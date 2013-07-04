@@ -1,8 +1,15 @@
 <h1>Family <%= @family.id %></h1>
-<%= link_to "Add family member", new_family_member_path, data: { family_id: @family.id } %>
+<%= link_to "Add family member", new_family_family_member_path(@family) %>
 
-<ul>
   <% @family.family_members.each do |member| %>
-  <li><%= member.first_name %>, age: <%= member.age %></li>
+  <h2><%= member.first_name %></h2>
+  <h4>Age: <%= member.age %></h4>
+  <h4>Gender: <%= member.gender %></h4>
+  <h4>Sizes</h4>
+  <ul>
+    <li>Pants: <%= member.size_pants %></li>
+    <li>Shirt: <%= member.size_shirt %></li>
+    <li>Dress: <%= member.size_dress %></li>
+    <li>Shoes: <%= member.size_shoes %></li>
+  </ul>
   <% end %>
-</ul>
