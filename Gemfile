@@ -7,6 +7,7 @@ gem 'devise'
 
 group :development do
   gem 'quiet_assets'
+  gem 'sextant'
 end
 
 group :assets do
