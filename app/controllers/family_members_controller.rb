@@ -13,4 +13,19 @@ class FamilyMembersController < ApplicationController
       flash[:alert] = "That didn't work out quite right"
     end
   end
+
+  def edit
+    @family = Family.find(params[:family_id])
+    @family_member = FamilyMember.find(params[:id])
+  end
+
+  def update
+    p params
+    @family_member = FamilyMember.find(params[:id])
+    if @family_member.update_attributes(params[:family_member])
+      redirect_to family_path(params[:family_id])
+    else
+      flash[:alert] = "That didn't work out quite right"
+    end
+  end
 end
