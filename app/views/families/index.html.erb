@@ -1,0 +1,12 @@
+<h1>Families</h1>
+
+<ul>
+<% @families.each do |family| %>
+  <li>Family <%= family.id %></li>
+  <ul>
+  <% family.family_members.each do |member| %>
+    <li><%= member.first_name %>, age: <%= member.age %></li>
+  <% end %>
+  </ul>
+<% end %>
+</ul>

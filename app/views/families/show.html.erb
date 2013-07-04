@@ -1,0 +1,8 @@
+<h1>Family <%= @family.id %></h1>
+<%= link_to "Add family member", new_family_member_path, data: { family_id: @family.id } %>
+
+<ul>
+  <% @family.family_members.each do |member| %>
+  <li><%= member.first_name %>, age: <%= member.age %></li>
+  <% end %>
+</ul>

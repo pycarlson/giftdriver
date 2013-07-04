@@ -1,0 +1,20 @@
+  <%= form_for @family_member do |f| %>
+  <%= hidden_field_tag(:family_id, @family_id) %>
+  <%= f.label :first_name %>
+  <%= f.text_field :first_name %>
+  <%= f.label :age %>
+  <%= f.text_field :age %>
+  <%= f.label :gender %>
+  <%= f.text_field :gender %>
+  <%= f.label :size_pants %>
+  <%= f.text_field :size_pants %>
+  <%= f.label :size_shirt %>
+  <%= f.text_field :size_shirt %>
+  <%= f.label :size_dress %>
+  <%= f.text_field :size_dress %>
+  <%= f.label :size_shoes %>
+  <%= f.text_field :size_shoes %>
+  <%= f.label :bio %>
+  <%= f.text_area :bio, size: "24x6" %>
+  <%= f.submit "Add family member" %>
+<% end %>
