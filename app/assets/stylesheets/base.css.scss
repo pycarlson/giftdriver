@@ -24,12 +24,11 @@ label {
   font-size: 1.2em;
 }
 
-.button input {
-  font-family: 'Droid Sans', sans-serif;
-}
-
 .button {
   margin-top: 20px;
+  input {
+    font-family: 'Droid Sans', sans-serif;
+  }
 }
 
 .remember_me label {
