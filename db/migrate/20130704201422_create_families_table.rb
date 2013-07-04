@@ -1,5 +1,5 @@
 class CreateFamiliesTable < ActiveRecord::Migration
-  def create
+  def change
     create_table :families do |t|
       t.integer :drive_id
       t.integer :donor_id

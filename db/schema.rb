@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704012519) do
+ActiveRecord::Schema.define(:version => 20130704202320) do
+
+  create_table "families", :force => true do |t|
+    t.integer "drive_id"
+    t.integer "donor_id"
+  end
+
+  create_table "family_members", :force => true do |t|
+    t.integer "family_id"
+    t.string  "first_name"
+    t.integer "age"
+    t.string  "gender"
+    t.string  "size_pants"
+    t.string  "size_shirt"
+    t.string  "size_dress"
+    t.string  "size_shoes"
+    t.text    "bio"
+  end
 
   create_table "users", :force => true do |t|
     t.string   "email",                  :default => "", :null => false
