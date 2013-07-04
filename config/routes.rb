@@ -9,7 +9,9 @@ Giftdriver::Application.routes.draw do
     resources :family_members, only: [:index, :new, :create]
   end
 
-  resources :family_members, only: [:show, :edit, :update, :destroy]
+  resources :family_members, only: [:show, :edit, :update, :destroy] do
+    resources :needs
+  end
 
 
   # The priority is based upon order of creation:
