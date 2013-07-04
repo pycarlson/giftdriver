@@ -14,5 +14,5 @@
     <li>Dress: <%= member.size_dress %></li>
     <li>Shoes: <%= member.size_shoes %></li>
   </ul>
-  <%= link_to "Edit #{member.first_name}", edit_family_family_member_path(@family, member) %>
+  <%= link_to "Edit #{member.first_name}", edit_family_member_path(member) %>
   <% end %>
