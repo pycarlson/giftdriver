@@ -1,3 +1,6 @@
-<h1>This is the drives index.</h1>
+<h1>GiftDriver's Current Drives</h1>
 
-<p>This is a paragraph.</p>
+<% @drives.each do |drive| %>
+<h2><%= drive.drive_title %></h2>
+    <%= drive.drive_blurb %>
+<% end %>

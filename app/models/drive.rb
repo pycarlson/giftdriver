@@ -13,5 +13,18 @@ class Drive < ActiveRecord::Base
                   :start_date,
                   :end_date
 
-  # validates :organizer_id, :organization_name, :organization_blurb, :drive_title, :drive_blurb, :start_date, :end_date, :presence => true
+  validates :org_blurb,
+            :org_email,
+            :org_phone,
+            :org_name,
+            :org_address,
+            :org_zipcode,
+            :drop_location,
+            :drive_title,
+            :drive_blurb,
+            :start_date,
+            :end_date,
+            :presence => true
+
+  validates :drive_title, :uniqueness => :true
 end

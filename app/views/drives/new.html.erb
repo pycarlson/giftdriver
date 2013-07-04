@@ -1,0 +1,40 @@
+<h2>Create a Drive</h2>
+
+<%= form_for(@drive) do |f| %>
+
+
+  <div class="form-item"><%= f.label :Organization_Name %>
+  <%= f.text_field :org_name, :autofocus => true %></div>
+
+  <div class="form-item"><%= f.label :Organization_Details %>
+  <%= f.text_field :org_blurb, :autofocus => true %></div>
+
+  <div class="form-item"><%= f.label :Address %>
+  <%= f.text_field :org_address, :autofocus => true %></div>
+
+  <div class="form-item"><%= f.label :Zipcode %>
+  <%= f.text_field :org_zipcode %></div>
+
+  <div class="form-item"><%= f.label :Phone_Number %>
+  <%= f.text_field :org_phone %></div>
+
+  <div class="form-item"><%= f.label :Organization_Email%>
+  <%= f.email_field :org_email %></div>
+
+  <div class="form-item"><%= f.label :Drive_Title %>
+  <%= f.text_field :drive_title %></div>
+
+  <div class="form-item"><%= f.label :Drive_Description %>
+  <%= f.text_field :drive_blurb %></div>
+
+  <div class="form-item"><%= f.label :Drop_Location %>
+  <%= f.text_field :drop_location %></div>
+
+  <div class="form-item"><%= f.label :Start_Date %>
+  <%= f.date_field :start_date %></div>
+
+  <div class="form-item"><%= f.label :End_Date %>
+  <%= f.date_field :end_date %></div>
+
+  <div class="button"><%= f.submit "Create Drive!" %></div>
+<% end %>

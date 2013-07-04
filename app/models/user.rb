@@ -9,6 +9,7 @@ class User < ActiveRecord::Base
   attr_accessible :email, :password, :password_confirmation, :remember_me, :full_name, :zipcode
   # attr_accessible :title, :body
 
-  validate :full_name, :zipcode, :presence => :true
+  validates :zipcode, :presence => :true
+  validates :full_name, :presence => :true
   has_many :drives
 end

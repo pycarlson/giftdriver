@@ -1,6 +1,7 @@
 Giftdriver::Application.routes.draw do
 
   devise_for :users
+  resources :drives
 
   root :to => "drives#index"
 
