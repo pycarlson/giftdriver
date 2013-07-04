@@ -2,17 +2,24 @@
 <%= link_to "Add family member", new_family_family_member_path(@family) %>
 
   <% @family.family_members.each do |member| %>
-  <h2><%= member.first_name %></h2>
-  <h4>About <%= member.first_name %></h4>
-  <p><%= member.bio %></p>
-  <h4>Age: <%= member.age %></h4>
-  <h4>Gender: <%= member.gender %></h4>
-  <h4>Sizes</h4>
-  <ul>
-    <li>Pants: <%= member.size_pants %></li>
-    <li>Shirt: <%= member.size_shirt %></li>
-    <li>Dress: <%= member.size_dress %></li>
-    <li>Shoes: <%= member.size_shoes %></li>
-  </ul>
-  <%= link_to "Edit #{member.first_name}", edit_family_member_path(member) %>
+    <h2><%= member.first_name %></h2>
+    <h4>About <%= member.first_name %></h4>
+    <p><%= member.bio %></p>
+    <h4>Age: <%= member.age %></h4>
+    <h4>Gender: <%= member.gender %></h4>
+    <h4>Sizes</h4>
+    <ul>
+      <li>Pants: <%= member.size_pants %></li>
+      <li>Shirt: <%= member.size_shirt %></li>
+      <li>Dress: <%= member.size_dress %></li>
+      <li>Shoes: <%= member.size_shoes %></li>
+    </ul>
+    <h4>Needs:</h4>
+    <ul>
+    <% member.needs.each do |need| %>
+      <li><%= need.text %></li>
+    <% end %>
+    </ul>
+    <button><%= link_to "Edit #{member.first_name}", edit_family_member_path(member) %></button>
+    <button><%= link_to "Add needs for #{member.first_name}", new_family_member_need_path(member) %></button>
   <% end %>
