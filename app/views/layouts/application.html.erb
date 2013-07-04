@@ -4,13 +4,14 @@
   <title>Giftdriver</title>
   <%= stylesheet_link_tag    "application", :media => "all" %>
   <%= javascript_include_tag "application" %>
+  <link href='http://fonts.googleapis.com/css?family=Droid+Sans|Droid+Serif:400,700' rel='stylesheet' type='text/css'>
   <%= csrf_meta_tags %>
 </head>
 <body>
   <%= render "shared/top_nav" %>
   <div class="container">
     <% if flash[:notice] %>
-    <p class="notice"><%= notice %></p>
+    <p class="alert alert-info"><%= notice %></p>
     <% end %>
     <% if flash[:alert] %>
     <p class="alert"><%= alert %></p>
