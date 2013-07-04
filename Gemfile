@@ -18,6 +18,7 @@ group :test do
   gem 'factory_girl_rails'
   gem 'launchy'
   gem 'faker'
+  gem 'database_cleaner'
 end
 
 
