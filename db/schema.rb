@@ -28,6 +28,22 @@ ActiveRecord::Schema.define(:version => 20130704202320) do
     t.string  "size_dress"
     t.string  "size_shoes"
     t.text    "bio"
+
+  create_table "drives", :force => true do |t|
+    t.string   "org_name"
+    t.text     "org_blurb"
+    t.string   "org_email"
+    t.string   "org_phone"
+    t.string   "org_address"
+    t.string   "org_zipcode"
+    t.string   "drop_location"
+    t.string   "drive_title"
+    t.text     "drive_blurb"
+    t.string   "start_date"
+    t.string   "end_date"
+    t.integer  "user_id"
+    t.datetime "created_at",    :null => false
+    t.datetime "updated_at",    :null => false
   end
 
   create_table "users", :force => true do |t|
@@ -43,6 +59,9 @@ ActiveRecord::Schema.define(:version => 20130704202320) do
     t.string   "last_sign_in_ip"
     t.datetime "created_at",                             :null => false
     t.datetime "updated_at",                             :null => false
+    t.string   "full_name"
+    t.string   "zipcode"
+    t.string   "company"
   end
 
   add_index "users", ["email"], :name => "index_users_on_email", :unique => true
