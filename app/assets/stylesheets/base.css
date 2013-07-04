@@ -8,11 +8,34 @@ h1, h2, h3, h4 {
   font-weight: 700;
 }
 
+h1, h2 {
+  margin-bottom: 20px;
+}
+
 .container {
   margin: 0 auto;
 }
 
-.brand {
-  font-family: 'Droid Serif', serif;
-  font-weight: 700; 
+.form-item {
+  margin-bottom: 10px;
+}
+
+label {
+  font-size: 1.2em;
+}
+
+.button input {
+  font-family: 'Droid Sans', sans-serif;
+}
+
+.button {
+  margin-top: 20px;
+}
+
+.remember_me label {
+  display: inline;
+}
+
+#user_remember_me {
+  margin-right: 10px;
 }
