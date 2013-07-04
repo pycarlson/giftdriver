@@ -1,0 +1,17 @@
+<div class="navbar">
+  <div class="navbar-inner">
+    <a class="brand" href="#">Giftdriver</a>
+    <ul class="nav">
+      <li><a href="/">Home</a></li>
+    </ul>
+    <ul class="nav pull-right">
+      <% if user_signed_in? %>
+      <li><%= link_to 'Account', edit_user_registration_path, :class => 'navbar-link' %></li>
+      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+      <% else %>
+      <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
+      <li><%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %></li>
+      <% end %>
+    </ul>
+  </div>
+</div>
