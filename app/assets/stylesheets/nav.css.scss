@@ -1,3 +1,5 @@
+$footer_height: 25px;
+
 .navbar {
   ul {
     font-size: 1.25em;
@@ -7,3 +9,16 @@
     font-size: 2em;
   }
 }
+
+html {
+  min-height: 100%;
+  position: relative;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  height: $footer_height;
+  width: 100%;
+}
+
