@@ -122,6 +122,10 @@ GEM
     rake (10.1.0)
     rdoc (3.12.2)
       json (~> 1.4)
+    roo (1.11.2)
+      nokogiri
+      rubyzip
+      spreadsheet (> 0.6.4)
     rspec-core (2.13.1)
     rspec-expectations (2.13.0)
       diff-lcs (>= 1.1.3, < 2.0)
@@ -133,6 +137,7 @@ GEM
       rspec-core (~> 2.13.0)
       rspec-expectations (~> 2.13.0)
       rspec-mocks (~> 2.13.0)
+    ruby-ole (1.2.11.7)
     rubyzip (0.9.9)
     sass (3.2.9)
     sass-rails (3.2.6)
@@ -152,6 +157,8 @@ GEM
     shoulda-context (1.0.0)
     shoulda-matchers (1.4.1)
       activesupport (>= 3.0.0)
+    spreadsheet (0.8.5)
+      ruby-ole (>= 1.0)
     sprockets (2.2.2)
       hike (~> 1.2)
       multi_json (~> 1.0)
@@ -189,6 +196,7 @@ DEPENDENCIES
   pg
   quiet_assets
   rails (= 3.2.13)
+  roo
   rspec-rails
   sass-rails (~> 3.2.3)
   selenium-webdriver
