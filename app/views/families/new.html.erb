@@ -1,3 +1,3 @@
-<%= form_for @family do |f| %>
+<%= form_for([@drive, @family], url: drive_families_path) do |f| %>
  <%= f.submit "Add a family" %>
 <% end %>

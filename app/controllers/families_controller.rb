@@ -1,10 +1,11 @@
 class FamiliesController < ApplicationController
 
   def index
-    @families = Family.all
+    @families = Family.where('drive_id = ?', params[:drive_id])
   end
 
   def new
+    @drive = params[:drive_id]
     @family = Family.new
   end
 

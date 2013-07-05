@@ -30,12 +30,6 @@ ActiveRecord::Schema.define(:version => 20130704232710) do
     t.datetime "updated_at",    :null => false
   end
 
-  create_table "needs", :force => true do |t|
-    t.text    "text"
-    t.integer "family_member_id"
-    t.integer "priority"
-  end
-
   create_table "families", :force => true do |t|
     t.integer "drive_id"
     t.integer "donor_id"
@@ -51,6 +45,12 @@ ActiveRecord::Schema.define(:version => 20130704232710) do
     t.string  "size_dress"
     t.string  "size_shoes"
     t.text    "bio"
+  end
+
+  create_table "needs", :force => true do |t|
+    t.text    "text"
+    t.integer "family_member_id"
+    t.integer "priority"
   end
 
   create_table "users", :force => true do |t|

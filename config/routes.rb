@@ -1,17 +1,21 @@
 Giftdriver::Application.routes.draw do
 
   devise_for :users
-  resources :drives
 
-  root :to => "drives#index"
-
-  resources :families do
+  resources :families, except: [:index, :new, :create] do
     resources :family_members, only: [:index, :new, :create]
   end
+
+  resources :drives do
+    resources :families, only: [:index, :new, :create]
+  end
+
 
   resources :family_members, only: [:show, :edit, :update, :destroy] do
     resources :needs
   end
+
+  root :to => "drives#index"
 
 
   # The priority is based upon order of creation:

@@ -10,8 +10,10 @@
   <%= @drive.drop_location %><br>
   <%= @drive.start_date %><br>
   <%= @drive.end_date %><br>
-  <%=link_to "See the Families", families_path(@drive) %>
+  <p><%=link_to "See the Families", drive_families_path(@drive) %></p>
+  <p><%=link_to "Add a Family", new_drive_family_path(@drive) %></p>
 </div>
+
 
 
 
