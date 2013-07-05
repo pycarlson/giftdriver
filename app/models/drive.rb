@@ -1,5 +1,6 @@
 class Drive < ActiveRecord::Base
   belongs_to :user
+  has_many :families
 
   attr_accessible :org_blurb,
                   :org_email,

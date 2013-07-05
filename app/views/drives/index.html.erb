@@ -1,6 +1,8 @@
-<h1>GiftDriver's Current Drives</h1>
+<h1>Giftdriver's Current Drives</h1>
 
 <% @drives.each do |drive| %>
-<h2><%= drive.drive_title %></h2>
+<h2><%= link_to drive.drive_title, drive %></h2>
     <%= drive.drive_blurb %>
 <% end %>
+
+

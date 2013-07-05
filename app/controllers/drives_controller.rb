@@ -5,7 +5,9 @@ class DrivesController < ApplicationController
   end
 
   def show
-    @drive = Drive.find_by_title(params[:title])
+    p params
+    @drive = Drive.find(params[:id])
+    @families = @drive.families
   end
 
   def new

@@ -2,7 +2,7 @@
 
 <ul>
 <% @families.each do |family| %>
-  <li>Family <%= family.id %></li>
+  <li> <%= link_to "Family #{family.id}", family_path(family) %></li>
   <ul>
   <% family.family_members.each do |member| %>
     <li><%= member.first_name %>, age: <%= member.age %></li>
