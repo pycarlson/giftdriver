@@ -1,17 +1,23 @@
 <div id="drive-deets">
-  <h2><%= @drive.drive_title %></h2><br>
-  <%= @drive.drive_blurb %><br>
-  <%= @drive.org_name %><br>
-  <%= @drive.org_blurb %><br>
-  <%= @drive.org_email %><br>
-  <%= @drive.org_phone %><br>
-  <%= @drive.org_address %><br>
-  <%= @drive.org_zipcode %><br>
-  <%= @drive.drop_location %><br>
-  <%= @drive.start_date %><br>
-  <%= @drive.end_date %><br>
-  <p><%=link_to "See the Families", drive_families_path(@drive) %></p>
-  <%=button_to "Add a Family", drive_families_path(@drive) %>
+  <h2><%= @drive.drive_title %></h2>
+  <h3>Organized by <%= @drive.org_name %></h3>
+
+  <p><%= @drive.drive_blurb %><p>
+
+  <h3>Details</h3>
+  <p>Where to drop off your gifts: <%= @drive.drop_location %></p>
+  <p>Dates of drive: <%= @drive.start_date %> to <%= @drive.end_date %></p>
+
+  <h3>About <%= @drive.org_name %></h3>
+  <%= @drive.org_blurb %>
+
+  <h4>Contact Us</h4>
+  <p>Email: <%= @drive.org_email %></p>
+  <p>Phone: <%= @drive.org_phone %></p>
+  <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
+
+  <%= button_to "See the Families", drive_families_path(@drive) %>
+  <%= button_to "Add a Family", drive_families_path(@drive) %>
 </div>
 
 
