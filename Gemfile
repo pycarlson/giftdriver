@@ -45,4 +45,5 @@ end
 # To use debugger
 # gem 'debugger'
 
+# To enable excel, csv, etc, file uploads to create Family Member objects
 gem 'roo'
