@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def authorized?(drive)    
-    current_user.id == drive.user
+  def organizer?(drive)
+    current_user == drive.user
   end
 end

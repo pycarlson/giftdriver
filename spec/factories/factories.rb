@@ -1,11 +1,4 @@
 FactoryGirl.define do
-  # factory :user do
-  #   sequence(:email) { |n| "testuser+#{n}@example.com" }
-  #   full_name "Cat Woman"
-  #   zipcode "94606"
-  #   password "password"
-  #   password_confirmation "password"
-  # end
 
   factory :user do
     full_name "Cat Woman"
@@ -28,5 +21,23 @@ FactoryGirl.define do
     start_date "Nov 15, 2013"
     end_date "Dec 24, 2013"
     user
+  end
+
+  factory :family do
+    code "hrt675"
+    drive
+  end
+
+  factory :family_member do
+    family
+    first_name "Kitty"
+    age 9
+    gender "cat"
+    bio "this is a healthy cat"
+  end
+
+  factory :need do
+    text "new shoes"
+    family_member
   end
 end

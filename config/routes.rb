@@ -5,6 +5,7 @@ Giftdriver::Application.routes.draw do
   match '/about' => 'static_pages#about', :as => :about
   match '/team' => 'static_pages#team', :as => :team
 
+
   resources :families, except: [:index, :new, :create] do
     resources :family_members, only: [:index, :new, :create]
   end
@@ -16,6 +17,8 @@ Giftdriver::Application.routes.draw do
   resources :family_members, only: [:show, :edit, :update, :destroy] do
     resources :needs
   end
+
+  match '/families/:id/adopt' => 'families#adopt', as: :adopt
 
   root :to => "drives#index"
 

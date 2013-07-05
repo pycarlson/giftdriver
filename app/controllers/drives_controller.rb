@@ -1,6 +1,7 @@
 class DrivesController < ApplicationController
 
   skip_before_filter :authenticate_user!, :only => [:index, :show]
+  before_filter :validate_organizer, except: [:index, :show, :new, :create]
 
   def index
     @drives = Drive.all
@@ -9,6 +10,7 @@ class DrivesController < ApplicationController
   def show
     @drive = Drive.find(params[:id])
     @families = @drive.families
+    @family = Family.new
   end
 
   def new
@@ -40,6 +42,12 @@ class DrivesController < ApplicationController
   end
 
   def destroy
+  end
+
+  protected
+
+  def validate_organizer
+    redirect_to root_url unless Drive.find(params[:id]).user_id == current_user.id
   end
 
 end

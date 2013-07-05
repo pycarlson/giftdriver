@@ -1,6 +1,10 @@
 <h1>Family <%= @family.id %></h1>
-<%= link_to "Add family member", new_family_family_member_path(@family) %>
-
+<% unless @family.adopted? %>
+  <button><%= link_to "Adopt Family", adopt_path(@family), action: 'post' %></button>
+<% end %>
+<% if organizer?(@family.drive) %>
+  <button><%= link_to "Add family member", new_family_family_member_path(@family) %></button>
+<% end %>
   <% @family.family_members.each do |member| %>
     <h2><%= member.first_name %></h2>
     <h4>About <%= member.first_name %></h4>
@@ -20,7 +24,7 @@
       <li><%= need.text %></li>
     <% end %>
     </ul>
-    <% if authorized?(@family.drive)%>
-    <%= render 'add_edit_buttons' %>
+    <% if organizer?(@family.drive)%>
+    <%= render 'add_edit_buttons', member: member %>
     <% end %>
   <% end %>

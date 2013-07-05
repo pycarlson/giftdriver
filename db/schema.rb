@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130704232710) do
+ActiveRecord::Schema.define(:version => 20130705222446) do
 
   create_table "drives", :force => true do |t|
     t.string   "org_name"
@@ -33,6 +33,10 @@ ActiveRecord::Schema.define(:version => 20130704232710) do
   create_table "families", :force => true do |t|
     t.integer "drive_id"
     t.integer "donor_id"
+    t.integer "adopted_by"
+    t.boolean "recieved_at_org"
+    t.boolean "given_to_family"
+    t.string  "code"
   end
 
   create_table "family_members", :force => true do |t|

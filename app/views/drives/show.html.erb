@@ -16,10 +16,10 @@
   <p>Phone: <%= @drive.org_phone %></p>
   <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
 
-  <button><%= link_to "See the Families", drive_families_path(@drive) %></button>
- 
-  <%= button_to "Add a Family", drive_families_path(@drive) %>
-  <%= link_to "Edit Drive Details", edit_drive_path(@drive) %>
+  <button><%= link_to "See #{@drive.drive_title} Families", drive_families_path(@drive) %></button>
+  <% if organizer?(@drive) %> 
+    <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
+  <% end %>
 </div>
 
 

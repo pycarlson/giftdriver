@@ -1,12 +1,27 @@
-<h1>Families</h1>
-
+<h1>Families to Adopt</h1>
 <ul>
-<% @families.each do |family| %>
-  <li> <%= link_to "Family #{family.id}", family_path(family) %></li>
-  <ul>
-  <% family.family_members.each do |member| %>
-    <li><%= member.first_name %>, age: <%= member.age %></li>
-  <% end %>
-  </ul>
+<% @not_adopted.each do |family| %>
+  
+    <li> <%= link_to "Family #{family.id}", family_path(family) %></li>
+    <ul>
+    <% family.family_members.each do |member| %>
+      <li><%= member.first_name %>, age: <%= member.age %></li>
+    <% end %>
+    </ul>
+  
+<% end %>
+</ul>
+
+<h1>Adopted Families</h1>
+<ul>
+<% @adopted.each do |family| %>
+  
+    <li> <%= link_to "Family #{family.id}", family_path(family) %></li>
+    <ul>
+    <% family.family_members.each do |member| %>
+      <li><%= member.first_name %>, age: <%= member.age %></li>
+    <% end %>
+    </ul>
+  
 <% end %>
 </ul>

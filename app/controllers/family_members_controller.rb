@@ -1,4 +1,7 @@
 class FamilyMembersController < ApplicationController
+  before_filter :validate_organizer, except: [:new, :create]
+  before_filter :validate_organizer_with_family, only: [:new, :create]
+
   def new
     @family = Family.find(params[:family_id])
     @family_member = @family.family_members.new
@@ -25,5 +28,17 @@ class FamilyMembersController < ApplicationController
     else
       flash[:alert] = "That didn't work out quite right"
     end
+  end
+
+  protected
+
+  def validate_organizer
+    drive = FamilyMember.find(params[:id]).family.drive
+    redirect_to root_url unless drive.user == current_user
+  end
+
+  def validate_organizer_with_family
+    drive = Family.find(params[:family_id]).drive
+    redirect_to root_url unless drive.user == current_user
   end
 end

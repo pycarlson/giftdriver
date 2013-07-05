@@ -1,0 +1,7 @@
+<%= form_for([@drive, @family]) do |f| %>
+    <%= f.label :Family_Code %>
+    <%= f.text_field :code, :autofocus => true %>
+    <div class="button"><%= f.submit "Add a Family" %></div>
+<% end %>
+
+<%= link_to "Edit Drive Details", edit_drive_path(@drive) %>

@@ -8,6 +8,7 @@ gem 'devise'
 group :development do
   gem 'quiet_assets'
   gem 'sextant'
+  gem 'debugger'
 end
 
 group :assets do
@@ -25,6 +26,7 @@ group :test do
   gem 'faker'
   gem 'database_cleaner'
   gem 'shoulda'
+  gem 'selenium-webdriver'
 end
 
 
