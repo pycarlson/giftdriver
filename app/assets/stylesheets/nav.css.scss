@@ -10,9 +10,21 @@ $footer_height: 25px;
   }
 }
 
+body {
+  min-height: 100%;
+}
+
 html {
   min-height: 100%;
   position: relative;
+}
+
+.container {
+  width: 900px;
+  margin: 0 auto;
+  min-height: 100%;
+  padding-bottom: $footer_height;
+  margin-bottom: 40px;
 }
 
 footer {

@@ -19,6 +19,7 @@ class DrivesController < ApplicationController
   end
 
   def edit
+    @drive = Drive.find(params[:id])
   end
 
   def update
