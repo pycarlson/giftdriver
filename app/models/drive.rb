@@ -25,7 +25,6 @@ class Drive < ActiveRecord::Base
             :drive_blurb,
             :start_date,
             :end_date,
-            :presence => true
 
   validates :drive_title, :uniqueness => :true
 end

@@ -11,7 +11,7 @@
   <%= @drive.start_date %><br>
   <%= @drive.end_date %><br>
   <p><%=link_to "See the Families", drive_families_path(@drive) %></p>
-  <p><%=link_to "Add a Family", new_drive_family_path(@drive) %></p>
+  <%=button_to "Add a Family", drive_families_path(@drive) %>
 </div>
 
 

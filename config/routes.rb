@@ -13,10 +13,11 @@ Giftdriver::Application.routes.draw do
     resources :families, only: [:index, :new, :create]
   end
 
-
   resources :family_members, only: [:show, :edit, :update, :destroy] do
     resources :needs
   end
+
+  resources :families, only: [:show, :edit, :update, :destroy]
 
   root :to => "drives#index"
 

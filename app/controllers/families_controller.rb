@@ -4,15 +4,10 @@ class FamiliesController < ApplicationController
     @families = Family.where('drive_id = ?', params[:drive_id])
   end
 
-  def new
-    @drive = params[:drive_id]
-    @family = Family.new
-  end
-
   def create
-    if @family = Family.create
-      @family.drive = Drive.find(params[:drive_id])
-      @family.save
+    @family = Family.new
+    @family.drive = Drive.find(params[:drive_id])
+    if @family.save
       redirect_to family_path(@family.id)
     else
       flash[:alert] = "That didn't work out quite right"

@@ -5,7 +5,6 @@ class DrivesController < ApplicationController
   end
 
   def show
-    p params
     @drive = Drive.find(params[:id])
     @families = @drive.families
   end
@@ -15,7 +14,11 @@ class DrivesController < ApplicationController
   end
 
   def create
-    Drive.create(params[:drive], user_id: current_user.id)
+    @drive = Drive.new(params[:drive], user_id: current_user.id)
+    if @drive.save
+      redirect_to drive_path(@drive)
+    else
+    end
   end
 
   def edit
