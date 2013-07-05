@@ -2,6 +2,9 @@ Giftdriver::Application.routes.draw do
 
   devise_for :users
 
+  match '/about' => 'static_pages#about', :as => :about
+  match '/team' => 'static_pages#team', :as => :team
+
   resources :families, except: [:index, :new, :create] do
     resources :family_members, only: [:index, :new, :create]
   end
