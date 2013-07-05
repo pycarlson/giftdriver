@@ -17,8 +17,6 @@ Giftdriver::Application.routes.draw do
     resources :needs
   end
 
-  resources :families, only: [:show, :edit, :update, :destroy]
-
   root :to => "drives#index"
 
 

@@ -16,7 +16,8 @@
   <p>Phone: <%= @drive.org_phone %></p>
   <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
 
-  <%= button_to "See the Families", drive_families_path(@drive) %>
+  <button><%= link_to "See the Families", drive_families_path(@drive) %></button>
+ 
   <%= button_to "Add a Family", drive_families_path(@drive) %>
   <%= link_to "Edit Drive Details", edit_drive_path(@drive) %>
 </div>

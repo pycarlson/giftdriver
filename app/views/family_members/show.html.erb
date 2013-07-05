@@ -20,7 +20,6 @@
       <li><%= need.text %></li>
     <% end %>
     </ul>
-    <% if authorized?(@family.drive)%>
-    <%= render 'add_edit_buttons' %>
-    <% end %>
+    <%= render authorized?(@family.drive) %>
+    
   <% end %>

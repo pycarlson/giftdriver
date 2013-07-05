@@ -1,5 +1,7 @@
 class DrivesController < ApplicationController
 
+  skip_before_filter :authenticate_user!, :only => [:index, :show]
+
   def index
     @drives = Drive.all
   end
@@ -14,7 +16,9 @@ class DrivesController < ApplicationController
   end
 
   def create
-    @drive = Drive.new(params[:drive], user_id: current_user.id)
+    @drive = Drive.new(params[:drive])
+    @drive.user = current_user
+    
     if @drive.save
       redirect_to drive_path(@drive)
     else
