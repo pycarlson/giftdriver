@@ -1,38 +1,42 @@
-<%= form_for(@drive) do |f| %>
+<div class="form"
+<div class="row">
+  <div class="span5">
+    <%= form_for(@drive) do |f| %>
+    <%= f.label :Organization_Name %>
+    <%= f.text_field :org_name, :autofocus => true %>
 
+    <%= f.label :About_Your_Organization %>
+    <%= f.text_area :org_blurb %>
 
-  <div class="form-item"><%= f.label :Organization_Name %>
-  <%= f.text_field :org_name, :autofocus => true %></div>
+    <%= f.label :Email%>
+    <%= f.email_field :org_email %>
 
-  <div class="form-item"><%= f.label :Organization_Details %>
-  <%= f.text_field :org_blurb, :autofocus => true %></div>
+    <%= f.label :Phone_Number %>
+    <%= f.text_field :org_phone %>
 
-  <div class="form-item"><%= f.label :Address %>
-  <%= f.text_field :org_address, :autofocus => true %></div>
+    <%= f.label :Address %>
+    <%= f.text_field :org_address %>
 
-  <div class="form-item"><%= f.label :Zipcode %>
-  <%= f.text_field :org_zipcode %></div>
+    <%= f.label :Zipcode %>
+    <%= f.text_field :org_zipcode, size: "10x10" %>
+  </div>
+  <div class="span5">
+    <%= f.label :Drive_Title %>
+    <%= f.text_field :drive_title %>
 
-  <div class="form-item"><%= f.label :Phone_Number %>
-  <%= f.text_field :org_phone %></div>
+    <%= f.label :About_your_drive %>
+    <%= f.text_area :drive_blurb %>
 
-  <div class="form-item"><%= f.label :Organization_Email%>
-  <%= f.email_field :org_email %></div>
+    <%= f.label :Drop_Off_Location %>
+    <%= f.text_field :drop_location %>
 
-  <div class="form-item"><%= f.label :Drive_Title %>
-  <%= f.text_field :drive_title %></div>
+    <%= f.label :Start_Date %>
+    <%= f.text_field :start_date %>
 
-  <div class="form-item"><%= f.label :Drive_Description %>
-  <%= f.text_field :drive_blurb %></div>
-
-  <div class="form-item"><%= f.label :Drop_Location %>
-  <%= f.text_field :drop_location %></div>
-
-  <div class="form-item"><%= f.label :Start_Date %>
-  <%= f.text_field :start_date %></div>
-
-  <div class="form-item"><%= f.label :End_Date %>
-  <%= f.text_field :end_date %></div>
-
-  <div class="button"><%= f.submit "Create Drive!" %></div>
+    <%= f.label :End_Date %>
+    <%= f.text_field :end_date %>
+    <div class="button"><%= f.submit "Create Drive!" %></div>
+  </div>
+</div>
 <% end %>
+</div>
