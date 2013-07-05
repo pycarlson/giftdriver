@@ -11,6 +11,8 @@ class FamiliesController < ApplicationController
 
   def create
     if @family = Family.create
+      @family.drive = Drive.find(params[:drive_id])
+      @family.save
       redirect_to family_path(@family.id)
     else
       flash[:alert] = "That didn't work out quite right"
