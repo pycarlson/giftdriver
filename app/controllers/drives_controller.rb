@@ -18,6 +18,7 @@ class DrivesController < ApplicationController
     if @drive.save
       redirect_to drive_path(@drive)
     else
+      render :edit
     end
   end
 
@@ -26,6 +27,12 @@ class DrivesController < ApplicationController
   end
 
   def update
+    @drive = Drive.find(params[:id])
+    if @drive.update_attributes(params[:drive])
+      redirect_to drive_path(@drive)
+    else
+      render :edit
+    end
   end
 
   def destroy
