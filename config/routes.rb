@@ -17,6 +17,8 @@ Giftdriver::Application.routes.draw do
     resources :needs
   end
 
+  resources :family_members_imports, only: [:new, :create]
+
   root :to => "drives#index"
 
 
