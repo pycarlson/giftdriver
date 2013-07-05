@@ -1,5 +1,7 @@
 require File.expand_path('../boot', __FILE__)
 
+require 'csv'
+require 'iconv' #not sure if this is needed, this was in application.rb in rails cast shoing file upload.
 require 'rails/all'
 
 if defined?(Bundler)
