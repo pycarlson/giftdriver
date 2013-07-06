@@ -2,8 +2,13 @@ require File.expand_path('../boot', __FILE__)
 
 require 'roo'
 require 'csv'
-require 'iconv' #Depricated, may need to use "String#encode" instead. 'iconv' is an API to convert between different character encodings.
 require 'rails/all'
+
+#####################################################################
+# THIS PROBABLY NEEDS TO BE FIXED IN THE FUTURE
+#require 'iconv' 
+#Depricated, may need to use "String#encode" instead. 'iconv' is an API to convert between different character encodings.
+######################################################################
 
 if defined?(Bundler)
   # If you precompile assets before deploying to production, use this line
