@@ -2,6 +2,7 @@ class Family < ActiveRecord::Base
   has_many :family_members
   validates :code, :presence => :true
   belongs_to :drive
+  attr_accessible :code
 
   def adopted?
     self.adopted_by != nil

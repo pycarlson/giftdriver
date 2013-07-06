@@ -12,6 +12,7 @@ Giftdriver::Application.routes.draw do
 
   resources :drives do
     resources :families, only: [:index, :new, :create]
+    resources :family_member_imports, only: [:new, :create]
   end
 
   resources :family_members, only: [:show, :edit, :update, :destroy] do
@@ -26,7 +27,7 @@ Giftdriver::Application.routes.draw do
   match 'families/:id/update_given' => 'families#update_given', as: :update_given
 
 
-  resources :family_member_imports, only: [:new, :create]
+  
 
 
 

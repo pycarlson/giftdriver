@@ -12,12 +12,12 @@
   <% end %>
 </ul>
 
-<%= form_for @family_member_import do |f| %>
-  <% if @family_member_import.errors.any? %>
+<%= form_for [@drive, @family_members] do |f| %>
+  <% if @family_members.errors.any? %>
     <div id="import_errors">
-      <h2><%= pluralize(@family_member_import.errors.count, "error") %> prohibited this import form completing:</h2>
+      <h2><%= pluralize(@family_members.errors.count, "error") %> prohibited this import form completing:</h2>
       <ul>
-      <% @family_member_import.errors.full_messages.each do |message| %>
+      <% @family_members.errors.full_messages.each do |message| %>
         <li><%= message %></li>
       <% end %>
       </ul>

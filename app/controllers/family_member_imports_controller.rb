@@ -1,12 +1,13 @@
 class FamilyMemberImportsController < ApplicationController
   def new
-    @family_member_import = FamilyMemberImport.new
+    @drive = Drive.find(params[:drive_id])
+    @family_members = FamilyMemberImport.new
   end
 
   def create
-    @family_member_import = FamilyMemberImport.new(params[:family_member_import])
+    @family_members = FamilyMemberImport.new(params[:family_member_import], params[:drive_id])
 
-    if @family_member_import.save
+    if @family_members.save
       redirect_to root_path, notice: "Families imported successfully."
     else
       render :new

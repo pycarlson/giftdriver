@@ -8,8 +8,9 @@ class FamilyMemberImport
 
   attr_accessor :file
   
-  def initialize(attributes = {})
+  def initialize(attributes = {}, drive_id = nil)
     attributes.each { |name, value| send("#{name}=", value) }
+    @drive = Drive.find(drive_id) if drive_id != nil
   end
 
   def persisted?
@@ -41,6 +42,10 @@ class FamilyMemberImport
       row = Hash[[header, spreadsheet.row(i)].transpose]
       family_member = FamilyMember.find_by_id(row["id"]) || FamilyMember.new
       family_member.attributes = row.to_hash.slice(*FamilyMember.accessible_attributes)
+      family_member.family = Family.find_or_create_by_code(row["family_code"])
+      family = family_member.family
+      family.drive = @drive
+      family.save
       family_member
     end
   end
