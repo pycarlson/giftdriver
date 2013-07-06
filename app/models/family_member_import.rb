@@ -1,4 +1,7 @@
+require 'roo' 
+
 class FamilyMemberImport
+  
   extend  ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
@@ -44,10 +47,10 @@ class FamilyMemberImport
 
   def open_spreadsheet
     case File.extname(file.original_filename)
-    when ".csv" then CSV.new(file.path, nil, :ignore)
-    when ".xls" then Excel.new(file.path, nil, :ignore)
-    when ".xlsx" then Excelx.new(file.path, nil, :ignore)
-    else raise "Unknown file type: #{file.original_filename}. Please import '.csv', '.xls', or.'xlsx' filetypes only."
+    when ".csv" then Roo::Csv.new(file.path, nil, :ignore)
+    when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
+    when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
+    else raise "Unknown file type: #{file.original_filename}. Please import '.csv', '.xls', or '.xlsx' filetypes only."
     end
   end  
 
