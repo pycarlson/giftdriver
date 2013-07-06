@@ -1,12 +1,9 @@
 <div id="drive-deets">
-  <h2><%= @drive.drive_title %></h2>
-  <h3>Organized by <%= @drive.org_name %></h3>
+  <h2 class="title"><%= @drive.drive_title %></h2>
+  <h3 class="organizers">Organized by <%= @drive.org_name %></h3>
+  <p>Drop off gifts from <%= @drive.start_date %> to <%= @drive.end_date %> at <%= @drive.drop_location %></p>
 
   <p><%= @drive.drive_blurb %><p>
-
-  <h3>Details</h3>
-  <p>Where to drop off your gifts: <%= @drive.drop_location %></p>
-  <p>Dates of drive: <%= @drive.start_date %> to <%= @drive.end_date %></p>
 
   <h3>About <%= @drive.org_name %></h3>
   <%= @drive.org_blurb %>
@@ -17,16 +14,12 @@
   <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
 
   <h2>Featured Families to Adopt</h2>
-  <ul>
-    <% @not_adopted.each do |family| %>
-      <li>Family id: <%= family.id %></li>
-        <ul>
-          <% family.family_members.each do |member| %>
-          <li>First name: <%= member.first_name %></li>
-          <% end %>
-        </ul>
-    <% end %>
-  </ul>
+  <% @not_adopted.each do |family| %>
+    <div class="family">
+      <p><%= family.members_names_sentence %></p>
+      <p><%= family.sampled_needs(5).to_sentence %></p>
+    </div>
+  <% end %>
 
   <button><%= link_to "See #{@drive.drive_title} Families", drive_families_path(@drive) %></button>
   <% if organizer?(@drive) %> 
