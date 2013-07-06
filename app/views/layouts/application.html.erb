@@ -11,10 +11,10 @@
   <%= render "shared/top_nav" %>
   <div class="container">
     <% if flash[:notice] %>
-    <p class="alert alert-info"><%= notice %></p>
+      <p class="alert alert-info"><%= notice %></p>
     <% end %>
     <% if flash[:alert] %>
-    <p class="alert"><%= alert %></p>
+      <p class="alert"><%= alert %></p>
     <% end %>
     <%= yield %>
   </div>
