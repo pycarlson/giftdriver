@@ -18,9 +18,9 @@ Giftdriver::Application.routes.draw do
     resources :needs
   end
 
-
-
   match '/families/:id/adopt' => 'families#adopt', as: :adopt
+  
+  match 'drives/:id/families/manage' => 'drives#manage', as: :manage
 
 
   resources :family_member_imports, only: [:new, :create]
