@@ -1,0 +1,4 @@
+class UsersWithAccess < ApplicationController
+  
+
+end
