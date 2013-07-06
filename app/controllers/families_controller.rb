@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
 
-  before_filter :validate_organizer, except: [:index, :show, :adopt]
+  before_filter :validate_organizer, except: [:index, :show, :adopt, :update_arrived, :update_given]
 
   def index
     @adopted = Family.adopted_families(params[:drive_id])
@@ -22,6 +22,20 @@ class FamiliesController < ApplicationController
 
   def show
     @family = Family.find(params[:id])
+  end
+
+  def update_arrived
+    family = Family.find(params[:id])
+    drive = Drive.find(family.drive_id)
+    family.update_attribute('received_at_org', true)
+    redirect_to manage_path(drive.id)
+  end
+
+  def update_given
+    family = Family.find(params[:id])
+    drive = Drive.find(family.drive_id)
+    family.update_attribute('given_to_family', true)
+    redirect_to manage_path(drive.id)
   end
 
   def adopt

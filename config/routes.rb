@@ -22,6 +22,9 @@ Giftdriver::Application.routes.draw do
   
   match 'drives/:id/families/manage' => 'drives#manage', as: :manage
 
+  match 'families/:id/update_arrived' => 'families#update_arrived', as: :update_arrived
+  match 'families/:id/update_given' => 'families#update_given', as: :update_given
+
 
   resources :family_member_imports, only: [:new, :create]
 

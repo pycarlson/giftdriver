@@ -1,5 +1,37 @@
-<ul>
-  <% @families.each do |family| %>
-    <li><%= family.code %></li>
-  <% end %>
-</ul> 
+<table class="table">
+  <thead>
+    <tr>
+      <th>Family Code</th>
+      <th>Family Size</th>
+      <th>Adopted?</th>
+      <th>Gifts Arrived</th>
+      <th>Gifts Given</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @families.each do |family| %>
+      <tr>
+        <td><%= family.code %></td>
+        <td><%= family.family_members.length %></td>
+        <td><%= family.adopted? %></td>
+        <td>
+          <% if family.received_at_org == false %>
+            <button><%= link_to "Received", update_arrived_path(family.id) %></button>
+          <% else %>
+            gift received
+          <% end %>
+        </td>
+
+        <td>
+          <% if family.given_to_family == false %>
+            <button><%= link_to "Delivered", update_given_path(family.id) %></button>
+          <% else %>
+            gifts delivered
+          <% end %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+

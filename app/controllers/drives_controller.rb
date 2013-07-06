@@ -44,7 +44,7 @@ class DrivesController < ApplicationController
 
   def manage
     @drive = Drive.find(params[:id])
-    @families = @drive.families
+    @families = @drive.families.order(:id)
   end
 
   def destroy
