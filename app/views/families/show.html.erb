@@ -1,5 +1,7 @@
 <h1>Family <%= @family.id %></h1>
-<% unless @family.adopted? %>
+<% if @family.adopted? %>
+  <h3>This family has been adopted!</h3>
+<% else %>
   <button><%= link_to "Adopt Family", adopt_path(@family), action: 'post' %></button>
 <% end %>
 <% if organizer?(@family.drive) %>

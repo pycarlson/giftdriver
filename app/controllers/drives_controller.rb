@@ -10,6 +10,7 @@ class DrivesController < ApplicationController
   def show
     @drive = Drive.find(params[:id])
     @families = @drive.families
+    @not_adopted = Family.not_adopted_families(@drive).sample(3)
     @family = Family.new
   end
 

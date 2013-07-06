@@ -16,6 +16,18 @@
   <p>Phone: <%= @drive.org_phone %></p>
   <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
 
+  <h2>Featured Families to Adopt</h2>
+  <ul>
+    <% @not_adopted.each do |family| %>
+      <li>Family id: <%= family.id %></li>
+        <ul>
+          <% family.family_members.each do |member| %>
+          <li>First name: <%= member.first_name %></li>
+          <% end %>
+        </ul>
+    <% end %>
+  </ul>
+
   <button><%= link_to "See #{@drive.drive_title} Families", drive_families_path(@drive) %></button>
   <% if organizer?(@drive) %> 
     <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>

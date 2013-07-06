@@ -3,10 +3,8 @@ class FamiliesController < ApplicationController
   before_filter :validate_organizer, except: [:index, :show, :adopt]
 
   def index
-    families = Family.where('drive_id = ?', params[:drive_id])
-
-    @adopted = families.where('adopted_by IS NOT NULL')
-    @not_adopted = families.where('adopted_by IS NULL')
+    @adopted = Family.adopted_families(params[:drive_id])
+    @not_adopted = Family.not_adopted_families(params[:drive_id])
   end
 
   def create
@@ -28,10 +26,10 @@ class FamiliesController < ApplicationController
 
   def adopt
     @family = Family.find(params[:id])
-    @family.update_attribute(:adopted_by, current_user.id)
 
     if @family.save
-      flash[:alert] = "THANK YOU!"
+      @family.update_attribute(:adopted_by, current_user.id)
+      flash[:message] = "THANK YOU!"
       redirect_to family_path(@family.id)
     else
       flash[:alert] = "Something went wrong. Try again?"
