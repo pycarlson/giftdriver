@@ -4,6 +4,8 @@ gem 'rails', '3.2.13'
 gem 'jquery-rails'
 gem 'pg'
 gem 'devise'
+gem "gmaps4rails", "~> 1.5.6"
+gem "geocoder"
 
 group :development do
   gem 'quiet_assets'
@@ -29,6 +31,8 @@ group :test do
   gem 'selenium-webdriver'
 end
 
+# To enable excel, csv, etc, file uploads to create Family Member objects
+gem 'roo'
 
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
@@ -45,5 +49,4 @@ end
 # To use debugger
 # gem 'debugger'
 
-# To enable excel, csv, etc, file uploads to create Family Member objects
-gem 'roo'
+
