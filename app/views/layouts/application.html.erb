@@ -16,6 +16,14 @@
     <% if flash[:alert] %>
       <p class="alert"><%= alert %></p>
     <% end %>
+     <% if flash[:error] %>
+      <ul>
+      <div class="alert"><% flash[:error].each do |error| %>
+        <li><%= error %></li>
+        <% end %>
+      </div>
+    </ul>
+    <% end %>
     <%= yield %>
   </div>
   <%= render "shared/footer" %>

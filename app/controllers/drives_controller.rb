@@ -29,7 +29,8 @@ class DrivesController < ApplicationController
       organizer.save
       redirect_to drive_path(@drive)
     else
-      render :edit
+      flash.now[:error] = @drive.errors.full_messages
+      render :new
     end
   end
 
@@ -42,32 +43,27 @@ class DrivesController < ApplicationController
     if @drive.update_attributes(params[:drive])
       redirect_to drive_path(@drive)
     else
+      flash.now[:error] = @drive.errors.full_messages
       render :edit
     end
   end
 
   def manage
-    @drive = Drive.find(params[:id])
-    @families = @drive.families.order(:id)
-  end
-
-  def destroy
+    drive = Drive.find(params[:id])
+    @families = drive.families.order(:id)
   end
 
   def access
     user = User.find_by_email(params[:email])
+    drive = Drive.find(params[:id])
 
     if user == nil
       flash[:alert] = "Please have user sign up."
       redirect_to drive_path
     else
-      access = UsersWithAccess.where("user_id = ? AND drive_id = ?", user.id, params[:id])
-      if access.empty?
-        new_organizer = UsersWithAccess.new
-        new_organizer.user_id = user.id
-        new_organizer.drive_id = params[:id]
-        new_organizer.organizer = true
-        new_organizer.save
+      new_organizer = UsersWithAccess.where("user_id = ? AND drive_id = ?", user.id, params[:id])
+      if new_organizer.empty?
+        drive.users << user
         flash[:alert] = "User is now an organizer for this drive."
         redirect_to drive_path
       else
