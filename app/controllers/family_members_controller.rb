@@ -1,19 +1,22 @@
 class FamilyMembersController < ApplicationController
+  
   before_filter :validate_organizer, except: [:new, :create]
   before_filter :validate_organizer_with_family, only: [:new, :create]
+  before_filter :find_family, only: [:new, :create]
 
   def new
-    @family = Family.find(params[:family_id])
     @family_member = @family.family_members.new
   end
 
   def create
-    if @family_member = FamilyMember.new(params[:family_member])
-      @family_member.family = Family.find(params[:family_id])
-      @family_member.save
+    @family_member = FamilyMember.new(params[:family_member])
+    @family_member.family = Family.find(params[:family_id])
+
+    if @family_member.save
       redirect_to family_path(params[:family_id])
     else
-      flash[:alert] = "That didn't work out quite right"
+      flash.now[:error] = @family_member.errors.full_messages
+      render :new
     end
   end
 
@@ -23,14 +26,19 @@ class FamilyMembersController < ApplicationController
 
   def update
     @family_member = FamilyMember.find(params[:id])
+    
     if @family_member.update_attributes(params[:family_member])
       redirect_to family_path(@family_member.family_id)
     else
-      flash[:alert] = "That didn't work out quite right"
+      flash.now[:error] = @family_member.errors.full_messages
+      render :edit
     end
   end
 
   protected
+  def find_family
+    @family = Family.find(params[:family_id])
+  end
 
   def validate_organizer
     drive = FamilyMember.find(params[:id]).family.drive
