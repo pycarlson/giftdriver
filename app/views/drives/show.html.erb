@@ -29,6 +29,21 @@
 
 
 
+<div class="add-access">
+  <p>Add an Organizer</p>
+  <%= form_tag("/drives/#{@drive.id}/access", method: "post") do %>
+      <%= label_tag :Email %>
+      <%= email_field_tag :email %>
+      <%= submit_tag("Add another Organizer") %>
+  <% end %>
+  <p>The current drive's organizers</p>
+  <% @organizers.each do |organizer| %>
+    <%= link_to "Delete Organizer", delete_organizer_path(:user_id => organizer.user.id) %>
+    <%= organizer.user.full_name %>
+    <%= organizer.user.email %><br>
+  <% end %>
+</div>
+
 
 
 

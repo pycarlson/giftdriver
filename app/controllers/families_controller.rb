@@ -54,7 +54,7 @@ class FamiliesController < ApplicationController
   protected
 
   def validate_organizer
-    redirect_to root_url unless Drive.find(params[:drive_id]).user == current_user
+    redirect_to root_url unless organizer?(Drive.find(params[:drive_id]))
   end
 
 end

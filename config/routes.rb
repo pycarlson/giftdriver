@@ -3,8 +3,8 @@ Giftdriver::Application.routes.draw do
   devise_for :users
 
   match '/about' => 'static_pages#about', :as => :about
+  
   match '/team' => 'static_pages#team', :as => :team
-
 
   resources :families, except: [:index, :new, :create] do
     resources :family_members, only: [:index, :new, :create]
@@ -24,12 +24,12 @@ Giftdriver::Application.routes.draw do
   match 'drives/:id/families/manage' => 'drives#manage', as: :manage
 
   match 'families/:id/update_arrived' => 'families#update_arrived', as: :update_arrived
+  
   match 'families/:id/update_given' => 'families#update_given', as: :update_given
 
+  match 'drives/:id/access' => 'drives#access', as: :access
 
-  
-
-
+  match 'drives/:id/delete_organizer' => 'drives#delete_organizer', as: :delete_organizer
 
   root :to => "drives#index"
 

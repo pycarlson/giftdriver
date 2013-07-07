@@ -34,11 +34,11 @@ class FamilyMembersController < ApplicationController
 
   def validate_organizer
     drive = FamilyMember.find(params[:id]).family.drive
-    redirect_to root_url unless drive.user == current_user
+    redirect_to root_url unless organizer?(drive)
   end
 
   def validate_organizer_with_family
     drive = Family.find(params[:family_id]).drive
-    redirect_to root_url unless drive.user == current_user
+    redirect_to root_url unless organizer?(drive)
   end
 end

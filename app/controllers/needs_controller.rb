@@ -23,7 +23,7 @@ class NeedsController < ApplicationController
 
   def validate_organizer
     drive = FamilyMember.find(params[:family_member_id]).family.drive
-    redirect_to root_url unless drive.user == current_user
+    redirect_to root_url unless organizer?(drive)
   end
 
 end

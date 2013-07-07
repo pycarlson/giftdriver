@@ -1,5 +1,6 @@
 class Drive < ActiveRecord::Base
-  has_many :users, through: :user_access
+  has_many :users_with_accesses
+  has_many :users, :through => :users_with_accesses
   has_many :families
 
 
