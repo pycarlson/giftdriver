@@ -3,7 +3,6 @@ class Drive < ActiveRecord::Base
   has_many :users, :through => :users_with_accesses
   has_many :families
 
-
   attr_accessible :org_blurb,
                   :org_email,
                   :org_phone,
