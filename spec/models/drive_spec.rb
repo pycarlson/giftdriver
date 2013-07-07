@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe Drive do
 
-  let(:user) { FactoryGirl.build(:user) }
-  let(:drive) { FactoryGirl.build(:drive) }
+  it "can be created from a factory" do
+    drive = create :drive
+    expect(drive.id).not_to be_nil
+  end
 
   context "all the associations" do
     it { should validate_presence_of :org_blurb}

@@ -2,8 +2,10 @@ require 'spec_helper'
 
 describe FamilyMember do
 
-  let(:Family) { FactoryGirl.build(:family) }
-  let(:family_member) { FactoryGirl.build(:family_member) }
+  it "can be created from a factory" do
+    family_member = create :family_member
+    expect(family_member.id).not_to be_nil
+  end
 
   context "family member validations and associations" do
     it { should validate_presence_of :first_name}
