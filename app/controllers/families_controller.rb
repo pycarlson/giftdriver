@@ -2,6 +2,7 @@ class FamiliesController < ApplicationController
 
   before_filter :validate_organizer, except: [:index, :show, :adopt, :update_gift_status, :update_arrived, :update_given]
   before_filter :find_family, except: [:index, :create]
+
   def index
     @adopted = Family.adopted_families(params[:drive_id])
     @not_adopted = Family.not_adopted_families(params[:drive_id])
@@ -35,6 +36,7 @@ class FamiliesController < ApplicationController
     if @family.save
       @family.update_attribute(:adopted_by, current_user.id)
       flash[:message] = "THANK YOU!"
+      UserMailer.adopted_family(current_user).deliver
       redirect_to family_path(@family.id)
     else
       flash[:alert] = "Something went wrong. Try again?"
