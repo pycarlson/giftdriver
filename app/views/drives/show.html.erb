@@ -29,7 +29,7 @@
 
   <div class="add-organizer">
     <h3>Add an Organizer</h3>
-    <%= form_tag("/drives/#{@drive.id}/access", method: "post") do %>
+    <%= form_tag("/drives/#{@drive.id}/add_organizer", method: "post") do %>
       <p>Enter organizer email address:</p>
       <%= email_field_tag :email %>
       <div><%= submit_tag("Add another Organizer") %></div>

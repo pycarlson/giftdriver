@@ -12,7 +12,7 @@ class DrivesController < ApplicationController
     @families = @drive.families
     @not_adopted = Family.not_adopted_families(@drive).sample(5)
     @family = Family.new
-    @organizers = UsersWithAccess.where("drive_id = ?", @drive.id)
+    @organizers = Organizer.where("drive_id = ?", @drive.id)
   end
 
   def new
@@ -24,8 +24,7 @@ class DrivesController < ApplicationController
 
     if @drive.save
       @drive.users << current_user
-      organizer = UsersWithAccess.where("user_id = ? AND drive_id = ?", current_user.id, @drive.id).first
-      organizer.organizer = true
+      organizer = Organizer.where("user_id = ? AND drive_id = ?", current_user.id, @drive.id).first
       organizer.save
       redirect_to drive_path(@drive)
     else
@@ -53,7 +52,7 @@ class DrivesController < ApplicationController
     @families = drive.families.order(:id)
   end
 
-  def access
+  def add_organizer
     user = User.find_by_email(params[:email])
     drive = Drive.find(params[:id])
 
@@ -61,7 +60,7 @@ class DrivesController < ApplicationController
       flash[:alert] = "Please have user sign up."
       redirect_to drive_path
     else
-      new_organizer = UsersWithAccess.where("user_id = ? AND drive_id = ?", user.id, params[:id])
+      new_organizer = Organizer.where("user_id = ? AND drive_id = ?", user.id, params[:id])
       if new_organizer.empty?
         drive.users << user
         flash[:alert] = "User is now an organizer for this drive."
@@ -74,8 +73,8 @@ class DrivesController < ApplicationController
   end
 
   def delete_organizer
-    organizer = UsersWithAccess.where("user_id = ? AND drive_id = ?", params[:user_id], params[:id]).first.id
-    UsersWithAccess.delete(organizer)
+    organizer = Organizer.where("user_id = ? AND drive_id = ?", params[:user_id], params[:id]).first.id
+    Organizer.delete(organizer)
     redirect_to drive_path
   end
 

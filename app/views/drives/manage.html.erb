@@ -29,7 +29,7 @@
         <td>
           <% if family.adopted? %>
             <% if family.received_at_org == false %>
-              <button><%= link_to "Received", update_arrived_path(family.id) %></button>
+              <button><%= link_to "Received", update_gift_status_path(family.id, status: 'received_at_org') %></button>
             <% else %>
                 <%=  Time.now.strftime("%B %-d, %Y") %>
             <% end %>
@@ -40,7 +40,7 @@
         <td>
           <% if family.adopted? && family.received_at_org %>
             <% if family.given_to_family == false %>
-              <button><%= link_to "Delivered", update_given_path(family.id) %></button>
+              <button><%= link_to "Delivered", update_gift_status_path(family.id, status: 'given_to_family') %></button>
             <% else %>
               <%=  Time.now.strftime("%B %-d, %Y") %>
             <% end %>

@@ -24,10 +24,10 @@ Giftdriver::Application.routes.draw do
   match 'drives/:id/families/manage' => 'drives#manage', as: :manage
 
   match 'families/:id/update_arrived' => 'families#update_arrived', as: :update_arrived
-  
+  match 'families/:id/update_gift_status' => 'families#update_gift_status', as: :update_gift_status
   match 'families/:id/update_given' => 'families#update_given', as: :update_given
 
-  match 'drives/:id/access' => 'drives#access', as: :access
+  match 'drives/:id/add_organizer' => 'drives#add_organizer', as: :add_organizer
 
   match 'drives/:id/delete_organizer' => 'drives#delete_organizer', as: :delete_organizer
 

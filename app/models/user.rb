@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :users_with_accesses
-  has_many :drives, through: :users_with_accesses
+  has_many :organizers
+  has_many :drives, through: :organizers
 
 
   # Include default devise modules. Others available are:

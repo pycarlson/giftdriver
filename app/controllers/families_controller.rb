@@ -1,7 +1,7 @@
 class FamiliesController < ApplicationController
 
-  before_filter :validate_organizer, except: [:index, :show, :adopt, :update_arrived, :update_given]
-
+  before_filter :validate_organizer, except: [:index, :show, :adopt, :update_gift_status, :update_arrived, :update_given]
+  before_filter :find_family, except: [:index, :create]
   def index
     @adopted = Family.adopted_families(params[:drive_id])
     @not_adopted = Family.not_adopted_families(params[:drive_id])
@@ -21,26 +21,17 @@ class FamiliesController < ApplicationController
   end
 
   def show
-    @family = Family.find(params[:id])
   end
 
-  def update_arrived
-    family = Family.find(params[:id])
-    drive = Drive.find(family.drive_id)
-    family.update_attribute('received_at_org', true)
-    redirect_to manage_path(drive.id)
-  end
-
-  def update_given
-    family = Family.find(params[:id])
-    drive = Drive.find(family.drive_id)
-    family.update_attribute('given_to_family', true)
+  def update_gift_status
+    drive = Drive.find(@family.drive_id)
+    # HEY WE'RE COMMUNICATING DIRECTLY FROM THE PAGE TO THE DB HERE
+    # Maybe the best idea? Maybe the worst?
+    @family.update_attribute(params[:status], true)
     redirect_to manage_path(drive.id)
   end
 
   def adopt
-    @family = Family.find(params[:id])
-
     if @family.save
       @family.update_attribute(:adopted_by, current_user.id)
       flash[:message] = "THANK YOU!"
@@ -55,6 +46,10 @@ class FamiliesController < ApplicationController
 
   def validate_organizer
     redirect_to root_url unless organizer?(Drive.find(params[:drive_id]))
+  end
+
+  def find_family
+    @family = Family.find(params[:id])
   end
 
 end
