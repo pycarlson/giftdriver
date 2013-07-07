@@ -3,7 +3,8 @@
     <tr>
       <th>Family Code</th>
       <th>Family Size</th>
-      <th>Adopted By</th>
+      <th>Adopted?</th>
+      <th>Adopter Email</th>
       <th>Gifts Arrived</th>
       <th>Gifts Given</th>
     </tr>
@@ -13,20 +14,33 @@
       <tr>
         <td><%= family.code %></td>
         <td><%= family.family_members.length %></td>
-        <td><%= family.adopted_by %></td>
         <td>
-          <% if family.received_at_org == false %>
-            <button><%= link_to "Received", update_arrived_path(family.id) %></button>
+          <%if family.adopted? %>
+            yes
           <% else %>
-            gift received
+            no
+          <% end %>
+        </td>
+        <td>nwy</td>
+        <td>
+          <% if family.adopted? %>
+            <% if family.received_at_org == false %>
+              <button><%= link_to "Received", update_arrived_path(family.id) %></button>
+            <% else %>
+                <%=  Time.now.to_date %>
+            <% end %>
+          <% else %>
           <% end %>
         </td>
 
         <td>
-          <% if family.given_to_family == false %>
-            <button><%= link_to "Delivered", update_given_path(family.id) %></button>
-          <% else %>
-            gifts delivered
+          <% if family.adopted? %>
+            <% if family.given_to_family == false %>
+              <button><%= link_to "Delivered", update_given_path(family.id) %></button>
+            <% else %>
+              <%=  Time.now.to_date %>
+            <% end %>
+            <% else %>
           <% end %>
         </td>
       </tr>

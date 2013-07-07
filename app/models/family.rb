@@ -8,6 +8,13 @@ class Family < ActiveRecord::Base
     self.adopted_by != nil
   end
 
+  def get_adopter_email(adopter_id)
+    p "*" * 100
+    p "this is the adopter_id --->>> #{adopter_id}"
+    user = User.find(adopter_id)
+    user.email
+  end
+
   def self.not_adopted_families(drive)
     Drive.find(drive).families.where('adopted_by IS NULL')
   end

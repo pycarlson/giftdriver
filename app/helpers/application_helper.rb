@@ -11,4 +11,5 @@ module ApplicationHelper
       return true
     end
   end
+
 end
