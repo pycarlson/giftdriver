@@ -1,7 +1,7 @@
 class DrivesController < ApplicationController
 
   skip_before_filter :authenticate_user!, :only => [:index, :show]
-  before_filter :validate_organizer, except: [:index, :show, :new, :create, :access]
+  before_filter :validate_organizer, except: [:index, :show, :new, :create]
 
   def index
     @drives = Drive.all
