@@ -7,16 +7,12 @@ describe "Creating and managing a drive" do
     login(user)
   end
 
-  it "lets a user visit the drive form" do
+  describe "Managing a drive" do
+
+  it "lets a user create a drive" do
     visit root_path
 
     click_link "Create a Drive"
-
-    expect(page).to have_content "About your Organization"
-  end
-
-  it "lets a user create a drive" do
-    visit new_drive_path
 
     fill_in "drive[org_name]", with: "Cats for Cats"
     fill_in "drive[org_blurb]", with: "We help people get cats fun treats!"
@@ -32,16 +28,23 @@ describe "Creating and managing a drive" do
 
     click_button "Create Drive"
 
-    within "#drive-deets" do
+    within ".drive-deets" do
       expect(page).to have_content "Cats for Cats"
     end
   end
 
   it "lets the drive organizer update drive details"
-  it "lets the drive organizer add a family via form"
-  it "lets the drive organizer add a family member via form"
-  it "lets the drive organizer add a need via form"
+
   it "lets the drive organizer log gift statuses"
-  it "lets the drive organizer import family data via CSV"
+
+  end
+
+  describe "Adding family data to the drive" do
+    it "lets the drive organizer add a family via form"
+    it "lets the drive organizer add a family member via form"
+    it "lets the drive organizer add a need via form"
+    it "lets the drive organizer import family data via CSV"
+  end
+
 
 end

@@ -18,6 +18,5 @@ describe Drive do
     it { should validate_presence_of :start_date}
     it { should validate_presence_of :end_date}
     it { should validate_uniqueness_of :drive_title}
-    it { should belong_to(:user) }
   end
 end
