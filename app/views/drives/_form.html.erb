@@ -1,42 +1,42 @@
-<div class="form"
-<div class="row">
-  <div class="span5">
-    <%= form_for(@drive) do |f| %>
-    <%= f.label :Organization_Name %>
-    <%= f.text_field :org_name, :autofocus => true %>
+<div class="form">
+  <%= form_for(@drive) do |f| %>
+  <div class="row">
+    <div class="span5">
+      <%= f.label :org_name, "Organization name" %>
+      <%= f.text_field :org_name, :autofocus => true %>
 
-    <%= f.label :About_Your_Organization %>
-    <%= f.text_area :org_blurb %>
+      <%= f.label :org_blurb, "About your Organization" %>
+      <%= f.text_area :org_blurb %>
 
-    <%= f.label :Email%>
-    <%= f.email_field :org_email %>
+      <%= f.label :org_email, "Email"%>
+      <%= f.email_field :org_email %>
 
-    <%= f.label :Phone_Number %>
-    <%= f.text_field :org_phone %>
+      <%= f.label :org_phone, "Phone Number" %>
+      <%= f.text_field :org_phone %>
 
-    <%= f.label :Address %>
-    <%= f.text_field :org_address %>
+      <%= f.label :org_address, "Address" %>
+      <%= f.text_field :org_address %>
 
-    <%= f.label :Zipcode %>
-    <%= f.text_field :org_zipcode, size: "10x10" %>
+      <%= f.label :org_zipcode, "Zip code" %>
+      <%= f.text_field :org_zipcode %>
+    </div>
+    <div class="span5">
+      <%= f.label :drive_title, "Drive Title" %>
+      <%= f.text_field :drive_title %>
+
+      <%= f.label :drive_blurb, "About your Drive" %>
+      <%= f.text_area :drive_blurb %>
+
+      <%= f.label :drop_location, "Drop off Location" %>
+      <%= f.text_field :drop_location %>
+
+      <%= f.label :start_date, "Start Date" %>
+      <%= f.text_field :start_date %>
+
+      <%= f.label :end_date, "End Date" %>
+      <%= f.text_field :end_date %>
+      <div class="button"><%= f.submit "Create Drive!" %></div>
+    </div>
   </div>
-  <div class="span5">
-    <%= f.label :Drive_Title %>
-    <%= f.text_field :drive_title %>
-
-    <%= f.label :About_your_drive %>
-    <%= f.text_area :drive_blurb %>
-
-    <%= f.label :Drop_Off_Location %>
-    <%= f.text_field :drop_location %>
-
-    <%= f.label :Start_Date %>
-    <%= f.text_field :start_date %>
-
-    <%= f.label :End_Date %>
-    <%= f.text_field :end_date %>
-    <div class="button"><%= f.submit "Create Drive!" %></div>
-  </div>
-</div>
-<% end %>
+  <% end %>
 </div>
