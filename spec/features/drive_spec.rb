@@ -54,20 +54,28 @@ describe "Creating and managing a drive" do
         end
       end
 
-      it "lets the drive organizer log gift as received" do
-        visit manage_path(family)
-        
-        click_link "Received"
+      context "when a family has been adopted" do
+        before do
+          family.adopted_by = user
+        end
 
-        expect(page).to have_content("gifts received")
-      end
+        it "lets the drive organizer log gift as received" do
+          visit manage_path(family)
 
-      it "lets the drive organizer log gift as delivered" do
-        visit manage_path(family)
-        
-        click_link "Delivered"
+          save_and_open_page
+          click_link "Received"
 
-        expect(page).to have_content("gifts delivered")
+          expect(page).to have_content(Time.now.strftime("%Y-%m-%d"))
+        end
+
+        it "lets the drive organizer log gift as delivered" do
+          visit manage_path(family)
+
+          click_link "Received"
+          click_link "Delivered"
+
+          expect(page).to have_content(Time.now.strftime("%Y-%m-%d"))
+        end
       end
 
       describe "Adding family data to the drive" do
