@@ -1,9 +1,9 @@
 .title {
-  text-align: center;
+  // text-align: center;
 }
 
 .organizers {
-  text-align: center; 
+  // text-align: center; 
 }
 
 .add-access {
@@ -25,10 +25,34 @@
 
 }
 
+.drive-deets {
+  background-color: #a0a6ac;
+  padding: 20px;
+  margin-top: 20px;
+}
+
 .organizer-options {
-  border: 1px solid gray;
-  background-color: #eee;
+  // border: 1px solid gray;
+  background-color: #a0a6ac;
   width: 100%;
   height: 400px;
-  margin-top: 40px;
+  margin-top: 20px;
 }
+
+.org-info {
+  // border: 1px solid gray;
+  background-color: #a0a6ac;
+  padding: 20px;
+  margin-top: 20px;
+}
+
+.featured {
+  background-color: #a0a6ac;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  padding-bottom: 40px;
+
+}
+
+
