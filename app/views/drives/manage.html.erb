@@ -15,18 +15,18 @@
         <td><%= family.family_members.length %></td>
         <td><%= family.adopted_by %></td>
         <td>
-          <% if family.received_at_org == false %>
-            <button><%= link_to "Received", update_arrived_path(family.id) %></button>
+          <% if family.received_at_org %>
+            gifts received
           <% else %>
-            gift received
+            <button><%= link_to "Received", update_arrived_path(family.id) %></button>
           <% end %>
         </td>
 
         <td>
-          <% if family.given_to_family == false %>
-            <button><%= link_to "Delivered", update_given_path(family.id) %></button>
-          <% else %>
+          <% if family.given_to_family %>
             gifts delivered
+          <% else %>
+            <button><%= link_to "Delivered", update_given_path(family.id) %></button>
           <% end %>
         </td>
       </tr>

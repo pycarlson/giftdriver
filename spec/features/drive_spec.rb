@@ -35,6 +35,7 @@ describe "Creating and managing a drive" do
 
     context "when a drive exists" do
       let(:drive) { create :drive }
+      let(:family) { create :family, drive: drive }
 
       before do
         drive.users << user
@@ -42,10 +43,31 @@ describe "Creating and managing a drive" do
 
       it "lets the drive organizer update drive details" do
         visit drive_path(drive)
-        expect(page).to have_content "Edit Drive Details"
+        click_link  "Edit Drive Details"
+
+        fill_in "drive[org_name]", with: "Cats for Kittens"
+        click_button "Update Drive"
+
+        within ".drive-deets" do
+          expect(page).to have_content "Cats for Kittens"
+        end
       end
 
-      it "lets the drive organizer log gift statuses"
+      it "lets the drive organizer log gift as received" do
+        visit manage_path(family)
+        
+        click_link "Received"
+
+        expect(page).to have_content("gifts received")
+      end
+
+      it "lets the drive organizer log gift as delivered" do
+        visit manage_path(family)
+        
+        click_link "Delivered"
+
+        expect(page).to have_content("gifts delivered")
+      end
 
     end
   end
