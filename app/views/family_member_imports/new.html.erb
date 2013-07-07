@@ -2,7 +2,12 @@
 
 <p>A CSV or Excel file can be used to import family records. The first row should be the column name. The following columns are required. (MAY NEED TO EDIT THIS STATEMENT)</p>
 
+
+
 <h5><strong> This list may need to include the "Family Code", and not "id" or "family_id"</strong></h5>
+
+
+
 <ul>
   <% FamilyMember.columns.each do |column| %> 
     <li>
@@ -11,6 +16,8 @@
     </li>  
   <% end %>
 </ul>
+
+
 
 <%= form_for [@drive, @family_members] do |f| %>
   <% if @family_members.errors.any? %>
