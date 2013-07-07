@@ -1,0 +1,10 @@
+<div class="featured">
+  <h3>Featured Families to Adopt</h3>
+  <% @not_adopted.each do |family| %>
+  <div class="family">
+    <p><%= family.members_names_sentence %></p>
+    <p><%= family.sampled_needs(5).to_sentence %></p>
+  </div>
+  <% end %>
+  <button><%= link_to "See #{@drive.drive_title} Families", drive_families_path(@drive) %></button>
+</div>

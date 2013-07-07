@@ -28,7 +28,8 @@ class Family < ActiveRecord::Base
 
   def sampled_needs(total_needs)
     need_objects = self.family_members.map { |person| person.needs }
-    need_strings = need_objects.map { |x| x[0].text }
+    need_strings = []
+    need_objects.each { |x| x.each { |y| need_strings << y.text } }
     need_strings.sample(total_needs)
   end
 
