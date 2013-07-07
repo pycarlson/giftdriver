@@ -1,0 +1,75 @@
+.family {
+  background-color: white;
+}
+
+.featured {
+  background-color: white;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  padding: 20px;
+  padding-bottom: 40px;
+  border-radius: 5px;
+}
+
+.family-box {
+  display: inline-block;
+  height: 200px;
+  border: 1px solid black;
+  margin: 10px;
+  vertical-align: top;
+  padding: 15px;
+}
+
+.family-content {
+  vertical-align: center;
+}
+
+.family-box-width-1, .family-box-width-2 {
+  width: 225px;
+}
+
+.family-box-width-3, .family-box-width-4 {
+  width: 275px;
+}
+
+.family-box-width-5, .family-box-width-6  {
+  width: 325px;
+}
+
+.family-members {
+  font-family: 'Droid Serif', serif;
+  font-size: 1.5em;
+  line-height: 1.2em;
+  text-align: center;
+}
+
+.family-needs {
+  margin: 10px 0 10px 0;
+}
+
+.family-count {
+  font-size: 1.2em;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.learn-more {
+  text-align: center;
+  font-size: 1.2em;
+  border: 1px solid grey;
+  width: 120px;
+  a {
+    color: black;
+    &:hover {
+      color: blue;
+    }
+  }
+}
+
+.all-families {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 2em;
+  font-family: 'Droid Serif', serif;
+  font-weight: 700;
+}
