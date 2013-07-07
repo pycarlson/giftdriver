@@ -11,6 +11,7 @@ class FamilyMemberImport
   def initialize(attributes = {}, drive_id = nil)
     attributes.each { |name, value| send("#{name}=", value) }
     @drive = Drive.find(drive_id) if drive_id != nil
+    @families = []
   end
 
   def persisted?
@@ -20,6 +21,7 @@ class FamilyMemberImport
   def save
     if imported_family_members.map(&:valid?).all?
       imported_family_members.each(&:save!)
+      @families.each(&:save!)
       true
     else
       imported_family_members.each_with_index do |family_member, index|
@@ -40,16 +42,16 @@ class FamilyMemberImport
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).map do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      family = Family.find_or_create_by_code(row["family_code"])
+      family = Family.find_by_code(row["family_code"]) || Family.new(code: row["family_code"])
       family_member = FamilyMember.where("family_id = ? AND first_name = ?", family.id, row["first_name"]).first || FamilyMember.new
       family_member.attributes = row.to_hash.slice(*FamilyMember.accessible_attributes)
       
-      check_for_needs(row, family_member)
-
-
-      family_member.family = family
-      family.drive = @drive
-      family.save
+      # this saving is a hack to allow needs to be associated with person. Need to handle this better if time.
+      if family_member.save
+        check_for_needs(row, family_member)
+        create_family_associations(family_member, family)
+      end      
+      
       family_member
     end
   end
@@ -78,6 +80,12 @@ class FamilyMemberImport
         end
       end
     end
-  end 
+  end
+
+  def create_family_associations(family_member, family)
+    family_member.family = family
+    family.drive = @drive
+    @families << family
+  end
 
 end
