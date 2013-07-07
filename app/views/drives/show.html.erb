@@ -22,29 +22,31 @@
   <% end %>
 
   <button><%= link_to "See #{@drive.drive_title} Families", drive_families_path(@drive) %></button>
+  </div>
+
+
+
+
+<div class="organizer-options">
   <% if organizer?(@drive) %> 
     <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
   <% end %>
-</div>
-
-
-
-<div class="add-access">
-  <% if organizer?(@drive) %> 
-    <p>Add an Organizer</p>
-    <%= form_tag("/drives/#{@drive.id}/access", method: "post") do %>
-        <%= label_tag :Email %>
-        <%= email_field_tag :email %>
-        <%= submit_tag("Add another Organizer") %>
+  <div class="add-access">
+    <% if organizer?(@drive) %> 
+      <h3>Add an Organizer</h3>
+      <%= form_tag("/drives/#{@drive.id}/access", method: "post") do %>
+          <%= email_field_tag :email, 'enter new organizer email'%>
+          <%= submit_tag("Add another Organizer") %>
+      <% end %>
+   
+      <h3><%= @drive.drive_title %> organizers</h3>
+      <% @organizers.each do |organizer| %>
+        <%= link_to "Delete", delete_organizer_path(:user_id => organizer.user.id) %>
+        <%= organizer.user.full_name %>
+        <%= organizer.user.email %><br>
+      <% end %>
     <% end %>
- 
-    <p>The current drive's organizers</p>
-    <% @organizers.each do |organizer| %>
-      <%= link_to "Delete Organizer", delete_organizer_path(:user_id => organizer.user.id) %>
-      <%= organizer.user.full_name %>
-      <%= organizer.user.email %><br>
-    <% end %>
-  <% end %>
+  </div>
 </div>
 
 

@@ -1,6 +1,7 @@
-<%= form_for([@drive, @family]) do |f| %>
-    <%= f.label :Family_Code %>
-    <%= f.text_field :code, :autofocus => true %>
+<div class='family-stuff'>
+  <h3>Add a New Family</h3>
+  <%= form_for([@drive, @family]) do |f| %>
+    <%= f.text_field :code, :placeholder => 'enter family code' %>
     <div class="button"><%= f.submit "Add a Family" %></div>
 <% end %>
 
@@ -8,6 +9,5 @@
 
 <%= link_to "Update Family Gifts Status", manage_path(@drive) %><br>
 
-
 <%= link_to "Import Family Data", new_drive_family_member_import_path(@drive) %>
-
+</div>
