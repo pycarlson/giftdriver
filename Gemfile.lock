@@ -75,6 +75,8 @@ GEM
     faker (1.1.2)
       i18n (~> 0.5)
     ffi (1.9.0)
+    geocoder (1.1.8)
+    gmaps4rails (1.5.6)
     hike (1.2.3)
     i18n (0.6.1)
     journey (1.0.4)
@@ -191,6 +193,8 @@ DEPENDENCIES
   devise
   factory_girl_rails
   faker
+  geocoder
+  gmaps4rails (~> 1.5.6)
   jquery-rails
   launchy
   pg

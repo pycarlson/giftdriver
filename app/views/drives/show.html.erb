@@ -1,3 +1,5 @@
+<%= gmaps4rails(@json) %>
+
 <div class="drive-deets">
   <h2 class="title"><%= @drive.drive_title %></h2>
   <h3 class="organizers">Organized by <%= @drive.org_name %></h3>
@@ -24,7 +26,7 @@
   </div>
 </div>
 
-<% if organizer?(@drive) %>
+<% if current_user && organizer?(@drive)  %>
 <div class="access">
 
   <div class="add-organizer">
