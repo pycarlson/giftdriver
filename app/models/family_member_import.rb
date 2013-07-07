@@ -40,10 +40,10 @@ class FamilyMemberImport
     header = spreadsheet.row(1)
     (2..spreadsheet.last_row).map do |i|
       row = Hash[[header, spreadsheet.row(i)].transpose]
-      family_member = FamilyMember.find_by_id(row["id"]) || FamilyMember.new
+      family = Family.find_or_create_by_code(row["family_code"])
+      family_member = FamilyMember.where("family_id = ? AND first_name = ?", family.id, row["first_name"]).first || FamilyMember.new
       family_member.attributes = row.to_hash.slice(*FamilyMember.accessible_attributes)
-      family_member.family = Family.find_or_create_by_code(row["family_code"])
-      family = family_member.family
+      family_member.family = family
       family.drive = @drive
       family.save
       family_member
