@@ -20,9 +20,11 @@ html {
   width: 1000px;
   margin: 0 auto;
   min-height: 100%;
-  margin-bottom: 60px;
-  background-color: white;
+  margin-bottom: 20px;
+  background-color: #FFD37C;
   padding: 20px 20px $footer_height 20px;
+  border-radius: 5px;
+  border: 2px solid white;
 }
 
 footer {
@@ -40,10 +42,18 @@ footer {
 h1, h2, h3, h4 {
   font-family: 'Droid Serif', serif;
   font-weight: 700;
+  margin-top: 0;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 40px;
+
+  font-size: 5em;
 }
 
 h1, h2 {
-  margin-bottom: 20px;
+  margin-bottom: 10px;
 }
 
 // OTHER STUFF

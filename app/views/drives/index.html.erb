@@ -3,8 +3,10 @@
 
 <h3>Current Drives</h3>
 <% @drives.each do |drive| %>
-<h2><%= link_to drive.drive_title, drive %></h2>
+  <div class="home-drives">
+  <h3><%= link_to drive.drive_title, drive %></h3>
     <%= drive.drive_blurb %>
+  </div>
 <% end %>
 
 <div id="carousel"></div>

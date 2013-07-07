@@ -6,53 +6,72 @@
   // text-align: center; 
 }
 
-.add-access {
-  float: left;
-  // border: 1px solid gray;
+.access {
   padding: 20px;
-  width: 400px;
-  margin-top: 20px;
-  margin-left: 40px;
+  width: 1000px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 100px;
+  background-color: white;
+  border-radius: 5px;
+  border: 2px solid #FFD37C;
 }
 
 .family-stuff {
   float: left;
-  // border: 1px solid gray;
-  padding: 20px;
-  width: 400px;
-  margin-top: 20px;
-  margin-left: 40px;
+  width: 300px;
+  border-radius: 5px;
+}
 
+#new_family {
+  width: 300px;
 }
 
 .drive-deets {
-  background-color: #a0a6ac;
+  background-color: white;
   padding: 20px;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 .organizer-options {
-  // border: 1px solid gray;
-  background-color: #a0a6ac;
-  width: 100%;
-  height: 400px;
-  margin-top: 20px;
+  float: left;
+  background-color: white;
+  margin-left: 100px;
+}
+
+.add-organizer {
+  float: left;
+  background-color: white;
+  width: 400px;
+  margin-left: 100px;
 }
 
 .org-info {
   // border: 1px solid gray;
-  background-color: #a0a6ac;
+  background-color: white;
   padding: 20px;
   margin-top: 20px;
+  border-radius: 5px;
 }
 
 .featured {
-  background-color: #a0a6ac;
+  background-color: white;
   margin-top: 40px;
   margin-bottom: 40px;
   padding: 20px;
   padding-bottom: 40px;
-
+  border-radius: 5px;
 }
 
+.home-drives {
+  background-color: white;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 20px;
+}
 
+.family {
+  background-color: white;
+}

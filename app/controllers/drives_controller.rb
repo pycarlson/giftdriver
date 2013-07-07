@@ -79,7 +79,7 @@ class DrivesController < ApplicationController
 
   def delete_organizer
     organizer = UsersWithAccess.where("user_id = ? AND drive_id = ?", params[:user_id], params[:id]).first.id
-    UsersWithAccess.destroy(organizer)
+    UsersWithAccess.delete(organizer)
     redirect_to drive_path
   end
 
