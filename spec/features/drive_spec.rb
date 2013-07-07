@@ -36,6 +36,7 @@ describe "Creating and managing a drive" do
     context "when a drive exists" do
       let(:drive) { create :drive }
       let(:family) { create :family, drive: drive }
+      let(:family_member) { create :family_member, family: family }
 
       before do
         drive.users << user
@@ -69,15 +70,40 @@ describe "Creating and managing a drive" do
         expect(page).to have_content("gifts delivered")
       end
 
+      describe "Adding family data to the drive" do
+        it "lets the drive organizer add a family via form" do
+          visit drive_path(drive)
+
+          fill_in "family[code]", with: "123abc"
+          click_button "Add a Family"
+
+          expect(page).to have_content "Adopt Family"
+        end
+
+        it "lets the drive organizer add a family member via form" do
+          visit new_family_family_member_path(family)
+
+          fill_in "family_member[first_name]", with: "Aureliano"
+          fill_in "family_member[age]", with: "235"
+          fill_in "family_member[gender]", with: "male"
+          fill_in "family_member[bio]", with: "I'm a character in a book."
+          click_button "Add family member"
+
+          expect(page).to have_content "Edit Aureliano"
+        end
+
+        it "lets the drive organizer add a need via form" do
+          visit new_family_member_need_path(family_member)
+
+          fill_in "need[text]", with: "New Boots"
+          click_button "Add need"
+
+          expect(page).to have_content "New Boots"
+        end
+
+        it "lets the drive organizer import family data via CSV"
+        it "lets the drive organizer import family data via XLS"
+      end
     end
   end
-
-  describe "Adding family data to the drive" do
-    it "lets the drive organizer add a family via form"
-    it "lets the drive organizer add a family member via form"
-    it "lets the drive organizer add a need via form"
-    it "lets the drive organizer import family data via CSV"
-  end
-
-
 end
