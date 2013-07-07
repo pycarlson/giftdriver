@@ -27,6 +27,12 @@ FactoryGirl.define do
     drive
   end
 
+  factory :adopted_family, parent: :family do
+    code "cat123"
+    adopted_by 1
+    drive
+  end
+
   factory :family_member do
     family
     first_name "Kitty"

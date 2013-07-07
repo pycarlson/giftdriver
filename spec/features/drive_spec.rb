@@ -35,8 +35,8 @@ describe "Creating and managing a drive" do
 
     context "when a drive exists" do
       let(:drive) { create :drive }
-      let(:family) { create :family, drive: drive }
-      let(:family_member) { create :family_member, family: family }
+      let(:adopted_family) { create :adopted_family, drive: drive }
+      let(:family_member) { create :family_member, family: adopted_family }
 
       before do
         drive.users << user
@@ -55,26 +55,24 @@ describe "Creating and managing a drive" do
       end
 
       context "when a family has been adopted" do
-        before do
-          family.adopted_by = user
-        end
 
         it "lets the drive organizer log gift as received" do
-          visit manage_path(family)
+          visit manage_path(adopted_family)
 
-          save_and_open_page
           click_link "Received"
-
-          expect(page).to have_content(Time.now.strftime("%Y-%m-%d"))
+          within ".received" do
+            expect(page).to have_content(Time.now.strftime("%B %-d, %Y"))
+          end
         end
 
         it "lets the drive organizer log gift as delivered" do
-          visit manage_path(family)
+          visit manage_path(adopted_family)
 
           click_link "Received"
           click_link "Delivered"
-
-          expect(page).to have_content(Time.now.strftime("%Y-%m-%d"))
+          within ".delivered" do
+            expect(page).to have_content(Time.now.strftime("%B %-d, %Y"))
+          end
         end
       end
 
@@ -89,7 +87,7 @@ describe "Creating and managing a drive" do
         end
 
         it "lets the drive organizer add a family member via form" do
-          visit new_family_family_member_path(family)
+          visit new_family_family_member_path(adopted_family)
 
           fill_in "family_member[first_name]", with: "Aureliano"
           fill_in "family_member[age]", with: "235"
