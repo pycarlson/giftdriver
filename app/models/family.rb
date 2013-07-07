@@ -8,10 +8,8 @@ class Family < ActiveRecord::Base
     self.adopted_by != nil
   end
 
-  def get_adopter_email(adopter_id)
-    p "*" * 100
-    p "this is the adopter_id --->>> #{adopter_id}"
-    user = User.find(adopter_id)
+  def get_adopter_email
+    user = User.find(self.adopted_by)
     user.email
   end
 

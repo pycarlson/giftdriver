@@ -21,13 +21,17 @@
             no
           <% end %>
         </td>
-        <td>nwy</td>
+        <td>
+          <% if family.adopted? %>
+            <%= family.get_adopter_email %>
+          <% end %>
+        </td>
         <td>
           <% if family.adopted? %>
             <% if family.received_at_org == false %>
               <button><%= link_to "Received", update_arrived_path(family.id) %></button>
             <% else %>
-                <%=  Time.now.to_date %>
+                <%=  Time.now.strftime("%B %-d, %Y") %>
             <% end %>
           <% else %>
           <% end %>
@@ -38,7 +42,7 @@
             <% if family.given_to_family == false %>
               <button><%= link_to "Delivered", update_given_path(family.id) %></button>
             <% else %>
-              <%=  Time.now.to_date %>
+              <%=  Time.now.strftime("%B %-d, %Y") %>
             <% end %>
             <% else %>
           <% end %>

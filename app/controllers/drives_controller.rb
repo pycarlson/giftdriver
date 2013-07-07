@@ -24,9 +24,9 @@ class DrivesController < ApplicationController
 
     if @drive.save
       @drive.users << current_user
-      whatever = UsersWithAccess.where("user_id = ? AND drive_id = ?", current_user.id, @drive.id).first
-      whatever.organizer = true
-      whatever.save
+      organizer = UsersWithAccess.where("user_id = ? AND drive_id = ?", current_user.id, @drive.id).first
+      organizer.organizer = true
+      organizer.save
       redirect_to drive_path(@drive)
     else
       render :edit
