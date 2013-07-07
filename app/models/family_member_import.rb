@@ -1,7 +1,7 @@
 require 'roo' 
 
 class FamilyMemberImport
-  
+
   extend  ActiveModel::Naming
   include ActiveModel::Conversion
   include ActiveModel::Validations
@@ -43,6 +43,10 @@ class FamilyMemberImport
       family = Family.find_or_create_by_code(row["family_code"])
       family_member = FamilyMember.where("family_id = ? AND first_name = ?", family.id, row["first_name"]).first || FamilyMember.new
       family_member.attributes = row.to_hash.slice(*FamilyMember.accessible_attributes)
+      
+      check_for_needs(row, family_member)
+
+
       family_member.family = family
       family.drive = @drive
       family.save
@@ -57,6 +61,23 @@ class FamilyMemberImport
     when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
     else raise "Unknown file type: #{file.original_filename}. Please import '.csv', '.xls', or '.xlsx' filetypes only."
     end
-  end  
+  end
+
+  def check_for_needs(row, family_member) 
+    row.each do |key, value|
+      if key.include?("need")
+        if value != nil
+          need_check = []
+          family_member.needs.each do |need|
+            need_check << need if need.text == value
+          end
+          if need_check.length == 0
+            need = Need.create(text: value) 
+            family_member.needs << need
+          end
+        end
+      end
+    end
+  end 
 
 end
