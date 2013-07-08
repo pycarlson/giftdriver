@@ -8,13 +8,20 @@
     font-weight: 200;
     font-size: 2em;
     color: white;
+    text-shadow: none;
   }
 }
 
 .navbar-inner {
   padding: 5px 20px;
-  background: #952849;
+  background: gray;
 }
+
+.navbar .nav > li > a {
+  text-shadow: none;
+  color: white;
+}
+
 
 a.navbar-link  {
     color: white;

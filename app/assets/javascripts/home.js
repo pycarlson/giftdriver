@@ -5,8 +5,18 @@ function changeColors(colors){
   }
 }
 
+// function populateNeedsBoxes(needs){
+//   $.ajax({
+//     type: 'get',
+//     url: 
+//     data: 
+//   }).done(function(){
+    
+//   })
+// } 
+
 $(document).ready(function(){
   var colors = ["#30387F","#952849","#599528" ]
   changeColors(colors);
-
+  populateNeedsBoxes(needs);
 });

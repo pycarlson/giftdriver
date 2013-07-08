@@ -27,11 +27,10 @@
 }
 
 #home-box {
-  // background-image: url(asset_path("sBidjf.jpg", images));
-  // padding-top: 100px;
   width: 100%;
   height: 330px;
   margin: 0 auto;
+  margin-bottom: 20px;
 }
 
 #home-box h3 a {
@@ -44,17 +43,16 @@
 }
 
 #home-box div:nth-child(1) {
-   background-color: #30387F;
-  }
+  background-color: #30387F;
+}
 
-  #home-box div:nth-child(2) {
-   background-color: #952849;
-  }
+#home-box div:nth-child(2) {
+  background-color: #952849;
+}
 
 #home-box div:nth-child(3) {
-   margin-right: 0;
-   background-color: #599528;
-  }
+  margin-right: 0;
+  background-color: #599528;}
 
 #kids-image img {
   width: 300px;
@@ -62,7 +60,6 @@
 }
 
 .tiles {
-  border: 2px solid gray;
   width: 139px;
   height: 139px;
   margin: 5px;
@@ -109,7 +106,7 @@
 }
 
 #top-box {
-  margin-top: 100px;
+  margin-top: 200px;
   // background-color: gray;
   text-align: center;
 }
