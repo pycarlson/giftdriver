@@ -1,0 +1,43 @@
+
+// Organizer Section Styling
+
+.access {
+  background-image: $cream-pixels;
+  padding: 20px;
+  width: 960px;
+  height: 320px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 25px;
+  border-radius: 5px;
+  border: 2px solid #FFD37C;
+}
+
+.add-location {
+  float: left;
+  border-radius: 5px;
+  margin-left: 40px;
+  background-color: white;
+}
+
+.organizer-options {
+  background-image: $cream-pixels;
+  float: left;
+  margin-left: 60px;
+  background-color: white;
+}
+
+.add-organizer {
+  background-image: $cream-pixels;
+  margin-left: 60px;
+  float: left;
+  background-color: gray;
+}
+
+.add-edit-family {
+  margin-left: 50px;
+  float: left;
+  border-radius: 5px;
+  background-color: white;
+}
+
