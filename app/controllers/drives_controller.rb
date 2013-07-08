@@ -13,7 +13,7 @@ class DrivesController < ApplicationController
     @not_adopted = Family.not_adopted_families(@drive).sample(5)
     @family = Family.new
     @organizers = Organizer.where("drive_id = ?", @drive.id)
-    @drop_location = DropLocation.where("drive_id = ?", @drive.id).last
+    @drop_location = DropLocation.where("drive_id = ?", @drive.id)
     @json = @drop_location.to_gmaps4rails
   end
 
