@@ -1,6 +1,9 @@
 class User < ActiveRecord::Base
   has_many :organizers
   has_many :drives, through: :organizers
+  has_many :donors
+  has_many :drive_donors, :through => :donors, :source => :drive
+  has_many :drop_locations, :through => :donors
 
 
   # Include default devise modules. Others available are:

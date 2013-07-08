@@ -4,6 +4,8 @@ class DropLocation < ActiveRecord::Base
 
   belongs_to :drive
   has_many :families
+  has_many :donors
+  has_many :users, :through => :donors
   
 
   acts_as_gmappable

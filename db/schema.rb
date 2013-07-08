@@ -11,7 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130708010604) do
+ActiveRecord::Schema.define(:version => 20130708172154) do
+
+  create_table "donors", :force => true do |t|
+    t.integer "user_id"
+    t.integer "drive_id"
+    t.integer "drop_location_id"
+  end
 
   create_table "drives", :force => true do |t|
     t.string   "org_name"

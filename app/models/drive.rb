@@ -4,6 +4,8 @@ class Drive < ActiveRecord::Base
   has_many :users, :through => :organizers
   has_many :families
   has_many :drop_locations
+  has_many :donors
+  has_many :user_donors, :through => :donors, :source => :user
 
   attr_accessible :org_blurb,
                   :org_email,
