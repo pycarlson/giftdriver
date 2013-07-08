@@ -1,11 +1,14 @@
 .navbar {
-  ul {
+  li {
     font-size: 1.25em;
-    
   }
   .brand {
-    font-family: 'Droid Serif', serif;
-    font-size: 2em;
+    font-family: 'Oleo Script', cursive;
+    font-weight: 400;
+    font-size: 2.3em;
   }
 }
 
+.navbar-inner {
+  padding: 10px 20px;
+}

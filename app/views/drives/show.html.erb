@@ -1,4 +1,3 @@
-<%= gmaps4rails(@json) %>
 
 <div class="drive-deets">
   <%= render 'shared/drive_header', locals: { drive: @drive } %>
@@ -33,12 +32,9 @@
     <%= organizer.user.full_name %>
     <%= organizer.user.email %><br>
     <% end %>
-  </div>
-
-  
-  <div class="organizer-options">
-    <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
-  </div>
-  <div><%= render '/drop_locations/form' %></div>
+  </div>  
+  <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
+  <%= render '/drop_locations/form' %>
+  <%= gmaps4rails(@json) %>
 </div>
 <% end %>
