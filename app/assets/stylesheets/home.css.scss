@@ -23,16 +23,15 @@
 }
 
 #children-pic {
-  image: url(asset_path("Happy-Childrens-Day-5.jpg", image))
+  // image: url(asset_path("Happy-Childrens-Day-5.jpg", image))
 }
 
 #home-box {
   // background-image: url(asset_path("sBidjf.jpg", images));
- 
+  // padding-top: 100px;
   width: 100%;
   height: 330px;
   margin: 0 auto;
-
 }
 
 #home-box h3 a {
@@ -44,7 +43,6 @@
   color: black;
 }
 
-
 #home-box div:nth-child(1) {
    background-color: #30387F;
   }
@@ -52,7 +50,6 @@
   #home-box div:nth-child(2) {
    background-color: #952849;
   }
-
 
 #home-box div:nth-child(3) {
    margin-right: 0;
@@ -62,5 +59,58 @@
 #kids-image img {
   width: 300px;
   margin-top: 80px;
+}
+
+.tiles {
+  border: 2px solid gray;
+  width: 139px;
+  height: 139px;
+  margin: 5px;
+  // float: left;
+  display: inline-block;
+  // text-align: center;
+  
+}
+
+// #big-daddy div:nth-child(2) {
+//   background-color: #599528;
+// }
+
+// #big-daddy div:nth-child(2) {
+//   background-color: #599528;
+// }
+
+// #big-daddy div:nth-child(3) {
+//   background-color: #07073D;
+// }
+
+// #big-daddy div:nth-child(7) {
+//   background-color: #952849;
+// }
+
+// #big-daddy div:nth-child(10) {
+//   background-color: #952849;
+// }
+
+
+
+#big-daddy {
+  width: 100%;
+  // height: 400px;
+  // margin: 0 auto;
+  text-align: center;
+}
+
+#big-daddy img {
+  width: 139px;
+  height: 139px;
+  vertical-align: 0;
+  margin-bottom: 10px;
+}
+
+#top-box {
+  margin-top: 100px;
+  // background-color: gray;
+  text-align: center;
 }
 
