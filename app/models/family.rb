@@ -3,6 +3,7 @@ class Family < ActiveRecord::Base
   validates :code, :presence => :true
   belongs_to :drive
   attr_accessible :code
+  belongs_to :drop_location
 
   def adopted?
     self.adopted_by != nil

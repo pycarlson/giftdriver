@@ -6,10 +6,17 @@
   // text-align: center; 
 }
 
+.drive-deets {
+  background-color: white;
+  padding: 20px;
+  margin-top: 20px;
+  border-radius: 5px;
+}
+
 .access {
   padding: 20px;
   width: 1000px;
-  height: 260px;
+  height: 320px;
   margin-left: auto;
   margin-right: auto;
   margin-bottom: 100px;
@@ -20,36 +27,36 @@
 
 .family-stuff {
   float: left;
-  width: 300px;
   border-radius: 5px;
+  margin-right: 60px;
 }
 
 #new_family {
-  width: 300px;
-}
-
-.drive-deets {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 5px;
+  float: left;
+ 
 }
 
 .organizer-options {
   float: left;
   background-color: white;
-  margin-left: 100px;
+  margin-left: 40px;
+}
+
+.add-location {
+  float: left;
+  margin-left: 40px;
+  border-radius: 5px;
+  margin-left: 40px;
 }
 
 .add-organizer {
   float: left;
   background-color: white;
-  width: 400px;
-  margin-left: 100px;
+  margin-left: 60px;
+  margin-right: 40px;
 }
 
 .org-info {
-  // border: 1px solid gray;
   background-color: white;
   padding: 20px;
   margin-top: 20px;

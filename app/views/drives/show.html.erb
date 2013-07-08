@@ -3,7 +3,7 @@
 <div class="drive-deets">
   <h2 class="title"><%= @drive.drive_title %></h2>
   <h3 class="organizers">Organized by <%= @drive.org_name %></h3>
-  <p>Drop off gifts from <%= @drive.start_date %> to <%= @drive.end_date %> at <%= @drive.drop_location %></p>
+  <p>Drop off gifts from <%= @drive.start_date %> to <%= @drive.end_date %> </p>
   <p><%= @drive.drive_blurb %><p>
   </div>
 
@@ -35,9 +35,11 @@
     <%= organizer.user.email %><br>
     <% end %>
   </div>
-  <div class="organizer-options">
-    <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
-  </div>
+
   
-</div>
+      <div class="organizer-options">
+        <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
+      </div>
+    <div><%= render '/drop_locations/form' %></div>
+  </div>
 <% end %>

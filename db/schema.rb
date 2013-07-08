@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130707221648) do
+ActiveRecord::Schema.define(:version => 20130708010604) do
 
   create_table "drives", :force => true do |t|
     t.string   "org_name"
@@ -20,25 +20,34 @@ ActiveRecord::Schema.define(:version => 20130707221648) do
     t.string   "org_phone"
     t.string   "org_address"
     t.string   "org_zipcode"
-    t.string   "drop_location"
     t.string   "drive_title"
     t.text     "drive_blurb"
     t.string   "start_date"
     t.string   "end_date"
-    t.datetime "created_at",    :null => false
-    t.datetime "updated_at",    :null => false
-    t.float    "latitude"
-    t.float    "longitude"
-    t.boolean  "gmaps"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
+  create_table "drop_locations", :force => true do |t|
+    t.integer "drive_id"
+    t.string  "street"
+    t.string  "city"
+    t.string  "state"
+    t.string  "zipcode"
+    t.string  "code"
+    t.float   "latitude"
+    t.float   "longitude"
+    t.boolean "gmaps"
   end
 
   create_table "families", :force => true do |t|
     t.integer  "drive_id"
     t.integer  "adopted_by"
-    t.boolean  "received_at_org", :default => false
-    t.boolean  "given_to_family", :default => false
+    t.boolean  "received_at_org",  :default => false
+    t.boolean  "given_to_family",  :default => false
     t.string   "code"
     t.datetime "created_at"
+    t.integer  "drop_location_id"
   end
 
   create_table "family_members", :force => true do |t|

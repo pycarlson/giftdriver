@@ -1,0 +1,4 @@
+class DropLocationController < ApplicationController
+
+
+end

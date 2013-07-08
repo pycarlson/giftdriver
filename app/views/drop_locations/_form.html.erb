@@ -1,0 +1,18 @@
+<div class='add-location'>
+<h3>Add a Location</h3>
+  <%= form_tag("/drives/#{@drive.id}/drop_locations", method: "post") do %>
+      <p>Drop Address:</p>
+      <%= text_field_tag :street, "street" %><br>
+
+      <%= text_field_tag :city, "city" %><br>
+
+      <%= text_field_tag :state, "state" %><br>
+
+      <%= text_field_tag :zipcode, "zipcode" %><br>
+
+      <%= text_field_tag :code, "location code" %>
+
+      <div><%= submit_tag("Add Location") %></div>
+    <% end %> 
+  </div>
+</div>

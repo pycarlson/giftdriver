@@ -13,11 +13,13 @@ class DrivesController < ApplicationController
     @not_adopted = Family.not_adopted_families(@drive).sample(5)
     @family = Family.new
     @organizers = Organizer.where("drive_id = ?", @drive.id)
-    @json = @drive.to_gmaps4rails
+    @drop_location = DropLocation.where("drive_id = ?", @drive.id).last
+    @json = @drop_location.to_gmaps4rails
   end
 
   def new
     @drive = Drive.new
+    @drop_location = DropLocation.new
   end
 
   def create
@@ -76,6 +78,20 @@ class DrivesController < ApplicationController
   def delete_organizer
     organizer = Organizer.where("user_id = ? AND drive_id = ?", params[:user_id], params[:id]).first.id
     Organizer.delete(organizer)
+    redirect_to drive_path
+  end
+
+  def drop_locations
+    p "*" * 100
+    p params
+    @location = DropLocation.new
+    @location.street = params[:street]
+    @location.city = params[:city]
+    @location.state = params[:state]
+    @location.zipcode = params[:zipcode]
+    @location.code = params[:code]
+    @location.save
+    Drive.find(params[:id]).drop_locations << @location
     redirect_to drive_path
   end
 
