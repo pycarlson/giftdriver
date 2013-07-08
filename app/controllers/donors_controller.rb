@@ -11,6 +11,6 @@ class DonorsController < ApplicationController
     donor.user_id = current_user.id
     donor.drop_location_id = params[:donor][:drop_location]
     donor.save
-    redirect_to drive_path(params[:drive_id])
+    redirect_to drive_families_path(params[:drive_id])
   end
 end

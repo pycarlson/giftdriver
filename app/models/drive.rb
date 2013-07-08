@@ -31,4 +31,13 @@ class Drive < ActiveRecord::Base
 
   validates :drive_title, :uniqueness => :true
 
+  def user_has_dropoff_preference?(user)
+    !Donor.where(user_id: user.id, drive_id: self.id).last.nil?
+  end
+
+  def donor_dropoff_pref(user)
+    Donor.where(user_id: user.id, drive_id: self.id).last.drop_location_id
+  end
+
+
 end

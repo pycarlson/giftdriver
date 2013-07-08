@@ -4,10 +4,20 @@ class FamiliesController < ApplicationController
   before_filter :find_family, except: [:index, :create]
 
   def index
-    donor_pref = Donor.where(user_id: current_user.id, drive_id: params[:drive_id]).last.drop_location_id
-    @filtered_families = Family.where(drive_id: params[:drive_id], drop_location_id: donor_pref)
-    @not_adopted = @filtered_families.where('adopted_by IS NULL')
-    @adopted = @filtered_families.where('adopted_by IS NOT NULL')
+    @drive = Drive.find(params[:drive_id])
+  
+    if @drive.drop_locations.length <= 1
+      @filtered_families = Family.where(drive_id: params[:drive_id])
+    elsif @drive.user_has_dropoff_preference?(current_user)
+      donor_pref = @drive.donor_dropoff_pref(current_user)
+      @filtered_families = Family.where(drive_id: params[:drive_id], drop_location_id: donor_pref)  
+    else
+      redirect_to new_drive_donor_path(@drive)
+    end
+    if !@filtered_families.nil?
+      @not_adopted = @filtered_families.where('adopted_by IS NULL')
+      @adopted = @filtered_families.where('adopted_by IS NOT NULL')
+    end
   end
 
   def create
