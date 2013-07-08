@@ -14,6 +14,14 @@ class Family < ActiveRecord::Base
     user.email
   end
 
+  def self.not_adopted_families(drive)
+    Drive.find(drive).families.where('adopted_by IS NULL')
+  end
+
+  def self.adopted_families(drive)
+    Drive.find(drive).families.where('adopted_by IS NOT NULL')
+  end
+
   def members_names_sentence
     names = self.family_members.map { |member| member.first_name }
     names.to_sentence
