@@ -14,48 +14,73 @@
 .family-box {
   display: inline-block;
   height: 200px;
-  border: 1px solid black;
   margin: 10px;
   vertical-align: top;
   padding: 15px;
 }
 
 .family-content {
-  vertical-align: center;
+  position: relative;
+  min-height: 100%;
+}
+
+.family-cards {
+  text-align: center;
 }
 
 .family-box-width-1, .family-box-width-2 {
-  width: 225px;
+  width: 200px;
+  border: 10px solid #80CCB8;
 }
 
 .family-box-width-3, .family-box-width-4 {
-  width: 275px;
+  width: 270px;
+  border: 10px solid #857F83;
 }
 
 .family-box-width-5, .family-box-width-6  {
-  width: 325px;
+  width: 340px;
+  border: 10px solid #2C2C75;
 }
 
 .family-members {
   font-family: 'Droid Serif', serif;
+  font-weight: 700;
   font-size: 1.5em;
   line-height: 1.2em;
   text-align: center;
 }
 
 .family-needs {
-  margin: 10px 0 10px 0;
+  margin: 10px 0 5px 0;
 }
 
 .family-count {
-  font-size: 1.2em;
+  font-size: .9em;
   text-align: center;
-  margin-bottom: 15px;
+  position: absolute;
+  left: 0;
+  bottom: 30px;
+}
+
+.family-number {
+  font-family: 'Oleo Script', cursive;
+  border-bottom: 3px;
+  padding-top: 3px;
+  font-size: 2em;
+  position: absolute;
+  left: 0;
+  bottom: 0;
 }
 
 .learn-more {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  font-family: 'Droid Serif', serif;
   text-align: center;
-  font-size: 1.2em;
+  font-size: 1.3em;
+  line-height: 1.35em;
   border: 1px solid grey;
   width: 120px;
   a {
@@ -72,4 +97,8 @@
   font-size: 2em;
   font-family: 'Droid Serif', serif;
   font-weight: 700;
+  a {
+    color: #2C2C75; 
+
+  }
 }

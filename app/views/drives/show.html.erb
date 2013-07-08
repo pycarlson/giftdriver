@@ -1,9 +1,8 @@
 <%= gmaps4rails(@json) %>
 
 <div class="drive-deets">
-  <h2 class="title"><%= @drive.drive_title %></h2>
-  <h3 class="organizers">Organized by <%= @drive.org_name %></h3>
-  <p>Drop off gifts from <%= @drive.start_date %> to <%= @drive.end_date %> </p>
+  <%= render 'shared/drive_header', locals: { drive: @drive } %>
+  <div class="where-when">Drop off gifts from <%= @drive.start_date %> to <%= @drive.end_date %> at <%= @drive.drop_location %></div>
   <p><%= @drive.drive_blurb %><p>
   </div>
 

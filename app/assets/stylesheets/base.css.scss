@@ -7,7 +7,7 @@ body {
   margin: 0;
   font-family: 'Droid Sans', sans-serif;
   font-size: 12pt;
-  background-image: url("/assets/fabric_1_yellow.png");
+  background-image: url("/assets/fabric_1_beige.png");
 }
 
 html {
@@ -19,11 +19,9 @@ html {
   width: 1000px;
   margin: 0 auto;
   min-height: 100%;
-  margin-bottom: 20px;
-  background-color: #FFD37C;
-  padding: 20px 20px $footer_height 20px;
+  background-color: #69004D;
+  padding: 0 20px $footer_height 20px;
   border-radius: 5px;
-  border: 2px solid white;
 }
 
 footer {

@@ -1,17 +1,47 @@
+$cream-pixels: url("/assets/cream_pixels.png");
+
+
+// Donor-facing styling
+
 .title {
-  // text-align: center;
+  color: #3E3E46; 
+  font-family: 'Oleo Script', cursive;
+  font-size: 4em;
+  line-height: 1.1em;
 }
 
 .organizers {
-  // text-align: center; 
+  color: #3E3E46; 
+  font-family: 'Oleo Script', cursive;
+  font-size: 2.5em;
+  text-align: right; 
+  margin-bottom: 10px;
+}
+
+.where-when {
+  margin: 20px 0;
+  font-size: 1.1em;
+  font-family: 'Droid Serif', serif;
+  font-weight: 700;
+  text-align: center;
 }
 
 .drive-deets {
+  background-image: $cream-pixels;
+  background-color: white;
+  margin-left: 40px;
+}
+
+.org-info {
+  background-image: $cream-pixels;
   background-color: white;
   padding: 20px;
   margin-top: 20px;
   border-radius: 5px;
 }
+
+
+// Organizer Section Styling
 
 .access {
   padding: 20px;
@@ -25,6 +55,27 @@
   border: 2px solid #FFD37C;
 }
 
+.add-location {
+  float: left;
+  margin-left: 40px;
+  border-radius: 5px;
+  margin-left: 40px;
+}
+
+.organizer-options {
+  background-image: $cream-pixels;
+  background-color: white;
+  float: left;
+  margin-left: 100px;
+}
+
+.add-organizer {
+  background-image: $cream-pixels;
+  background-color: white;
+  margin-left: 60px;
+  margin-right: 40px;
+}
+
 .family-stuff {
   float: left;
   border-radius: 5px;
@@ -33,36 +84,10 @@
 
 #new_family {
   float: left;
- 
 }
 
-.organizer-options {
-  float: left;
-  background-color: white;
-  margin-left: 40px;
-}
 
-.add-location {
-  float: left;
-  margin-left: 40px;
-  border-radius: 5px;
-  margin-left: 40px;
-}
-
-.add-organizer {
-  float: left;
-  background-color: white;
-  margin-left: 60px;
-  margin-right: 40px;
-}
-
-.org-info {
-  background-color: white;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 5px;
-}
-
+// Drive Index
 
 .home-drives {
   background-color: white;
