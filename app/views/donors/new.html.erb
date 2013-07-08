@@ -1,0 +1,11 @@
+<h1>One quick question!</h1>
+
+<h4>Since this drive has multiple drop off locations, we just need to know which one is most convenient for you.</h4>
+
+<%= form_for [@drive, @donor] do |f| %>
+  <% @locations.each do |location| %>
+    <%= f.radio_button(:drop_location, location.id ) %>
+    <%= f.label(:drop_location, "#{location.code}, #{location.street}, #{location.city} #{location.state} #{location.zipcode}") %>
+  <% end %> 
+  <%= f.submit "Set Location Preference" %>
+<% end %>
