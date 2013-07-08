@@ -8,7 +8,7 @@
       <div class="family-needs">Their needs include: <%= family.sampled_needs(5).to_sentence %>.</div>
       <div class="family-count">Family of </div>
       <div class="family-number"><%= family.family_members.length %></div>
-      <div class="learn-more"><%= link_to "Learn more!", family_path(family) %></div>
+      <div class="learn-more shadow"><%= link_to "Learn more!", family_path(family) %></div>
     </div>
   </div>
   <% end %>

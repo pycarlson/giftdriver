@@ -1,9 +1,10 @@
+$cream-pixels: url("/assets/cream_pixels.png");
+
 .family {
-  background-color: white;
 }
 
 .featured {
-  background-color: white;
+  background-image: $cream-pixels;
   margin-top: 20px;
   margin-bottom: 40px;
   padding: 20px;
@@ -12,11 +13,12 @@
 }
 
 .family-box {
+  background-color: white;
   display: inline-block;
   height: 200px;
   margin: 10px;
   vertical-align: top;
-  padding: 15px;
+  padding: 10px;
 }
 
 .family-content {
@@ -52,7 +54,7 @@
 }
 
 .family-needs {
-  margin: 10px 0 5px 0;
+  margin: 5px 0 5px 0;
 }
 
 .family-count {
@@ -80,14 +82,22 @@
   text-align: center;
   font-size: 1.3em;
   line-height: 1.35em;
-  border: 1px solid grey;
-  width: 120px;
+  background-color: rgb(213, 213, 213);
+  border-radius: 5%;
+  padding: 5px 0;
+  width: 100px;
   a {
-    color: black;
+    color: rgb(9, 0, 117);
     &:hover {
-      color: blue;
+      color: rgb(119, 119, 119);
     }
   }
+}
+
+.shadow {
+ -moz-box-shadow:    inset 0 0 20px #bbb;
+ -webkit-box-shadow: inset 0 0 20px #bbb;
+ box-shadow:         inset 0 0 20px #bbb;
 }
 
 .all-families {
