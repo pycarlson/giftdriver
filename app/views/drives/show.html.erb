@@ -26,7 +26,7 @@
     <%= email_field_tag :email %>
     <div><%= submit_tag("Add another Organizer") %></div>
     <% end %> 
-    <h4><%= @drive.drive_title %> organizers</h4>
+    <h4>Current Organizers</h4>
     <% @organizers.each do |organizer| %>
     <%= link_to "Delete", delete_organizer_path(:user_id => organizer.user.id) %>
     <%= organizer.user.full_name %>
