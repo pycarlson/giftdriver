@@ -2,30 +2,30 @@
 
 <div class="drive-deets">
   <%= render 'shared/drive_header', locals: { drive: @drive } %>
-  <div class="where-when">Drop off gifts from <%= @drive.start_date %> to <%= @drive.end_date %> at <%= @drive.drop_location %></div>
+  <div class="where-when">Drop off gifts from <%= @drive.start_date %> to <%= @drive.end_date %></div>
   <p><%= @drive.drive_blurb %><p>
-  </div>
-
-  <div class="org-info">
-    <h3>About <%= @drive.org_name %></h3>
-    <%= @drive.org_blurb %>
-    <h4>Contact Us</h4>
-    <p>Email: <%= @drive.org_email %></p>
-    <p>Phone: <%= @drive.org_phone %></p>
-    <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
-  </div>
-  <%= render 'families', locals: { drive: @drive, not_adopted: @not_adopted } %>
 </div>
+
+<div class="org-info">
+  <h3>About <%= @drive.org_name %></h3>
+  <p><%= @drive.org_blurb %></p>
+  <h4>Contact Us</h4>
+  <p>Email: <%= @drive.org_email %></p>
+  <p>Phone: <%= @drive.org_phone %></p>
+  <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
+</div>
+
+<%= render 'families', locals: { drive: @drive, not_adopted: @not_adopted } %>
+
 
 <% if current_user && organizer?(@drive)  %>
 <div class="access">
-
   <div class="add-organizer">
     <h3>Add an Organizer</h3>
     <%= form_tag("/drives/#{@drive.id}/add_organizer", method: "post") do %>
-      <p>Enter organizer email address:</p>
-      <%= email_field_tag :email %>
-      <div><%= submit_tag("Add another Organizer") %></div>
+    <p>Enter organizer email address:</p>
+    <%= email_field_tag :email %>
+    <div><%= submit_tag("Add another Organizer") %></div>
     <% end %> 
     <h4><%= @drive.drive_title %> organizers</h4>
     <% @organizers.each do |organizer| %>
@@ -36,9 +36,9 @@
   </div>
 
   
-      <div class="organizer-options">
-        <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
-      </div>
-    <div><%= render '/drop_locations/form' %></div>
+  <div class="organizer-options">
+    <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
   </div>
+  <div><%= render '/drop_locations/form' %></div>
+</div>
 <% end %>
