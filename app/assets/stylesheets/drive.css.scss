@@ -48,7 +48,7 @@ $cream-pixels: url("/assets/cream_pixels.png");
 
 .access {
   padding: 20px;
-  width: 1000px;
+  width: 960px;
   height: 320px;
   margin-left: auto;
   margin-right: auto;
@@ -60,33 +60,35 @@ $cream-pixels: url("/assets/cream_pixels.png");
 
 .add-location {
   float: left;
-  margin-left: 40px;
   border-radius: 5px;
   margin-left: 40px;
+  background-color: white;
 }
 
 .organizer-options {
   background-image: $cream-pixels;
-  background-color: white;
   float: left;
-  margin-left: 100px;
+  margin-left: 60px;
+  background-color: white;
 }
 
 .add-organizer {
   background-image: $cream-pixels;
-  background-color: white;
   margin-left: 60px;
-  margin-right: 40px;
+  float: left;
+  background-color: gray;
+  
 }
 
 .family-stuff {
   float: left;
   border-radius: 5px;
-  margin-right: 60px;
+  background-color: white;
 }
 
 #new_family {
   float: left;
+  background-color: white;
 }
 
 
