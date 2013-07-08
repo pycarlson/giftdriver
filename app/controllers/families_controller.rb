@@ -38,6 +38,7 @@ class FamiliesController < ApplicationController
   end
 
   def show
+    @drive = Drive.find(@family.drive_id)
   end
 
   def update_gift_status

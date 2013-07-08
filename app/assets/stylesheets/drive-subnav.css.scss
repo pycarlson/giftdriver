@@ -1,0 +1,34 @@
+.subnav {
+  background-color: #80CCB8;
+  text-align: center;
+  ul {
+    list-style-type: none;
+  }
+  li {
+    margin: 0 10px;
+    display: inline;
+    line-height: 2;
+    a {
+      color: white;
+    }
+  }
+}
+
+.drive-header {
+  margin-top: 10px;
+}
+
+.title {
+  color: #3E3E46; 
+  font-family: 'Oleo Script', cursive;
+  font-size: 3em;
+  margin: 0;
+}
+
+.organizers {
+  color: #3E3E46; 
+  font-family: 'Oleo Script', cursive;
+  font-size: 2em;
+  text-align: right; 
+  margin-bottom: 10px;
+}
