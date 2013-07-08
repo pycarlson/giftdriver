@@ -1,14 +1,22 @@
 .navbar {
   li {
-    font-size: 1.25em;
+    font-size: 1em;
+    
   }
   .brand {
     font-family: 'Oleo Script', cursive;
-    font-weight: 400;
-    font-size: 2.3em;
+    font-weight: 200;
+    font-size: 2em;
+    color: white;
+
   }
 }
 
 .navbar-inner {
-  padding: 10px 20px;
+  padding: 5px 20px;
+  background: #952849;
 }
+
+a.navbar-link  {
+    color: white;
+  }

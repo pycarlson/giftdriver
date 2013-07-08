@@ -3,8 +3,10 @@
 <% @drives.each do |drive| %>
   <div class="home-drives">
   <h3><%= link_to drive.drive_title, drive %></h3>
-    <%= drive.drive_blurb %>
+    <p><%= drive.drive_blurb %></p>
   </div>
 <% end %>
 </div>
 <div id="carousel"></div>
+
+<div id="kids-image"><%=image_tag("Happy-Childrens-Day-5.jpg")%></div>
