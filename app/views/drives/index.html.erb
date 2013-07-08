@@ -1,12 +1,10 @@
-<h1>Welcome to Giftdriver</h1>
 
-
-<h3>Current Drives</h3>
+<div id="home-box">
 <% @drives.each do |drive| %>
   <div class="home-drives">
   <h3><%= link_to drive.drive_title, drive %></h3>
     <%= drive.drive_blurb %>
   </div>
 <% end %>
-
+</div>
 <div id="carousel"></div>

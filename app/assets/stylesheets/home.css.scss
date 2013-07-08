@@ -1,8 +1,32 @@
 // Drive Index
 
 .home-drives {
+  float: left;
   background-color: white;
-  border-radius: 5px;
+  margin-right: 10px;
   padding: 20px;
-  margin-top: 20px;
+  margin-top: 80px;
+  width: 28%;
+  height: 200px;
+  bottom: 0px;
 }
+
+// #home-drives, div {
+//   margin-right: 0px;
+// }
+
+.navbar {
+  margin-bottom: 0px;
+}
+
+#home-box {
+  width: 87.5%;
+  height: 330px;
+  background-color: gray; 
+  margin: 0 auto;
+
+}
+
+#home-box div:nth-child(3) {
+   margin-right: 0;
+  }
