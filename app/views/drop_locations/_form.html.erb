@@ -1,18 +1,28 @@
 <div class='add-location'>
 <h3>Add a Location</h3>
   <%= form_tag("/drives/#{@drive.id}/drop_locations", method: "post") do %>
-      <p>Drop Address:</p>
-      <%= text_field_tag :street, "street" %><br>
+      
+      <%= text_field_tag :street, nil, :placeholder => "street" %><br>
 
-      <%= text_field_tag :city, "city" %><br>
+      <%= text_field_tag :city, nil, :placeholder => "city" %><br>
 
-      <%= text_field_tag :state, "state" %><br>
+      <%= text_field_tag :state, nil, :placeholder => "state" %><br>
 
-      <%= text_field_tag :zipcode, "zipcode" %><br>
+      <%= text_field_tag :zipcode, nil, :placeholder => "zipcode" %><br>
 
-      <%= text_field_tag :code, "location code" %>
+      <%= text_field_tag :code, nil, :placeholder => "location code or name" %>
 
       <div><%= submit_tag("Add Location") %></div>
     <% end %> 
-  </div>
+
+    <h4>Current Locations</h4>
+    <% if @locations.empty? %>
+      no locations assigned yet
+    <% else %>
+      <% @locations.each do |location| %>
+        <%= location.code %>
+      <% end %>
+    <% end %>
+
 </div>
+

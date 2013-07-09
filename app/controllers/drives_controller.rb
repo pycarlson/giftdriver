@@ -17,6 +17,7 @@ class DrivesController < ApplicationController
     @json = @drop_location.to_gmaps4rails
     @donor_ids = []
     @drive.donors.each { |donor| @donor_ids << donor.user_id }
+    @locations = DropLocation.where('drive_id = ?', @drive.id)
   end
 
   def new
