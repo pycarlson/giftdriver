@@ -33,8 +33,7 @@ Giftdriver::Application.configure do
   config.assets.debug = true
 
   config.action_mailer.perform_deliveries = true
-  # config.action_mailer.default_url_options = { :host => 'localhost:3000' }
-  config.action_mailer.default_url_options = { :host => ENV['HOST_URL'] }
+  config.action_mailer.default_url_options = { :host => 'localhost:3000' }
 
   config.action_mailer.default :charset => "utf-8"
   config.action_mailer.raise_delivery_errors = true
