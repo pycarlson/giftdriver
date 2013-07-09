@@ -16,7 +16,8 @@ class Drive < ActiveRecord::Base
                   :drive_title,
                   :drive_blurb,
                   :start_date,
-                  :end_date
+                  :end_date,
+                  :drop_locations_attributes
 
   validates :org_blurb,
             :org_email,
@@ -31,6 +32,8 @@ class Drive < ActiveRecord::Base
             presence: true
 
   validates :drive_title, :uniqueness => :true
+
+  accepts_nested_attributes_for :drop_locations
 
   def user_has_dropoff_preference?(user)
     !Donor.where(user_id: user.id, drive_id: self.id).last.nil?

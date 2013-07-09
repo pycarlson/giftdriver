@@ -22,40 +22,14 @@ class DrivesController < ApplicationController
 
   def new
     @drive = Drive.new
-    @drop_location = DropLocation.new
+    @drive.drop_locations.build
   end
 
   def create
-    @drive = Drive.new()
-    @drive.org_name = params[:org_name]
-    @drive.org_blurb = params[:org_blurb]
-    @drive.org_email = params[:org_email]
-    @drive.org_phone = params[:org_phone]
-    @drive.org_address = params[:org_address]
-    @drive.org_zipcode = params[:org_zipcode]
-    @drive.drive_title = params[:drive_title]
-    @drive.drive_blurb = params[:drive_blurb]
-    @drive.start_date = params[:start_date]
-    @drive.end_date = params[:end_date]
-    @drive.save
-
+    @drive = Drive.new params[:drive]
     if @drive.save
-      location = DropLocation.new
-      location.street = params[:street]
-      location.city = params[:city]
-      location.state = params[:state]
-      location.zipcode = params[:zipcode]
-      location.code = params[:code]
-      location.drive_id = @drive.id
-      location.save
-      @drive.drop_locations << location
-      @drive.users << current_user
-      organizer = Organizer.where("user_id = ? AND drive_id = ?", current_user.id, @drive.id).first
-      organizer.save
-      @drive.save
-      redirect_to drive_path(@drive)
+      redirect_to @drive
     else
-      flash.now[:error] = @drive.errors.full_messages
       render :new
     end
   end
@@ -69,7 +43,6 @@ class DrivesController < ApplicationController
     if @drive.update_attributes(params[:drive])
       redirect_to drive_path(@drive)
     else
-      flash.now[:error] = @drive.errors.full_messages
       render :edit
     end
   end
