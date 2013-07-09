@@ -86,17 +86,19 @@ class DrivesController < ApplicationController
   end
 
   def drop_locations
-    p "*" * 100
-    p params
     @location = DropLocation.new
     @location.street = params[:street]
     @location.city = params[:city]
     @location.state = params[:state]
     @location.zipcode = params[:zipcode]
     @location.code = params[:code]
-    @location.save
-    Drive.find(params[:id]).drop_locations << @location
-    redirect_to drive_path
+    if @location.save
+      Drive.find(params[:id]).drop_locations << @location
+      redirect_to drive_path
+    else
+      flash[:alert] = "There was a problem saving the drop location! Please verify the address and try again."
+      redirect_to drive_path
+    end
   end
 
   protected
