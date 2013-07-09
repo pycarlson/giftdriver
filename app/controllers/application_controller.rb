@@ -3,6 +3,10 @@ class ApplicationController < ActionController::Base
 
   before_filter :authenticate_user! 
 
+  def after_sign_in_path_for(user)
+    drives_path
+  end
+
   def organizer?(drive)
     access = Organizer.where("user_id = ? AND drive_id = ?", current_user.id, drive.id).first
     true unless access.nil?

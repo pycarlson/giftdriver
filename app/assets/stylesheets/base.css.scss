@@ -1,6 +1,8 @@
 // STRUCTURAL STUFF
 
 $footer_height: 25px;
+$cream-pixels: url("/assets/cream_pixels.png");
+
 
 body {
   min-height: 100%;
@@ -19,7 +21,7 @@ html {
   width: 1000px;
   margin: 0 auto;
   min-height: 100%;
-  background-color: rgb(197, 213, 216);
+  background-image: $cream-pixels;
   padding: 0 20px $footer_height 20px;
   border-radius: 5px;
 }

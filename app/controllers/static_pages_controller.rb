@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    @drives = Drive.all
+    return redirect_to drives_path if user_signed_in?
     render layout: 'home'
   end
 end
