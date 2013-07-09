@@ -6,4 +6,9 @@ class StaticPagesController < ApplicationController
 
   def team
   end
+
+  def home
+    # @drive 
+    # @drives = Drive.all
+  end
 end

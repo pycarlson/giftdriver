@@ -34,7 +34,7 @@ Giftdriver::Application.routes.draw do
   match 'drives/:id/drop_locations' => 'drives#drop_locations'
 
 
-  root :to => "drives#index"
+  root :to => "static_pages#home"
 
 
   # The priority is based upon order of creation:
