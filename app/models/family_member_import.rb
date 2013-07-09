@@ -44,10 +44,11 @@ class FamilyMemberImport
       family = Family.find_by_code(row["family_code"]) || Family.new(code: row["family_code"])
       family_member = FamilyMember.where("family_id = ? AND first_name = ?", family.id, row["first_name"]).first || FamilyMember.new
       family_member.attributes = row.to_hash.slice(*FamilyMember.accessible_attributes)
+      drop_location = DropLocation.find_by_code(row["drop_location"])
       
       if family_member.save
         check_for_needs(row, family_member)
-        create_family_associations(family_member, family)
+        create_family_associations(family_member, family, drop_location)
       end      
       
       family_member
@@ -59,7 +60,7 @@ class FamilyMemberImport
     when ".csv" then Roo::Csv.new(file.path, nil, :ignore)
     when ".xls" then Roo::Excel.new(file.path, nil, :ignore)
     when ".xlsx" then Roo::Excelx.new(file.path, nil, :ignore)
-    else raise "Unknown file type: #{file.original_filename}. Please import '.csv', '.xls', or '.xlsx' filetypes only."
+    else raise "Unknown file type: #{file.original_filename}. Please import '.csv', '.xls', or '.xlsx' file types only."
     end
   end
 
@@ -80,9 +81,10 @@ class FamilyMemberImport
     end
   end
 
-  def create_family_associations(family_member, family)
+  def create_family_associations(family_member, family, drop_location)
     family_member.family = family
     family.drive = @drive
+    family.drop_location = drop_location
     family.save
   end
 
