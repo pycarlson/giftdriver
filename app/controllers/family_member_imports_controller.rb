@@ -1,4 +1,11 @@
 class FamilyMemberImportsController < ApplicationController
+  def index
+    respond_to do |format|
+      format.html
+      format.xls
+    end
+  end
+
   def new
     @drive = Drive.find(params[:drive_id])
     @family_members = FamilyMemberImport.new
