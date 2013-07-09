@@ -1,8 +1,48 @@
 <html>
 <head>
-    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
-  </head>
+  <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  <style>
+  body { font-size: 14pt; font-family: sans-serif; }
+  </style>
+</head>
 <body>
-  <h1>This is an email</h1>
+  <h2>Thank you from <%= @drive.org_name %>!</h2>
+
+  <p>You can drop off your gifts from <%= @drive.start_date %> to <%= @drive.end_date %>.</p>
+
+  <% if @location %>
+  <p>Your drop off location is</p>
+  <p><%= @location.street %></p>
+  <p><%= @location.city %></p>
+  <p><%= @location.state %></p>
+  <p><%= @location.zipcode %></p>
+  <% end %>
+  
+  <p>You've adopted <%= @family.members_names_sentence %>. We're including their details below.</p>
+
+  <p>Thanks so much,</p>
+  <p><%= @drive.org_name %></p>
+
+  <h3>Family Details</h3>
+  <% @family.family_members.each do |member| %>
+    <h4><%= member.first_name %></h4>
+    <h5>About <%= member.first_name %></h5>
+    <p><%= member.bio %></p>
+    <p>Age: <%= member.age %></p>
+    <p>Gender: <%= member.gender %></p>
+    <p>Needs:</p>
+    <ul>
+    <% member.needs.each do |need| %>
+      <li><%= need.text %></li>
+    <% end %>
+    </ul>
+    <h5>Clothing Sizes</h5>
+    <ul>
+      <li>Pants: <%= member.size_pants %></li>
+      <li>Shirt: <%= member.size_shirt %></li>
+      <li>Dress: <%= member.size_dress %></li>
+      <li>Shoes: <%= member.size_shoes %></li>
+    </ul>
+    <% end %>
 </body>
 </html>

@@ -53,7 +53,7 @@ class FamiliesController < ApplicationController
     if @family.save
       @family.update_attribute(:adopted_by, current_user.id)
       flash[:message] = "THANK YOU!"
-      UserMailer.adopted_family(current_user).deliver
+      UserMailer.adopted_family(current_user, @family.id).deliver
       redirect_to family_path(@family.id)
     else
       flash[:alert] = "Something went wrong. Try again?"
