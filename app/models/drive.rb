@@ -40,8 +40,4 @@ class Drive < ActiveRecord::Base
     Donor.where(user_id: user.id, drive_id: self.id).last.drop_location_id
   end
 
-  def organizers
-    Organizer.where(drive_id: self.id)
-  end
-
 end
