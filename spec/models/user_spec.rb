@@ -2,7 +2,12 @@ require 'spec_helper'
 
 describe User do
 
-  let(:user) { FactoryGirl.build(:user) }
+  # let(:user) { FactoryGirl.build(:user) }
+
+  it "can be created from a factory" do
+    user = create :user
+    expect(user.id).not_to be_nil
+  end
 
   context "user associations" do
     it { should validate_presence_of :full_name}

@@ -1,6 +1,6 @@
 class Family < ActiveRecord::Base
   has_many :family_members
-  validates :code, :presence => :true
+  validates :code, :drop_location, :presence => :true
   belongs_to :drive
   attr_accessible :code, :drop_location
   belongs_to :drop_location
