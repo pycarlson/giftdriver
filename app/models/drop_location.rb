@@ -6,6 +6,9 @@ class DropLocation < ActiveRecord::Base
   has_many :families
   has_many :donors
   has_many :users, :through => :donors
+
+  validates :street, :city, :state, 
+            :zipcode, :code, :presence => :true
   
 
   acts_as_gmappable

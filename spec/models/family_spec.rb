@@ -8,8 +8,9 @@ describe Family do
   end
 
   context "family associations" do
-    it { should validate_presence_of :code}
+    it { should validate_presence_of(:code) }
     it { should have_many(:family_members) }
     it { should belong_to(:drive) }
+    it { should belong_to(:drop_location) }
   end
 end
