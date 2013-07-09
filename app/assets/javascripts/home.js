@@ -1,6 +1,6 @@
 var Home = {
   changeColors: function(colors) {
-    for (var k=1; k<13; k++) {
+    for (var k=1; k<25; k++) {
       $("#big-daddy div:nth-child("+k+")").css("background-color", colors[Math.floor(Math.random()*3)]);
     }
   }
