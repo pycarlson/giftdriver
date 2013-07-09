@@ -14,7 +14,7 @@ class DrivesController < ApplicationController
     @family = Family.new
     @organizers = Organizer.where("drive_id = ?", @drive.id)
     @drop_location = DropLocation.where("drive_id = ?", @drive.id)
-    # @json = @drop_location.to_gmaps4rails
+    @json = @drop_location.to_gmaps4rails
     @donor_ids = []
     @drive.donors.each { |donor| @donor_ids << donor.user_id }
   end
