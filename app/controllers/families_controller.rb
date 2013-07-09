@@ -5,8 +5,8 @@ class FamiliesController < ApplicationController
 
   def index
     @drive = Drive.find(params[:drive_id])
-  
-    if @drive.drop_locations.length <= 1
+
+    if @drive.drop_locations.length <= 1 || @drive.organizers.include?(current_user)
       @filtered_families = Family.where(drive_id: params[:drive_id])
     elsif @drive.user_has_dropoff_preference?(current_user)
       donor_pref = @drive.donor_dropoff_pref(current_user)
