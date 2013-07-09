@@ -27,7 +27,8 @@ class Drive < ActiveRecord::Base
             :drive_title,
             :drive_blurb,
             :start_date,
-            :end_date, presence: true
+            :end_date,
+            presence: true
 
   validates :drive_title, :uniqueness => :true
 
@@ -38,6 +39,5 @@ class Drive < ActiveRecord::Base
   def donor_dropoff_pref(user)
     Donor.where(user_id: user.id, drive_id: self.id).last.drop_location_id
   end
-
 
 end

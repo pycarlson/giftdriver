@@ -5,7 +5,6 @@ class DrivesController < ApplicationController
 
   def index
     @drives = Drive.all
-    # @needs = Need.all.map(&:name)
   end
 
   def show
@@ -26,12 +25,33 @@ class DrivesController < ApplicationController
   end
 
   def create
-    @drive = Drive.new(params[:drive])
+    @drive = Drive.new()
+    @drive.org_name = params[:org_name]
+    @drive.org_blurb = params[:org_blurb]
+    @drive.org_email = params[:org_email]
+    @drive.org_phone = params[:org_phone]
+    @drive.org_address = params[:org_address]
+    @drive.org_zipcode = params[:org_zipcode]
+    @drive.drive_title = params[:drive_title]
+    @drive.drive_blurb = params[:drive_blurb]
+    @drive.start_date = params[:start_date]
+    @drive.end_date = params[:end_date]
+    @drive.save
 
     if @drive.save
+      location = DropLocation.new
+      location.street = params[:street]
+      location.city = params[:city]
+      location.state = params[:state]
+      location.zipcode = params[:zipcode]
+      location.code = params[:code]
+      location.drive_id = @drive.id
+      location.save
+      @drive.drop_locations << location
       @drive.users << current_user
       organizer = Organizer.where("user_id = ? AND drive_id = ?", current_user.id, @drive.id).first
       organizer.save
+      @drive.save
       redirect_to drive_path(@drive)
     else
       flash.now[:error] = @drive.errors.full_messages
@@ -54,8 +74,8 @@ class DrivesController < ApplicationController
   end
 
   def manage
-    drive = Drive.find(params[:id])
-    @families = drive.families.order(:id)
+    @drive = Drive.find(params[:id])
+    @families = @drive.families.order(:id)
   end
 
   def add_organizer

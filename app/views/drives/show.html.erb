@@ -19,30 +19,7 @@
   <div class="all-families">
     <%= link_to "See all #{@drive.drive_title} families", drive_families_path(@drive) %>
   </div>
+  <%= render '/drives/dashboard' %>
 </div>
-<% if current_user && organizer?(@drive)  %>
-<div class="access">
-  <div class="add-organizer">
-    <h3>Add an Organizer</h3>
-    <%= form_tag("/drives/#{@drive.id}/add_organizer", method: "post") do %>
-    <p>Enter organizer email address:</p>
-    <%= email_field_tag :email %>
-    <div><%= submit_tag("Add another Organizer") %></div>
-    <% end %> 
-    <h4>Current Organizers</h4>
-    <% @organizers.each do |organizer| %>
-      <% if last_organizer?(@drive) %>
-        <%= organizer.user.full_name %>
-        <%= organizer.user.email %><br>
-      <% else %>
-        <%= link_to "Delete", delete_organizer_path(:user_id => organizer.user.id) %>
-        <%= organizer.user.full_name %>
-        <%= organizer.user.email %><br>
-      <% end %>
-    <% end %>
-  </div>  
-  <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
-  <%= render '/drop_locations/form' %>
-  <%= gmaps4rails(@json) %>
-</div>
-<% end %>
+
+ <%= gmaps4rails(@json) %>

@@ -1,40 +1,35 @@
+
 <div class="form">
-  <%= form_for(@drive) do |f| %>
+
+ <%= form_tag("/drives", method: "post") do %>
+
   <div class="row">
+
     <div class="span5">
-      <%= f.label :org_name, "Organization name" %>
-      <%= f.text_field :org_name, :autofocus => true %>
-
-      <%= f.label :org_blurb, "About your Organization" %>
-      <%= f.text_area :org_blurb %>
-
-      <%= f.label :org_email, "Email"%>
-      <%= f.email_field :org_email %>
-
-      <%= f.label :org_phone, "Phone Number" %>
-      <%= f.text_field :org_phone %>
-
-      <%= f.label :org_address, "Address" %>
-      <%= f.text_field :org_address %>
-
-      <%= f.label :org_zipcode, "Zip code" %>
-      <%= f.text_field :org_zipcode %>
+      <%= text_field_tag :drive_title, @drive.drive_title, :placeholder => "Giftdrive Title" %>
+      <%= text_area_tag :drive_blurb, @drive.drive_blurb, :placeholder => "Giftdrive Description", :rows => 10 %>
+      <%= text_field_tag :start_date, @drive.start_date, :placeholder => "Drive Start Date" %>
+      <%= text_field_tag :end_date, @drive.end_date, :placeholder => "Drive End Date" %>
+      <h3>Drop Location Details</h3>
+      <%= text_field_tag :street, nil, :placeholder => "Street Address" %>
+      <%= text_field_tag :city, nil, :placeholder => "City" %>
+      <%= text_field_tag :state, nil, :placeholder => "State" %>
+      <%= text_field_tag :zipcode, nil, :placeholder => "Zipcode" %>
+      <%= text_field_tag :code, nil, :placeholder => "Location Name or Code" %>
+ 
     </div>
 
     <div class="span5">
-      <%= f.label :drive_title, "Drive Title" %>
-      <%= f.text_field :drive_title %>
-
-      <%= f.label :drive_blurb, "About your Drive" %>
-      <%= f.text_area :drive_blurb %>
-
-      <%= f.label :start_date, "Start Date" %>
-      <%= f.text_field :start_date %>
-
-      <%= f.label :end_date, "End Date" %>
-      <%= f.text_field :end_date %>
-      <div class="button"><%= f.submit %></div>
+      <h3>Organization Details</h3>
+      <%= text_field_tag :org_name, @drive.org_name, :placeholder => "Organization Name", :autofocus => true %>
+      <%= text_area_tag :org_blurb, @drive.org_blurb, :placeholder => "Organization Description", :rows => 10  %>
+      <%= email_field_tag :org_email, @drive.org_email, :placeholder => "Organization Email" %>
+      <%= text_field_tag :org_phone, @drive.org_phone, :placeholder => "Organization Phone Number" %>
+      <%= text_field_tag :org_address, @drive.org_address, :placeholder => "Organization Address" %>
+      <%= text_field_tag :org_zipcode, @drive.org_zipcode, :placeholder => "Organization Zipcode" %>
+      <div class="button"><%= submit_tag("Create Drive!") %></div>
     </div>
   </div>
   <% end %>
 </div>
+
