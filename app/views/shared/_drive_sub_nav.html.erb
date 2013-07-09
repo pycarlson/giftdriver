@@ -1,11 +1,7 @@
 <div class="drive-header">
   <h2 class="title"><%= @drive.drive_title %></h2>
-<h3 class="organizers">Organized by <%= @drive.org_name %></h3>
-
-<div class="subnav">
-  <ul>
-    <li><%= link_to "Drive Home", drive_path(@drive) %></li>
-    <li><%= link_to "All Families", drive_families_path(@drive)%></li>
-  </ul>
-</div>
+  <h3 class="organizers">Organized by <%= @drive.org_name %></h3>
+    <div class="subnav">
+      <h4><span class="link"><%= link_to "Drive Home", drive_path(@drive) %><span class="link"><%= link_to "All Families", drive_families_path(@drive)%></h4>
+    </div>
 </div>

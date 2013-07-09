@@ -1,34 +1,40 @@
 .subnav {
-  background-color: #80CCB8;
-  text-align: center;
-  ul {
-    list-style-type: none;
+  position: absolute;
+  top: 60px;
+  right: 0;
+  a {
+    color: black;
+    font-family: 'Oleo Script', cursive;
+    font-weight: 400;
+    font-size: 18pt; 
+    color: #3E3E46; 
   }
-  li {
-    margin: 0 10px;
-    display: inline;
-    line-height: 2;
-    a {
-      color: white;
-    }
+  .link {
+    padding: 20px 0 5px 30px;
   }
 }
 
 .drive-header {
-  margin-top: 10px;
+  position: relative;
+  padding-bottom: 40px;
 }
 
 .title {
+  vertical-align: top;
+  width: 500px;
   color: #3E3E46; 
   font-family: 'Oleo Script', cursive;
   font-size: 3em;
+  line-height: 1em;
   margin: 0;
 }
 
 .organizers {
+  position: absolute;
+  top: 0;
+  right: 0;
   color: #3E3E46; 
   font-family: 'Oleo Script', cursive;
   font-size: 2em;
-  text-align: right; 
   margin-bottom: 10px;
 }
