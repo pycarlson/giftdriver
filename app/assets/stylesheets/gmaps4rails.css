@@ -9,9 +9,17 @@
   width: 500px;
 }
 
+.map_container img {
+  max-width: none;
+}
+
 .gmaps4rails_map {
   width: 500px;
   height: 400px;
+}
+
+.gmaps4rails_map img {
+  max-width: none;
 }
 
 .bing_map {
