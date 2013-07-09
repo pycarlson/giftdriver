@@ -8,7 +8,6 @@ describe "User authentication" do
 
     fill_in "user_email", with: "cat@example.com"
     fill_in "user_full_name", with: "Cat Cat"
-    fill_in "user_zipcode", with: "12345"
     fill_in "user[password]", with: "password"
     fill_in "user[password_confirmation]", with: "password"
     click_button('Sign up')
