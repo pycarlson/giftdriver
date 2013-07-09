@@ -3,7 +3,6 @@ Giftdriver::Application.routes.draw do
   devise_for :users
 
   match '/about' => 'static_pages#about', :as => :about
-  
   match '/team' => 'static_pages#team', :as => :team
 
   resources :families, except: [:index, :new, :create] do
@@ -33,9 +32,7 @@ Giftdriver::Application.routes.draw do
   match 'drives/:id/delete_organizer' => 'drives#delete_organizer', as: :delete_organizer
   match 'drives/:id/drop_locations' => 'drives#drop_locations'
 
-
   root :to => "static_pages#home"
-
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

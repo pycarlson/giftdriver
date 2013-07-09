@@ -8,7 +8,7 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    # @drive 
-    # @drives = Drive.all
+    @drives = Drive.all
+    render layout: 'home'
   end
 end
