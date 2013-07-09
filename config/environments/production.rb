@@ -65,7 +65,7 @@ Giftdriver::Application.configure do
   # with SQLite, MySQL, and PostgreSQL)
   # config.active_record.auto_explain_threshold_in_seconds = 0.5
 
-  config.action_mailer.default_url_options = { :host => 'giftdriver.herokuapp.com' }
+  # config.action_mailer.default_url_options = { :host => 'giftdriver.herokuapp.com' }
   # ActionMailer Config
   # Setup for production - deliveries, no errors raised
   config.action_mailer.delivery_method = :smtp
@@ -77,7 +77,8 @@ Giftdriver::Application.configure do
   :address   => "smtp.mandrillapp.com",
   :port      => 25,
   :user_name => ENV["MANDRILL_USERNAME"],
-  :password  => ENV["MANDRILL_API_KEY"]
+  :password  => ENV["MANDRILL_API_KEY"],
+  :domain    => 'heroku.com'
 }
-
+  config.action_mailer.default_url_options = { :host => ENV['HOST_URL'] }
 end
