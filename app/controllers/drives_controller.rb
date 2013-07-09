@@ -16,7 +16,6 @@ class DrivesController < ApplicationController
     @organizers = Organizer.where("drive_id = ?", @drive.id)
     @drop_location = DropLocation.where("drive_id = ?", @drive.id)
     @json = @drop_location.to_gmaps4rails
-
     @donor_ids = []
     @drive.donors.each { |donor| @donor_ids << donor.user_id }
   end
@@ -80,9 +79,16 @@ class DrivesController < ApplicationController
   end
 
   def delete_organizer
-    organizer = Organizer.where("user_id = ? AND drive_id = ?", params[:user_id], params[:id]).first.id
-    Organizer.delete(organizer)
-    redirect_to drive_path
+    organizers = Organizer.where("drive_id = ?", params[:id])
+
+    if organizers.length < 2
+      redirect_to drive_path
+      flash[:alert] = "The last organizer for this event can't be deleted."
+    else
+      organizer = Organizer.where("user_id = ? AND drive_id = ?", params[:user_id], params[:id]).first.id
+      Organizer.delete(organizer)
+      redirect_to drive_path
+    end
   end
 
   def drop_locations

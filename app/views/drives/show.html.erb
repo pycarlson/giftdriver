@@ -31,9 +31,14 @@
     <% end %> 
     <h4>Current Organizers</h4>
     <% @organizers.each do |organizer| %>
-    <%= link_to "Delete", delete_organizer_path(:user_id => organizer.user.id) %>
-    <%= organizer.user.full_name %>
-    <%= organizer.user.email %><br>
+      <% if last_organizer?(@drive) %>
+        <%= organizer.user.full_name %>
+        <%= organizer.user.email %><br>
+      <% else %>
+        <%= link_to "Delete", delete_organizer_path(:user_id => organizer.user.id) %>
+        <%= organizer.user.full_name %>
+        <%= organizer.user.email %><br>
+      <% end %>
     <% end %>
   </div>  
   <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
