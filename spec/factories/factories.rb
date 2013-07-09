@@ -15,7 +15,7 @@ FactoryGirl.define do
     org_name "Smiles"
     org_address "717 Cali"
     org_zipcode "94606"
-    drive_title "Smile Bright"
+    drive_title "Desperado"
     drive_blurb "Smiling all the way"
     start_date "Nov 15, 2013"
     end_date "Dec 24, 2013"
@@ -63,8 +63,6 @@ FactoryGirl.define do
     user_id 1
     drive_id 1
   end
-
-  
 
   factory :donor do 
     user
