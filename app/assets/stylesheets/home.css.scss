@@ -22,8 +22,9 @@
   margin-bottom: 0px;
 }
 
-#children-pic {
-  // image: url(asset_path("Happy-Childrens-Day-5.jpg", image))
+#home-blurb {
+  background-color: gray;
+  margin-top: 60px;
 }
 
 #home-box {
@@ -63,39 +64,21 @@
   width: 139px;
   height: 139px;
   margin: 5px;
-  // float: left;
-  display: inline-block;
-  // text-align: center;
+  float: left;
   
 }
 
-// #big-daddy div:nth-child(2) {
-//   background-color: #599528;
-// }
-
-// #big-daddy div:nth-child(2) {
-//   background-color: #599528;
-// }
-
-// #big-daddy div:nth-child(3) {
-//   background-color: #07073D;
-// }
-
-// #big-daddy div:nth-child(7) {
-//   background-color: #952849;
-// }
-
-// #big-daddy div:nth-child(10) {
-//   background-color: #952849;
-// }
-
-
-
 #big-daddy {
-  width: 100%;
-  // height: 400px;
-  // margin: 0 auto;
+  width: 894px;
+  margin: 0 auto;
   text-align: center;
+}
+
+#big-daddy p {
+  color: white;
+  font-size: 2em;
+  font-family: 'Oleo Script', cursive;
+  padding-top: 50px;
 }
 
 #big-daddy img {
@@ -106,8 +89,7 @@
 }
 
 #top-box {
-  margin-top: 200px;
-  // background-color: gray;
+  margin-top: 50px;
   text-align: center;
 }
 

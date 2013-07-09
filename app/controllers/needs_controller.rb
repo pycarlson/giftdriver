@@ -19,6 +19,7 @@ class NeedsController < ApplicationController
     end
   end
 
+
   protected
 
   def validate_organizer

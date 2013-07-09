@@ -33,6 +33,7 @@ Giftdriver::Application.routes.draw do
   match 'drives/:id/delete_organizer' => 'drives#delete_organizer', as: :delete_organizer
   match 'drives/:id/drop_locations' => 'drives#drop_locations'
 
+
   root :to => "drives#index"
 
 
