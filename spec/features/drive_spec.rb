@@ -24,10 +24,14 @@ describe "Creating and managing a drive" do
       fill_in "drive[drive_blurb]", with: "This is a mitten drive for kittens"
       fill_in "drive[start_date]", with: "Jan 5, 2017"
       fill_in "drive[end_date]", with: "Jan 5, 2018"
+      fill_in "drive[drop_locations_attributes][0][street]", with: "111 California St"
+      fill_in "drive[drop_locations_attributes][0][city]", with: "San Francisco"
+      fill_in "drive[drop_locations_attributes][0][state]", with: "CA"
+      fill_in "drive[drop_locations_attributes][0][zipcode]", with: "94102"
+      fill_in "drive[drop_locations_attributes][0][code]", with: "Placetown"
 
       click_button "Create Drive"
-
-      within ".drive-deets" do
+      within ".drive-header" do
         expect(page).to have_content "Cats for Cats"
       end
     end
@@ -80,9 +84,9 @@ describe "Creating and managing a drive" do
           visit drive_path(drive)
 
           fill_in "family[code]", with: "123abc"
-          click_button "Add a Family"
+          click_button "Add Family"
 
-          expect(page).to have_content "Adopt Family"
+          expect(page).to have_content "Adopt this Family"
         end
 
         it "lets the drive organizer add a family member via form" do
