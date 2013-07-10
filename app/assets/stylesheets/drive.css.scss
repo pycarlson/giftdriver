@@ -2,24 +2,27 @@
 
 $cream-pixels: url("/assets/cream_pixels.png");
 
+.inner {
+  width: 780px;
+  margin: 0 auto;
+  background: white;
+  vertical-align: top;
+}
+
 .drive-deets {
-  background-image: $cream-pixels;
-  padding: 20px;
-  margin-top: 20px;
-  border-radius: 5px;
+  h1 {
+    margin: 0;
+    padding-top: 30px;
+  }
 }
 
 .where-when {
   margin: 20px 0;
   font-size: 1.1em;
-  font-family: 'Droid Serif', serif;
   font-weight: 700;
 }
 
 .org-info {
-  background-image: $cream-pixels;
-  background-color: white;
   padding: 20px;
   margin-top: 20px;
-  border-radius: 5px;
 }

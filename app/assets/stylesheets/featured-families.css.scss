@@ -4,7 +4,6 @@ $cream-pixels: url("/assets/cream_pixels.png");
 }
 
 .featured {
-  background-image: $cream-pixels;
   margin-top: 20px;
   margin-bottom: 40px;
   padding: 20px;
@@ -99,16 +98,4 @@ $cream-pixels: url("/assets/cream_pixels.png");
  -moz-box-shadow:    inset 0 0 20px #bbb;
  -webkit-box-shadow: inset 0 0 20px #bbb;
  box-shadow:         inset 0 0 20px #bbb;
-}
-
-.all-families {
-  margin-top: 20px;
-  text-align: center;
-  font-size: 2em;
-  font-family: 'Droid Serif', serif;
-  font-weight: 700;
-  a {
-    color: #2C2C75; 
-
-  }
 }

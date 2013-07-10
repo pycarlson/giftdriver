@@ -1,41 +1,9 @@
 .subnav {
-  position: absolute;
-  top: 60px;
-  right: 0;
   a {
     color: black;
-  font-family: 'Droid Sans', sans-serif;
-
+    font-family: 'Droid Sans', sans-serif;
     font-weight: 400;
     font-size: 18pt; 
     color: #3E3E46; 
   }
-  .link {
-    padding: 20px 0 5px 30px;
-  }
-}
-
-.drive-header {
-  position: relative;
-  padding-bottom: 70px;
-}
-
-.title {
-  vertical-align: top;
-  width: 500px;
-  color: #3E3E46; 
-  font-family: 'Oleo Script', cursive;
-  font-size: 3em;
-  line-height: 1em;
-  margin: 0;
-}
-
-.organizers {
-  position: absolute;
-  top: 0;
-  right: 0;
-  color: #3E3E46; 
-  font-family: 'Oleo Script', cursive;
-  font-size: 2em;
-  margin-bottom: 10px;
 }
