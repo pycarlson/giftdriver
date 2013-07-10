@@ -1,9 +1,22 @@
 .subnav {
+  margin: 0 auto;
   a {
+    padding: 5px 10px;
     color: black;
-    font-family: 'Droid Sans', sans-serif;
-    font-weight: 400;
-    font-size: 18pt; 
+    font-size: 12pt; 
     color: #3E3E46; 
+    text-transform: uppercase;
+
+  }
+}
+
+.title {
+  text-align: center;
+  h1 {
+    text-transform: uppercase;
+  }
+  h2 {
+    font-size: 20pt;
+    line-height: 24pt;
   }
 }

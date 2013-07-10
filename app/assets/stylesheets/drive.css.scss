@@ -1,28 +1,42 @@
 // Donor-facing styling on drive page
 
-$cream-pixels: url("/assets/cream_pixels.png");
-
-.inner {
-  width: 780px;
-  margin: 0 auto;
-  background: white;
-  vertical-align: top;
-}
-
 .drive-deets {
   h1 {
     margin: 0;
     padding-top: 30px;
   }
+  hr {
+    margin: 50px 0;
+  }
 }
 
 .where-when {
-  margin: 20px 0;
-  font-size: 1.1em;
-  font-weight: 700;
+  padding: 5px 10px;
+  color: black;
+  font-size: 18pt; 
+  color: #3E3E46; 
 }
 
 .org-info {
   padding: 20px;
   margin-top: 20px;
+}
+
+
+.drop-deets {
+  margin-top: 10px;
+  color: black;
+  font-size: 20pt; 
+  color: #3E3E46; 
+  line-height: 24pt;
+  background-color: #fafafa;
+  padding: 15px;
+}
+
+.date {
+  color: blue;
+}
+
+.blurb {
+  padding-left: 24px;
 }

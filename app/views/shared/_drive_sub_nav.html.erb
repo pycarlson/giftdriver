@@ -1,5 +1,9 @@
+<div class="title">
   <h1><%= @drive.drive_title %></h1>
   <h2>Organized by <%= @drive.org_name %></h2>
-  <div class="subnav">
-    <h4><span class="link"><%= link_to "Drive Home", drive_path(@drive) %></span class="link"><%= link_to "All Families", drive_families_path(@drive)%></h4>
-  </div>
+<div class="subnav">
+  <%= link_to "Drive Home", drive_path(@drive) %>
+  <%= link_to "All Families", drive_families_path(@drive)%>
+</div>
+</div>
+
