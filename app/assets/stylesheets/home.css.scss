@@ -13,8 +13,19 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
 }
 
 #current-drives-button {
+
+  padding: 2%;
+  margin-top: 50px;
+  width: 160px;
+  margin: 0 auto;
+}
+
+#current-drives-button a {
   background-color: #47a9f8;
   color: white;
+  padding: 1%;
+  border-radius: 5px;
+  
 }
 
 .tiles {
@@ -42,17 +53,15 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   font-family: $home-font;
   color: #404040;
   font-size: 48px;
-  width: 300px;
-  text-transform: uppercase;
+  width: 260px;
+  // text-transform: uppercase;
   padding-top: 60px;
   margin: 0 auto;
-  
 }
 
 #mission h1 span {
   background-color: #df451b;
   color: white;
-
 }
 
 #last-home {
