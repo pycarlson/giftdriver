@@ -12,7 +12,7 @@ describe "Creating and managing a drive" do
     it "lets a user create a drive" do
       visit root_path
 
-      click_link "Create a Drive"
+      click_link "CREATE A DRIVE"
 
       fill_in "drive[org_name]", with: "Cats for Cats"
       fill_in "drive[org_blurb]", with: "We help people get cats fun treats!"

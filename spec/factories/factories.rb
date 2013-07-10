@@ -14,7 +14,7 @@ FactoryGirl.define do
     org_name "Smiles"
     org_address "717 Cali"
     org_zipcode "94606"
-    drive_title "Desperado"
+    sequence(:drive_title) { |n| "Holiday Drive #{n}" }
     drive_blurb "Smiling all the way"
     start_date "Nov 15, 2013"
     end_date "Dec 24, 2013"
