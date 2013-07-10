@@ -1,7 +1,12 @@
+$container-width: 1280px;
+$nav-background: #303030;
+
 .navbar {
+  margin-bottom: 0;
+  width: $container-width;
+  margin: 0 auto;
   li {
     font-size: 1em;
-    
   }
   .brand {
     font-family: 'Oleo Script', cursive;
@@ -13,15 +18,16 @@
 }
 
 .navbar-inner {
-  padding: 5px 20px;
-  background: gray;
+  background: $nav-background;
+  border: none;
+  border-radius: 0;
+  height: 58px;
 }
 
 .navbar .nav > li > a {
   text-shadow: none;
   color: white;
 }
-
 
 a.navbar-link  {
     color: white;

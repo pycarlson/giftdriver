@@ -8,7 +8,5 @@ class StaticPagesController < ApplicationController
   end
 
   def home
-    return redirect_to drives_path if user_signed_in?
-    render layout: 'home'
   end
 end

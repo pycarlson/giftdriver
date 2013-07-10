@@ -1,9 +1,19 @@
-.home {
-  height: 100vh;
-  background-image: url("/assets/presents_openings1500.jpg");
-  background-position: center;
-  position: relative;
+#long-strip {
+  width: 1280px;
+  height: 180px;
+  background-color: #eee;
+  margin: 0 auto;
+  display: inline-block;
+  vertical-align: middle;
+  line-height: normal;    
 }
+
+#mission {
+  height: 500px;
+  boder: 1px solid gray;
+}
+
+// AND ABOVE
 
 .logo {
   position: absolute;

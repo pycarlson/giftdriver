@@ -1,15 +1,12 @@
 // STRUCTURAL STUFF
 
 $footer_height: 25px;
-$cream-pixels: url("/assets/cream_pixels.png");
-
 
 body {
   min-height: 100%;
   margin: 0;
   font-family: 'Droid Sans', sans-serif;
   font-size: 12pt;
-  background-color: rgb(145, 221, 203);
 }
 
 html {
@@ -18,19 +15,23 @@ html {
 }
 
 .container {
-  width: 1000px;
+  width: 1280px;
   margin: 0 auto;
   min-height: 100%;
-  background-image: $cream-pixels;
-  padding: 0 20px $footer_height 20px;
-  border-radius: 5px;
+  box-shadow: 0px 5px 6px ;
+}
+
+.inner {
+  width: 780px;
 }
 
 footer {
-  position: absolute;
+  position: fixed;
+  left: 0;
+  right: 0;
   bottom: 0;
   height: $footer_height;
-  width: 100%;
+  width: 1280;
   &.navbar {
     margin-bottom: 0px;
   }
