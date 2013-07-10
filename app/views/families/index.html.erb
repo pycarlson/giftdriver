@@ -1,8 +1,10 @@
 <div class="inner">
-
   <%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
-
+  
+  <hr>
+  <div id="home-box">
   <h1>Families to Adopt</h1>
+
   <div class="families-to-adopt">
     <% @not_adopted.each do |family| %>
       <% if family.family_members.length != 0 %>
@@ -13,10 +15,13 @@
           <li><%= member.first_name %>, age: <%= member.age %></li>
           <% end %>
         </ul>
+        <div class="family-needs">Their needs include: <%= family.sampled_needs(8).to_sentence %>.</div>
       </div>
       <% end %>
     <% end %>
   </div>
+
+  <hr>
 
   <h1>Adopted Families</h1>
   <div class="adopted-families">
@@ -28,7 +33,9 @@
         <li><%= member.first_name %>, age: <%= member.age %></li>
         <% end %>
       </ul>
-      <div class="family">
-        <% end %>
       </div>
+        <% end %>
+
     </div>
+  </div>
+</div>
