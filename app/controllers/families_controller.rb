@@ -10,7 +10,7 @@ class FamiliesController < ApplicationController
       @filtered_families = Family.where(drive_id: params[:drive_id])
     elsif @drive.user_has_dropoff_preference?(current_user)
       donor_pref = @drive.donor_dropoff_pref(current_user)
-      @filtered_families = Family.where(drive_id: params[:drive_id], drop_location_id: donor_pref)  
+      @filtered_families = Family.where(drive_id: params[:drive_id], drop_location_id: donor_pref)
     else
       redirect_to new_drive_donor_path(@drive)
     end
@@ -31,14 +31,14 @@ class FamiliesController < ApplicationController
     @family.code = params[:family][:code]
     @family.save
 
-    if sole_location?(drive) == true
+    if sole_location?(drive)
       location = DropLocation.find_by_drive_id(drive.id)
     else
       location = DropLocation.find_by_code(params[:family][:drop_locations][:code])
     end
 
     @family.drop_location = location
- 
+
     if @family.save
       redirect_to family_path(@family.id)
     else
@@ -56,14 +56,13 @@ class FamiliesController < ApplicationController
     # HEY WE'RE COMMUNICATING DIRECTLY FROM THE PAGE TO THE DB HERE
     # Maybe the best idea? Maybe the worst?
     @family.update_attribute(params[:status], true)
-    redirect_to manage_path(drive.id)
+    redirect_to manage_path(drive)
   end
 
   def adopt
-    if @family.save
-      @family.update_attribute(:adopted_by, current_user.id)
+    if @family.update_attribute(:adopted_by, current_user.id)
       flash[:message] = "THANK YOU!"
-      UserMailer.adopted_family(current_user, @family.id).deliver
+      UserMailer.adopted_family(current_user, @family.id).deliver # move to this to an after_save
       redirect_to family_path(@family.id)
     else
       flash[:alert] = "Something went wrong. Try again?"

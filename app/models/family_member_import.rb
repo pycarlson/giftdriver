@@ -1,4 +1,4 @@
-require 'roo' 
+require 'roo'
 
 class FamilyMemberImport
 
@@ -7,7 +7,7 @@ class FamilyMemberImport
   include ActiveModel::Validations
 
   attr_accessor :file
-  
+
   def initialize(attributes = {}, drive_id = nil)
     attributes.each { |name, value| send("#{name}=", value) }
     @drive = Drive.find(drive_id) if drive_id != nil
@@ -17,7 +17,7 @@ class FamilyMemberImport
   def persisted?
     false
   end
-  
+
   def save
     if imported_family_members.map(&:valid?).all?
       imported_family_members.each(&:save!)
@@ -45,12 +45,12 @@ class FamilyMemberImport
       family_member = FamilyMember.where("family_id = ? AND first_name = ?", family.id, row["first_name"]).first || FamilyMember.new
       family_member.attributes = row.to_hash.slice(*FamilyMember.accessible_attributes)
       drop_location = DropLocation.find_by_code(row["drop_location"])
-      
+
       if family_member.save
         check_for_needs(row, family_member)
         create_family_associations(family_member, family, drop_location)
-      end      
-      
+      end
+
       family_member
     end
   end
@@ -64,16 +64,13 @@ class FamilyMemberImport
     end
   end
 
-  def check_for_needs(row, family_member) 
+  def check_for_needs(row, family_member)
     row.each do |key, value|
       if key.include?("need")
-        if value != nil
-          need_check = []
-          family_member.needs.each do |need|
-            need_check << need if need.text == value
-          end
-          if need_check.length == 0
-            need = Need.create(text: value) 
+        if !value.nil?
+          need_check = family_member.needs.inject([]) {|need_check, need| need_check << need if need.text == value }
+          if need_check.blank?
+            need = Need.create(text: value)
             family_member.needs << need
           end
         end

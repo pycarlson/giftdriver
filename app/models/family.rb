@@ -9,8 +9,14 @@ class Family < ActiveRecord::Base
   attr_accessible :drop_locations_attributes
   accepts_nested_attributes_for :drop_location
 
+  #after_save :send_confirmation_email
+
   def adopted?
-    self.adopted_by != nil
+    self.adopted_by.present?
+  end
+
+  def not_adopted?
+    self.adopted_by.blank?
   end
 
   def get_adopter_email
@@ -19,10 +25,12 @@ class Family < ActiveRecord::Base
   end
 
   def self.not_adopted_families(drive)
+    # query by association
     Drive.find(drive).families.where('adopted_by IS NULL')
   end
 
   def self.adopted_families(drive)
+    # query by association
     Drive.find(drive).families.where('adopted_by IS NOT NULL')
   end
 
@@ -36,6 +44,13 @@ class Family < ActiveRecord::Base
     need_strings = []
     need_objects.each { |x| x.each { |y| need_strings << y.text } }
     need_strings.sample(total_needs)
+  end
+
+  def adopted_by?(user)
+    self.adopted_by == user
+  end
+  def send_confirmation_email
+    UserMailer.adopted_family(self.adopted_by, @family.id).deliver if self.adopted_by_changed?
   end
 
 end

@@ -16,6 +16,9 @@ Giftdriver::Application.routes.draw do
     resources :families, only: [:index, :new, :create]
     resources :family_member_imports, only: [:new, :create]
     resources :donors, only: [:new, :create]
+    member do
+      post :drop_locations
+    end
   end
 
   resources :family_members, only: [:show, :edit, :update, :destroy] do
@@ -30,8 +33,6 @@ Giftdriver::Application.routes.draw do
   match 'drives/:id/families/manage' => 'drives#manage', as: :manage
   match 'drives/:id/add_organizer' => 'drives#add_organizer', as: :add_organizer
   match 'drives/:id/delete_organizer' => 'drives#delete_organizer', as: :delete_organizer
-  match 'drives/:id/drop_locations' => 'drives#drop_locations'
-
   root :to => "static_pages#home"
 
   # The priority is based upon order of creation:
