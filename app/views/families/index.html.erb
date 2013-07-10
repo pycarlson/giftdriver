@@ -1,31 +1,34 @@
-<%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
+<div class="inner">
 
-<h1>Families to Adopt</h1>
-<div class="families-to-adopt">
-<% @not_adopted.each do |family| %>
-  <% if family.family_members.length != 0 %>
+  <%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
+
+  <h1>Families to Adopt</h1>
+  <div class="families-to-adopt">
+    <% @not_adopted.each do |family| %>
+      <% if family.family_members.length != 0 %>
+      <div class="family-details-card">
+        <h3><%= link_to "Family #{family.id}", family_path(family) %></h3>
+        <ul>
+          <% family.family_members.each do |member| %>
+          <li><%= member.first_name %>, age: <%= member.age %></li>
+          <% end %>
+        </ul>
+      </div>
+      <% end %>
+    <% end %>
+  </div>
+
+  <h1>Adopted Families</h1>
+  <div class="adopted-families">
+    <% @adopted.each do |family| %>
     <div class="family-details-card">
-    <h3><%= link_to "Family #{family.id}", family_path(family) %></h3>
-    <ul>
-    <% family.family_members.each do |member| %>
-      <li><%= member.first_name %>, age: <%= member.age %></li>
-    <% end %>
-    </ul>
+      <h3><%= link_to "Family #{family.id}", family_path(family) %></h3>
+      <ul>
+        <% family.family_members.each do |member| %>
+        <li><%= member.first_name %>, age: <%= member.age %></li>
+        <% end %>
+      </ul>
+      <div class="family">
+        <% end %>
+      </div>
     </div>
-  <% end %>
-<% end %>
-</div>
-
-<h1>Adopted Families</h1>
-<div class="adopted-families">
-<% @adopted.each do |family| %>
-  <div class="family-details-card">
-    <h3><%= link_to "Family #{family.id}", family_path(family) %></h3>
-    <ul>
-    <% family.family_members.each do |member| %>
-      <li><%= member.first_name %>, age: <%= member.age %></li>
-    <% end %>
-    </ul>
-  <div class="family">
-<% end %>
-</div>
