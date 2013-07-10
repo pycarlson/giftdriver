@@ -1,6 +1,6 @@
 // STRUCTURAL STUFF
-
 $footer_height: 25px;
+$home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
 
 body {
   min-height: 100%;
@@ -45,8 +45,10 @@ label {
 
 .button {
   margin-top: 20px;
+  
   input {
     font-family: 'Droid Sans', sans-serif;
+
   }
   a {
     color: black;

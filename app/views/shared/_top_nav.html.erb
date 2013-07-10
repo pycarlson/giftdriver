@@ -1,16 +1,25 @@
 <div class="navbar nav">
   <div class="navbar-inner">
-    <a class="brand" href="/">Giftdriver</a>
-    <ul class="nav pull-right links">
+    
+    <ul class="nav-links">
+      <li><a class="brand" href="/">Giftdriver</a></li>
+
+      <li><%= link_to "ABOUT", about_path, :class => 'navbar-link'  %></li>
+      <li><%= link_to "TEAM", about_path, :class => 'navbar-link'  %></li>
       <% if user_signed_in? %>
-      <li><%= link_to "Create a Drive", new_drive_path, :class => 'navbar-link'  %></li>
-      <li><%= link_to 'Account', edit_user_registration_path, :class => 'navbar-link' %></li>
-      <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
+
+      
+      <li><%= link_to "CREATE A DRIVE", team_path, :class => 'navbar-link'  %></li>
+      <li><%= link_to 'ACCOUNT', edit_user_registration_path, :class => 'navbar-link' %></li>
+      <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 
       <% else %>
-      <li><%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %></li>
-      <li><%= link_to "Log in", new_user_session_path, :class => 'navbar-link'  %></li>
+      <li id="blue-link"><%= link_to "CURRENT DRIVES", drives_path, :class => 'navbar-link'  %></li>
+      <li><%= link_to "SIGN UP", new_user_registration_path, :class => 'navbar-link'  %></li>
+      <li><%= link_to "LOG IN", new_user_session_path, :class => 'navbar-link'  %></li>
+
       <% end %>
+      
     </ul>
   </div>
 </div>

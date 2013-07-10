@@ -1,5 +1,6 @@
 $container-width: 1280px;
 $nav-background: #303030;
+$home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
 
 .navbar {
   margin-bottom: 0;
@@ -10,12 +11,17 @@ $nav-background: #303030;
   }
   .brand {
     font-family: 'Oleo Script', cursive;
-    font-weight: 200;
     font-size: 2em;
     color: white;
     text-shadow: none;
-    padding-top: 18px;
   }
+}
+
+#blue-link a {
+  background-color: #47a9f8;
+  width: 100px; 
+  padding: 6px;
+  border-radius: 2px;
 }
 
 .navbar-inner {
@@ -25,10 +31,21 @@ $nav-background: #303030;
   height: 58px;
 }
 
+.navbar-inner ul {
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+
+.navbar-inner li {
+  display: inline;
+  padding-left: 110px;
+}
+
 .navbar .nav > li > a {
   text-shadow: none;
   color: white;
-  padding-top: 20px;
+  font-weight: 100px;
+  font-size: 0.5em;
 }
 
 a.navbar-link  {

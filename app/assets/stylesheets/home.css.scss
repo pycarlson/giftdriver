@@ -1,3 +1,8 @@
+$home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
+#home-pic {
+  padding-top: 0;
+}
+
 #long-strip {
   width: 1280px;
   height: 180px;
@@ -28,7 +33,7 @@
 }
 
 #mission h1 {
-  font-family: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
+  font-family: $home-font;
   color: #404040;
   font-size: 48px;
   width: 300px;
