@@ -1,12 +1,24 @@
+/* WE added these: */
+
+
 /* general styles */
 
 /* reset styles */
 
-.agile_carousel img {border: 0;}
+.agile_carousel img {
+  border: 0;
+  width: 1280px;
+
+}
+
 
 .agile_carousel p, .agile_carousel ul, .agile_carousel ul li {
 margin: 0;
 padding: 0;
+}
+
+.content_buttons_container  .button_container {
+
 }
 
 /* agile carousel styles */
@@ -19,10 +31,12 @@ padding: 0;
 Contains .slides .slide_content_... .persistent_content and controls that have "no_control_set" --*/
 
 .agile_carousel {
+
 position: relative;
 overflow: hidden;
 font-family: Arial, Helvetica, sans-serif;
 font-size: 11px;
+height: 600px;
 }
 
 /*-- container for all slides only --*/
@@ -36,6 +50,7 @@ left: 0;
 /*-- individual slide --*/
 
 .agile_carousel .slide {
+  padding-top: 100px;
 float: left;
 }
 
@@ -256,7 +271,7 @@ width: 16px;
 height: 16px;
 overflow: hidden;
 text-indent: 1000px;
-background-image: url(../images/sprite_ac_normal.png);
+background-image: url(/assets/sprite_ac_normal.png);
 background-color: #ccc;
 border: 1px solid #cfcece;
 -webkit-border-radius: 5px;
@@ -277,13 +292,13 @@ background-position: -44px 3px;
 background-color: #f7f7f7;
 }
 #multiple_slides_visible .previous_button:hover {
-background-image: url(../images/sprite_ac_hover.png);
+background-image: url(/assets/sprite_ac_normal.png);
 }
 #multiple_slides_visible .next_button:hover {
-background-image: url(../images/sprite_ac_hover.png);
+background-image: url(/assets/sprite_ac_normal.png);
 }
 #multiple_slides_visible .control_set_1 .ac_disabled {
-background-image: url(../images/sprite_ac_disabled.png);
+background-image: url(/assets/sprite_ac_normal.png);
 }
 		
 /*-- .control_set_2 - includes: group_numbered_buttons --*/
@@ -305,7 +320,7 @@ color: #000;
 padding: 0 2px;
 font-size: 12px;
 margin-right: 2px;
-background-image: url(../images/sprite_ac_normal.png);
+background-image: url(/assets/sprite_ac_normal.png/sprite_ac_normal.png);
 background-position: -95px 0;
 width: 10px;
 height: 10px;
@@ -314,7 +329,7 @@ text-indent: 1000px;
 background-color: transparent;
 }
 #multiple_slides_visible .group_numbered_button:hover, #multiple_slides_visible .group_numbered_buttons_container .ac_selected {
-background-image: url(../images/sprite_ac_hover.png);
+background-image: url(/assets/sprite_ac_normal.png/sprite_ac_normal.png);
 }
 
 
@@ -381,7 +396,7 @@ height: 35px;
 display: block;
 overflow: hidden;
 text-indent: 1000px;
-background-image: url(../images/sprite_ac_normal.png);
+background-image: url(/assets/sprite_ac_normal.png);
 background-repeat: no-repeat;
 }
 .hover_previous_button {
@@ -472,7 +487,7 @@ width: 10px;
 height: 18px;
 overflow: hidden;
 text-indent: 1000px;
-background-image: url(../images/sprite_ac_normal.png);
+background-image: url(/assets/sprite_ac_normal.png);
 }
 #flavor_2 .previous_button {
 background-position: 0 3px;
@@ -491,29 +506,40 @@ margin-right: 10px;
 }
 
 /*-- .control_set_2 - includes: .conent_button --*/
+div.thumb img {
+  width: 200px;
+}
 
 #flavor_2 .control_set_2 {
 left: 0;
 bottom: 0;
-width: 480px;
-height: 112px;
+width: 1280px;
+height: 145px;
 }
 #flavor_2 .content_button {
 float: left;
-width: 96px;
+width: 256px;
 text-align: center;
 }
+
+#flavor_2.content_buttons_container  .button_container {
+ width: 1280px;
+ padding-top: 50px;
+}
+
 #flavor_2 .content_buttons_container .ac_selected {
-background-image: url(../images/sprite_ac_normal.png);
+background-image: url(/assets/sprite_ac_normal.png);
 background-position: -124px 0;
 }
 #flavor_2 .content_button_inner {
-background-color: #f4f3f3;
+/*background-color: #f4f3f3;*/
 height: 100px;
 margin-top: 12px;
 border-right: 1px solid #f4f3f3;
 border-bottom: 1px solid #f4f3f3;
 border-left: 1px solid #f4f3f3;
+padding-top: 20px;
+padding-bottom: 20px;
 }
 #flavor_2 .ac_selected .content_button_inner  {
 background-color: #dfdddd;
@@ -521,7 +547,8 @@ border-right: 1px solid #acabab;
 border-bottom: 1px solid #acabab;
 border-left: 1px solid #acabab;
 height: 99px;
-width: 94px;
+width: 256px;
+
 }
 #flavor_2 .content_button p {
 margin-top: 4px;
@@ -530,7 +557,9 @@ line-height: 15px;
 }
 #flavor_2 .content_button_inner:hover {
 background-color: #dfdddd;
+opacity: 0.6;
 }
+
 #flavor_2 .content_button img {
 border: 4px solid #fff;
 margin: 7px auto 0 auto;
@@ -582,7 +611,7 @@ height: 44px;
 float: left;
 }
 #flavor_3 .content_buttons_container .ac_selected {
-background-image: url(../images/sprite_ac_normal.png);
+background-image: url(/assets/sprite_ac_normal.png);
 background-position: -244px 0;
 }
 #flavor_3 .content_button p {

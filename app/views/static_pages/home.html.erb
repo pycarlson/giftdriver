@@ -1,51 +1,71 @@
-<link rel="stylesheet" href="agile_carousel.css">
+<link rel="stylesheet" href="/assets/agile_carousel.css">
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.0/jquery.js"></script>
-<script src="agile_carousel/agile_carousel.a1.1.js"></script>
+<script src="/assets/agile_carousel.alpha.js"></script>
 
 <script>
 
 
-$.getJSON("agile_carousel/agile_carousel_data.php", function(data) {
+// $.getJSON("image_data", function(data) {
+
+
   $(document).ready(function(){
-    $("#long-strip").agile_carousel({
+    var data = [{
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/presents_openings1500.jpg'></a><a class='caption' href='#'>1</a></div>",
+      "content_button": "<div class='thumb'><img src='/assets/presents_openings1500.jpg' ></div><p></p>"
+    }, {
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='http://t3.gstatic.com/images?q=tbn:ANd9GcSH0BdMyiPBjZciCYyXPauKvNh-gku9SPcI3DzhNcIabr9Vka2wwA' ></a><a class='caption' href='#'>2</a></div>",
+      "content_button": "<div class='thumb'><img src='http://t3.gstatic.com/images?q=tbn:ANd9GcSH0BdMyiPBjZciCYyXPauKvNh-gku9SPcI3DzhNcIabr9Vka2wwA' ></div><p></p>"
+    }, {
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/presents_openings1500.jpg' ></a><a class='caption' href='#'>3</a></div>",
+      "content_button": "<div class='thumb'><img src='/assets/presents_openings1500.jpg' ></div><p></p>"
+    }, {
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='http://t3.gstatic.com/images?q=tbn:ANd9GcSH0BdMyiPBjZciCYyXPauKvNh-gku9SPcI3DzhNcIabr9Vka2wwA' ></a><a class='caption' href='#'>4</a></div>",
+      "content_button": "<div class='thumb'><img src='http://t3.gstatic.com/images?q=tbn:ANd9GcSH0BdMyiPBjZciCYyXPauKvNh-gku9SPcI3DzhNcIabr9Vka2wwA' ></div><p></p>"
+    }, {
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/presents_openings1500.jpg'></a><a class='caption' href='#'>5</a></div>",
+      "content_button": "<div class='thumb'><img src='/assets/presents_openings1500.jpg' ></div><p></p>"
+    }]
+
+    console.log(data);
+    $("#flavor_2").agile_carousel({
 
       // required settings
       
       carousel_data: data,
-      carousel_outer_height: 330,
+      carousel_outer_height: 540,
       carousel_height: 230,
       slide_height: 230,
-      carousel_outer_width: 480,
-      slide_width: 480,
+      carousel_outer_width: 1280,
+      slide_width: 1280,
 
       // end required settings
 
-      transition_type: "fade",
-      transition_time: 600,
-      timer: 3000,
+      // transition_type: "fade",
+      transition_time: 640,
+      timer: 1000,
       continuous_scrolling: true,
-      control_set_1: "numbered_buttons,previous_button,
-      ... (continues on same line)... pause_button,next_button",
+      // control_set_1: "numbered_buttons,previous_button,
+      // ... (continues on same line)... pause_button,next_button",
       control_set_2: "content_buttons",
       change_on_hover: "content_buttons"
     });
   });
-});
+// });
 </script>
 
-<div id="carousel"></div>
+<div id="flavor_2"></div>
 
-<div id="home-pic"><img src="/assets/presents_openings1500.jpg" width="1280" height="200" ¬
-  alt="A descriptive text of the image" /></div>
+<!-- <div id="home-pic"><img src="/assets/presents_openings1500.jpg" width="1280" height="200" ¬
+  alt="A descriptive text of the image" /></div> -->
 
 
-  <div id="long-strip">
+<!--   <div id="long-strip">
     <div class="tiles"></div>
     <div class="tiles"></div>
     <div class="tiles"></div>
     <div class="tiles"></div>
     <div class="tiles"></div>
-  </div>
+  </div> -->
 
   <div id="mission"><h1>OUR <span>MISSION</span></h1></div>
 
