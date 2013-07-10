@@ -12,5 +12,10 @@ class ApplicationController < ActionController::Base
     true unless access.nil?
   end
 
+  def sole_location?(drive)
+    true if drive.drop_locations.length == 1
+  end
+  
   helper_method :organizer?
+  helper_method :sole_location?
 end
