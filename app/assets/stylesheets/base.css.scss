@@ -18,7 +18,9 @@ html {
   width: 1280px;
   margin: 0 auto;
   min-height: 100%;
-  box-shadow: 0px 5px 6px ;
+  box-shadow: 0px 2px 4px ;
+  border: none;
+
 }
 
 .inner {
@@ -36,27 +38,6 @@ footer {
     margin-bottom: 0px;
   }
 }
-
-// FONTS
-
-h1, h2, h3, h4 {
-  font-family: 'Droid Serif', serif;
-  font-weight: 700;
-  margin-top: 0;
-}
-
-h1 {
-  font-family: 'Oleo Script', cursive;
-  text-align: center;
-  margin-top: 40px;
-  font-size: 3em;
-}
-
-h1, h2 {
-  margin-bottom: 10px;
-}
-
-// OTHER STUFF
 
 label {
   font-size: 1.2em;

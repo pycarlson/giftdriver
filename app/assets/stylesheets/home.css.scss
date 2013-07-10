@@ -1,74 +1,57 @@
 #long-strip {
   width: 1280px;
   height: 180px;
-  background-color: #eee;
-  margin: 0 auto;
-  display: inline-block;
+  background-color: #f7f6f3;
+  margin: 0 auto; 
   vertical-align: middle;
-  line-height: normal;    
+  border: 1px solid #D4D4D4;
+  
 }
+
+.tiles {
+  height: 90px;
+  width: 165px;
+  border: 1px solid #D4D4D4;
+  float: left;
+  margin-top: 40px;
+  margin-left: 73px;
+}
+
 
 #mission {
-  height: 500px;
-  boder: 1px solid gray;
+  height: 160px;
+  border-bottom: 1px dotted #D4D4D4;
+  border-right: 0px;
+  border-left: none;
+  width: 1280px;
+  clear: both;
 }
 
-// AND ABOVE
-
-.logo {
-  position: absolute;
-  bottom: 100px;
-  right: 100px;
-  font-family: 'Oleo Script', cursive;
-  color: white;
-  font-size: 5em;
+#mission h1 {
+  font-family: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
+  color: #404040;
+  font-size: 48px;
+  width: 300px;
+  text-transform: uppercase;
+  padding-top: 60px;
+  margin: 0 auto;
+  
 }
 
-.one-liner {
-  width: 270px;
-  position: absolute;
-  top: 180px;
-  left: 55px;
-  font-size: 1.5em;
-  line-height: 1.3em;
+#mission h1 span {
+  background-color: #df451b;
   color: white;
-  font-family: 'Droid Sans', sans-serif;
+
 }
 
-.slogan {
-  width: 400px;
-  position: absolute;
-  top: 50px;
-  left: 55px;
-  font-family: 'Droid Sans', sans-serif;
-  color: white;
-  font-size: 3em;
-  line-height: 1.2em;
+#last-home {
+  height: 400px;
+  width: 1280px;
 }
 
-.login_buttons {
-  font-family: 'Droid Sans', sans-serif;
-  color: white;
-  font-size: 2em;
-  .signup {
-    position: absolute;  
-    top: 300px;
-    left: 55px;
-  }
-  .login {
-  position: absolute;  
-
-    left: 205px;
-    top: 300px;
-  }
-  a {
-    color: white;
-    line-height: 1.5em;
-    &:hover {
-      background-color: white;
-      box-shadow: 0px 0px 15px 10px white;
-      text-decoration: none;
-      color: rgb(78, 78, 78);
-    }
-  }
+#last-home p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-size: 25px;
+  text-align: center;
+  padding-top: 40px;
 }
