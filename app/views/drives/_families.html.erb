@@ -1,15 +1,14 @@
 <div class="featured">
-  <h3>Featured Families to Adopt</h3>
+  <h1>A Sample of Families</h1>
   <div class="family-cards">
     <% @not_adopted.each do |family| %>
       <% if family.family_members.length != 0 %>
         <div class="family family-box family-box-width-<%= family.family_members.length %>">
           <div class="family-content">
             <div class="family-members"><%= family.members_names_sentence %></div>
-            <div class="family-needs">Their needs include: <%= family.sampled_needs(5).to_sentence %>.</div>
             <div class="family-count">Family of </div>
             <div class="family-number"><%= family.family_members.length %></div>
-            <div class="learn-more shadow"><%= link_to "Learn more!", family_path(family) %></div>
+            <div class="family-needs">Their needs include: <%= family.sampled_needs(5).to_sentence %>.</div>
           </div>
         </div>
       <% end %> 

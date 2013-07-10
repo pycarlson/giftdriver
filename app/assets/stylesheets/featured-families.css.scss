@@ -1,24 +1,15 @@
-$cream-pixels: url("/assets/cream_pixels.png");
-
-.family {
-}
-
 .featured {
-  margin-top: 20px;
-  margin-bottom: 40px;
-  padding: 20px;
-  padding-bottom: 40px;
-  border-radius: 5px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
 .family-box {
-  background-color: white;
+  background-color: #fafafa;
   display: inline-block;
   height: 200px;
-  margin: 10px;
+  margin: 10px 25px;
   vertical-align: top;
   padding: 15px;
-  border-radius: 10%;
 }
 
 .family-content {
@@ -27,25 +18,24 @@ $cream-pixels: url("/assets/cream_pixels.png");
 }
 
 .family-cards {
+  padding-top: 20px;
   text-align: center;
 }
 
 .family-box-width-1, .family-box-width-2 {
-  width: 200px;
-  border: 10px solid #80CCB8;
+  width: 180px;
 }
 
 .family-box-width-3, .family-box-width-4 {
-  width: 270px;
-  border: 10px solid #857F83;
+  width: 200px;
 }
 
 .family-box-width-5, .family-box-width-6  {
-  width: 340px;
-  border: 10px solid #2C2C75;
+  width: 280px;
 }
 
 .family-members {
+  padding-bottom: 5px;
   font-family: 'Droid Serif', serif;
   font-weight: 700;
   font-size: 1.5em;
@@ -60,42 +50,12 @@ $cream-pixels: url("/assets/cream_pixels.png");
 .family-count {
   font-size: .9em;
   text-align: center;
-  position: absolute;
-  bottom: 30px;
 }
 
 .family-number {
   font-family: 'Oleo Script', cursive;
   border-bottom: 3px;
-  padding-top: 3px;
+  line-height: 1em;
   font-size: 2em;
-  position: absolute;
-  bottom: 0;
   text-align: center;
-}
-
-.learn-more {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  font-family: 'Droid Serif', serif;
-  text-align: center;
-  font-size: 1.3em;
-  line-height: 1.35em;
-  background-color: rgb(213, 213, 213);
-  border-radius: 5%;
-  padding: 5px 0;
-  width: 100px;
-  a {
-    color: rgb(9, 0, 117);
-    &:hover {
-      color: rgb(119, 119, 119);
-    }
-  }
-}
-
-.shadow {
- -moz-box-shadow:    inset 0 0 20px #bbb;
- -webkit-box-shadow: inset 0 0 20px #bbb;
- box-shadow:         inset 0 0 20px #bbb;
 }
