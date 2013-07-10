@@ -1,6 +1,6 @@
 class DropLocation < ActiveRecord::Base
 
-  include Gmaps4rails::ActsAsGmappable
+  # include Gmaps4rails::ActsAsGmappable
 
   belongs_to :drive
   has_many :families
@@ -11,13 +11,13 @@ class DropLocation < ActiveRecord::Base
             :zipcode, :code, :presence => :true
   
 
-  acts_as_gmappable
-  geocoded_by :gmaps4rails_address 
-  after_validation :geocode    
+  # acts_as_gmappable
+  # geocoded_by :gmaps4rails_address 
+  # after_validation :geocode    
 
   attr_accessible :street, :city, :state, :zipcode, :code 
 
-  def gmaps4rails_address
-     "#{self.street}, #{self.city}, #{self.state}, #{self.zipcode}"  
-  end
+  # def gmaps4rails_address
+  #    "#{self.street}, #{self.city}, #{self.state}, #{self.zipcode}"  
+  # end
 end

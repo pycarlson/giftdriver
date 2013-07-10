@@ -26,9 +26,13 @@ class FamiliesController < ApplicationController
 
   def create
     @family = Family.new
-    @family.drive = Drive.find(params[:drive_id])
+    drive = Drive.find(params[:drive_id])
+    @family.drive = drive
     @family.code = params[:family][:code]
-
+    @family.save
+    location = DropLocation.find_by_code(params[:family][:drop_locations][:code])
+    @family.drop_location = location
+ 
     if @family.save
       redirect_to family_path(@family.id)
     else

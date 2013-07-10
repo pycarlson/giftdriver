@@ -1,8 +1,11 @@
 <div class='add-edit-family'>
   <h3>Add a New Family</h3>
   <%= form_for([@drive, @family]) do |f| %>
-    <%= f.text_field :code, :placeholder => 'family code' %>
-    <div class="button"><%= f.submit "Add Family" %></div>
+    <%= f.text_field :code, :placeholder => 'family code' %><br>
+      <%= f.fields_for :drop_locations do |l| %>
+      <%= l.text_field :code, :placeholder => 'location nickname' %>
+    <% end %>
+    <div class="button"><%= f.submit("Add Family") %></div>
 <% end %>
 
 <%= link_to "Edit Drive Details", edit_drive_path(@drive) %><br>

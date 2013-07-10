@@ -2,7 +2,7 @@
 <div class="access">
   
   <%= render '/drop_locations/form' %>
-  <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
+  
   
   <div class="add-organizer">
     <h3>Add an Organizer</h3>
@@ -24,5 +24,6 @@
     <% end %>
    
   </div>
+  <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
 </div>
 <% end %>

@@ -5,6 +5,10 @@ class Family < ActiveRecord::Base
   attr_accessible :code, :drop_location
   belongs_to :drop_location
 
+
+  attr_accessible :drop_locations_attributes
+  accepts_nested_attributes_for :drop_location
+
   def adopted?
     self.adopted_by != nil
   end
