@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
 
-  before_filter :validate_organizer, except: [:index, :show, :adopt, :update_gift_status, :update_arrived, :update_given]
+  before_filter :validate_organizer, except: [:index, :show, :adopt, :update_gift_status]
   before_filter :find_family, except: [:index, :create]
 
   def index

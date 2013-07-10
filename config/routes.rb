@@ -7,6 +7,9 @@ Giftdriver::Application.routes.draw do
 
   resources :families, except: [:index, :new, :create] do
     resources :family_members, only: [:index, :new, :create]
+    member do
+
+    end
   end
 
   resources :drives do
@@ -22,9 +25,7 @@ Giftdriver::Application.routes.draw do
   resources :family_member_imports, only: [:index]
 
   match 'families/:id/adopt' => 'families#adopt', as: :adopt
-  match 'families/:id/update_arrived' => 'families#update_arrived', as: :update_arrived
   match 'families/:id/update_gift_status' => 'families#update_gift_status', as: :update_gift_status
-  match 'families/:id/update_given' => 'families#update_given', as: :update_given
 
   match 'drives/:id/families/manage' => 'drives#manage', as: :manage
   match 'drives/:id/add_organizer' => 'drives#add_organizer', as: :add_organizer
