@@ -16,7 +16,7 @@ class FamilyMemberImportsController < ApplicationController
     @family_members = FamilyMemberImport.new(params[:family_member_import], params[:drive_id])
     
     if @family_members.save
-      redirect_to root_path, notice: "Families imported successfully."
+      redirect_to drive_path(@drive), notice: "Families imported successfully."
     else
       render :new
     end

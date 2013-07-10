@@ -1,50 +1,66 @@
-<h2>Import Family Data</h2>
-
-<p>A CSV or Excel file can be used to import family records.</p>
-
-<p>Download an import template in <%= link_to "Excel Format", family_member_imports_path(format: "xls") %>.</p>
-<br>
-<p>If you prefer to use your own CSV file or EXCEL spreadsheet, the following column headers are required:</p>
-
-
-<ul>
-  <li>first_name</li>
-  <li>age</li>
-  <li>gender</li>
-  <li>size_pants</li>
-  <li>size_shirt</li>
-  <li>size_dress</li>
-  <li>size_shoes</li>
-  <li>bio</li>
-  <li>family_code</li>
-  <li>drop_location</li> 
-</ul>
-<br>
-<p> 
-  In addition to these columns, you may also add optional "needs" columns as "need1", "need2", "need3", and so on. Doing so will associate desired gifts/needs with the family member upon spreadsheet import.
-</p>
-
-<br>
-
-
-<br>
-<%= form_for [@drive, @family_members] do |f| %>
-  <% if @family_members.errors.any? %>
-    <div id="import_errors">
-      <h2><%= pluralize(@family_members.errors.count, "error") %> prohibited this import form completing:</h2>
-      <ul>
-      <% @family_members.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
+<div class="inner">
+  <div class="drive-deets">
+    <div class="title">
+      <h1><%= @drive.drive_title %></h1>
+      <h2>Import Family Data</h2>
+      <div class="subnav">
+      <%= link_to "Drive Home", drive_path(@drive) %>
+      </div>
     </div>
+
+    <hr>
+  </div>
+
+
+
+  <p>A CSV or Excel file can be used to import family records.</p>
+
+  <p>Download an import template in <%= link_to "Excel Format", family_member_imports_path(format: "xls") %>.</p>
+  <br>
+  <p>If you prefer to use your own CSV file or EXCEL spreadsheet, the following column headers are required:</p>
+
+
+  <ul id="import_headers">
+    <li>first_name</li>
+    <li>age</li>
+    <li>gender</li>
+    <li>size_pants</li>
+    <li>size_shirt</li>
+    <li>size_dress</li>
+    <li>size_shoes</li>
+    <li>bio</li>
+    <li>family_code</li>
+    <li>drop_location</li> 
+  </ul>
+  <br>
+  <p> 
+    In addition to these columns, you may also add optional "needs" columns as "need1", "need2", "need3", and so on. Doing so will associate desired gifts/needs with the family member upon spreadsheet import.
+  </p>
+
+  <br>
+
+
+  <br>
+  <%= form_for [@drive, @family_members] do |f| %>
+  <% if @family_members.errors.any? %>
+  <div id="import_errors">
+    <h2><%= pluralize(@family_members.errors.count, "error") %> prohibited this import form completing:</h2>
+    <ul>
+      <% @family_members.errors.full_messages.each do |message| %>
+      <li><%= message %></li>
+      <% end %>
+    </ul>
+  </div>
   <% end %>
 
-  <div class="import_field">
-    <%= f.file_field :file %>
-    <%= f.submit "Import" %>
+
+  <div id="import_field">
+    <%= f.file_field :file, :id => "import_file" %>
+    <%= f.submit "Import", :id => "import_blue_link" %>
   </div>
-<% end %>
+  <% end %>
+
+</div>
 
 
 
