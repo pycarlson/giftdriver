@@ -10,7 +10,11 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   margin: 0 auto; 
   vertical-align: middle;
   border: 1px solid #D4D4D4;
-  
+}
+
+#current-drives-button {
+  background-color: #47a9f8;
+  color: white;
 }
 
 .tiles {
@@ -28,9 +32,10 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   border-bottom: 1px dotted #D4D4D4;
   border-right: 0px;
   border-left: none;
-  width: 1280px;
+  width: 780px;
   clear: both;
-  margin-top: 600px; 
+  margin: 0 auto;
+  
 }
 
 #mission h1 {

@@ -9,8 +9,8 @@
       <% if user_signed_in? %>
 
       
-      <li><%= link_to "CREATE A DRIVE", new_drive_path, :class => 'navbar-link'  %></li>
-      <li id="blue-link"><%= link_to "CURRENT DRIVES", drives_path, :class => 'navbar-link'  %></li>
+      <li id="blue-link"><%= link_to "CREATE A DRIVE", new_drive_path, :class => 'navbar-link'  %></li>
+      
       <li><%= link_to 'ACCOUNT', edit_user_registration_path, :class => 'navbar-link' %></li>
       <li><%= link_to "LOGOUT", destroy_user_session_path, method: :delete, :class => 'navbar-link'  %></li>
 

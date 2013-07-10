@@ -512,9 +512,10 @@ div.thumb img {
 
 #flavor_2 .control_set_2 {
 left: 0;
-bottom: 0;
+bottom: -25px;
 width: 1280px;
 height: 145px;
+z-index: 10;
 }
 #flavor_2 .content_button {
 float: left;
@@ -532,14 +533,14 @@ background-image: url(/assets/sprite_ac_normal.png);
 background-position: -124px 0;
 }
 #flavor_2 .content_button_inner {
-/*background-color: #f4f3f3;*/
+background-color: #f4f3f3;
 height: 100px;
-margin-top: 12px;
+
 border-right: 1px solid #f4f3f3;
 border-bottom: 1px solid #f4f3f3;
 border-left: 1px solid #f4f3f3;
 padding-top: 20px;
-padding-bottom: 20px;
+padding-bottom: 10px;
 }
 #flavor_2 .ac_selected .content_button_inner  {
 background-color: #dfdddd;
@@ -562,8 +563,8 @@ opacity: 0.6;
 
 #flavor_2 .content_button img {
 border: 4px solid #fff;
-margin: 7px auto 0 auto;
--moz-box-shadow: 1px 1px 1px #bcbbbb; /* FF3.5+ */
+margin: 0 auto;
+-moz-box-shadow: 1px 1px 1px #bcbbbb; /* FF3.5+ 
 -webkit-box-shadow: 1px 1px 1px #bcbbbb; /* Saf3.0+, Chrome */
 box-shadow: 1px 1px 1px #bcbbbb; /* Opera 10.5, IE9, Chrome 10+ */
 }

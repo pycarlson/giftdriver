@@ -27,46 +27,27 @@
     }]
 
     console.log(data);
-    $("#flavor_2").agile_carousel({
-
-      // required settings
-      
+    $("#flavor_2").agile_carousel({ 
       carousel_data: data,
-      carousel_outer_height: 540,
+      carousel_outer_height: 560,
       carousel_height: 230,
       slide_height: 230,
       carousel_outer_width: 1280,
       slide_width: 1280,
-
-      // end required settings
-
-      // transition_type: "fade",
-      transition_time: 640,
-      timer: 1000,
+      transition_time: 540,
+      timer: 3000,
       continuous_scrolling: true,
-      // control_set_1: "numbered_buttons,previous_button,
-      // ... (continues on same line)... pause_button,next_button",
       control_set_2: "content_buttons",
       change_on_hover: "content_buttons"
     });
   });
-// });
+
 </script>
 
 <div id="flavor_2"></div>
 
-<!-- <div id="home-pic"><img src="/assets/presents_openings1500.jpg" width="1280" height="200" ¬
-  alt="A descriptive text of the image" /></div> -->
 
-
-<!--   <div id="long-strip">
-    <div class="tiles"></div>
-    <div class="tiles"></div>
-    <div class="tiles"></div>
-    <div class="tiles"></div>
-    <div class="tiles"></div>
-  </div> -->
-
+  <div id="current-drives-button"><%= link_to "CURRENT DRIVES", drives_path %></div>
   <div id="mission"><h1>OUR <span>MISSION</span></h1></div>
 
   <div id="last-home"><p>Generating generosity-powered software for organizing gift drives.</p></div>
