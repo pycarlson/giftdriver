@@ -6,10 +6,16 @@
     <div class="row">
       <div class="span6 blurb">
         <h2>About this drive</h1>
-        <%= @drive.drive_blurb %>
+        <p><%= @drive.drive_blurb %></p>
       </div>
-      <div class="drop-deets span3">Drop off gifts between <span class="date"><%= @drive.start_date %></span> and <span class="date"><%= @drive.end_date %></span></div>
+      <div class="drop-deets span3">Drive dates:<br /><span class="date"><%= @drive.start_date %></span> to <span class="date"><%= @drive.end_date %></span></div>
     </div>
+
+
+  <%= render 'families', locals: { drive: @drive, not_adopted: @not_adopted } %>
+
+  <h1><%= link_to "See all #{@drive.drive_title} families", drive_families_path(@drive) %></h1>
+
   <div class="org-info">
     <h3>About <%= @drive.org_name %></h3>
     <p><%= @drive.org_blurb %></p>
@@ -18,11 +24,6 @@
     <p>Phone: <%= @drive.org_phone %></p>
     <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
   </div>
-
-  <%= render 'families', locals: { drive: @drive, not_adopted: @not_adopted } %>
-
-  <h1><%= link_to "See all #{@drive.drive_title} families", drive_families_path(@drive) %></h1>
-
 
   <%= render '/drives/dashboard' %>
 </div>
