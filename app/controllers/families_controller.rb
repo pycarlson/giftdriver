@@ -14,14 +14,16 @@ class FamiliesController < ApplicationController
     else
       redirect_to new_drive_donor_path(@drive)
     end
+    p @filtered_families
     if !@filtered_families.nil?
       @not_adopted = @filtered_families.where('adopted_by IS NULL')
+      
+      if @not_adopted.length > 6
+        @not_adopted = @not_adopted.paginate(:page => params[:page], :per_page => 6)
+      end
+
       @adopted = @filtered_families.where('adopted_by IS NOT NULL')
     end
-
-    @filtered_families = Family.where(drive_id: params[:drive_id], drop_location_id: donor_pref)
-    @not_adopted = @filtered_families.where('adopted_by IS NULL').paginate(:page => params[:page], :per_page => 6)
-    @adopted = @filtered_families.where('adopted_by IS NOT NULL')
   end
 
   def create

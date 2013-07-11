@@ -22,8 +22,10 @@
   </div>
 
   <div id='paginator'>
-    <h4>See More Families!</h4>
-    <%= will_paginate @not_adopted %>
+    <% if @not_adopted.length >= 6 %>
+      <h4>See More Families!</h4>
+    <% end %>
+
   </div>
 
   <hr>
