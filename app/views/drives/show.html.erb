@@ -6,13 +6,33 @@
 
     <div class="row">
       <div class="span6 blurb">
-        <h2>About this drive</h1>
+        <h2>About this drive</h2>
         <p><%= @drive.drive_blurb %></p>
       </div>
       <div class="drop-deets span3">Drive dates:<br /><span class="date"><%= @drive.start_date %></span> to <span class="date"><%= @drive.end_date %></span></div>
       <div class="span3 cw-button"><%= link_to "See all families", drive_families_path(@drive) %></div>
     </div>
-      
+
+    <hr>
+
+    <div class="locations">
+      <% if @locations.length > 1 %>
+        <h2>Drop Locations</h2>
+      <% else %>
+        <h2>Drop Location</h2>
+      <% end %>
+        <div class="map">
+          <%= gmaps4rails(@json) %>
+        </div>
+          <% @locations.each do |location| %>
+          <div class="location-box">
+            <h3><%= location.code %></h3>
+            <p><%= location.street %></p>
+            <p><%= location.city %>, <%= location.state %> <%= location.zipcode %></p>
+          </div>
+          <% end %>
+        </div>
+
     <hr>
 
     <%= render 'families', locals: { drive: @drive, not_adopted: @not_adopted } %>
@@ -37,5 +57,5 @@
     </div>
   </div>
 </div>
+
 <%= render '/drives/dashboard' %>
-<%= gmaps4rails(@json) %>

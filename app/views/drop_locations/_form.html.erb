@@ -19,9 +19,11 @@
     <% if @locations.empty? %>
       no locations assigned yet
     <% else %>
+      <ul>
       <% @locations.each do |location| %>
-        <%= location.code %>
+        <li><%= location.code %></li>
       <% end %>
+      </ul>
     <% end %>
 
 </div>

@@ -1,12 +1,11 @@
 .map_container {
   padding: 6px;
-  border-width: 1px;
-  border-style: solid;
-  border-color: #ccc #ccc #999 #ccc;
   -webkit-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
   -moz-box-shadow: rgba(64, 64, 64, 0.5) 0 2px 5px;
   box-shadow: rgba(64, 64, 64, 0.1) 0 2px 5px;
-  width: 500px;
+  width: 230px;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .map_container img {
@@ -14,8 +13,8 @@
 }
 
 .gmaps4rails_map {
-  width: 500px;
-  height: 400px;
+  width: 230px;
+  height: 230px;
 }
 
 .gmaps4rails_map img {

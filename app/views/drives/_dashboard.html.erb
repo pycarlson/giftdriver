@@ -12,16 +12,18 @@
     <div><%= submit_tag("Add Organizer") %></div>
     <% end %> 
     <h4>Current Organizers</h4>
+    <ul>
     <% @organizers.each do |organizer| %>
       <% if last_organizer?(@drive) %>
-        <%= organizer.user.full_name %>
-        <%= organizer.user.email %><br>
+        <li><%= organizer.user.full_name %>: <%= organizer.user.email %></li>
       <% else %>
-        <%= link_to "Delete", delete_organizer_path(:user_id => organizer.user.id) %>
-        <%= organizer.user.full_name %>
-        <%= organizer.user.email %><br>
+        <li><%= organizer.user.full_name %>: <%= organizer.user.email %>
+          <ul>
+            <li><%= link_to "Remove #{organizer.user.full_name} as organizer", delete_organizer_path(:user_id => organizer.user.id) %></li>
+          </ul>
       <% end %>
     <% end %>
+    </ul>
    
   </div>
   <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
