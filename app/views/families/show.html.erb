@@ -1,42 +1,52 @@
+<div class="inner">
 <%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
-
-<h1>Family <%= @family.id %></h1>
+<div class="page-title"><h1>Family <%= @family.id %></h1></div>
+  <div class="add-family-button">
+    <% if organizer?(@family.drive) %>
+      <button class="cw-button"><%= link_to "Add family member", new_family_family_member_path(@family) %></button>
+    <% end %>
+  </div>
 <div>
-<% if @family.adopted? %>
-  <h3>This family has been adopted!</h3>
-<% else %>
-  <div class="adopt-family"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
-<% end %>
-<% if organizer?(@family.drive) %>
-  <button><%= link_to "Add family member", new_family_family_member_path(@family) %></button>
-<% end %>
+  <% if @family.adopted? %>
+    <h3>This family has been adopted!</h3>
+  <% else %>
+    <div class="adopt-family"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
+  <% end %>
 </div>
+
 <div class="family-detail-section">
   <% @family.family_members.each do |member| %>
-    <div class="family-details-card">
+    <div class="row">
+      <div class="family-details-card">
+        <div class="span3">
+          <h2><%= member.first_name %></h2>
+          <% if organizer?(@family.drive)%>
+            <%= render 'add_edit_buttons', member: member %>
+          <% end %>
+          <p><%= member.bio %></p>
+        </div>
+        <div class="span3">
+          <h4>Age: <%= member.age %></h4>
+          <h4>Needs:</h4>
+          <ul>
+          <% member.needs.each do |need| %>
+            <li><%= need.text %></li>
+          <% end %>
+          </ul>
+        </div>
+        <div class="span3">
+          <h4>Gender: <%= member.gender %></h4>
 
-    <h2><%= member.first_name %></h2>
-    <h4>About <%= member.first_name %></h4>
-    <p><%= member.bio %></p>
-    <h4>Age: <%= member.age %></h4>
-    <h4>Gender: <%= member.gender %></h4>
-    <h4>Needs:</h4>
-    <ul>
-    <% member.needs.each do |need| %>
-      <li><%= need.text %></li>
-    <% end %>
-    </ul>
-    <h4>Clothing Sizes</h4>
-    <ul>
-      <li>Pants: <%= member.size_pants %></li>
-      <li>Shirt: <%= member.size_shirt %></li>
-      <li>Dress: <%= member.size_dress %></li>
-      <li>Shoes: <%= member.size_shoes %></li>
-    </ul>
-    <% if organizer?(@family.drive)%>
-    <%= render 'add_edit_buttons', member: member %>
-    <% end %>
+          <h4>Clothing Sizes</h4>
+          <ul>
+            <li>Pants: <%= member.size_pants %></li>
+            <li>Shirt: <%= member.size_shirt %></li>
+            <li>Dress: <%= member.size_dress %></li>
+            <li>Shoes: <%= member.size_shoes %></li>
+          </ul>
+        </div>
+
+      </div>
     </div>
-
   <% end %>
 </div>

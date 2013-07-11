@@ -1,11 +1,28 @@
+.add-family-button {
+  text-align: center;
+  button {
+    margin: 0;
+  }
+}
+
+.text-fish {
+  // display: absolute;
+  // bottom: 0;
+  // right: 0;
+  background-color: red;
+}
+
 .family-details-card {
+  display: relative;
   background-color: #f1f1f1;
   text-align: left;
   vertical-align: top;
-  display: inline-block;
-  margin: 10px;
+  margin: 20px 10px;
   padding: 10px;
-  width: 250px;
+  overflow: auto;
+  button {
+    margin-bottom: 10px;
+  }
 }
 
 .family-detail-section {

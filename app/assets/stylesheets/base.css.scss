@@ -27,6 +27,14 @@ h5 {
   font-family: 'Droid Serif', serif;
 }
 
+.page-title {
+  text-align: center;
+  h1 {
+    text-transform: uppercase;
+    padding-top: 30px;
+  }  
+}
+
 html {
   min-height: 100%;
   position: relative;
