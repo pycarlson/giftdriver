@@ -49,6 +49,9 @@
       <h3>Drop Location Details</h3>
       <%= f.fields_for :drop_locations, required: :true do |l| %>
 
+        <div class="form-item"><%= l.label :Name %>
+        <%= l.text_field :code, required: :true %></div>
+        
         <div class="form-item"><%= l.label :Street %>
         <%= l.text_field :street, required: :true %></div>
 
@@ -60,9 +63,6 @@
 
         <div class="form-item"><%= l.label :Zipcode %>
         <%= l.text_field :zipcode, required: :true %></div>
-        
-        <div class="form-item"><%= l.label :Name %>
-        <%= l.text_field :code, required: :true %></div>
 
         <h5>(Additional drop locations can be added following intial creation of your drive)</h5>
       
