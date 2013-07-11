@@ -72,6 +72,7 @@ $main-accent-hover: #7eeb82;
 }
 
 .contact {
+  margin-left: 70px;
   p {
     margin: 0 0 5px;
   }
@@ -93,4 +94,9 @@ $main-accent-hover: #7eeb82;
       text-decoration: none;
     }
   }
+}
+
+.row {
+  // margin-left: 0;
+  margin-bottom: 50px;
 }
