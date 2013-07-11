@@ -1,0 +1,50 @@
+.received button {
+  background-color: #47a9f8;
+  width: 100px; 
+  padding: 6px;
+  border-radius: 2px;
+  border: 0;
+}
+
+.delivered button {
+  background-color: #47a9f8;
+  width: 100px; 
+  padding: 6px;
+  border-radius: 2px;
+  border: 0;
+}
+
+.received button a {
+  color: white;
+}
+
+.delivered button a {
+  color: white;
+}
+
+
+
+#manage_table {
+  width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 50px;
+
+
+  	height: 100px;
+  	overflow: auto;
+
+  th {
+    font-weight: 900;
+  	text-align: center; 
+    padding-bottom: 20px;
+  }
+  
+  td {
+  	text-align: center; 
+  }
+
+
+
+
+}
