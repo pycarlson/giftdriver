@@ -1,11 +1,15 @@
-<h1>One quick question!</h1>
+<div class="location-chooser">
 
-<h4>Since this drive has multiple drop off locations, we just need to know which one is most convenient for you.</h4>
+  <h1>One quick question!</h1>
 
-<%= form_for [@drive, @donor] do |f| %>
-  <% @locations.each do |location| %>
-    <%= f.radio_button(:drop_location, location.id ) %>
-    <%= f.label(:drop_location, "#{location.code}, #{location.street}, #{location.city} #{location.state} #{location.zipcode}") %>
-  <% end %> 
-  <%= f.submit "Set Location Preference" %>
-<% end %>
+  <h4>Since this drive has multiple drop off locations, we just need to know which one is most convenient for you.</h4>
+
+  <%= form_for [@drive, @donor] do |f| %>
+    <% @locations.each do |location| %>
+      <div class="radio"><%= f.radio_button(:drop_location, location.id ) %></div>
+      <div class="local"><%= f.label(:drop_location, "#{location.code}, #{location.street}, #{location.city} #{location.state} #{location.zipcode}") %></div><br>
+    <% end %> 
+    <div id="local-button"><%= f.submit "Set Location Preference" %></div>
+  <% end %>
+</div>
+
