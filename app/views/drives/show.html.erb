@@ -1,6 +1,7 @@
 <div class="inner">
   <div class="drive-deets">
     <%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
+
     <hr>
 
     <div class="row">
@@ -28,9 +29,9 @@
         </div>
       <div class="contact span3">
         <h5>Contact <%= @drive.org_name %></h5>
-          <p>Email: <%= @drive.org_email %></p>
-          <p>Phone: <%= @drive.org_phone %></p>
-          <p>Address: <%= @drive.org_address %>, <%= @drive.org_zipcode %></p>
+          <p><i class="icon-envelope"></i> <%= @drive.org_email %></p>
+          <p><i class="icon-phone"></i> <%= @drive.org_phone %></p>
+          <p><i class="icon-home"></i> <%= @drive.org_zipcode %></p>
         </div>
       </div>
     </div>
