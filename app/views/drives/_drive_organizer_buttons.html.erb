@@ -1,10 +1,10 @@
 <div class='add-edit-family'>
   <h3>Add a New Family</h3>
   <%= form_for([@drive, @family]) do |f| %>
-    <%= f.text_field :code, :placeholder => 'family code' %><br>
+    <%= f.text_field :code, :placeholder => 'family code', required: :true %><br>
       <% unless sole_location?(@drive) %>
         <%= f.fields_for :drop_locations do |l| %>
-        <%= l.text_field :code, :placeholder => 'location nickname' %>
+        <%= l.text_field :code, :placeholder => 'location nickname', required: :true %>
       <% end %>
     <% end %>
     <div class="button"><%= f.submit("Add Family") %></div>

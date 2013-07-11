@@ -31,7 +31,7 @@
         <div id="right-member-create">
         <%= f.fields_for :needs do |l| %>
             <%= l.label :description_of_needs %>
-            <%= l.text_area :text, size: "24x6", required: :true %><br>
+            <%= l.text_area :text, size: "24x6" %><br>
         <% end %>
         <div id="create-family-button"><%= f.submit %></div>
     </div>

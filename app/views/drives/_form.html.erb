@@ -10,59 +10,59 @@
       <h3>Organization Details</h3>
 
       <div class="form-item"><%= f.label :Name %>
-      <%= f.text_field :org_name, :autofocus => true %></div>
+      <%= f.text_field :org_name, required: :true, :autofocus => true %></div>
 
       <div class="form-item"><%= f.label :Description %>
-      <%= f.text_area :org_blurb, :rows => 10  %></div>
+      <%= f.text_area :org_blurb, :rows => 10, required: :true  %></div>
 
       <div class="form-item"><%= f.label :Email %>
-      <%= f.email_field :org_email %></div>
+      <%= f.email_field :org_email, required: :true %></div>
 
       <div class="form-item"><%= f.label :Phone %>
-      <%= f.text_field :org_phone %></div>
+      <%= f.text_field :org_phone, required: :true %></div>
 
       <div class="form-item"><%= f.label :Address %>
-      <%= f.text_field :org_address %></div>
+      <%= f.text_field :org_address, required: :true %></div>
       
       <div class="form-item"><%= f.label :Zipcode %>
-      <%= f.text_field :org_zipcode %></div>
+      <%= f.text_field :org_zipcode, required: :true %></div>
     </div>
 
     <div id="middle">
       <h3>Drive Details</h3>
 
       <div class="form-item"><%= f.label :Title %>
-      <%= f.text_field :drive_title %></div>
+      <%= f.text_field :drive_title, required: :true, required: :true %></div>
 
       <div class="form-item"><%= f.label :Desription %>
-      <%= f.text_area :drive_blurb, :rows => 10 %></div>
+      <%= f.text_area :drive_blurb, :rows => 10, required: :true %></div>
 
       <div class="form-item"><%= f.label :Start_date %>
-      <%= f.text_field :start_date %></div>
+      <%= f.text_field :start_date, required: :true %></div>
 
       <div class="form-item"><%= f.label :End_date %>
-      <%= f.text_field :end_date %></div>
+      <%= f.text_field :end_date, required: :true %></div>
       
     </div>
 
     <div id="right">
       <h3>Drop Location Details</h3>
-      <%= f.fields_for :drop_locations do |l| %>
+      <%= f.fields_for :drop_locations, required: :true do |l| %>
 
         <div class="form-item"><%= l.label :Street %>
-        <%= l.text_field :street %></div>
+        <%= l.text_field :street, required: :true %></div>
 
         <div class="form-item"><%= l.label :City %>
-        <%= l.text_field :city %></div>
+        <%= l.text_field :city, required: :true %></div>
 
         <div class="form-item"><%= l.label :State %>
-        <%= l.text_field :state %></div>
+        <%= l.text_field :state, required: :true %></div>
 
         <div class="form-item"><%= l.label :Zipcode %>
-        <%= l.text_field :zipcode %></div>
+        <%= l.text_field :zipcode, required: :true %></div>
         
         <div class="form-item"><%= l.label :Name %>
-        <%= l.text_field :code %></div>
+        <%= l.text_field :code, required: :true %></div>
 
         <h5>(Additional drop locations can be added following intial creation of your drive)</h5>
       
