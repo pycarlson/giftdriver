@@ -1,3 +1,4 @@
+
 <div class="inner">
 <%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
 <div class="page-title"><h1>Family <%= @family.id %></h1></div>
@@ -18,6 +19,7 @@
   <% @family.family_members.each do |member| %>
     <div class="row">
       <div class="family-details-card">
+        
         <div class="span3">
           <h2><%= member.first_name %></h2>
           <% if organizer?(@family.drive)%>
@@ -25,6 +27,7 @@
           <% end %>
           <p><%= member.bio %></p>
         </div>
+        
         <div class="span3">
           <h4>Age: <%= member.age %></h4>
           <h4>Needs:</h4>
@@ -34,6 +37,7 @@
           <% end %>
           </ul>
         </div>
+        
         <div class="span3">
           <h4>Gender: <%= member.gender %></h4>
 
@@ -50,3 +54,6 @@
     </div>
   <% end %>
 </div>
+
+  
+

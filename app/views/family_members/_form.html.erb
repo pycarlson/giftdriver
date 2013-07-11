@@ -1,19 +1,21 @@
-<%= form_for [@family, @family_member] do |f| %>
-  <%= f.label :first_name %>
-  <%= f.text_field :first_name %>
-  <%= f.label :age %>
-  <%= f.text_field :age %>
-  <%= f.label :gender %>
-  <%= f.text_field :gender %>
-  <%= f.label :size_pants %>
-  <%= f.text_field :size_pants %>
-  <%= f.label :size_shirt %>
-  <%= f.text_field :size_shirt %>
-  <%= f.label :size_dress %>
-  <%= f.text_field :size_dress %>
-  <%= f.label :size_shoes %>
-  <%= f.text_field :size_shoes %>
-  <%= f.label :bio %>
-  <%= f.text_area :bio, size: "24x6" %>
-  <%= f.submit "Add family member" %>
-<% end %>
+<div class="family-member-form">
+  <%= form_for [@family, @family_member] do |f| %>
+    <%= f.label :first_name %>
+    <%= f.text_field :first_name %>
+    <%= f.label :age %>
+    <%= f.text_field :age %>
+    <%= f.label :gender %>
+    <%= f.text_field :gender %>
+    <%= f.label :size_pants %>
+    <%= f.text_field :size_pants %>
+    <%= f.label :size_shirt %>
+    <%= f.text_field :size_shirt %>
+    <%= f.label :size_dress %>
+    <%= f.text_field :size_dress %>
+    <%= f.label :size_shoes %>
+    <%= f.text_field :size_shoes %>
+    <%= f.label :bio %>
+    <%= f.text_area :bio, size: "24x6" %><br>
+    <div id="create-family-button"><%= f.submit %></div>
+  <% end %>
+</div>

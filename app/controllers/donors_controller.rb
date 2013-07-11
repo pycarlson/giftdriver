@@ -2,6 +2,7 @@ class DonorsController < ApplicationController
   def new
     @drive = Drive.find(params[:drive_id])
     @locations = @drive.drop_locations
+    @json = @locations.to_gmaps4rails
     @donor = Donor.new
   end
 
