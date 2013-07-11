@@ -1,28 +1,43 @@
 <div class="family-member-form">
   <%= form_for [@family, @family_member] do |f| %>
-    <%= f.label :first_name %>
-    <%= f.text_field :first_name %>
-    <%= f.label :age %>
-    <%= f.text_field :age %>
-    <%= f.label :gender %>
-    <%= f.text_field :gender %>
-    <%= f.label :size_pants %>
-    <%= f.text_field :size_pants %>
-    <%= f.label :size_shirt %>
-    <%= f.text_field :size_shirt %>
-    <%= f.label :size_dress %>
-    <%= f.text_field :size_dress %>
-    <%= f.label :size_shoes %>
-    <%= f.text_field :size_shoes %>
-    <%= f.label :bio %>
-    <%= f.text_area :bio, size: "24x6" %>
+<div id="whole-create-form">
+    <h2>Add a New Family Member Here</h2>
+    <div id="left-member-create">
+    
 
-    <%= f.fields_for :needs do |l| %>
-        <%= l.label :text %>
-        <%= l.text_area :text, size: "24x6" %><br>
+    <h3>Family Member Details</h3>
+    
+        <%= f.label :first_name %>
+        <%= f.text_field :first_name, required: :true %>
+        <%= f.label :age %>
+        <%= f.text_field :age, required: :true %>
+        <%= f.label :gender %>
+        <%= f.text_field :gender, required: :true %>
+        <%= f.label :bio %>
+        <%= f.text_area :bio, size: "24x6", required: :true %>
+    </div>
+
+    <div id="middle-member-create">
+        <%= f.label :size_pants %>
+        <%= f.text_field :size_pants %>
+        <%= f.label :size_shirt %>
+        <%= f.text_field :size_shirt %>
+        <%= f.label :size_dress %>
+        <%= f.text_field :size_dress %>
+        <%= f.label :size_shoes %>
+        <%= f.text_field :size_shoes %>
+    </div>
+
+        <div id="right-member-create">
+        <%= f.fields_for :needs do |l| %>
+            <%= l.label :description_of_needs %>
+            <%= l.text_area :text, size: "24x6", required: :true %><br>
+        <% end %>
+        <div id="create-family-button"><%= f.submit %></div>
+    </div>
     <% end %>
-    <div id="create-family-button"><%= f.submit %></div>
-  <% end %>
+  </div>
+</div>
 </div>
 
 
