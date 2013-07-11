@@ -17,11 +17,7 @@ class FamiliesController < ApplicationController
     end
 
     if !@filtered_families.nil?
-      @not_adopted = @filtered_families.where('adopted_by IS NULL')
-      
-      if @not_adopted.length > 6
-        @not_adopted = @not_adopted.paginate(:page => params[:page], :per_page => 6)
-      end
+      @not_adopted = @filtered_families.where('adopted_by IS NULL').paginate(:page => params[:page], :per_page => 6)
 
       @adopted = @filtered_families.where('adopted_by IS NOT NULL')
     end
