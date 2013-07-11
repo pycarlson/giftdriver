@@ -6,47 +6,64 @@
   <div id="create-wrapper">
     <div id="left">
       <h2>Create a Drive</h2>
+
       <h3>Organization Details</h3>
-      <h5>Name</h5>
-      <%= f.text_field :org_name, :placeholder => "Organization Name", :autofocus => true %>
-      <h5>Description</h5>
-      <%= f.text_area :org_blurb, :placeholder => "Organization Description", :rows => 10  %>
-      <h5>Email</h5>
-      <%= f.email_field :org_email, :placeholder => "Organization Email" %>
-      <h5>Phone number</h5>
-      <%= f.text_field :org_phone, :placeholder => "Organization Phone Number" %>
-      <h5>Address</h5>
-      <%= f.text_field :org_address, :placeholder => "Organization Address" %>
-      <h5>Zipcode</h5>
-      <%= f.text_field :org_zipcode, :placeholder => "Organization Zipcode" %>
+
+      <div class="form-item"><%= f.label :Name %>
+      <%= f.text_field :org_name, :autofocus => true %>
+
+      <div class="form-item"><%= f.label :Description %>
+      <%= f.text_area :org_blurb, :rows => 10  %>
+
+      <div class="form-item"><%= f.label :Email %>
+      <%= f.email_field :org_email %>
+
+      <div class="form-item"><%= f.label :Phone %>
+      <%= f.text_field :org_phone %>
+
+      <div class="form-item"><%= f.label :Address %>
+      <%= f.text_field :org_address %>
+      
+      <div class="form-item"><%= f.label :Zipcode %>
+      <%= f.text_field :org_zipcode %>
     </div>
 
     <div id="middle">
       <h3>Drive Details</h3>
-      <h5>Title</h5>
-      <%= f.text_field :drive_title, :placeholder => "Giftdrive Title" %>
-      <h5>Description</h5>
-      <%= f.text_area :drive_blurb, :placeholder => "Giftdrive Description", :rows => 10 %>
-      <h5>Start Date</h5>
-      <%= f.text_field :start_date, :placeholder => "Drive Start Date" %>
-      <h5>End Date</h5>
-      <%= f.text_field :end_date, :placeholder => "Drive End Date" %>
+
+      <div class="form-item"><%= f.label :Title %>
+      <%= f.text_field :drive_title %>
+
+      <div class="form-item"><%= f.label :Desription %>
+      <%= f.text_area :drive_blurb, :rows => 10 %>
+
+      <div class="form-item"><%= f.label :Start_date %>
+      <%= f.text_field :start_date %>
+
+      <div class="form-item"><%= f.label :End_date %>
+      <%= f.text_field :end_date %>
       
     </div>
 
     <div id="right">
       <h3>Drop Location Details</h3>
       <%= f.fields_for :drop_locations do |l| %>
-        <h5>Street</h5>
-        <%= l.text_field :street, :placeholder => "Street Address" %>
-        <h5>City</h5>
-        <%= l.text_field :city, :placeholder => "City" %>
-        <h5>State</h5>
-        <%= l.text_field :state, :placeholder => "State" %>
-        <h5>Zipcode</h5>
-        <%= l.text_field :zipcode, :placeholder => "Zipcode" %>
-        <h5>Location name</h5>
-        <%= l.text_field :code, :placeholder => "Location Name or Code" %>
+
+        <div class="form-item"><%= l.label :Street %>
+        <%= l.text_field :street %>
+
+        <div class="form-item"><%= l.label :City %>
+        <%= l.text_field :city %>
+
+        <div class="form-item"><%= l.label :State %>
+        <%= l.text_field :state %>
+
+        <div class="form-item"><%= l.label :Zipcode %>
+        <%= l.text_field :zipcode %>
+        
+        <div class="form-item"><%= l.label :Name %>
+        <%= l.text_field :code %>
+
         <h5>(Additional drop locations can be added</h5>
         <h5>following intial creation of your drive)</h5>
       
