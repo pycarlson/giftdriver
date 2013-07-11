@@ -12,11 +12,13 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   .brand {
     font-family: 'Oleo Script', cursive;
     font-size: 2em;
-    padding: 0px;
+    margin-top: 8px;
+    margin-bottom: 0px;
     color: white;
     text-shadow: none;
   }
 }
+
 
 #blue-link a {
   background-color: #47a9f8;
@@ -35,11 +37,16 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
 .navbar-inner ul {
   margin-top: 20px;
   margin-bottom: 0px;
+  float: right;
 }
 
 .navbar-inner li {
   display: inline;
-  padding-left: 210px;
+  margin-left: 40px;
+}
+
+title {
+  float: left;
 }
 
 .navbar .nav > li > a {
@@ -47,6 +54,7 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   color: white;
   font-weight: 100px;
   font-size: 0.5em;
+
 }
 
 a.navbar-link  {

@@ -35,7 +35,7 @@
       carousel_outer_width: 1280,
       slide_width: 1280,
       transition_time: 540,
-      timer: 3000,
+      timer:4000,
       continuous_scrolling: true,
       control_set_2: "content_buttons",
       change_on_hover: "content_buttons"
@@ -47,7 +47,15 @@
 <div id="flavor_2"></div>
 
 
-  <div id="current-drives-button"><%= link_to "CURRENT DRIVES", drives_path %></div>
-  <div id="mission"><h1>OUR <span>MISSION</span></h1></div>
+ 
+  <div id="mission"><h1>GIFTDRIVER</h1></div>
 
-  <div id="last-home"><p>Generating generosity-powered software for organizing gift drives.</p></div>
+  <div id="last-home">
+    <p>Generosity-powered software for organizing gift drives.</p>
+    <div id="link-boxes">
+      <div class="big" id="blue-link"><%= link_to "CREATE A DRIVE", new_drive_path, :class => 'navbar-link'  %></div>
+      <div class="big" id="blue-link"><%= link_to "CURRENT DRIVES", drives_path, :class => 'navbar-link'  %></div>
+    </div>
+  </div>
+
+

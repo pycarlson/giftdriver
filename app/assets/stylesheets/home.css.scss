@@ -3,15 +3,6 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   padding-top: 0;
 }
 
-#long-strip {
-  width: 1280px;
-  height: 180px;
-  background-color: #f7f6f3;
-  margin: 0 auto; 
-  vertical-align: middle;
-  border: 1px solid #D4D4D4;
-}
-
 #current-drives-button {
 
   padding: 2%;
@@ -25,7 +16,6 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   color: white;
   padding: 1%;
   border-radius: 5px;
-  
 }
 
 .tiles {
@@ -39,33 +29,26 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
 
 
 #mission {
-  height: 160px;
+  height: 120px;
   border-bottom: 1px dotted #D4D4D4;
   border-right: 0px;
   border-left: none;
   width: 780px;
   clear: both;
   margin: 0 auto;
-  
+  text-align: center;
 }
 
 #mission h1 {
   font-family: $home-font;
   color: #404040;
-  font-size: 48px;
-  width: 260px;
-  // text-transform: uppercase;
-  padding-top: 60px;
+  font-size: 54px;
+  padding-top: 50px;
   margin: 0 auto;
 }
 
-#mission h1 span {
-  background-color: #df451b;
-  color: white;
-}
-
 #last-home {
-  height: 400px;
+  height: 200px;
   width: 1280px;
 }
 
@@ -73,7 +56,22 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   font-family: Verdana, Geneva, sans-serif;
   font-size: 25px;
   text-align: center;
-  padding-top: 40px;
+  padding-top: 30px;
 }
+
+#link-boxes {
+ text-align: center;
+  margin-top: 50px;
+}
+
+.big {
+  display: inline;
+  padding: 100px;
+}
+
+.big a {
+  padding: 20px;
+}
+
 
 

@@ -43,11 +43,10 @@ html {
 .container {
   width: 1280px;
   margin: 0 auto;
-  min-height: 860px;
+  min-height: 660px;
   box-shadow: 0px 2px 4px ;
   border: none;
-  
-  // overflow: auto;
+  overflow: auto;
 }
 
 .inner {
