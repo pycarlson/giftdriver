@@ -5,26 +5,28 @@ $cream-pixels: url("/assets/cream_pixels.png");
 .access {
   background-color: #eee;
   overflow: auto;
-  width: 780px;
+  width: 1200px;
+  margin-top: 50px;
+  padding: 40px;
 }
 
 .add-location {
   float: left;
-  margin-left: 70px;
+  padding-left: 130px;
 }
 
 .organizer-options {
   float: left;
-  margin-left: 70px;
+  padding-left: 130px;
 }
 
 .add-organizer {
-  margin-left: 70px;
   float: left;
+  padding-left: 130px;
 }
 
 .add-edit-family {
-  margin-left: 70px;
   float: left;
+  padding-left: 130px;
 }
 
