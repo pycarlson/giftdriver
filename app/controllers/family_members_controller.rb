@@ -6,14 +6,15 @@ class FamilyMembersController < ApplicationController
 
   def new
     @family_member = @family.family_members.new
+    @family_member.needs.build
   end
 
   def create
     @family_member = FamilyMember.new(params[:family_member])
-    @family_member.family = Family.find(params[:family_id])
+    @family_member.family = @family
 
     if @family_member.save
-      redirect_to family_path(params[:family_id])
+      redirect_to family_path(@family)
     else
       flash.now[:error] = @family_member.errors.full_messages
       render :new

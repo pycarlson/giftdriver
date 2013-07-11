@@ -1,5 +1,7 @@
-<%= form_for [@member, @need] do |f| %>
-  <%= f.label :text %>
-  <%= f.text_field :text %>
-  <%= f.submit "Add need" %>
-<% end %>
+<div id="needs-form">
+  <%= form_for [@member, @need] do |f| %>
+    <%= f.label :text %>
+    <%= f.text_field :text %>
+    <%= f.submit "Add need" %>
+  <% end %>
+</div>

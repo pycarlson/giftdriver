@@ -15,7 +15,14 @@
     <%= f.label :size_shoes %>
     <%= f.text_field :size_shoes %>
     <%= f.label :bio %>
-    <%= f.text_area :bio, size: "24x6" %><br>
+    <%= f.text_area :bio, size: "24x6" %>
+
+    <%= f.fields_for :needs do |l| %>
+        <%= l.label :text %>
+        <%= l.text_area :text, size: "24x6" %><br>
+    <% end %>
     <div id="create-family-button"><%= f.submit %></div>
   <% end %>
 </div>
+
+
