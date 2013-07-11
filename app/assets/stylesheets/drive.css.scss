@@ -14,14 +14,14 @@ $main-accent-hover: #7eeb82;
 .location-box {
   background-color: #fafafa;
   display: inline-block;
-  min-width: 200px;
+  width: 200px;
   padding: 15px;
   margin: 10px 10px 10px 10px;
   p {
     margin: 0;
   }
   h3 {
-    line-height: .5em;
+    line-height: 1em;
   }
 }
 
