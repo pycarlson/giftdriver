@@ -46,16 +46,20 @@
 
 <div id="flavor_2"></div>
 
-
- 
-  <div id="mission"><h1>GIFTDRIVER</h1></div>
-
-  <div id="last-home">
+<div id="mission">
+    <h1>Giftdriver:</h1>
     <p>Generosity-powered software for organizing gift drives.</p>
-    <div id="link-boxes">
-      <div class="big" id="blue-link"><%= link_to "CREATE A DRIVE", new_drive_path, :class => 'navbar-link'  %></div>
-      <div class="big" id="blue-link"><%= link_to "CURRENT DRIVES", drives_path, :class => 'navbar-link'  %></div>
-    </div>
+</div>
+
+<div id="home-blurb">
+  <p>This is a meaningful blurb about Giftdriver and why we are building this app. It talks about kindness and generosity and the way that people are busy and need software that will help them get things done and get the gifts out the door but maybe this blurb should be focused on a different thing like you the user.</p>
+</div>
+
+<div id="last-home">
+  <div id="link-box">
+    <span class="cw-button home-button"><%= link_to "Create a Drive", new_drive_path %></span>
+    <span class="cw-button home-button"><%= link_to "Current Drives", drives_path %></span>
   </div>
+</div>
 
 

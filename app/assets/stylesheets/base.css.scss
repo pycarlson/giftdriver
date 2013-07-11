@@ -1,6 +1,9 @@
 // STRUCTURAL STUFF
 $footer_height: 25px;
-$home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
+$container_width: 1280px;
+$reddish: #E01B5D;
+$reddish-hover: #ff6f9f;
+
 
 body {
   min-height: 100%;
@@ -41,12 +44,13 @@ html {
 }
 
 .container {
-  width: 1280px;
+  width: $container_width;
   margin: 0 auto;
-  min-height: 870px;
-  box-shadow: 0px 2px 4px ;
+  min-height: 660px;
+  box-shadow: 0px 2px 4px;
   border: none;
   overflow: auto;
+  background: transparent;
 }
 
 .inner {
@@ -63,10 +67,16 @@ footer {
   right: 0;
   bottom: 0;
   height: $footer_height;
-  width: 1280;
   &.navbar {
     margin-bottom: 0px;
   }
+}
+
+.footer-nav {
+  margin: 0 auto;
+  width: $container_width;
+  background-color: black;
+  box-shadow: 0px 2px 4px;
 }
 
 label {
@@ -105,8 +115,7 @@ hr {
 }
 
 .cw-button {
-  background: #2e9df7;
-  border: 1px solid #2b79b8;
+  background: $reddish;
   color: #fff;
   width: auto;
   padding: .5em 1.4em;
@@ -129,4 +138,13 @@ hr {
   -o-transition: 0.1s all linear;
   transition: 0.1s all linear;
   -webkit-appearance: none;
+  a {
+    color: white;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+  &:hover {
+    background: $reddish-hover;
+  }
 }

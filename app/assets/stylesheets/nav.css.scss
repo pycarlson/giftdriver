@@ -1,8 +1,10 @@
 $container-width: 1280px;
 $nav-background: #303030;
 $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
+$reddish: #E01B5D;
 
 .navbar {
+  box-shadow: 0px 2px 4px;
   margin-bottom: 0;
   width: $container-width;
   margin: 0 auto;
@@ -16,6 +18,9 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
     margin-bottom: 0px;
     color: white;
     text-shadow: none;
+    &:hover {
+      color: $reddish;
+    }
   }
 }
 
@@ -56,5 +61,9 @@ title {
 }
 
 a.navbar-link  {
-    color: white;
+  color: white;
+  &:hover {
+    color: $reddish;
+    text-decoration: none;
   }
+}

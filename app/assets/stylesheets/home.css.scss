@@ -1,10 +1,8 @@
-$home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",Impact,sans-serif;
 #home-pic {
   padding-top: 0;
 }
 
 #current-drives-button {
-
   padding: 2%;
   margin-top: 50px;
   width: 160px;
@@ -27,51 +25,46 @@ $home-font: "LeagueGothic","League-Gothic-1","League-Gothic-2","League Gothic",I
   margin-left: 73px;
 }
 
-
 #mission {
-  height: 120px;
+  padding: 30px 0 15px 0;
   border-bottom: 1px dotted #D4D4D4;
-  border-right: 0px;
-  border-left: none;
   width: 780px;
-  clear: both;
   margin: 0 auto;
   text-align: center;
+  h1 {
+    font-family: 'Oleo Script', cursive;
+    line-height: 78px;
+    color: #404040;
+    font-size: 54px;
+    margin: 0 auto;
+  }
+  p {
+    font-size: 25px;
+    text-align: center;
+    font-size: 24px;
+  }
 }
 
-#mission h1 {
-  font-family: $home-font;
-  color: #404040;
-  font-size: 54px;
-  padding-top: 50px;
-  margin: 0 auto;
+#home-blurb {
+  width: 700px;
+  margin: 20px auto;
 }
 
 #last-home {
-  height: 200px;
+  height: 60px;
   width: 1280px;
 }
 
-#last-home p {
-  font-family: Verdana, Geneva, sans-serif;
-  font-size: 25px;
-  text-align: center;
-  padding-top: 30px;
-}
-
-#link-boxes {
- text-align: center;
+#link-box {
+  margin: 0 auto;
+  width: 600px;
   margin-top: 50px;
 }
 
-.big {
+.home-button {
+  text-align: center;
   display: inline;
-  padding: 100px;
+  margin-left: 73px;
 }
-
-.big a {
-  padding: 20px;
-}
-
 
 

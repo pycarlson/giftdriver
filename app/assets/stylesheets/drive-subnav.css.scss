@@ -1,3 +1,5 @@
+$reddish: #E01B5D;
+
 .subnav {
   margin: 0 auto;
   a {
@@ -18,4 +20,8 @@
     font-size: 20pt;
     line-height: 24pt;
   }
+}
+
+.pink-present {
+  color: $reddish;
 }
