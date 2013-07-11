@@ -53,6 +53,7 @@
 #last-home {
   height: 60px;
   width: 1280px;
+  margin-bottom: 100px;
 }
 
 #link-box {
@@ -65,6 +66,13 @@
   text-align: center;
   display: inline;
   margin-left: 73px;
+}
+#photo_credits{
+  text-align: center;
+
+  .icon-heart {
+    color: red;
+  }
 }
 
 

@@ -50,7 +50,6 @@ html {
   border: none;
   overflow: auto;
   background: white;
-  padding-bottom: 50px;
 }
 
 .inner {
@@ -66,7 +65,7 @@ footer {
   right: 0;
   bottom: 0;
   height: $footer_height;
-
+  position: relative;
   &.navbar {
     margin-bottom: 0px;
   }
@@ -77,7 +76,6 @@ footer {
   width: $container_width;
   background-color: #303030;
   box-shadow: 0px 2px 4px;
-  position: fixed;
 }
 
 label {
