@@ -3,17 +3,17 @@ $(document).ready(function(){
       "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/presents_openings1500.jpg'></a><a class='caption' href='#'>1</a></div>",
       "content_button": "<div class='thumb'><img src='/assets/presents_openings1500.jpg' ></div><p></p>"
     }, {
-      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/toy-drive-header.jpg' ></a><a class='caption' href='#'>2</a></div>",
-      "content_button": "<div class='thumb'><img src='/assets/toy-drive-header.jpg' ></div><p></p>"
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/bear.jpg' ></a><a class='caption' href='#'>2</a></div>",
+      "content_button": "<div class='thumb'><img src='/assets/bear.jpg' ></div><p></p>"
     }, {
-      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/Gift766_3817.jpg' ></a><a class='caption' href='#'>3</a></div>",
-      "content_button": "<div class='thumb'><img src='/assets/Gift766_3817.jpg' ></div><p></p>"
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/boy_on_porch.jpg' ></a><a class='caption' href='#'>3</a></div>",
+      "content_button": "<div class='thumb'><img src='/assets/boy_on_porch.jpg' ></div><p></p>"
     }, {
-      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/gifts.jpg' ></a><a class='caption' href='#'>4</a></div>",
-      "content_button": "<div class='thumb'><img src='/assets/gifts.jpg' ></div><p></p>"
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/mom_daughter.jpg' ></a><a class='caption' href='#'>4</a></div>",
+      "content_button": "<div class='thumb'><img src='/assets/mom_daughter.jpg' ></div><p></p>"
     }, {
-      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/HilfigerHolidayParty.jpg' href='#'>5</a></div>",
-      "content_button": "<div class='thumb'><img src='/assets/HilfigerHolidayParty.jpg' ></div><p></p>"
+      "content": "<div class='slide_inner'><a class='photo_link' href='#'><img class='photo' src='/assets/bikes.jpg' href='#'>5</a></div>",
+      "content_button": "<div class='thumb'><img src='/assets/bikes.jpg' ></div><p></p>"
     }]
 
     $("#flavor_2").agile_carousel({ 
