@@ -45,11 +45,12 @@ html {
 .container {
   width: $container_width;
   margin: 0 auto;
-  min-height: 660px;
+  min-height: 870px;
   box-shadow: 0px 2px 4px;
   border: none;
   overflow: auto;
   background: white;
+  padding-bottom: 30px;
 }
 
 .inner {
@@ -61,11 +62,11 @@ html {
 }
 
 footer {
-  // position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   height: $footer_height;
+
   &.navbar {
     margin-bottom: 0px;
   }
