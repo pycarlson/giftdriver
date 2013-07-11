@@ -3,6 +3,7 @@ class FamiliesController < ApplicationController
   before_filter :validate_organizer, except: [:index, :show, :adopt, :update_gift_status]
   before_filter :find_family, except: [:index, :create]
 
+
   def index
     @drive = Drive.find(params[:drive_id])
 
@@ -14,7 +15,7 @@ class FamiliesController < ApplicationController
     else
       redirect_to new_drive_donor_path(@drive)
     end
-    p @filtered_families
+
     if !@filtered_families.nil?
       @not_adopted = @filtered_families.where('adopted_by IS NULL')
       
@@ -82,5 +83,6 @@ class FamiliesController < ApplicationController
   def find_family
     @family = Family.find(params[:id])
   end
+
 
 end

@@ -16,7 +16,7 @@
 </div>
 
 <div class="family-detail-section">
-  <% @family.family_members.each do |member| %>
+  <% @family.family_members.order('age DESC').each do |member| %>
     <div class="row">
       <div class="family-details-card">
         
