@@ -5,6 +5,7 @@
  <%= form_for @drive do |f|%>
   <div id="create-wrapper">
     <div id="left">
+      <h2>Create a Drive</h2>
       <h3>Organization Details</h3>
       <h5>Name</h5>
       <%= f.text_field :org_name, :placeholder => "Organization Name", :autofocus => true %>
@@ -46,10 +47,10 @@
         <%= l.text_field :zipcode, :placeholder => "Zipcode" %>
         <h5>Location name</h5>
         <%= l.text_field :code, :placeholder => "Location Name or Code" %>
-        <h5>(Additional drop off locations added</h5>
+        <h5>(Additional drop locations can be added</h5>
         <h5>following intial creation of your drive)</h5>
       
-        <div class="button"><%= f.submit %></div>
+        <div id="build" class="button"><%= f.submit %></div>
       <% end %>
     </div>
   </div>

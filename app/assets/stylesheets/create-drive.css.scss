@@ -1,4 +1,5 @@
 #create-wrapper {
+  margin-top: 40px;
   padding-bottom: 200px;
   padding-left: 88px;
   h5 {
@@ -7,12 +8,31 @@
   h3 {
     color: #47a9f8;
   }
+  h1 {
+    padding-left: 88px;
+  }
 }
 
 #left, #middle, #right {
   float: left;
   width: 33%;
 }
+
+#left, h3 {
+  margin-top: 25px;
+}
+
+#middle, #right {
+  margin-top: 75px;
+}
+
+#right h5:nth-child(12) {
+  padding-top: 30px;
+}
+
+#right h5:nth-child(13) {
+    margin-bottom: 50px;
+  }
 
 #new-drive-title {
   h1 {
