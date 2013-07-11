@@ -5,13 +5,6 @@
   }
 }
 
-.text-fish {
-  // display: absolute;
-  // bottom: 0;
-  // right: 0;
-  background-color: red;
-}
-
 .family-details-card {
   display: relative;
   background-color: #f1f1f1;
@@ -22,6 +15,9 @@
   overflow: auto;
   button {
     margin-bottom: 10px;
+  }
+  h3 {
+    margin-top: 5px;
   }
 }
 

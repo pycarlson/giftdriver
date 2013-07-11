@@ -18,16 +18,20 @@
   width: 33%;
 }
 
-#left, h3 {
-  margin-top: 25px;
+#left {
+  h3 {
+    margin-top: 25px;
+  }
 }
 
 #middle, #right {
   margin-top: 75px;
 }
 
-#right h5 {
-  margin-top: 20px;
+#right {
+  h5 {
+    margin-top: 20px;
+  }
 }
 
 #new-drive-title {

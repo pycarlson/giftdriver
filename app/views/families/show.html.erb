@@ -10,7 +10,7 @@
   <% if @family.adopted? %>
     <h3>This family has been adopted!</h3>
   <% else %>
-    <div class="adopt-family"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
+    <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
   <% end %>
 </div>
 

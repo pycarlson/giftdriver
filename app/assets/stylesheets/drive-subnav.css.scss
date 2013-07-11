@@ -1,4 +1,6 @@
-$reddish: #E01B5D;
+$main-accent: #4fcb53;
+$main-accent-hover: #7eeb82;
+
 
 .subnav {
   margin: 0 auto;
@@ -23,5 +25,5 @@ $reddish: #E01B5D;
 }
 
 .pink-present {
-  color: $reddish;
+  color: $main-accent;
 }

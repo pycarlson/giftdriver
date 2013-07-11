@@ -1,10 +1,15 @@
-$reddish: #E01B5D;
-$reddish-hover: #ff6f9f;
+$main-accent: #4fcb53;
+$main-accent-hover: #7eeb82;
 
 .drive-deets {
   hr {
     margin: 30px 0;
   }
+}
+
+#adopt-button {
+  width: 200px;
+  margin: 0 auto;
 }
 
 .where-when {
@@ -25,7 +30,7 @@ $reddish-hover: #ff6f9f;
 }
 
 .date {
-  color: $reddish;
+  color: $main-accent;
 }
 
 .blurb {
@@ -57,9 +62,9 @@ $reddish-hover: #ff6f9f;
 .all-families-link {
   text-align: center;
   a {
-    color: $reddish;
+    color: $main-accent;
     &:hover {
-      color: $reddish-hover;
+      color: $main-accent-hover;
       text-decoration: none;
     }
   }

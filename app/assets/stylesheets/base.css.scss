@@ -1,9 +1,8 @@
 // STRUCTURAL STUFF
 $footer_height: 25px;
 $container_width: 1280px;
-$reddish: #E01B5D;
-$reddish-hover: #ff6f9f;
-
+$main-accent: #4fcb53;
+$main-accent-hover: #7eeb82;
 
 body {
   min-height: 100%;
@@ -50,7 +49,7 @@ html {
   box-shadow: 0px 2px 4px;
   border: none;
   overflow: auto;
-  background: transparent;
+  background: white;
 }
 
 .inner {
@@ -115,7 +114,7 @@ hr {
 }
 
 .cw-button {
-  background: $reddish;
+  background: $main-accent;
   color: #fff;
   width: auto;
   padding: .5em 1.4em;
@@ -145,6 +144,6 @@ hr {
     }
   }
   &:hover {
-    background: $reddish-hover;
+    background: $main-accent-hover;
   }
 }
