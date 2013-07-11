@@ -20,7 +20,8 @@ class FamiliesController < ApplicationController
     end
 
     @filtered_families = Family.where(drive_id: params[:drive_id], drop_location_id: donor_pref)
-    @not_adopted = @filtered_families.where('adopted_by IS NULL')
+    @not_adopted = @filtered_families.where('adopted_by IS NULL').paginate(:page => params[:page], :per_page => 6)
+    p @not_adopted
     @adopted = @filtered_families.where('adopted_by IS NOT NULL')
   end
 
