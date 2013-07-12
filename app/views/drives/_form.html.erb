@@ -48,25 +48,27 @@
     <div id="right">
       <h3>Drop Location Details</h3>
       <%= f.fields_for :drop_locations, required: :true do |l| %>
+        <div class="location-form">
+          <div class="form-item"><%= l.label :Name %>
+          <%= l.text_field :code, required: :true %></div>
+          
+          <div class="form-item"><%= l.label :Street %>
+          <%= l.text_field :street, required: :true %></div>
 
-        <div class="form-item"><%= l.label :Name %>
-        <%= l.text_field :code, required: :true %></div>
+          <div class="form-item"><%= l.label :City %>
+          <%= l.text_field :city, required: :true %></div>
+
+          <div class="form-item"><%= l.label :State %>
+          <%= l.text_field :state, required: :true %></div>
+
+          <div class="form-item"><%= l.label :Zipcode %>
+          <%= l.text_field :zipcode, required: :true %></div>
+
+          <h5>(Additional drop locations can be added following intial creation of your drive)</h5>
+          
+          <div><%= f.submit "New Drive", :id =>"build" %></div>  
+        </div>
         
-        <div class="form-item"><%= l.label :Street %>
-        <%= l.text_field :street, required: :true %></div>
-
-        <div class="form-item"><%= l.label :City %>
-        <%= l.text_field :city, required: :true %></div>
-
-        <div class="form-item"><%= l.label :State %>
-        <%= l.text_field :state, required: :true %></div>
-
-        <div class="form-item"><%= l.label :Zipcode %>
-        <%= l.text_field :zipcode, required: :true %></div>
-
-        <h5>(Additional drop locations can be added following intial creation of your drive)</h5>
-      
-        <div><%= f.submit "New Drive", :id =>"build" %></div>
       <% end %>
     </div>
   </div>

@@ -11,6 +11,10 @@ class FamilyMembersController < ApplicationController
 
   def create
     @family_member = FamilyMember.new(params[:family_member])
+    params[:needs].split(',').each do |need|
+      @family_member.needs.build :text => need
+    end
+    
     @family_member.family = @family
 
     if @family_member.save

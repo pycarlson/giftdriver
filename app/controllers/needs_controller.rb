@@ -7,9 +7,14 @@ class NeedsController < ApplicationController
   end
 
   def create
+    needs = parse_needs(params["family_member"]["needs_attributes"])
+    p needs
     @member = FamilyMember.find(params[:family_member_id])
-    @need = Need.new(params[:need])
-    @member.needs << @need
+
+    needs.each do |need|
+      @need = Need.create(text: need)
+      @member.needs << @need
+    end
 
     if @need.save
       redirect_to family_path(@member.family_id)

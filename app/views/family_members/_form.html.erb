@@ -29,10 +29,8 @@
     </div>
 
         <div id="right-member-create">
-        <%= f.fields_for :needs do |l| %>
-            <%= l.label :description_of_needs %>
-            <%= l.text_area :text, size: "24x6" %><br>
-        <% end %>
+        <%= label_tag :needs %>
+        <%= text_area_tag :needs, nil, size: "24x6" %><br>
         <div id="create-family-button"><%= f.submit %></div>
     </div>
     <% end %>
