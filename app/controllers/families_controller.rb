@@ -29,17 +29,17 @@ class FamiliesController < ApplicationController
     @family.drive = drive
     @family.code = params[:family][:code]
     @family.save
-
+    
     if sole_location?(drive) == true
       location = DropLocation.find_by_drive_id(drive.id)
     else
       location = DropLocation.find_by_code(params[:family][:drop_locations][:code])
     end
 
-    @family.drop_location = location
+    @family.drop_location_id = location.id
  
     if @family.save
-      redirect_to family_path(@family.id)
+      redirect_to family_path(@family)
     else
       flash[:alert] = "That didn't work out quite right"
       redirect_to drive_path(params[:drive_id])
