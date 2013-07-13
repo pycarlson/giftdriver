@@ -52,8 +52,6 @@ class FamiliesController < ApplicationController
 
   def update_gift_status
     drive = Drive.find(@family.drive_id)
-    # HEY WE'RE COMMUNICATING DIRECTLY FROM THE PAGE TO THE DB HERE
-    # Maybe the best idea? Maybe the worst?
     @family.update_attribute(params[:status], true)
     redirect_to manage_path(drive.id)
   end

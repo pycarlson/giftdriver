@@ -30,7 +30,7 @@
 
         <div id="right-member-create">
         <%= label_tag :needs %>
-        <%= text_area_tag :needs, nil, size: "24x6" %><br>
+        <%= text_area_tag :needs, @needs, size: "24x6" %><br>
         <div id="create-family-button"><%= f.submit %></div>
     </div>
     <% end %>

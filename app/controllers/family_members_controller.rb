@@ -27,11 +27,17 @@ class FamilyMembersController < ApplicationController
 
   def edit
     @family_member = FamilyMember.find(params[:id])
+    @needs = nil
+    if @family_member
+      @needs = @family_member.needs.map {|need| need.text }.join(',')
+    end
   end
 
   def update
     @family_member = FamilyMember.find(params[:id])
-    
+    # p "these are the needs #{params[:needs]}"
+    # p params[:needs].split(',').map {|need| need.id }.inspect
+
     if @family_member.update_attributes(params[:family_member])
       redirect_to family_path(@family_member.family_id)
     else

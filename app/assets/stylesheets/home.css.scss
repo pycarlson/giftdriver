@@ -2,6 +2,17 @@
   padding-top: 0;
 }
 
+#flavor_2 {
+  z-index: -1;
+  h3 {
+    color: white;
+    z-index: 1;
+    position: fixed; 
+    top: 50px;
+    right: 200px;
+  }
+}
+
 #current-drives-button {
   padding: 2%;
   margin-top: 50px;

@@ -8,9 +8,13 @@
 .agile_carousel img {
   border: 0;
   width: 1280px;
-
+  z-index: -1;
 }
 
+.agile_carousel img h3 {
+	color: black;
+	z-index: 1;
+}
 
 .agile_carousel p, .agile_carousel ul, .agile_carousel ul li {
 margin: 0;
