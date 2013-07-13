@@ -8,13 +8,15 @@
 .agile_carousel img {
   border: 0;
   width: 1280px;
-  z-index: -1;
+  /*z-index: -1;*/
 }
 
-.agile_carousel img h3 {
-	color: black;
-	z-index: 1;
-}
+/*.agile_carousel img title {
+  z-index: 9999;
+  float: right;
+  margin-right: 30px;
+  color: black;
+}*/
 
 .agile_carousel p, .agile_carousel ul, .agile_carousel ul li {
 margin: 0;
@@ -187,7 +189,7 @@ cursor: text;
 
 /*-- hide the captions --*/
 #basic_slideshow .caption {
-display: none;
+/*display: none;*/
 }
 
 
@@ -338,107 +340,6 @@ background-image: url(/assets/sprite_ac_normal.png/sprite_ac_normal.png);
 
 
 /* -------------------------------------------- */
-/*-- #flavor_1 styles --*/
-/* -------------------------------------------- */
-
-/*-- outer container --*/
-
-#flavor_1 .agile_carousel {
-overflow: hidden;
--moz-box-shadow: 0px 0px 4px #dfdfdf; /* FF3.5+ */
--webkit-box-shadow: 0px 0px 0px #dfdfdf; /* Saf3.0+, Chrome */
-box-shadow: 0px 0px 4px #dfdfdf; /* Opera 10.5, IE9, Chrome 10+ */
-}
-
-/*-- hide the captions --*/
-#flavor_1 .caption {
-display: none;
-}
-
-/*-- .control_set_1 - includes: numbered_buttons --*/
-
-#flavor_1 .control_set_1 {
-float: right;
-position: relative;
-margin: 6px 2px 0 0;
-}
-#flavor_1 .numbered_buttons_container {
-float: left;
-}
-#flavor_1 .control_set_1 .slide_button {
-float: left;
-}
-#flavor_1 .numbered_button {
-color: #000;
-padding: 2px 5px;
-font-size: 12px;
-margin-right: 4px;
-background-color: #d9d9d9;
-opacity: .6;
-}
-#flavor_1 .numbered_buttons_container .ac_selected, #flavor_1 .numbered_buttons_container .numbered_button:hover {
-color: #fff;
-background-color: #666;
-opacity: .9;
-}
-
-/*-- "no control set" - includes: .hover_previous_button, .hover_next_button --*/
-
-.hover_previous_next_button {
-position: absolute;
-top: 30px;
-width: 90px;
-height: 150px;
-}
-.hover_previous_next_button .hover_previous_next_button_inner {
-position: absolute;
-top: 60px;
-background-color: #d9d9d9;
-opacity: 0.5;
-width: 54px;
-height: 35px;
-display: block;
-overflow: hidden;
-text-indent: 1000px;
-background-image: url(/assets/sprite_ac_normal.png);
-background-repeat: no-repeat;
-}
-.hover_previous_button {
-left: 0px;
-}
-.hover_next_button {
-right: 0px;
-}
-.hover_previous_button .hover_previous_next_button_inner {
-left: 0px;
--webkit-border-top-right-radius: 10px;
--webkit-border-bottom-right-radius: 10px;
--moz-border-radius-topright: 10px;
--moz-border-radius-bottomright: 10px;
-border-top-right-radius: 10px;
-border-bottom-right-radius: 10px;
-background-position: -298px 8px;
-}
-.hover_next_button .hover_previous_next_button_inner {
-right: 0px;
--webkit-border-top-left-radius: 10px;
--webkit-border-bottom-left-radius: 10px;
--moz-border-radius-topleft: 10px;
--moz-border-radius-bottomleft: 10px;
-border-top-left-radius: 10px;
-border-bottom-left-radius: 10px;
-background-position: -351px 8px;
-}
-#flavor_1 .persistent_content {
-top: 100px;
-left: 10px;
-color: #ccc;
-position: absolute;
-z-index: 5000;
-}
-
-
-/* -------------------------------------------- */
 /*-- #flavor_2 styles --*/
 /* -------------------------------------------- */
 
@@ -578,76 +479,4 @@ left: 10px;
 color: #ccc;
 position: absolute;
 z-index: 5000;
-}
-
-/* -------------------------------------------- */
-/*-- #flavor_3 styles --*/
-/* -------------------------------------------- */
-
-/*-- outer container --*/
-
-#flavor_3 .agile_carousel {
-overflow: hidden;
--moz-box-shadow: 0px 0px 4px #dfdfdf; /* FF3.5+ */
--webkit-box-shadow: 0px 0px 0px #dfdfdf; /* Saf3.0+, Chrome */
-box-shadow: 0px 0px 4px #dfdfdf; /* Opera 10.5, IE9, Chrome 10+ */
-}
-
-/*-- hide the captions --*/
-#flavor_3 .caption {
-display: none;
-}
-
-/*-- .control_set_1 - includes: content_buttons --*/
-
-#flavor_3 .control_set_1 {
-position: absolute;
-right: 0;
-top: 0;
-width: 208px;
-height: 224px;
-color: #fff;
-}
-#flavor_3 .content_button {
-width: 208px;
-height: 44px;
-}
-#flavor_3 .content_button_inner p {
-float: left;
-}
-#flavor_3 .content_buttons_container .ac_selected {
-background-image: url(/assets/sprite_ac_normal.png);
-background-position: -244px 0;
-}
-#flavor_3 .content_button p {
-opacity: 1;
-vertical-align: auto;
-float: left;
-padding-right: 5px;
-width: 138px;
-}
-#flavor_3 .content_button_inner {
-background-color: #333;
-width: 189px;
-height: 43px;
-border-bottom: 1px solid #000;
-opacity: 0.8;
-float: right;
-}
-#flavor_3 .ac_selected .content_button_inner, #flavor_3 .ac_selected .content_button_inner:hover  {
-opacity: 0.95;
-}
-#flavor_3 .content_button_inner:hover {
-opacity: 0.9;
-}
-#flavor_3 .content_button img {
-opacity: 1;
-}
-#flavor_3 .content_button .thumb {
-width: 37px;
-height: 37px;
-overflow: hidden;
-float: left;
-border: 1px solid #000;
-margin: 3px 3px 0 3px;
 }

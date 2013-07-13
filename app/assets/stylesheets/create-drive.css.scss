@@ -1,3 +1,8 @@
+.create-edit-title {
+  padding-left: 88px;
+  margin-top: 40px;
+}
+
 #create-wrapper {
   margin-top: 40px;
   padding-bottom: 200px;
@@ -13,48 +18,23 @@
   }
 }
 
-#new-fam-title {
-  h3 {
-    color: #47a9f8;
-  }
-}
-
 #left, #middle, #right {
   float: left;
   width: 33%;
 }
 
-#left {
-  h3 {
-    margin-top: 25px;
-  }
-}
-
-#middle, #right {
-  margin-top: 63px;
-}
-
 #right {
-  margin-top: 63px;
   h5 {
-    margin-top: 20px;
     font-family: 'Droid Sans', sans-serif;
   }
 }
 
-#new-drive-title {
-  h1 {
-    margin-left: 85px;
-    margin-top: 40px;
-  }
+
+.location-form:nth-child(1)  {
+  padding-bottom: 50px;
 }
 
 #build {
-  border: none;
-  background-color: #47a9f8;
-  width: 120px;
-  border-radius: 2px;
-  padding: 6px;
-  color: white;
-  margin-top: 120px;
+  margin-top: 50px;
+  margin-bottom: 50px;
 }

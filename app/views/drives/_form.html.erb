@@ -5,7 +5,6 @@
  <%= form_for @drive do |f|%>
   <div id="create-wrapper">
     <div id="left">
-      <h2>Create a Drive</h2>
 
       <h3>Organization Details</h3>
 
@@ -46,9 +45,10 @@
     </div>
 
     <div id="right">
-      <h3>Drop Location Details</h3>
+      
       <%= f.fields_for :drop_locations, required: :true do |l| %>
         <div class="location-form">
+          <h3>Drop Location Details</h3>
           <div class="form-item"><%= l.label :Name %>
           <%= l.text_field :code, required: :true %></div>
           
@@ -63,13 +63,11 @@
 
           <div class="form-item"><%= l.label :Zipcode %>
           <%= l.text_field :zipcode, required: :true %></div>
-
-          <h5>(Additional drop locations can be added following intial creation of your drive)</h5>
-          
-          <div><%= f.submit "New Drive", :id =>"build" %></div>  
         </div>
         
       <% end %>
+      <h5>(Additional drop locations can be added following intial creation of your drive)</h5>
+      <div id="build"><%= f.submit %></div> 
     </div>
   </div>
     <% end %>
