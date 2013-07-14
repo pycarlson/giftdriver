@@ -31,15 +31,16 @@
         <div id="right-member-create">
      
       <%=  f.fields_for :needs do |need| %>
+        <%= need.label :need %>
         <%= need.text_field :text %>
         <%= need.link_to_remove "Remove this need" %><br>
       <%  end %>
 
       <%= f.link_to_add "Add a need", :needs %>
         <div id="create-family-button"><%= f.submit %></div>
-    </div>
+      </div>
+      
     <% end %>
-  
   </div>
 </div>
 </div>
