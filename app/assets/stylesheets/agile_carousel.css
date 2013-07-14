@@ -11,16 +11,13 @@
   /*z-index: -1;*/
 }
 
-/*.agile_carousel img title {
-  z-index: 9999;
-  float: right;
-  margin-right: 30px;
-  color: black;
-}*/
+.agile_carousel span {
+  
+}
 
 .agile_carousel p, .agile_carousel ul, .agile_carousel ul li {
-margin: 0;
-padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 .content_buttons_container  .button_container {
@@ -37,7 +34,6 @@ padding: 0;
 Contains .slides .slide_content_... .persistent_content and controls that have "no_control_set" --*/
 
 .agile_carousel {
-
 position: relative;
 overflow: hidden;
 font-family: Arial, Helvetica, sans-serif;

@@ -22,6 +22,10 @@ class NeedsController < ApplicationController
       flash.now[:error] = @need.errors.full_messages
       render :new
     end
+
+    def edit
+      p "did I make it here????????????"
+    end
   end
 
 

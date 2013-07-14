@@ -6,6 +6,7 @@ gem 'pg'
 gem 'devise'
 gem "gmaps4rails", "~> 1.5.6"
 gem "geocoder"
+gem "nested_form"
 
 group :development do
   gem 'quiet_assets'
