@@ -36,7 +36,7 @@ class FamiliesController < ApplicationController
       location = DropLocation.find_by_code(params[:family][:drop_locations][:code])
     end
 
-    @family.drop_location_id = location.id
+    @family.drop_location = location
  
     if @family.save
       redirect_to family_path(@family)

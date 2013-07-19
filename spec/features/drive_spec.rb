@@ -31,7 +31,8 @@ describe "Creating and managing a drive" do
       fill_in "drive[drop_locations_attributes][0][code]", with: "Placetown"
 
       click_button "Create Drive"
-      within ".drive-header" do
+
+      within ".title" do
         expect(page).to have_content "Cats for Cats"
       end
     end
@@ -96,18 +97,24 @@ describe "Creating and managing a drive" do
           fill_in "family_member[age]", with: "235"
           fill_in "family_member[gender]", with: "male"
           fill_in "family_member[bio]", with: "I'm a character in a book."
-          click_button "Add family member"
+          fill_in "family_member[needs_attributes][0][text]", with: "Hot jams"
+          click_button "Create Family member"
 
-          expect(page).to have_content "Edit Aureliano"
+          expect(page).to have_content "Hot jams"
         end
 
-        it "lets the drive organizer add a need via form" do
-          visit new_family_member_need_path(family_member)
+        it "lets the drive organizer add additional needs via edit form", js: true do
+          visit edit_family_member_path(family_member)
 
-          fill_in "need[text]", with: "New Boots"
-          click_button "Add need"
+          click_link "Add a need"
+          find(:css, "#right-member-create input[type=text]").set("New Shirts")
+          
+          click_link "Add a need"
+          find(:xpath, "descendant-or-self::*[@id = 'right-member-create']/descendant::input[@type = 'text' and (position() = last() - 2)]").set("New Hats")
 
-          expect(page).to have_content "New Boots"
+          click_button "Update Family member"
+
+          expect(page).to have_content "New Hats"
         end
 
         it "lets the drive organizer import family data via CSV"
