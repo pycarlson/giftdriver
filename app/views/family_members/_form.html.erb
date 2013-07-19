@@ -1,48 +1,42 @@
 <div class="family-member-form">
   <%= nested_form_for [@family, @family_member] do |f| %>
-<div id="whole-create-form">
+  <div id="whole-create-form">
     <h2>Add a New Family Member Here</h2>
     <div id="left-member-create">
-    
+      <div id="new-fam-title"><h3>Family Member Details</h3></div>
 
-    <div id="new-fam-title"><h3>Family Member Details</h3></div>
-    
-        <%= f.label :first_name %>
-        <%= f.text_field :first_name, required: :true %>
-        <%= f.label :age %>
-        <%= f.text_field :age, required: :true %>
-        <%= f.label :gender %>
-        <%= f.text_field :gender, required: :true %>
-        <%= f.label :bio %>
-        <%= f.text_area :bio, size: "24x6", required: :true %>
+      <%= f.label :first_name %>
+      <%= f.text_field :first_name, required: :true %>
+      <%= f.label :age %>
+      <%= f.text_field :age, required: :true %>
+      <%= f.label :gender %>
+      <%= f.text_field :gender, required: :true %>
+      <%= f.label :bio %>
+      <%= f.text_area :bio, size: "24x6", required: :true %>
     </div>
 
     <div id="middle-member-create">
-        <%= f.label :size_pants %>
-        <%= f.text_field :size_pants %>
-        <%= f.label :size_shirt %>
-        <%= f.text_field :size_shirt %>
-        <%= f.label :size_dress %>
-        <%= f.text_field :size_dress %>
-        <%= f.label :size_shoes %>
-        <%= f.text_field :size_shoes %>
+      <%= f.label :size_pants %>
+      <%= f.text_field :size_pants %>
+      <%= f.label :size_shirt %>
+      <%= f.text_field :size_shirt %>
+      <%= f.label :size_dress %>
+      <%= f.text_field :size_dress %>
+      <%= f.label :size_shoes %>
+      <%= f.text_field :size_shoes %>
     </div>
 
-        <div id="right-member-create">
-     
+    <div id="right-member-create">
       <%=  f.fields_for :needs do |need| %>
-        <%= need.label :need %>
-        <%= need.text_field :text %>
-        <%= need.link_to_remove "Remove this need" %><br>
+      <%= need.label :need %>
+      <%= need.text_field :text %>
+      <%= need.link_to_remove "Remove this need" %><br>
       <%  end %>
-
-      <%= f.link_to_add "Add a need", :needs %>
-        <div id="create-family-button"><%= f.submit %></div>
-      </div>
-      
-    <% end %>
-  </div>
-</div>
+      <div id="add-a-need-button"><%= f.link_to_add "Add a need", :needs %></div>
+      <div id="create-family-button"><%= f.submit %></div>
+    </div>
+   </div>
+  <% end %>
 </div>
 
 
