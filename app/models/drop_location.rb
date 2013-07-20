@@ -10,9 +10,9 @@ class DropLocation < ActiveRecord::Base
   validates :street, :city, :state, 
             :zipcode, :code, :presence => :true
   
-
-  acts_as_gmappable
+  acts_as_gmappable(process_geocoding: !Rails.env.test?)
   geocoded_by :gmaps4rails_address 
+  
   after_validation :geocode    
 
   attr_accessible :street, :city, :state, :zipcode, :code 

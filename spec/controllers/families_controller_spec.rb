@@ -2,17 +2,17 @@ require 'spec_helper'
 
 describe FamiliesController do
 
-	let(:family) { FactoryGirl.create(:family) }
-	let(:drive) { FactoryGirl.create(:drive) }
-	let(:drop_location) { FactoryGirl.create(:drop_locatiion) }
-	let(:family_attributes) { FactoryGirl.create(:family) }
+	let(:family) { create(:family) }
+	let(:drive) { create(:drive) }
+	let(:drop_location) { create(:drop_locatiion) }
+	let(:family_attributes) { create(:family) }
 
 	before do
 		drive
 	end
 
 	context "with valid attributes" do
-		it "creates a new drop location" do
+		it "creates a new family" do
 			family_attributes[:drive_id] = drive.id
 
 			expect {

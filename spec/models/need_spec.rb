@@ -9,7 +9,7 @@ describe Need do
 
   context "need associations" do
     it { should validate_presence_of :text}
-    it { should validate_presence_of :family_member_id}
+    it { should validate_presence_of :family_member}
     it { should belong_to(:family_member) }
   end
 end
