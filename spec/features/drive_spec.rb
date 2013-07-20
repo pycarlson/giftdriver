@@ -46,7 +46,7 @@ describe "Creating and managing a drive" do
         drive.users << user
       end
 
-      it "lets the drive organizer update drive details" do
+      it "lets the organizer update drive details" do
         visit drive_path(drive)
         click_link  "Edit Drive Details"
 
@@ -58,9 +58,23 @@ describe "Creating and managing a drive" do
         end
       end
 
+      describe "managing organizers" do
+        it "lets the organizer make other userse organizers"
+        it "doesn't let the organizer make non-users organizers"
+      end
+
+      context "when the drive has multiple locations" do
+        it "allows organizer to see all families without location filtering"
+        it "does not prompt organizer for location preference"
+        it "allows organizer to associate a family with a location by name"
+        it "allows organizer to edit drop locations"
+      end
+
+      it "lets the organizer add more drop locations"
+
       context "when a family has been adopted" do
 
-        it "lets the drive organizer log gift as received" do
+        it "lets the organizer log gifts as received" do
           visit manage_path(adopted_family)
 
           click_link "Received"
@@ -69,7 +83,7 @@ describe "Creating and managing a drive" do
           end
         end
 
-        it "lets the drive organizer log gift as delivered" do
+        it "lets the organizer log gift as delivered" do
           visit manage_path(adopted_family)
 
           click_link "Received"
@@ -81,7 +95,7 @@ describe "Creating and managing a drive" do
       end
 
       describe "Adding family data to the drive" do
-        it "lets the drive organizer add a family via form" do
+        it "lets the organizer add a family via form" do
           visit drive_path(drive)
 
           fill_in "family[code]", with: "123abc"
@@ -90,7 +104,7 @@ describe "Creating and managing a drive" do
           expect(page).to have_content "Adopt this Family"
         end
 
-        it "lets the drive organizer add a family member via form" do
+        it "lets the organizer add a family member via form" do
           visit new_family_family_member_path(adopted_family)
 
           fill_in "family_member[first_name]", with: "Aureliano"
@@ -103,22 +117,24 @@ describe "Creating and managing a drive" do
           expect(page).to have_content "Hot jams"
         end
 
-        it "lets the drive organizer add additional needs via edit form", js: true do
+        it "lets the organizer add additional needs via edit form", js: true do
           visit edit_family_member_path(family_member)
 
           click_link "Add a need"
           find(:css, "#right-member-create input[type=text]").set("New Shirts")
           
           click_link "Add a need"
-          find(:xpath, "descendant-or-self::*[@id = 'right-member-create']/descendant::input[@type = 'text' and (position() = last() - 2)]").set("New Hats")
+
+          need_inputs = all(:css, "#right-member-create input[type=text]")
+          need_inputs.last.set("New Hats")
 
           click_button "Update Family member"
 
           expect(page).to have_content "New Hats"
         end
 
-        it "lets the drive organizer import family data via CSV"
-        it "lets the drive organizer import family data via XLS"
+        it "lets the organizer import family data via CSV"
+        it "lets the organizer import family data via XLS"
       end
     end
   end
