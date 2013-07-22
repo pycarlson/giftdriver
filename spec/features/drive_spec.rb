@@ -59,7 +59,21 @@ describe "Creating and managing a drive" do
       end
 
       describe "managing organizers" do
-        it "lets the organizer make other userse organizers"
+        let(:second_organizer) { create :user, email: "org2@cat.cat" }
+
+        it "lets the organizer make other users organizers" do
+          visit drive_path(drive)
+
+          within ".add-organizer" do
+            fill_in "email", with: second_organizer.email
+            click_button "Add Organizer"
+          end
+
+          save_and_open_page
+
+          expect(page).to have_content "org2@cat.cat"
+        end
+
         it "doesn't let the organizer make non-users organizers"
       end
 
