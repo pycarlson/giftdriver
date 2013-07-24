@@ -9,6 +9,8 @@ class FamilyMemberImport
   attr_accessor :file
   
   def initialize(attributes = {}, drive_id = nil)
+    p "*" * 100
+    p attributes
     attributes.each { |name, value| send("#{name}=", value) }
     @drive = Drive.find(drive_id) if drive_id != nil
     @families = []
