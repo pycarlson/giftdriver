@@ -11,12 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130710001021) do
+ActiveRecord::Schema.define(:version => 20130726223011) do
 
   create_table "donors", :force => true do |t|
     t.integer "user_id"
     t.integer "drive_id"
     t.integer "drop_location_id"
+    t.integer "family_id"
   end
 
   create_table "drives", :force => true do |t|
@@ -54,6 +55,7 @@ ActiveRecord::Schema.define(:version => 20130710001021) do
     t.string   "code"
     t.datetime "created_at"
     t.integer  "drop_location_id"
+    t.integer  "user_id"
   end
 
   create_table "family_members", :force => true do |t|
@@ -100,6 +102,11 @@ ActiveRecord::Schema.define(:version => 20130710001021) do
     t.string   "confirmation_token"
     t.datetime "confirmed_at"
     t.datetime "confirmation_sent_at"
+    t.string   "street"
+    t.string   "city"
+    t.string   "state"
+    t.string   "zipcode"
+    t.string   "phone"
   end
 
   add_index "users", ["confirmation_token"], :name => "index_users_on_confirmation_token", :unique => true

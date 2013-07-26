@@ -1,0 +1,24 @@
+<div id="confirm-container">
+  <div id="confirm-left">
+  <%= form_for(@family, :url => "/families/#{@family.id}/adopt") do |f| %>
+  <%= f.fields_for :users, required: :true do |l| %>
+      <%= l.label :street %>
+      <%= l.text_field :street, value: current_user.street %>
+      <%= l.label :city %>
+      <%= l.text_field :city, value: current_user.city %>
+      <%= l.label :state %>
+      <%= l.text_field :state, value: current_user.state %>
+    </div>
+    <div id="confirm-right">
+      <%= l.label :zipcode %>
+      <%= l.text_field :zipcode, value: current_user.zipcode %>
+      <%= l.label :phone %>
+      <%= l.text_field :phone, value: current_user.phone %>
+      <%= l.label :company %>
+      <%= l.text_field :company, value: current_user.company %>
+    <% end %>
+    </div>
+  <%= f.submit("Confirm Adoption!") %>
+  <% end %>
+</div>
+

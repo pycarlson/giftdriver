@@ -12,6 +12,8 @@ Giftdriver::Application.routes.draw do
     end
   end
 
+  resources :users
+
   resources :drives do
     resources :families, only: [:index, :new, :create]
     resources :family_member_imports, only: [:new, :create]

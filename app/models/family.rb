@@ -4,11 +4,13 @@ class Family < ActiveRecord::Base
   belongs_to :drive
   attr_accessible :code, :drop_location
   belongs_to :drop_location
+  belongs_to :user
 
 
-  attr_accessible :drop_locations_attributes
+  attr_accessible :drop_locations_attributes, :users_attributes
   accepts_nested_attributes_for :drop_location
-
+  accepts_nested_attributes_for :user
+  
   def adopted?
     self.adopted_by != nil
   end

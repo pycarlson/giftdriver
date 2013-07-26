@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
 
-  before_filter :validate_organizer, except: [:index, :show, :adopt, :update_gift_status]
+  before_filter :validate_organizer, except: [:index, :show, :adopt, :update, :update_gift_status]
   before_filter :find_family, except: [:index, :create]
 
 
@@ -58,6 +58,9 @@ class FamiliesController < ApplicationController
   def adopt
     if @family.save
       @family.update_attribute(:adopted_by, current_user.id)
+      @family.update_attribute(:user_id, current_user.id)
+      p "*" * 100
+      current_user.update_attributes(params[:family][:users])
       flash[:message] = "THANK YOU!"
       UserMailer.adopted_family(current_user, @family.id).deliver
       redirect_to family_path(@family.id)

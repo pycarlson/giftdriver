@@ -1,4 +1,3 @@
-
 <div class="inner">
 <%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
 <div class="page-title"><h1>Family <%= @family.id %></h1></div>
@@ -15,7 +14,7 @@
     <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
   <% end %>
 </div>
-
+<div id="adoption-confirmation"><%= render 'adoption_confirmation', :locals => { @family => @family } %></div>
 <div class="family-detail-section">
   <% @family.family_members.order('age DESC').each do |member| %>
 
