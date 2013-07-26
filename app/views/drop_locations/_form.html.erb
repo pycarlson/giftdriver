@@ -1,8 +1,8 @@
 <div class='add-location'>
 <h3>Add a Location</h3>
-  <%= form_tag("/drives/#{@drive.id}/drop_locations", method: "post") do %>
-
-      <%= text_field_tag :code, nil, :placeholder => "location code or name", required: :true %><br>
+  <%= form_tag("/drives/#{@drive.id}/drop_locations", :class => "add-loc-form", remote: true, method: "post") do %>
+    
+      <%= text_field_tag :code, nil, :placeholder => "location code or name", required: :true, rel: "tooltip", title: "Sample tooltip. Need to write intructions here." %><br>
       
       <%= text_field_tag :street, nil, :placeholder => "street", required: :true %><br>
 
@@ -21,7 +21,7 @@
     <% if @locations.empty? %>
       no locations assigned yet
     <% else %>
-      <ul>
+      <ul class="loc-list">
       <% @locations.each do |location| %>
         <li><%= location.code %></li>
       <% end %>

@@ -34,6 +34,9 @@ GEM
     bootstrap-sass-rails (2.3.2.0)
       railties (>= 3.1.0)
       sass-rails (>= 3.1.0)
+    bootstrap-tooltip-rails (0.1)
+      rails (>= 3.1)
+      thor
     builder (3.0.4)
     capybara (2.1.0)
       mime-types (>= 1.16)
@@ -190,6 +193,7 @@ PLATFORMS
 
 DEPENDENCIES
   bootstrap-sass-rails
+  bootstrap-tooltip-rails (~> 0.1)
   capybara
   coffee-rails (~> 3.2.1)
   database_cleaner

@@ -94,10 +94,9 @@ class DrivesController < ApplicationController
     @location.code = params[:code]
     if @location.save
       Drive.find(params[:id]).drop_locations << @location
-      redirect_to drive_path
+      render :json => {location_code: params[:code], location_id: @location.id}.to_json
     else
-      flash[:alert] = "There was a problem saving the drop location! Please verify the address and try again."
-      redirect_to drive_path
+      render :json => {alert: "There was a problem saving the drop location! Please verify the address and try again."}.to_json
     end
   end
 
