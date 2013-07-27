@@ -16,6 +16,4 @@ $(document).ready(function(){
   	  $(".new_family select").append('<option value='+id+'>'+code+'</option>');
       }
   });
-  
-
 });

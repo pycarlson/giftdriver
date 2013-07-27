@@ -20,6 +20,26 @@ class Family < ActiveRecord::Base
     user.email
   end
 
+  def get_adopter_name
+    user = User.find(self.adopted_by)
+    user.full_name
+  end
+
+  def get_adopter_address
+    user = User.find(self.adopted_by)
+    "#{user.street}, #{user.city}, #{user.state}, #{user.zipcode}"
+  end
+
+  def get_adopter_phone
+    user = User.find(self.adopted_by)
+    user.phone
+  end
+
+   def get_adopter_company
+    user = User.find(self.adopted_by)
+    user.company ? user.company : "n/a"
+  end
+
   def self.not_adopted_families(drive)
     Drive.find(drive).families.where('adopted_by IS NULL')
   end
