@@ -4,7 +4,7 @@
   <hr>
   <div id="home-box">
   <h1>Families to Adopt</h1>
-
+  <%= render 'filter_by_size_buttons' %>
   <div class="families-to-adopt">
     <% @not_adopted.each do |family| %>
       <% if family.family_members.length != 0 %>
