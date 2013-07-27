@@ -1,24 +1,32 @@
 <div id="confirm-container">
-  <div id="confirm-left">
-  <%= form_for(@family, :url => "/families/#{@family.id}/adopt") do |f| %>
-  <%= f.fields_for :users, required: :true do |l| %>
-      <%= l.label :street %>
-      <%= l.text_field :street, value: current_user.street %>
-      <%= l.label :city %>
-      <%= l.text_field :city, value: current_user.city %>
-      <%= l.label :state %>
-      <%= l.text_field :state, value: current_user.state %>
+  <h3>Congratulations!</h3>
+  <p>To complete the adoption process, please provide us with your contact information below.</p>
+  <div id="confirm-form">
+    <div id="confirm-left">
+      <%= form_for(@family, :url => "/families/#{@family.id}/adopt") do |f| %>
+      <%= f.fields_for :users do |l| %>
+      <div class="form-item"><%= l.label :street %>
+      <%= l.text_field :street, value: current_user.street, required: :true,:autofocus => true %></div>
+      <div class="form-item"><%= l.label :city %>
+      <%= l.text_field :city, value: current_user.city, required: :true %></div>
+      <div class="form-item"><%= l.label :state %>
+      <%= l.text_field :state, value: current_user.state, required: :true %></div>
     </div>
     <div id="confirm-right">
-      <%= l.label :zipcode %>
-      <%= l.text_field :zipcode, value: current_user.zipcode %>
-      <%= l.label :phone %>
-      <%= l.text_field :phone, value: current_user.phone %>
-      <%= l.label :company %>
-      <%= l.text_field :company, value: current_user.company %>
+      <div class="form-item"><%= l.label :zipcode %>
+      <%= l.text_field :zipcode, value: current_user.zipcode, required: :true %></div>
+      <div class="form-item"><%= l.label :phone %>
+      <%= l.text_field :phone, value: current_user.phone, required: :true %></div>
+      <div class="form-item"><%= l.label :company %>
+      <%= l.text_field :company, value: current_user.company %></div>
     <% end %>
     </div>
-  <%= f.submit("Confirm Adoption!") %>
-  <% end %>
+  </div>
 </div>
 
+<p>Once you click 'Confirm Adoption!', an email with details about this family and the <%= @drive.drive_title %> drive will be sent off to you.</p>
+<div id="adopt-options"> 
+  <span id='no'><%= link_to "Cancel", family_path(@family)%></span>
+  <span id="confirm-button"><%= f.submit("Confirm Adoption!") %></span>
+</div>
+<% end %>
