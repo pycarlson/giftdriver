@@ -18,6 +18,7 @@
       <th>Phone</th>
       <th>Company</th>
       <th>Gifts Arrived</th>
+      <th>Boxes?</th>
       <th>Gifts Given</th>
     </tr>
   </thead>
@@ -60,27 +61,37 @@
       </td>
       <td><div class="received">
         <% if family.adopted? %>
-        <% if family.received_at_org == false %>
-        <button><%= link_to "Received", update_gift_status_path(family.id, status: 'received_at_org') %></button>
-        <% else %>
-        <%=  Time.now.strftime("%B %-d, %Y") %>
-        <% end %>
+          <% if family.received_at_org == false %>
+            <button><%= link_to "Received", update_gift_status_path(family.id, status: 'received_at_org') %></button>
+          <% else %>
+            <%=  Time.now.strftime("%B %-d, %Y") %>
+          <% end %>
         <% end %>
       </div>
     </td>
-
-    <td><div class="delivered">
-
-      <% if family.adopted? && family.received_at_org %>
-      <% if family.given_to_family == false %>
-      <button><%= link_to "Delivered", update_gift_status_path(family.id, status: 'given_to_family') %></button>
-      <% else %>
-      <%=  Time.now.strftime("%B %-d, %Y") %>
+    <td>
+      <% if family.adopted? %>
+        <%= form_for family do |f|%>
+        <ul id="boxes">
+          <li><%= f.text_field :num_boxes, :value => family.num_boxes, :style => "width: 16px; height: 10px;" %></li> 
+          <li><%= f.submit "" %></li>
+        <% end %>
       <% end %>
-      <% end %>
-    </div>
-  </td>
-</tr>
+    </ul>
+    </td>
+
+      <td><div class="delivered">
+
+        <% if family.adopted? && family.received_at_org %>
+          <% if family.given_to_family == false %>
+            <button><%= link_to "Delivered", update_gift_status_path(family.id, status: 'given_to_family') %></button>
+          <% else %>
+            <%=  Time.now.strftime("%B %-d, %Y") %>
+          <% end %>
+        <% end %>
+      </div>
+    </td>
+  </tr>
 <% end %>
 
 </tbody>

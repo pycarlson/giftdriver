@@ -41,12 +41,18 @@ class FamiliesController < ApplicationController
       redirect_to family_path(@family)
     else
       flash[:alert] = "That didn't work out quite right"
-      redirect_to drive_path(params[:drive_id])
+      render 
     end
   end
 
   def show
     @drive = Drive.find(@family.drive_id)
+  end
+
+  def update
+    drive = Drive.find(@family.drive_id)
+    @family.update_attributes(:num_boxes => params[:family][:num_boxes])
+    redirect_to manage_path(drive.id)
   end
 
   def update_gift_status

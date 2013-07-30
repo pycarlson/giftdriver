@@ -7,7 +7,7 @@ class Family < ActiveRecord::Base
   belongs_to :user
 
 
-  attr_accessible :drop_locations_attributes, :users_attributes
+  attr_accessible :num_boxes, :drop_locations_attributes, :users_attributes
   accepts_nested_attributes_for :drop_location
   accepts_nested_attributes_for :user
   

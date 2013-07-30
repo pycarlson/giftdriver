@@ -47,6 +47,20 @@
   
   td {
   	text-align: center; 
-  }
 
+  }
+}
+
+#boxes {
+  border-radius: 1px;
+  input {
+    font-size: 11px;
+    width: 10px;
+  }
+  li {
+    display: inline;
+  }
+  &:nth-child(2) {
+    height: 10px;
+  }
 }
