@@ -77,6 +77,7 @@ class FamiliesController < ApplicationController
       flash[:alert] = "Something went wrong. Try again?"
       redirect_to family_path(@family.id)
     end
+
   end
 
   protected

@@ -23,7 +23,7 @@
     <% else %>
       <ul class="loc-list">
       <% @locations.each do |location| %>
-        <li><%= location.code %></li>
+        <li><%= link_to "Remove" %>&nbsp<%= location.code %></li>
       <% end %>
       </ul>
     <% end %>

@@ -1,4 +1,4 @@
-class DropLocationController < ApplicationController
+class DropLocationsController < ApplicationController
 
-
+  
 end
