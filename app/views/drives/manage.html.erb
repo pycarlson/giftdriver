@@ -11,8 +11,7 @@
     <tr>
       <th>Family Code</th>
       <th>Size</th>
-      <th>Adopted? By:</th>
-      <th>Name</th>
+      <th>Adopted By:</th>
       <th>Email</th>
       <th>Address</th>
       <th>Phone</th>
@@ -27,13 +26,6 @@
     <tr>
       <td><%= family.code %></td>
       <td><%= family.family_members.length %></td>
-      <td>
-        <%if family.adopted? %>
-        yes
-        <% else %>
-        no
-        <% end %>
-      </td>
       <td>
         <% if family.adopted? %>
         <%= family.get_adopter_name %>
