@@ -2,7 +2,7 @@
   margin-left: auto;
   margin-right: auto;
   font-size: 11px;
-  width: 1000px;
+  width: 1200px;
 
 }
 
@@ -36,7 +36,7 @@
   width: 100%;
   margin-left: auto;
   margin-right: auto;
-  // margin-bottom: 50px;
+  margin-bottom: 50px;
 
 
   th {
@@ -56,21 +56,20 @@ form #edit-family {
 }
 
 #boxes {
-  ul {
-  height: 12px;
-  }
-  border-radius: 1px;
   input {
     font-size: 11px;
-    width: 10px;
+    height: 10px;
+  }
+  tr td {
+  height: 20px;
   }
   li {
     display: inline;
+    float: left;
+    height: 15px;
   }
-  li input {
-    height: 10px;
-  }
-  li input a {
-  background-color: #4fcb53;
+  li:last-child div {
+    background-color: #4fcb53;
+    border-radius: 1px;
   }
 }

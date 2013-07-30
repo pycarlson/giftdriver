@@ -73,8 +73,8 @@
       <% if family.adopted? %>
         <%= form_for family do |f|%>
         <ul id="boxes">
-          <li><%= f.text_field :num_boxes, :value => family.num_boxes, :style => "width: 16px; height: 10px;" %></li> 
-          <li><%= f.submit "" %></li>
+          <li><div><%= f.text_field :num_boxes, :value => family.num_boxes, :style => "width: 16px; height: 10px;" %></div></li> 
+          <li><div><%= f.submit "" %></div></li>
         <% end %>
       <% end %>
     </ul>
