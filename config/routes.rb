@@ -7,10 +7,10 @@ Giftdriver::Application.routes.draw do
 
   resources :families, except: [:index, :new, :create] do
     resources :family_members, only: [:index, :new, :create]
-    member do
-
-    end
   end
+
+  match '/filter' => 'families#filter', :as => :filter
+
 
   resources :users
 
