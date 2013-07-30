@@ -47,11 +47,18 @@
   
   td {
   	text-align: center; 
-
   }
 }
 
+form #edit-family {
+  height: 12px;
+  margin-bottom: 0px;
+}
+
 #boxes {
+  ul {
+  height: 12px;
+  }
   border-radius: 1px;
   input {
     font-size: 11px;
@@ -60,7 +67,10 @@
   li {
     display: inline;
   }
-  &:nth-child(2) {
+  li input {
     height: 10px;
+  }
+  li input a {
+  background-color: #4fcb53;
   }
 }
