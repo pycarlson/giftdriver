@@ -43,4 +43,8 @@ class Drive < ActiveRecord::Base
     Donor.where(user_id: user.id, drive_id: self.id).last.drop_location_id
   end
 
+  def families_by_size(family_size)
+    self.families.map { |family| family if family.family_members.length == family_size }.compact
+  end
+
 end
