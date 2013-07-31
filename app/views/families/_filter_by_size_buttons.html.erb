@@ -1,34 +1,32 @@
 <div id="family-size-filter-buttons">
-  <div id="family-size-filter-buttons-container">
-    <h4>Filter families by size:</h4>
-    <%= form_tag(filter_drive_path(@drive), action: 'filter', method: 'get', id: 'filter-family-form', remote: true) do %>
-      <ul>
+  <h4>Filter families by size:</h4>
+  <%= form_tag(filter_drive_path(@drive), action: 'filter', method: 'get', id: 'filter-family-form', remote: true) do %>
+  <ul>
+    <li>
+      <%= radio_button_tag(:filter, "1") %>
+      <%= label_tag(:filter_1, "1 Person") %>
+    </li>
+    <li>
+      <%= radio_button_tag(:filter, "2") %>
+      <%= label_tag(:filter_2, "2 People") %>
+    </li>
+    <li>
+      <%= radio_button_tag(:filter, "3") %>
+      <%= label_tag(:filter_3, "3 People") %>
+    </li>
+    <li>
+      <%= radio_button_tag(:filter, "4") %>
+      <%= label_tag(:filter_4, "4 People") %>
+    </li>
+    <li>
+      <%= radio_button_tag(:filter, "5") %>
+      <%= label_tag(:filter_5, "5 or more") %>
+    </li>
         <li>
-          <%= radio_button_tag(:filter, "0") %>
-          <%= label_tag(:filter_all, "Show All") %>
-        </li>
-        <li>
-          <%= radio_button_tag(:filter, "1") %>
-          <%= label_tag(:filter_1, "1 Person") %>
-        </li>
-        <li>
-          <%= radio_button_tag(:filter, "2") %>
-          <%= label_tag(:filter_2, "2 People") %>
-        </li>
-        <li>
-          <%= radio_button_tag(:filter, "3") %>
-          <%= label_tag(:filter_3, "3 People") %>
-        </li>
-        <li>
-          <%= radio_button_tag(:filter, "4") %>
-          <%= label_tag(:filter_4, "4 People") %>
-        </li>
-        <li>
-          <%= radio_button_tag(:filter, "5") %>
-          <%= label_tag(:filter_5, "5 or more") %>
-        </li>
-        <li><%= submit_tag "Filter" %><li>
-      </ul>
+      <%= radio_button_tag(:filter, "0") %>
+      <%= label_tag(:filter_0, "Show All") %>
+    </li>
+    <li><%= submit_tag "Filter" %><li>
+    </ul>
     <% end %>
   </div>
-</div>

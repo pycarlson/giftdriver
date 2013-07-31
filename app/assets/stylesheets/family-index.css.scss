@@ -10,15 +10,11 @@ h3 {
   margin-top: 10px;
 }
 
-#family-size-filter-buttons-container {
+#family-size-filter-buttons {
   width: 700px;
   height: 100px;
-}
-
-#family-size-filter-buttons {
   li {
     display: inline-block;
-    padding-left: 20px;
-    padding-right: 20px;
+    padding: 0 15px;
   }
 }
