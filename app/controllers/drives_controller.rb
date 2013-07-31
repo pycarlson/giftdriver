@@ -1,7 +1,16 @@
 class DrivesController < ApplicationController
 
   skip_before_filter :authenticate_user!, :only => [:index, :show]
-  before_filter :validate_organizer, except: [:index, :show, :new, :create]
+  before_filter :validate_organizer, except: [:filter, :index, :show, :new, :create]
+
+  def filter
+    drive = Drive.find(params[:id])
+    @families = drive.families_by_size(params[:filter].to_i)
+    respond_to do |format|
+      format.html
+      format.json { render json: "This is a message from families#filter" }
+    end
+  end
 
   def index
     @drives = Drive.all

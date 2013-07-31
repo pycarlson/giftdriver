@@ -3,10 +3,6 @@ class FamiliesController < ApplicationController
   before_filter :validate_organizer, except: [:index, :show, :adopt, :update, :update_gift_status]
   before_filter :find_family, except: [:index, :create]
 
-  def filter
-    "This is a message from families#filter"
-  end
-
   def index
     @drive = Drive.find(params[:drive_id])
 
