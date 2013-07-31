@@ -5,7 +5,13 @@ class DrivesController < ApplicationController
 
   def filter
     drive = Drive.find(params[:id])
-    @families = drive.families_by_size(params[:filter].to_i)
+    if params[:filter] == "0"
+      @families = Family.not_adopted_families(drive)
+    elsif params[:filter] == "5"
+      @families = Family.not_adopted_big_families(drive)
+    else
+      @families = Family.not_adopted_families_by_size(drive, params[:filter].to_i)
+    end
     respond_to do |format|
       format.js
     end

@@ -48,6 +48,16 @@ class Family < ActiveRecord::Base
     Drive.find(drive).families.where('adopted_by IS NOT NULL')
   end
 
+  def self.not_adopted_families_by_size(drive, family_size)
+    families = Drive.find(drive).families.where('adopted_by IS NULL')
+    families.map { |family| family if family.family_members.length == family_size }.compact
+  end
+
+  def self.not_adopted_big_families(drive)
+    families = Drive.find(drive).families.where('adopted_by IS NULL')
+    families.map { |family| family if family.family_members.length > 4 }.compact
+  end
+
   def members_names_sentence
     names = self.family_members.map { |member| member.first_name }
     names.to_sentence
