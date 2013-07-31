@@ -7,8 +7,7 @@ class DrivesController < ApplicationController
     drive = Drive.find(params[:id])
     @families = drive.families_by_size(params[:filter].to_i)
     respond_to do |format|
-      format.html
-      format.json { render json: "This is a message from families#filter" }
+      format.js
     end
   end
 
