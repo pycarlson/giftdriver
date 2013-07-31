@@ -1,7 +1,7 @@
 <div id="family-size-filter-buttons">
   <div id="family-size-filter-buttons-container">
     <h4>Filter families by size:</h4>
-    <%= form_tag(action: 'filter', method: 'get', remote: true, id: 'filter-family-form') do %>
+    <%= form_tag(filter_drive_path(@drive), action: 'filter', method: 'get', id: 'filter-family-form', remote: true) do %>
       <ul>
         <li>
           <%= radio_button_tag(:filter, "0") %>
@@ -27,6 +27,7 @@
           <%= radio_button_tag(:filter, "5") %>
           <%= label_tag(:filter_5, "5 or more") %>
         </li>
+        <li><%= submit_tag "Filter" %><li>
       </ul>
     <% end %>
   </div>

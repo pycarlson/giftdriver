@@ -9,9 +9,6 @@ Giftdriver::Application.routes.draw do
     resources :family_members, only: [:index, :new, :create]
   end
 
-  match '/filter' => 'families#filter', :as => :filter
-
-
   resources :users
 
   resources :drives do
@@ -19,6 +16,9 @@ Giftdriver::Application.routes.draw do
     resources :family_member_imports, only: [:new, :create]
     resources :donors, only: [:new, :create]
     resources :drop_locations, only: [:destroy]
+    member do
+      get :filter
+    end
   end
 
   resources :family_members, only: [:show, :edit, :update, :destroy] do
