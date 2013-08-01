@@ -6,13 +6,12 @@
   </div>
 
 <div id="manage-all">
-<table class="table table-striped table-scrollable" id="manage_table">
 <table class="datatable table table-striped table-scrollable table-bordered" id="manage_table">
   <thead>
     <tr>
       <th>Family Code</th>
       <th>Size</th>
-      <th>Adopted By:</th>
+      <th>Adoptor</th>
       <th>Email</th>
       <th>Address</th>
       <th>Phone</th>
@@ -37,7 +36,7 @@
         <%= family.get_adopter_email %>
         <% end %>
       </td>
-      <td>
+      <td class="adoptor-address">
         <% if family.adopted? %>
         <%= family.get_adopter_address %>
         <% end %>

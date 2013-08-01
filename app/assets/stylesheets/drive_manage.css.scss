@@ -1,9 +1,8 @@
 #manage-all {
   margin-left: auto;
   margin-right: auto;
-  font-size: 11px;
+  font-size: 14px;
   width: 1200px;
-
 }
 
 .received button {
@@ -12,6 +11,10 @@
   padding: 0;
   border-radius: 2px;
   border: 0;
+    a {
+    color: white;
+    font-size: 11px;
+  }
 }
 
 .delivered button {
@@ -20,16 +23,10 @@
   padding: 0;
   border-radius: 2px;
   border: 0;
-}
-
-.received button a {
-  color: white;
-  font-size: 11px;
-}
-
-.delivered button a {
-  color: white;
-  font-size: 11px;
+    a {
+    color: white;
+    font-size: 11px;
+  }
 }
 
 #manage_table {
@@ -38,17 +35,21 @@
   margin-right: auto;
   margin-bottom: 50px;
 
-
   th {
-    font-weight: 900;
-  	text-align: center; 
-    padding-bottom: 20px;
+    font-size: 11pt;
+    font-weight: 700;
+    font-family: 'Droid Serif', serif;
   }
-  
-  td {
-  	text-align: center; 
+  .adoptor-address {
+    width: 150px;
   }
+}
 
+#manage-all {
+  #manage_table_filter {
+    float: right;
+    margin-bottom: 20px;
+  }
 }
 
 form #edit-family {
