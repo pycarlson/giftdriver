@@ -4,29 +4,29 @@
   <ul>
     <li>
       <%= radio_button_tag(:filter, "1") %>
-      <%= label_tag(:filter_1, "1 Person") %>
+      <%= label_tag(:filter_1, "1 person") %>
     </li>
     <li>
       <%= radio_button_tag(:filter, "2") %>
-      <%= label_tag(:filter_2, "2 People") %>
+      <%= label_tag(:filter_2, "2 people") %>
     </li>
     <li>
       <%= radio_button_tag(:filter, "3") %>
-      <%= label_tag(:filter_3, "3 People") %>
+      <%= label_tag(:filter_3, "3 people") %>
     </li>
     <li>
       <%= radio_button_tag(:filter, "4") %>
-      <%= label_tag(:filter_4, "4 People") %>
+      <%= label_tag(:filter_4, "4 people") %>
     </li>
     <li>
       <%= radio_button_tag(:filter, "5") %>
-      <%= label_tag(:filter_5, "5 or more") %>
+      <%= label_tag(:filter_5, "5+ people") %>
     </li>
         <li>
       <%= radio_button_tag(:filter, "0") %>
-      <%= label_tag(:filter_0, "Show All") %>
+      <%= label_tag(:filter_0, "Show all") %>
     </li>
-    <li><%= submit_tag "Filter" %><li>
+    <li><%= submit_tag "Filter", class: 'hidden' %><li>
     </ul>
     <% end %>
   </div>

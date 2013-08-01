@@ -12,9 +12,17 @@ h3 {
 
 #family-size-filter-buttons {
   width: 700px;
-  height: 100px;
+  height: 75px;
+  margin-top: 25px;
   li {
     display: inline-block;
-    padding: 0 15px;
+    padding: 0 23px;
   }
+  label {
+    font-size: 1em;
+  }
+}
+
+.hidden {
+  display: none;
 }
