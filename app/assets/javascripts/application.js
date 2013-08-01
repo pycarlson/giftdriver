@@ -17,3 +17,11 @@
 //= require bootstrap/bootstrap-tooltip
 //= require_tree .
 //= require jquery_nested_form
+//= require dataTables/jquery.dataTables
+//= require dataTables/jquery.dataTables.bootstrap
+
+$(document).ready(function() {
+  $('.datatable').dataTable({
+	  "bPaginate": false,
+  });
+});

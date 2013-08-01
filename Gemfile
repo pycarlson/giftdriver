@@ -7,6 +7,7 @@ gem 'devise'
 gem "gmaps4rails", "~> 1.5.6"
 gem "geocoder"
 gem "nested_form"
+gem "jquery-datatables-rails"
 
 group :development do
   gem 'quiet_assets'
