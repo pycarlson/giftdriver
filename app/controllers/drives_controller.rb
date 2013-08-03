@@ -29,6 +29,8 @@ class DrivesController < ApplicationController
     @organizers = Organizer.where("drive_id = ?", @drive.id)
     @donor_ids = []
     @drive.donors.each { |donor| @donor_ids << donor.user_id }
+    @user = Donor.find_by_user_id(current_user.id)
+    
     @locations = DropLocation.where('drive_id = ?', @drive.id)
     @json = @locations.to_gmaps4rails
   end
@@ -36,7 +38,6 @@ class DrivesController < ApplicationController
   def new
     @drive = Drive.new
     @drive.drop_locations.build
-    # @drive.drop_dates.build
   end
 
   def create

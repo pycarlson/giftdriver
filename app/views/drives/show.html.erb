@@ -28,7 +28,14 @@
           <div class="location-box">
             <h3><%= location.code %></h3>
             <p><%= location.street %></p>
-            <p><%= location.city %>, <%= location.state %> <%= location.zipcode %></p>
+            <p><%= location.city %>, <%= location.state %> <%= location.zipcode %></p><br>
+            <h5>Drop off dates</h5>
+            <% location.drop_dates.each do |date| %>
+
+              <ul> 
+                <li><%= date.date_and_time %></li>
+              </ul>
+            <% end %>
           </div>
           <% end %>
         </div>
