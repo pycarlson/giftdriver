@@ -1,6 +1,6 @@
 class DropLocationsController < ApplicationController
-
   def new
-    @drop_location = DropLocation.new
+    @drop_date = DropDate.new
   end
+  
 end

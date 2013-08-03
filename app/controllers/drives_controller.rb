@@ -36,6 +36,7 @@ class DrivesController < ApplicationController
   def new
     @drive = Drive.new
     @drive.drop_locations.build
+    # @drive.drop_dates.build
   end
 
   def create

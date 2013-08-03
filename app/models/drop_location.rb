@@ -6,6 +6,9 @@ class DropLocation < ActiveRecord::Base
   has_many :families
   has_many :donors
   has_many :users, :through => :donors
+  has_many :drop_dates
+  accepts_nested_attributes_for :drop_dates, :allow_destroy => true
+
 
   validates :street, :city, :state, 
             :zipcode, :code, :presence => :true
@@ -15,7 +18,7 @@ class DropLocation < ActiveRecord::Base
   
   after_validation :geocode    
 
-  attr_accessible :street, :city, :state, :zipcode, :code 
+  attr_accessible :street, :city, :state, :zipcode, :code, :drop_dates_attributes 
 
   def gmaps4rails_address
      "#{self.street}, #{self.city}, #{self.state}, #{self.zipcode}"  

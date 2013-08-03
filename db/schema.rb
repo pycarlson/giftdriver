@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130730003326) do
+ActiveRecord::Schema.define(:version => 20130803161710) do
 
   create_table "donors", :force => true do |t|
     t.integer "user_id"
@@ -33,6 +33,12 @@ ActiveRecord::Schema.define(:version => 20130730003326) do
     t.string   "end_date"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
+  end
+
+  create_table "drop_dates", :force => true do |t|
+    t.text    "date_and_time"
+    t.integer "drop_location_id"
+    t.integer "drive_id"
   end
 
   create_table "drop_locations", :force => true do |t|

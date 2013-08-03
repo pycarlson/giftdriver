@@ -1,3 +1,3 @@
-class Need < ActiveRecord::Base
+# class Need < ActiveRecord::Base
   
-end
+# end

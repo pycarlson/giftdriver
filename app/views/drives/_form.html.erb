@@ -1,8 +1,7 @@
 <%= render 'shared/form_errors', :object => @drive %>
 
 <div class="form">
-
- <%= form_for @drive do |f|%>
+ <%= nested_form_for @drive do |f|%>
   <div id="create-wrapper">
     <div id="left">
 
@@ -46,9 +45,16 @@
 
     <div id="right">
       
-      <%= f.fields_for :drop_locations, required: :true do |l| %>
+      <%= f.fields_for :drop_locations do |l| %>
         <div class="location-form">
           <h3>Drop Location Details</h3>
+          <%= l.fields_for :drop_dates do |d| %>
+         
+              <%= d.label :date_and_time %>
+              <%= d.text_field :date_and_time %>
+              <%= d.link_to_remove "Remove" %>
+              <%  end %>
+            <div id="add-a-need-button"><%= l.link_to_add "Add a drop date", :drop_dates %></div><br> 
           <div class="form-item"><%= l.label :Name %>
           <%= l.text_field :code, required: :true %></div>
           
@@ -63,11 +69,18 @@
 
           <div class="form-item"><%= l.label :Zipcode %>
           <%= l.text_field :zipcode, required: :true %></div>
+          <%= l.link_to_remove "Remove this location" %><br><br>
         </div>
-        
-      <% end %>
+        <% end %>
+            
+         
+          <div id="add-a-need-button"><%= f.link_to_add "Add a drop location", :drop_locations %></div> 
+
+          
+
       <h5>(Additional drop locations can be added following intial creation of your drive)</h5>
       <div id="build"><%= f.submit %></div> 
+      
     </div>
   </div>
     <% end %>
