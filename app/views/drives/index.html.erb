@@ -5,7 +5,7 @@
   <div id="home-box">
     <% @drives.each do |drive| %>
     <div class="home-drives">
-      <h3><%= link_to drive.drive_title, drive %></h3>
+      <h3><%= link_to drive.drive_title, drive, action: 'get' %></h3>
       <h4>Organized by <%= drive.org_name %></h4>
       <div class="index-blurb"><p><%= drive.drive_blurb %></p></div>
     </div>
