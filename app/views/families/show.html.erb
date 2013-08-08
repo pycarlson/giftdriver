@@ -3,7 +3,7 @@
 <div class="page-title"><h1>Family <%= @family.id %></h1></div>
   <div class="add-family-button">
     <% if organizer?(@family.drive) %>
-      <div class="cw-button"><%= link_to "Add family member", new_family_family_member_path(@family), action: 'post' %></div>
+      <div class="cw-button" id="add-member"><%= link_to "Add family member", new_family_family_member_path(@family), action: 'post' %></div>
     <% end %>
   </div>
 <div>
