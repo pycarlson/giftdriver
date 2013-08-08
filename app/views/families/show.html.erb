@@ -3,12 +3,11 @@
 <div class="page-title"><h1>Family <%= @family.id %></h1></div>
   <div class="add-family-button">
     <% if organizer?(@family.drive) %>
-      <button class="cw-button"><%= link_to "Add family member", new_family_family_member_path(@family) %></button>
+      <div class="cw-button"><%= link_to "Add family member", new_family_family_member_path(@family), action: 'post' %></div>
     <% end %>
   </div>
 <div>
   <% if @family.adopted? %>
-    <h3>This family has been adopted!</h3>
     <h3>This family has been adopted!</h3>
   <% else %>
     <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
