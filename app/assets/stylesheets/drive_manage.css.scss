@@ -5,8 +5,9 @@
   width: 1200px;
 }
 
-.received button {
+#received {
   background-color: #47a9f8;
+  margin-top: 0;
   width: 60px; 
   padding: 0;
   border-radius: 2px;
@@ -17,8 +18,9 @@
   }
 }
 
-.delivered button {
+#delivered {
   background-color: #47a9f8;
+  margin-top: 0;
   width: 60px; 
   padding: 0;
   border-radius: 2px;

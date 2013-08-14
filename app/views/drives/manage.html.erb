@@ -54,7 +54,7 @@
       <td><div class="received">
         <% if family.adopted? %>
           <% if family.received_at_org == false %>
-            <button><%= link_to "Received", update_gift_status_path(family.id, status: 'received_at_org') %></button>
+            <div class="cw-button" id="received"><%= link_to "Received", update_gift_status_path(family.id, status: 'received_at_org'), action: 'post' %></div>
           <% else %>
             <%=  Time.now.strftime("%B %-d, %Y") %>
           <% end %>
@@ -76,7 +76,7 @@
 
         <% if family.adopted? && family.received_at_org %>
           <% if family.given_to_family == false %>
-            <button><%= link_to "Delivered", update_gift_status_path(family.id, status: 'given_to_family') %></button>
+            <div class="cw-button" id="delivered"><%= link_to "Delivered", update_gift_status_path(family.id, status: 'given_to_family'), action: 'post' %></div>
           <% else %>
             <%=  Time.now.strftime("%B %-d, %Y") %>
           <% end %>
