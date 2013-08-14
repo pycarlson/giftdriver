@@ -32,7 +32,7 @@
       <div class="form-item"><%= f.label :Title %>
       <%= f.text_field :drive_title, required: :true, required: :true %></div>
 
-      <div class="form-item"><%= f.label :Desription %>
+      <div class="form-item"><%= f.label :Description %>
       <%= f.text_area :drive_blurb, :rows => 10, required: :true %></div>
 
       <div class="form-item"><%= f.label :Start_date %>
@@ -40,6 +40,9 @@
 
       <div class="form-item"><%= f.label :End_date %>
       <%= f.text_field :end_date, required: :true %></div>
+
+      <div class="form-item"><%= f.label :Details_for_the_donor_email %>
+      <%= f.text_area :details_for_the_donor, :rows => 20, required: :true %></div>
       
     </div>
 

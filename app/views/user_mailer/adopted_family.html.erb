@@ -7,8 +7,9 @@
 </head>
 <body>
   <h2>Thank you from <%= @drive.org_name %>!</h2>
+  <p><%= @drive.details_for_the_donor %></p>
 
-  <p>You can drop off your gifts from <%= @drive.start_date %> to <%= @drive.end_date %>.</p>
+  <p>The <%= @drive.drive_title %> runs from <%= @drive.start_date %> to <%= @drive.end_date %>.</p>
 
   <% if @location %>
   <p>Your drop off location is</p>

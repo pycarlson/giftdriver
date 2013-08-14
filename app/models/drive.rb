@@ -18,6 +18,7 @@ class Drive < ActiveRecord::Base
                   :drive_blurb,
                   :start_date,
                   :end_date,
+                  :details_for_the_donor,
                   :drop_locations_attributes,
                   :drop_dates_attributes
 
