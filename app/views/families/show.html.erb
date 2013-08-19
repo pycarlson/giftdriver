@@ -21,14 +21,16 @@
         
         <div class="span3">
           <h2><%= member.first_name %></h2>
+          <h4>Gender: <%= member.gender %></h4>
+          <h4>Age: <%= member.age %></h4>
           <% if organizer?(@family.drive)%>
             <%= render 'add_edit_buttons', member: member %>
           <% end %>
-          <p><%= member.bio %></p>
+          
         </div>
         
         <div class="span3">
-          <h4>Age: <%= member.age %></h4>
+          
           <h4>Needs:</h4>
           <ul>
           <% member.needs.each do |need| %>
@@ -38,7 +40,7 @@
         </div>
         
         <div class="span3">
-          <h4>Gender: <%= member.gender %></h4>
+          
 
           <h4>Clothing Sizes</h4>
           <ul>
@@ -48,7 +50,7 @@
             <li>Shoes: <%= member.size_shoes %></li>
           </ul>
         </div>
-
+        <p id="member-bio"><%= member.bio %></p>
       </div>
 
   <% end %>

@@ -4,5 +4,4 @@ module ApplicationHelper
     Organizer.where('drive_id = ?', drive.id).count < 2 
   end
 
-
 end

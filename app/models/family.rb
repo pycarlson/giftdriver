@@ -11,6 +11,7 @@ class Family < ActiveRecord::Base
   accepts_nested_attributes_for :drop_location
   accepts_nested_attributes_for :user
   
+  
   def adopted?
     self.adopted_by != nil
   end
@@ -38,6 +39,12 @@ class Family < ActiveRecord::Base
    def get_adopter_company
     user = User.find(self.adopted_by)
     user.company ? user.company : "n/a"
+  end
+
+  def get_adopter_drop_location_dates
+    # user = User.find(2)
+    loc_id = current_user.donors.find_by_drive_id(1).drop_location_id
+    DropLocation.find(loc_id).drop_dates
   end
 
   def self.not_adopted_families(drive)

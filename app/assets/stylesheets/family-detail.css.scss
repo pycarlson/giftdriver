@@ -14,11 +14,13 @@
   text-align: left;
   vertical-align: top;
   margin: 20px 10px;
-  padding: 10px;
+  padding: 20px;
   overflow: auto;
-  button {
-    margin-bottom: 10px;
-  }
+
+  #edit-family-member-button {
+    margin-bottom: 20px;
+    width: 100px;
+    }
   h3 {
     margin-top: 5px;
   }
@@ -55,4 +57,10 @@
   }
 }
 
+#member-bio {
+  clear: both;
+  padding-left: 20px;
+  padding-right: 20px;
+  padding-top: 20px;
+}
 
