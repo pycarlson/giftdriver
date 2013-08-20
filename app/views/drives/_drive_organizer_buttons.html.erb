@@ -1,7 +1,7 @@
 <div class='add-edit-family'>
   <h3>Add a New Family</h3>
   <%= form_for([@drive, @family]) do |f| %>
-    <%= f.text_field :code, :placeholder => 'family code', required: :true, :class => "tooltips", rel: "tooltip", title: "Another Sample tooltip. Here is a sentence to make it longer." %><br>
+    <%= f.text_field :code, :placeholder => 'family code', required: :true, :class => "tooltips", rel: "tooltip", title: "The family code is named according to each organization's needs. Use this code to help you sort your families on the Gift Status table." %><br>
     <% unless sole_location?(@drive) %>
       <%= f.collection_select(:drop_location_id, @drive.drop_locations, :id, :code)%> 
     <% end %>

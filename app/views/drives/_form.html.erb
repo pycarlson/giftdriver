@@ -59,7 +59,7 @@
               <%  end %>
             <div id="add-a-need-button"><%= l.link_to_add "Add drop date and time", :drop_dates %></div><br> 
           <div class="form-item"><%= l.label :Name %>
-          <%= l.text_field :code, required: :true %></div>
+          <%= l.text_field :code, required: :true, :class => "tooltips", rel: "tooltip", title: "Use this box to declare a drop location name that will be associated with each family. For example, 'San Fran' or 'Oakland'. When associating families with drop locations, the drop location name must be spelled correctly." %></div>
           
           <div class="form-item"><%= l.label :Street %>
           <%= l.text_field :street, required: :true %></div>
