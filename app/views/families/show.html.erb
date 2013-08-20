@@ -23,8 +23,13 @@
           <h2><%= member.first_name %></h2>
           <h4>Gender: <%= member.gender %></h4>
           <h4>Age: <%= member.age %></h4>
+
           <% if organizer?(@family.drive)%>
             <%= render 'add_edit_buttons', member: member %>
+          <% end %>
+
+          <% if organizer?(@family.drive)  %>
+          <%= link_to "delete #{member.first_name}", family_member_path(member.id), :confirm => 'Are you sure?', :method => :delete %>
           <% end %>
           
         </div>
