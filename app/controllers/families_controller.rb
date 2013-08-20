@@ -54,6 +54,16 @@ class FamiliesController < ApplicationController
     redirect_to manage_path(drive.id)
   end
 
+  def destroy
+    p "*" * 100
+    p "DID I MAKE IT IN HERE< TO THIS METHOD??????"
+    @family = Family.find(params[:id])
+    p "#{@family}"
+    @drive = Drive.find(@family.drive_id)
+    @family.destroy
+    redirect_to manage_path(@drive.id)
+  end  
+
   def update_gift_status
     drive = Drive.find(@family.drive_id)
     @family.update_attribute(params[:status], true)
