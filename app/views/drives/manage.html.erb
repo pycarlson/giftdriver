@@ -20,6 +20,7 @@
       <th>Gifts Arrived</th>
       <th>Boxes?</th>
       <th>Gifts Given</th>
+      <th>Update</th>
     </tr>
   </thead>
   <tbody>
@@ -53,39 +54,28 @@
         <%= family.get_adopter_company %>
         <% end %>
       </td>
-      <td><div class="received">
-        <% if family.adopted? %>
-          <% if family.received_at_org == false %>
-            <div class="cw-button" id="received"><%= link_to "Received", update_gift_status_path(family.id, status: 'received_at_org'), action: 'post' %></div>
-          <% else %>
-            <%=  Time.now.strftime("%B %-d, %Y") %>
-          <% end %>
-        <% end %>
-      </div>
-    </td>
-    <td>
-      <% if family.adopted? %>
-        <%= form_for family do |f|%>
-        <ul id="boxes">
-          <li><div><%= f.text_field :num_boxes, :value => family.num_boxes, :style => "width: 16px; height: 14px;" %></div></li> 
-          <li><div><%= f.submit "" %></div></li>
-        <% end %>
-      <% end %>
-    </ul>
-    </td>
+      <td>
+        <%= form_tag("/families/#{family.id}/update_gift_status") do %>
 
-      <td><div class="delivered">
+          <%= text_field_tag :received_at_org, family.received_at_org, :style => "width: 80px" %> 
+      </td>
 
-        <% if family.adopted? && family.received_at_org %>
-          <% if family.given_to_family == false %>
-            <div class="cw-button" id="delivered"><%= link_to "Delivered", update_gift_status_path(family.id, status: 'given_to_family'), action: 'post' %></div>
-          <% else %>
-            <%=  Time.now.strftime("%B %-d, %Y") %>
-          <% end %>
+      <td>
+        <%= text_field_tag :num_boxes, family.num_boxes, :style => "width: 16px; height: 16px;" %>
+      </td>
+
+      <td>
+        <%= text_field_tag :given_to_family, family.given_to_family, :style => "width: 80px" %>
+      </td>
+
+      <td>
+        <%= submit_tag "Update" %>
+      </td>
         <% end %>
-      </div>
-    </td>
-  </tr>
+
+
+    
+    </tr>
 <% end %>
 
 </tbody>

@@ -62,7 +62,9 @@ class FamiliesController < ApplicationController
 
   def update_gift_status
     drive = Drive.find(@family.drive_id)
-    @family.update_attribute(params[:status], true)
+    @family.update_attributes(:given_to_family => params[:given_to_family],
+                              :received_at_org => params[:received_at_org],
+                              :num_boxes => params[:num_boxes])
     redirect_to manage_path(drive.id)
   end
 
