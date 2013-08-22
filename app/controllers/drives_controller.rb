@@ -22,15 +22,21 @@ class DrivesController < ApplicationController
   end
 
   def show
-    @drive = Drive.find(params[:id])
+    p "*" * 100
+    p "DID I GET HERE?"
+    @drive = Drive.find_by_id(params[:id])
+    p @drive.id
     @families = @drive.families
+    p @families
     @not_adopted = Family.not_adopted_families(@drive).sample(5)
     @family = Family.new
     @organizers = Organizer.where("drive_id = ?", @drive.id)
     @donor_ids = []
     @drive.donors.each { |donor| @donor_ids << donor.user_id }
-    @user = Donor.find_by_user_id(current_user.id)
-    
+    p @donor_ids
+    if current_user
+      @user = Donor.find_by_user_id(current_user.id)
+    end
     @locations = DropLocation.where('drive_id = ?', @drive.id)
     @json = @locations.to_gmaps4rails
   end

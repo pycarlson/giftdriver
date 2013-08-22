@@ -5,6 +5,7 @@
     <ul>
       <% family.family_members.each do |member| %>
       <li><%= member.first_name %>, age: <%= member.age %></li>
+      
       <% end %>
     </ul>
     <div class="family-needs">Their needs include: <%= family.sampled_needs(8).to_sentence %>.</div>
