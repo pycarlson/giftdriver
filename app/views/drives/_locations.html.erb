@@ -1,0 +1,21 @@
+<div class="locations">
+  <% if @locations.length > 1 %>
+    <h2>Drop Locations</h2>
+  <% else %>
+    <h2>Drop Location</h2>
+  <% end %>
+  
+  <div class="map">
+    <%= gmaps4rails(@json) %>
+  </div>
+  
+  <% if drive.user_has_dropoff_preference?(current_user) %>
+    <h2>Your selected drop-off location is: </h2>
+    <% donor_location = drive.donor_dropoff_pref(current_user) %>
+    <%= render 'locations_box', location: donor_location %>
+  <% else %>
+    <% @locations.each do |location| %>
+      <%= render 'locations_box', location: location %>
+    <% end %>
+  <% end %>
+</div>
