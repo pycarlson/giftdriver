@@ -1,7 +1,6 @@
 <%= form_for [@drive, @donor] do |f| %>
   <% @locations.each do |location| %>
-    <% if location.families.length == 0 %>
-    <% else %>
+    <% if Family.not_adopted_families_by_location(@drive, location).present? %>
       <div class="radio">
         <%= f.radio_button(:drop_location, location.id) %>
       </div>
