@@ -44,7 +44,15 @@ class Drive < ActiveRecord::Base
   end
 
   def donor_dropoff_pref(user)
-    Donor.where(user_id: user.id, drive_id: self.id).last.drop_location_id
+    Donor.where(user_id: user.id, drive_id: self.id).last.drop_location
+  end
+
+  def donor(user)
+    donors.where(user_id: user.id).first
+  end
+
+  def multiple_dropoff_locations?
+    self.drop_locations.length > 1
   end
 
 end

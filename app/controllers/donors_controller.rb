@@ -1,8 +1,7 @@
 class DonorsController < ApplicationController
+  before_filter :load_resources, except: [:create]
+
   def new
-    @drive = Drive.find(params[:drive_id])
-    @locations = @drive.drop_locations
-    @json = @locations.to_gmaps4rails
     @donor = Donor.new
   end
 
@@ -14,4 +13,27 @@ class DonorsController < ApplicationController
     donor.save
     redirect_to drive_families_path(params[:drive_id])
   end
+
+  def edit
+    @donor = @drive.donor(current_user)
+  end
+
+  def update
+    @donor = @drive.donor(current_user)
+    @donor.drop_location = DropLocation.find(params[:donor][:drop_location])
+
+    if @donor.save
+      redirect_to drive_path(params[:drive_id])
+    else
+      render action: "edit"
+    end
+  end
 end
+
+private
+
+  def load_resources
+    @drive = Drive.find(params[:drive_id])
+    @locations = @drive.drop_locations
+    @json = @locations.to_gmaps4rails
+  end

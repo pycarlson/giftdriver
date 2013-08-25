@@ -14,7 +14,7 @@ Giftdriver::Application.routes.draw do
   resources :drives do
     resources :families, only: [:index, :new, :create]
     resources :family_member_imports, only: [:new, :create]
-    resources :donors, only: [:new, :create]
+    resources :donors, only: [:new, :create, :edit, :update]
     resources :drop_locations, only: [:destroy]
     member do
       get :filter
