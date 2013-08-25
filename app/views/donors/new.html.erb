@@ -1,18 +1,21 @@
-<div class="location-chooser">
+<div class="inner location-chooser">
 
   <h1>One quick question!</h1>
 
-  <h4>Since this drive has multiple drop off locations, we just need to know which one is most convenient for you.</h4>
+  <h4>Since this drive has multiple drop-off locations, we just need to know which one is most convenient for you.</h4>
 
+  <h4><em>(Only drop-off locations that have families that still need to be adopted are listed as choices.)</em></h4>
+  <div id="choose-map"><%= gmaps4rails(@json) %></div>
   <%= form_for [@drive, @donor] do |f| %>
     <% @locations.each do |location| %>
-    <% if location.families.length == 0 %>
-    <% else %>
-      <div class="radio"><%= f.radio_button(:drop_location, location.id ) %></div>
-      <div class="local"><%= f.label(:drop_location, "#{location.code}, #{location.street}, #{location.city} #{location.state} #{location.zipcode}") %></div><br>
+      <% if location.families.length == 0 %>
+      <% else %>
+        <div class="radio"><%= f.radio_button(:drop_location, location.id ) %></div>
+        <div class="local"><%= f.label(:drop_location, "#{location.code}, #{location.street}, #{location.city} #{location.state} #{location.zipcode}") %></div><br>
+      <% end %> 
     <% end %> 
-    <% end %> 
-    <div id="local-button"><%= f.submit "Set Location Preference" %></div>
+    <div><%= f.submit "Set Location Preference", class: 'cw-button' %></div>
   <% end %>
 </div>
-<div id="choose-map"><%= gmaps4rails(@json) %></div>
+
+

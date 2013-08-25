@@ -1,11 +1,6 @@
 .location-chooser {
-  margin-left: 100px;
-  margin-top: 88px;
-  margin-bottom: 40px;
-  h1 {
-    padding-bottom: 10px;
-  }
-    h4 {
+  margin-top: 50px;
+  h4 {
     margin-bottom: 30px;
   }
 }
@@ -16,6 +11,6 @@
 }
 
 #choose-map {
-  margin-left: 100px;
-  margin-top: 20px;
+  float: left;
+  margin-right: 50px;
 }
