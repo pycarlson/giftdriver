@@ -1,0 +1,14 @@
+<div class="family-details-card">
+  <h3><%= link_to "Family #{family.id}", family_path(family), action: 'get' %></h3>
+  <p>Location: 
+  <% if family.drop_location %>
+    <%= family.drop_location.code %>
+  <% end %>
+  </p>
+  <ul>
+    <% family.family_members.each do |member| %>
+    <li><%= member.first_name %>, age: <%= member.age %></li>
+    <% end %>
+  </ul>
+  <div class="family-needs">Their needs include: <%= family.sampled_needs(8).to_sentence %>.</div>
+</div>
