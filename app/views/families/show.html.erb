@@ -1,64 +1,33 @@
 <div class="inner">
-<%= render 'shared/drive_sub_nav', locals: { drive: @drive } %>
-<div class="page-title"><h1>Family <%= @family.id %></h1></div>
+  <%= render 'shared/drive_sub_nav' %>
+  <div class="page-title">
+    <h1>Family <%= @family.id %></h1>
+  </div>
   <div class="add-family-button">
     <% if organizer?(@family.drive) %>
-      <div class="cw-button" id="add-member"><%= link_to "Add family member", new_family_family_member_path(@family), action: 'post' %></div>
+      <div class="cw-button organizer-button" id="add-member"><%= link_to "Add family member", new_family_family_member_path(@family), action: 'post' %></div>
     <% end %>
   </div>
-<div>
-  <% if @family.adopted? %>
-    <h3>This family has been adopted!</h3>
-  <% else %>
-    <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
-  <% end %>
-</div>
-<div id="adoption-confirmation"><%= render 'adoption_confirmation', :locals => { @family => @family } %></div>
-<div class="family-detail-section">
-  <% @family.family_members.order('age DESC').each do |member| %>
-
-      <div class="family-details-card">
-        
-        <div class="span3">
-          <h2><%= member.first_name %></h2>
-          <h4>Gender: <%= member.gender %></h4>
-          <h4>Age: <%= member.age %></h4>
-
-          <% if organizer?(@family.drive)%>
-            <%= render 'add_edit_buttons', member: member %>
-          <% end %>
-
-          <% if organizer?(@family.drive)  %>
-          <%= link_to "delete #{member.first_name}", family_member_path(member.id), :confirm => 'Are you sure?', :method => :delete %>
-          <% end %>
-          
-        </div>
-        
-        <div class="span3">
-          
-          <h4>Needs:</h4>
-          <ul>
-          <% member.needs.each do |need| %>
-            <li><%= need.text %></li>
-          <% end %>
-          </ul>
-        </div>
-        
-        <div class="span3">
-          
-
-          <h4>Clothing Sizes</h4>
-          <ul>
-            <li>Pants: <%= member.size_pants %></li>
-            <li>Shirt: <%= member.size_shirt %></li>
-            <li>Dress: <%= member.size_dress %></li>
-            <li>Shoes: <%= member.size_shoes %></li>
-          </ul>
-        </div>
-        <p id="member-bio"><%= member.bio %></p>
-      </div>
-
-  <% end %>
+  <div>
+    <% if @family.adopted? %>
+      <h3>This family has been adopted!</h3>
+    <% else %>
+      <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
+    <% end %>
+  </div>
+  <div class="page-title">
+    <h4>This family's gifts should be delivered to:</h4>
+    <h4><%= @family.drop_location.code %></h4>
+    <h4><%= @family.drop_location.gmaps4rails_address %></h4>
+  </div>
+  <div id="adoption-confirmation">
+    <%= render 'adoption_confirmation' %>
+  </div>
+  <div class="family-detail-section">
+    <% @family.family_members.order('age DESC').each do |member| %>
+      <%= render 'family_member_needs_card', member: member, family: @family %>
+    <% end %>
+  </div>
 </div>
 
   

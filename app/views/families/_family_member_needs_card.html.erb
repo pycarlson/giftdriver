@@ -1,0 +1,30 @@
+<div class="family-details-card">
+  <div class="span3">
+    <h2><%= member.first_name %></h2>
+    <h4>Gender: <%= member.gender %></h4>
+    <h4>Age: <%= member.age %></h4>
+  </div>
+  <div class="span3">
+    <h3>Needs</h3>
+    <ul>
+      <% member.needs.each do |need| %>
+      <li><%= need.text %></li>
+      <% end %>
+    </ul>
+  </div>
+  <div class="span3">
+    <h3>Clothing Sizes</h3>
+    <ul>
+      <li>Pants: <%= member.size_pants %></li>
+      <li>Shirt: <%= member.size_shirt %></li>
+      <li>Dress: <%= member.size_dress %></li>
+      <li>Shoes: <%= member.size_shoes %></li>
+    </ul>
+  </div>
+  <p id="member-bio"><%= member.bio %></p>
+  <div class="span9">
+  <% if organizer?(family.drive)%>
+    <%= render 'add_edit_buttons', member: member %>
+  <% end %>
+  </div>
+</div>

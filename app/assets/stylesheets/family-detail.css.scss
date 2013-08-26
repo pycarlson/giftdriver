@@ -17,12 +17,14 @@
   padding: 20px;
   overflow: auto;
 
-  #edit-family-member-button {
-    margin-bottom: 20px;
-    width: 100px;
+  #organizers-family-member-buttons {
+    margin: 15px 0;
+    .organizer-button {
+      margin-right: 20px;
     }
-  h3 {
-    margin-top: 5px;
+    h3 {
+      margin-top: 5px;
+    }
   }
 }
 

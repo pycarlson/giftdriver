@@ -145,3 +145,12 @@ hr {
     background: $main-accent-hover;
   }
 }
+
+.organizer-button {
+  background: #47a9f8;
+  &:hover {
+    background-color: #9DCAEF;
+    color: white;
+    text-decoration: none;
+  }
+}

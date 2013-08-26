@@ -1,2 +1,9 @@
-<div id="edit-family-member-button" class="cw-button"><%= link_to "Edit", edit_family_member_path(member) %></div>
+<div id="organizers-family-member-buttons">
+  <span>
+    <%= link_to "Edit", edit_family_member_path(member), class: "cw-button organizer-button" %>
+  </span>
+  <span>
+    <%= link_to "Delete", family_member_path(member.id), :confirm => 'Are you sure?', :method => :delete, class: 'cw-button organizer-button' %>
+  </span>
+</div>
 
