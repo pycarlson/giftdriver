@@ -54,6 +54,23 @@ class Family < ActiveRecord::Base
     Drive.find(drive).families.where('adopted_by IS NOT NULL')
   end
 
+  def self.not_adopted_families_by_size(drive, family_size)
+    all_families = Drive.find(drive).families.where('adopted_by IS NULL')
+    if family_size == "0"
+      filtered_families = all_families
+    elsif family_size == "5"
+      all_families = Drive.find(drive).families.where('adopted_by IS NULL')
+      filtered_families = all_families.map do |fam| 
+        fam if fam.family_members.length > 4
+      end
+    else
+      filtered_families = all_families.map do |fam|
+        fam if fam.family_members.length == family_size.to_i
+      end
+    end
+    filtered_families.compact
+  end
+
   def self.not_adopted_families_by_location_and_size(drive, location, family_size)
     all_families = Drive.find(drive).families.where('adopted_by IS NULL')
     filtered_families = all_families.map do |fam| 

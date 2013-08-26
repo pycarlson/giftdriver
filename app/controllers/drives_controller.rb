@@ -5,8 +5,13 @@ class DrivesController < ApplicationController
 
   def filter
     drive = Drive.find(params[:id])
-    location = drive.set_location(current_user)
-    @families = drive.get_filtered_families(drive, location, params[:filter])
+
+    if organizer?(drive)
+      @families = Family.not_adopted_families_by_size(drive, params[:filter])
+    else
+      location = drive.set_location(current_user)
+      @families = drive.get_filtered_families(drive, location, params[:filter])
+    end
 
     respond_to do |format|
       format.js
