@@ -54,19 +54,25 @@ class Family < ActiveRecord::Base
     Drive.find(drive).families.where('adopted_by IS NOT NULL')
   end
 
-  def self.not_adopted_families_by_size(drive, family_size)
-    families = Drive.find(drive).families.where('adopted_by IS NULL')
-    families.map { |family| family if family.family_members.length == family_size }.compact
+  def self.not_adopted_families_by_location_and_size(drive, location, family_size)
+    all_families = Drive.find(drive).families.where('adopted_by IS NULL')
+    filtered_families = all_families.map do |fam| 
+      fam if fam.family_members.length == family_size && fam.drop_location == location 
+    end
+    filtered_families.compact
   end
 
   def self.not_adopted_families_by_location(drive, location)
-    families = Drive.find(drive).families.where('adopted_by IS NULL')
-    families.map { |family| family if family.drop_location == location }.compact
+    all_families = Drive.find(drive).families.where('adopted_by IS NULL')
+    all_families.map { |fam| fam if fam.drop_location == location }.compact
   end
 
-  def self.not_adopted_big_families(drive)
-    families = Drive.find(drive).families.where('adopted_by IS NULL')
-    families.map { |family| family if family.family_members.length > 4 }.compact
+  def self.not_adopted_big_families_by_location(drive, location)
+    all_families = Drive.find(drive).families.where('adopted_by IS NULL')
+    filtered_families = all_families.map do |fam| 
+      fam if fam.family_members.length > 4 && fam.drop_location == location 
+    end
+    filtered_families.compact
   end
 
   def members_names_sentence

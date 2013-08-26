@@ -55,4 +55,21 @@ class Drive < ActiveRecord::Base
     self.drop_locations.length > 1
   end
 
+  def set_location(current_user)
+    if multiple_dropoff_locations?
+      donor(current_user).drop_location
+    else
+      drop_locations.last
+    end
+  end
+
+  def get_filtered_families(drive, location, size)
+    if size == "0"
+      Family.not_adopted_families_by_location(drive, location)
+    elsif size == "5"
+      Family.not_adopted_big_families_by_location(drive, location)
+    else
+      Family.not_adopted_families_by_location_and_size(drive, location, size.to_i)
+    end
+  end
 end
