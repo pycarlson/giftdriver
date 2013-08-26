@@ -27,7 +27,6 @@ class Drive < ActiveRecord::Base
             :org_phone,
             :org_name,
             :org_address,
-            :org_zipcode,
             :drive_title,
             :drive_blurb,
             :start_date,

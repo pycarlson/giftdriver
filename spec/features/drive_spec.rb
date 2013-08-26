@@ -19,7 +19,6 @@ describe "Creating and managing a drive" do
       fill_in "drive[org_email]", with: "cat@mittens.cat"
       fill_in "drive[org_phone]", with: "555-555-5555"
       fill_in "drive[org_address]", with: "1251 Address Road"
-      fill_in "drive[org_zipcode]", with: "83743"
       fill_in "drive[drive_title]", with: "Mittens for Kittens"
       fill_in "drive[drive_blurb]", with: "This is a mitten drive for kittens"
       fill_in "drive[start_date]", with: "Jan 5, 2017"

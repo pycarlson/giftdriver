@@ -13,7 +13,6 @@ describe Drive do
     it { should validate_presence_of :org_phone}
     it { should validate_presence_of :org_name}
     it { should validate_presence_of :org_address}
-    it { should validate_presence_of :org_zipcode}
     it { should validate_presence_of :drive_title}
     it { should validate_presence_of :drive_blurb}
     it { should validate_presence_of :start_date}
