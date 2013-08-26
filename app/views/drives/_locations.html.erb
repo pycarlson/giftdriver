@@ -13,7 +13,9 @@
     <h2>Your selected drop-off location is: </h2>
     <% donor_location = drive.donor_dropoff_pref(current_user) %>
     <%= render 'locations_box', location: donor_location %>
-    <%= link_to "Update location", edit_drive_donor_path(drive, drive.donor(current_user)), class: "cw-button" %>
+    <div class="cw-button">
+      <%= link_to "Update location", edit_drive_donor_path(drive, drive.donor(current_user)) %>
+    </div>
   <% else %>
     <% @locations.each do |location| %>
       <%= render 'locations_box', location: location %>

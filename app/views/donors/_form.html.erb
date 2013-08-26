@@ -5,7 +5,7 @@
         <%= f.radio_button(:drop_location, location.id) %>
       </div>
       <div class="local">
-        <%= f.label(:drop_location, 
+        <%= f.label("drop_location_#{location.id}",
                     "#{location.code}, #{location.gmaps4rails_address}") %>
       </div>
       <br>
