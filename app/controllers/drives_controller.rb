@@ -33,7 +33,13 @@ class DrivesController < ApplicationController
     if current_user
       @user = Donor.find_by_user_id(current_user.id)
     end
-    @locations = DropLocation.where('drive_id = ?', @drive.id)
+
+    if @drive.user_has_dropoff_preference?(current_user)
+      @locations = @drive.donor_dropoff_pref(current_user)
+    else
+      @locations = DropLocation.where('drive_id = ?', @drive.id)
+    end
+    
     @json = @locations.to_gmaps4rails
   end
 
