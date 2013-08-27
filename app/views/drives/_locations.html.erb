@@ -1,5 +1,5 @@
 <div class="locations">
-  <% if @locations.class == Array && @locations.length > 1 %>
+  <% if @locations.kind_of?(Array) && @locations.length > 1 %>
     <h2>Drop Locations</h2>
   <% else %>
     <h2>Drop Location</h2>
