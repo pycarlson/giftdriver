@@ -46,6 +46,19 @@ class Family < ActiveRecord::Base
     DropLocation.find(loc_id).drop_dates
   end
 
+  # def update_adoptor_drop_date(id, user_id)
+  #   donor = Donor.where(:user_id => user_id, :drive_id => self.drive_id)
+  #   p "*" * 100
+  #   p donor
+  #   donor.drop_date_id = id
+  #   donor.save
+  # end
+
+  # def get_adopter_drop_date
+  #   id = User.find(self.user_id).donors.first.drop_date_id
+  #   DropDate.find(id).date_and_time
+  # end
+
   def self.not_adopted_families(drive)
     Drive.find(drive).families.where('adopted_by IS NULL')
   end

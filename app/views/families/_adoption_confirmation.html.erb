@@ -24,6 +24,16 @@
   </div>
 </div>
 
+<div id="donor-drop-date-preference">
+  <p>Please choose a drop date so the <%= @drive.drive_title %> staff know when to expect your delivery.</p>
+  <ul>
+  <% @drop_dates.each do |date| %>
+    <li><%= check_box_tag 'date_and_time', date.id %><%= date.date_and_time %></li><br>
+  <% end %>
+  </ul>
+</div><br>
+
+
 <p>Once you click 'Confirm Adoption!', an email with details about this family and the <%= @drive.drive_title %> drive will be sent off to you.</p>
 <div id="adopt-options"> 
   <span id='no'><%= link_to "Cancel", family_path(@family)%></span>

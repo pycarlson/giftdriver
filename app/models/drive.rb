@@ -38,8 +38,8 @@ class Drive < ActiveRecord::Base
   accepts_nested_attributes_for :drop_locations
   
 
-  def user_has_dropoff_preference?(user)
-    !Donor.where(user_id: user.id, drive_id: self.id).last.nil?
+  def user_has_dropoff_preference?(id)
+    !Donor.where(user_id: id, drive_id: self.id).last.nil?
   end
 
   def donor_dropoff_pref(user)

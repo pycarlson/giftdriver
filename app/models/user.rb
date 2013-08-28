@@ -5,6 +5,7 @@ class User < ActiveRecord::Base
   has_many :drive_donors, :through => :donors, :source => :drive
   has_many :drop_locations, :through => :donors
   has_many :families
+  
 
   # Include default devise modules. Others available are:
   # :token_authenticatable, :confirmable,

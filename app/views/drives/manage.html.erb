@@ -13,6 +13,7 @@
       <th>Delete?</th>
       <th>Size</th>
       <th>Adoptor</th>
+      <th>Drop Date</th>
       <th>Email</th>
       <th>Address</th>
       <th>Phone</th>
@@ -32,6 +33,11 @@
       <td>
         <% if family.adopted? %>
         <%= family.get_adopter_name %>
+        <% end %>
+      </td>
+      <td>
+        <% if family.adopted? %>
+        
         <% end %>
       </td>
       <td>
