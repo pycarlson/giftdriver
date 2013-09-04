@@ -19,23 +19,29 @@
       <%= l.text_field :phone, value: current_user.phone, required: :true %></div>
       <div class="form-item"><%= l.label :company %>
       <%= l.text_field :company, value: current_user.company %></div>
-    <% end %>
     </div>
+    <div id="confirm-p"><p>Please choose a drop date so the <%= @drive.drive_title %> staff know when to expect your delivery.</p></div>
+    <div id="donor-drop-date-options">
+      <% @drop_dates.each do |date| %>
+      <div class="radio">
+        <%= f.radio_button(:drop_date_id, date.id, required: :true ) %>
+      </div>
+      <div class="local">
+        <%= f.label("#{date.date_and_time}") %>
+      </div>
+      <br>
+      <% end %>
+    </div>
+    
+    <% end %>
   </div>
 </div>
 
-<div id="donor-drop-date-preference">
-  <p>Please choose a drop date so the <%= @drive.drive_title %> staff know when to expect your delivery.</p>
-  <ul>
-  <% @drop_dates.each do |date| %>
-    <li><%= check_box_tag 'date_and_time', date.id %><%= date.date_and_time %></li><br>
-  <% end %>
-  </ul>
-</div><br>
 
 
-<p>Once you click 'Confirm Adoption!', an email with details about this family and the <%= @drive.drive_title %> drive will be sent off to you.</p>
+
 <div id="adopt-options"> 
+  <p>Once you click 'Confirm Adoption!', an email with details about this family and the <%= @drive.drive_title %> drive will be sent off to you.</p>
   <span id='no'><%= link_to "Cancel", family_path(@family)%></span>
   <span id="confirm-button"><%= f.submit("Confirm Adoption!") %></span>
 </div>

@@ -5,9 +5,9 @@ class Family < ActiveRecord::Base
   attr_accessible :code, :drop_location
   belongs_to :drop_location
   belongs_to :user
+  has_one :drop_date
 
-
-  attr_accessible :num_boxes, :received_at_org, :given_to_family, :drop_locations_attributes, :users_attributes
+  attr_accessible :num_boxes, :received_at_org, :given_to_family, :drop_locations_attributes, :drop_date_id, :users_attributes
   accepts_nested_attributes_for :drop_location
   accepts_nested_attributes_for :user
   
@@ -41,23 +41,9 @@ class Family < ActiveRecord::Base
     user.company ? user.company : "n/a"
   end
 
-  def get_adopter_drop_location_dates
-    loc_id = current_user.donors.find_by_drive_id(1).drop_location_id
-    DropLocation.find(loc_id).drop_dates
+  def get_donor_gift_drop_date
+    DropDate.find(self.drop_date_id).date_and_time
   end
-
-  # def update_adoptor_drop_date(id, user_id)
-  #   donor = Donor.where(:user_id => user_id, :drive_id => self.drive_id)
-  #   p "*" * 100
-  #   p donor
-  #   donor.drop_date_id = id
-  #   donor.save
-  # end
-
-  # def get_adopter_drop_date
-  #   id = User.find(self.user_id).donors.first.drop_date_id
-  #   DropDate.find(id).date_and_time
-  # end
 
   def self.not_adopted_families(drive)
     Drive.find(drive).families.where('adopted_by IS NULL')

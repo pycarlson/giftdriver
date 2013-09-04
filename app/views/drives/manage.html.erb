@@ -11,7 +11,6 @@
     <tr>
       <th>Family Code</th>
       <th>Delete?</th>
-      <th>Size</th>
       <th>Adoptor</th>
       <th>Drop Date</th>
       <th>Email</th>
@@ -28,8 +27,9 @@
     <% @families.each do |family| %>
     <tr>
       <td><%= family.code %></td>
-      <td><%= link_to "delete", family_path(family.id, :drive_id => family.drive_id), :confirm => 'Are you sure?', :method => :delete %></td>
-      <td><%= family.family_members.length %></td>
+      <td><%= link_to "delete", family_path(family.id, :drive_id => family.drive_id), :confirm => 'Are you sure?', :method => :delete %>
+      </td>
+      
       <td>
         <% if family.adopted? %>
         <%= family.get_adopter_name %>
@@ -37,7 +37,7 @@
       </td>
       <td>
         <% if family.adopted? %>
-        
+        <%= family.get_donor_gift_drop_date %>
         <% end %>
       </td>
       <td>

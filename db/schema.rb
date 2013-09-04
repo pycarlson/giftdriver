@@ -11,14 +11,13 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130828195621) do
+ActiveRecord::Schema.define(:version => 20130904212019) do
 
   create_table "donors", :force => true do |t|
     t.integer "user_id"
     t.integer "drive_id"
     t.integer "drop_location_id"
     t.integer "family_id"
-    t.integer "drop_date_id"
   end
 
   create_table "drives", :force => true do |t|
@@ -65,6 +64,7 @@ ActiveRecord::Schema.define(:version => 20130828195621) do
     t.integer  "drop_location_id"
     t.integer  "user_id"
     t.integer  "num_boxes"
+    t.integer  "drop_date_id"
   end
 
   create_table "family_members", :force => true do |t|

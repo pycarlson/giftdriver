@@ -47,6 +47,8 @@ class FamiliesController < ApplicationController
   def show
     @drive = Drive.find(@family.drive_id)
     @drop_dates = @family.drop_location.drop_dates
+    p @drop_dates.inspect
+    p "*" * 100
   end
 
   def update
@@ -73,10 +75,8 @@ class FamiliesController < ApplicationController
     if @family.save
       @family.update_attribute(:adopted_by, current_user.id)
       @family.update_attribute(:user_id, current_user.id)
-      p "*" * 100
-
+      @family.update_attribute(:drop_date_id, params[:family][:drop_date_id])
       current_user.update_attributes(params[:family][:users])
-      # @family.update_adopter_drop_date(params[:date_and_time], current_user.id)
       flash[:message] = "THANK YOU!"
       UserMailer.adopted_family(current_user, @family.id).deliver
       redirect_to family_path(@family.id)
