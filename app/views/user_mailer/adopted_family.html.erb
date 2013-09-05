@@ -12,12 +12,14 @@
   <p>The <%= @drive.drive_title %> runs from <%= @drive.start_date %> to <%= @drive.end_date %>.</p>
 
   <% if @location %>
-  <p>Your drop off location is</p>
+  <h2>Your drop off location:<h3>
   <p><%= @location.street %></p>
   <p><%= @location.city %></p>
   <p><%= @location.state %></p>
   <p><%= @location.zipcode %></p>
   <% end %>
+
+  <p>You're chosen drop date: <h3><%= DropDate.find(@family.drop_date_id).date_and_time %></p></h3>
   
   <p>You've adopted <%= @family.members_names_sentence %>. We're including their details below.</p>
 
