@@ -32,6 +32,7 @@ group :test do
   gem 'database_cleaner'
   gem 'shoulda'
   gem 'selenium-webdriver'
+  gem 'zeus'
 end
 
 # To enable excel, csv, etc, file uploads to create Family Member objects
