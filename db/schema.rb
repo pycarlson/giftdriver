@@ -57,8 +57,8 @@ ActiveRecord::Schema.define(:version => 20130904212019) do
   create_table "families", :force => true do |t|
     t.integer  "drive_id"
     t.integer  "adopted_by"
-    t.string   "received_at_org",  :default => "f"
-    t.string   "given_to_family",  :default => "f"
+    t.string   "received_at_org",  :default => false
+    t.string   "given_to_family",  :default => false
     t.string   "code"
     t.datetime "created_at"
     t.integer  "drop_location_id"

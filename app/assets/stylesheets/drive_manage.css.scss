@@ -47,6 +47,11 @@
   }
 }
 
+// Fix Firefox bug in Data Tables search field display
+table.dataTable {
+  clear: both;
+}
+
 #manage-all {
   #manage_table_filter {
     float: right;
