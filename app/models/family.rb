@@ -1,17 +1,25 @@
 class Family < ActiveRecord::Base
-  has_many :family_members
+
   validates :code, :presence => :true
+
   belongs_to :drive
-  attr_accessible :code, :drop_location
   belongs_to :drop_location
   belongs_to :user
   has_one :drop_date
+  has_many :family_members
 
-  attr_accessible :num_boxes, :received_at_org, :given_to_family, :drop_locations_attributes, :drop_date_id, :users_attributes
+  attr_accessible :num_boxes,
+                  :received_at_org,
+                  :given_to_family,
+                  :drop_locations_attributes,
+                  :drop_date_id,
+                  :users_attributes,
+                  :code,
+                  :drop_location
+
   accepts_nested_attributes_for :drop_location
   accepts_nested_attributes_for :user
-  
-  
+
   def adopted?
     self.adopted_by != nil
   end

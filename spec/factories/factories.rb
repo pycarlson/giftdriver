@@ -4,7 +4,6 @@ FactoryGirl.define do
     full_name "Cat Woman"
     sequence(:email) { |n| "testuser+#{n}@example.com" }
     password 'password'
-    password_confirmation 'password'
   end
 
   factory :drive do
