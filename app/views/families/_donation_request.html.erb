@@ -1,0 +1,11 @@
+<div class="ask">
+  <p><%= @drive.fundraising_blurb %></p>
+
+  <div class="no">
+    <h2><%= link_to "No,", drive_path() %></h2><p>I'm done</p>
+  </div>
+
+  <div class="yes">
+    <h2><%= link_to "Yes,", get_donation_page_url(@family.drive_id) %></h2><p>I'd like to donate</p>
+  </div>
+</div>

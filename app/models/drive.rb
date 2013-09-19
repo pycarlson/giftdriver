@@ -20,7 +20,9 @@ class Drive < ActiveRecord::Base
                   :end_date,
                   :details_for_the_donor,
                   :drop_locations_attributes,
-                  :drop_dates_attributes
+                  :drop_dates_attributes,
+                  :fundraising_url,
+                  :fundraising_blurb
 
   validates :org_blurb,
             :org_email,

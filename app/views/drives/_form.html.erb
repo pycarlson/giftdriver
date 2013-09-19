@@ -21,6 +21,13 @@
 
       <div class="form-item"><%= f.label :Address %>
       <%= f.text_field :org_address, required: :true %></div>
+    
+      <div class="form-item"><%= f.label :Your_website_donations_page_url %>
+      <%= f.text_field :fundraising_url %></div>
+
+      <div class="form-item"><%= f.label :Details_about_your_fundraising_needs %>
+      <%= f.text_area :fundraising_blurb, :rows => 10 %></div>
+
     </div>
 
     <div id="middle">
@@ -40,7 +47,7 @@
 
       <div class="form-item"><%= f.label :Details_for_the_donor_email %>
       <%= f.text_area :details_for_the_donor, :rows => 20 %></div>
-      
+
     </div>
 
     <div id="right">

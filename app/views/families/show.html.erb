@@ -23,6 +23,11 @@
   <div id="adoption-confirmation">
     <%= render 'adoption_confirmation' %>
   </div>
+
+  <div id="donation-request" data-id='<%= @family.id %>' data-url='<%= get_donation_page_url(@family.drive_id) %>' >
+    <%= render 'donation_request' %>
+  </div>
+
   <div class="family-detail-section">
     <% @family.family_members.order('age DESC').each do |member| %>
       <%= render 'family_member_needs_card', member: member, family: @family %>
