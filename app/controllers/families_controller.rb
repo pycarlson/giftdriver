@@ -72,12 +72,10 @@ class FamiliesController < ApplicationController
   def adopt
     if @family.save
       @drive = Drive.find(@family.drive_id)
-      p "I GET IN TO THE SAVE BUT HOW FAR?"
       @family.update_attribute(:adopted_by, current_user.id)
-      p "HER ASND WHERE NOW?"
       @family.update_attribute(:user_id, current_user.id)
-      p "#{params}"
-      @family.update_attribute(:drop_date_id, 3)
+      p "HERE ARE THE PARAMS #{params}" 
+      @family.update_attribute(:drop_date_id, params[:family][:drop_date_id])
       current_user.update_attributes(params[:family][:users])
       UserMailer.adopted_family(current_user, @family.id).deliver
       
