@@ -36,7 +36,7 @@
         <% end %>
       </td>
       <td>
-        <% if family.adopted? %>
+        <% if family.adopted? && get_donation_page_url(family.drive_id) %>
         <%= family.get_donor_gift_drop_date %>
         <% end %>
       </td>

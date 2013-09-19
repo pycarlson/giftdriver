@@ -47,8 +47,6 @@ class FamiliesController < ApplicationController
   def show
     @drive = Drive.find(@family.drive_id)
     @drop_dates = @family.drop_location.drop_dates
-    p @drop_dates.inspect
-    p "*" * 100
   end
 
   def update

@@ -38,8 +38,6 @@ class FamilyMembersController < ApplicationController
   end
 
   def destroy
-    p "*" * 100
-    p "DID I MAKE IT IN HERE< TO THIS METHOD??????"
     @member = FamilyMember.find(params[:id])
     @member.destroy
     redirect_to family_path(@member.family_id)
