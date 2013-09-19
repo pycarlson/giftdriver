@@ -10,7 +10,7 @@
   </div>
   <div>
     <% if @family.adopted? %>
-      <h3 style="text-align: center; font-size: 36px; padding-bottom: 20px;">Thank you <%= current_user.full_name %> for adopting this family. You will receive an email with our giftdrive and family details in just a moment.</h3>
+      <h3 style="text-align: center; font-size: 32px; padding-bottom: 20px;">Thank you <%= current_user.full_name %> for adopting this family. You will receive an email with our giftdrive and family details in just a moment.</h3>
     <% else %>
       <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
     <% end %>
