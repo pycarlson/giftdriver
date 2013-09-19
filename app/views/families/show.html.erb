@@ -10,7 +10,7 @@
   </div>
   <div>
     <% if @family.adopted? %>
-      <h3>This family has been adopted!</h3>
+      <h3 style="text-align: center; font-size: 36px; padding-bottom: 20px;">Thank you for adopting family <%=@family.id %>, <%= current_user.full_name %>!</h3>
     <% else %>
       <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
     <% end %>
@@ -24,9 +24,9 @@
     <%= render 'adoption_confirmation' %>
   </div>
 
-  <div id="donation-request" data-id='<%= @family.id %>' data-url='<%= get_donation_page_url(@family.drive_id) %>' >
-    <%= render 'donation_request' %>
-  </div>
+  
+
+  <div class="grateful-thankyou"></div>
 
   <div class="family-detail-section">
     <% @family.family_members.order('age DESC').each do |member| %>

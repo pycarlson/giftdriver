@@ -28,6 +28,7 @@ Giftdriver::Application.routes.draw do
   resources :family_member_imports, only: [:index]
 
   match 'families/:id/adopt' => 'families#adopt', as: :adopt
+  match 'families/:id/send_adoption_email' => 'families#send_adoption_email', as: :send_adoption_email
   match 'families/:id/update_gift_status' => 'families#update_gift_status', as: :update_gift_status
 
   match 'drives/:id/families/manage' => 'drives#manage', as: :manage
