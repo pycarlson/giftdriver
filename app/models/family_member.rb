@@ -4,7 +4,7 @@ class FamilyMember < ActiveRecord::Base
   validates :first_name, :age, :gender, :bio, :presence => :true
 
   belongs_to :family
-  has_many :needs, :inverse_of => :family_member
+  has_many :needs, :dependent => :destroy, :inverse_of => :family_member
 
   accepts_nested_attributes_for :needs, :allow_destroy => true
 

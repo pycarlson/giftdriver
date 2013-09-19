@@ -6,7 +6,7 @@ class Family < ActiveRecord::Base
   belongs_to :drop_location
   belongs_to :user
   has_one :drop_date
-  has_many :family_members
+  has_many :family_members, :dependent => :destroy
 
   attr_accessible :num_boxes,
                   :received_at_org,

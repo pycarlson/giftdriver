@@ -1,11 +1,11 @@
 class Drive < ActiveRecord::Base
 
-  has_many :organizers
+  has_many :organizers, :dependent => :destroy
   has_many :users, :through => :organizers
-  has_many :families
-  has_many :drop_locations
-  has_many :drop_dates
-  has_many :donors
+  has_many :families, :dependent => :destroy
+  has_many :drop_locations, :dependent => :destroy
+  has_many :drop_dates, :dependent => :destroy
+  has_many :donors, :dependent => :destroy
   has_many :user_donors, :through => :donors, :source => :user
 
   attr_accessible :org_blurb,

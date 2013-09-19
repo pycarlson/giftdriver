@@ -6,7 +6,7 @@ class DropLocation < ActiveRecord::Base
   has_many :families
   has_many :donors
   has_many :users, :through => :donors
-  has_many :drop_dates
+  has_many :drop_dates, :dependent => :destroy
   accepts_nested_attributes_for :drop_dates, :allow_destroy => true
 
 
