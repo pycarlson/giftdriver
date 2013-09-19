@@ -74,14 +74,15 @@ class FamiliesController < ApplicationController
       @drive = Drive.find(@family.drive_id)
       @family.update_attribute(:adopted_by, current_user.id)
       @family.update_attribute(:user_id, current_user.id)
-      p "HERE ARE THE PARAMS #{params}" 
       @family.update_attribute(:drop_date_id, params[:family][:drop_date_id])
       current_user.update_attributes(params[:family][:users])
       UserMailer.adopted_family(current_user, @family.id).deliver
-      
-      flash[:message] = "THANK YOU!"
-      render 'static_pages/fundraising'
-      # redirect_to family_path(@family.id)
+
+      if !@drive.fundraising_url.blank?
+        render 'static_pages/fundraising' 
+      else
+        redirect_to family_path(@family.id)
+      end
     else
       flash[:alert] = "Something went wrong. Try again?"
       redirect_to family_path(@family.id)

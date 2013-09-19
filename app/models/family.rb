@@ -20,6 +20,10 @@ class Family < ActiveRecord::Base
   accepts_nested_attributes_for :drop_location
   accepts_nested_attributes_for :user
 
+  def org_has_fundraising_url
+    p "THIS IS THE URL #{Drive.find(self.drive_id).fundraising_url}"
+  end
+
   def get_organization_name
     Drive.find(self.drive_id).org_name
   end
