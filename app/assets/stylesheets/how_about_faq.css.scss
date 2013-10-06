@@ -1,0 +1,59 @@
+.faq {
+  width: 900px;
+  margin: 0 auto;
+  padding: 40px;
+  padding-top: 20px;
+  a {
+    text-decoration: none;
+    padding: 0;
+  }
+  h2 {
+    padding-bottom: 10px;
+  }
+  h3 {
+    text-transform: none;
+    /*padding-bottom: 20px;*/
+    margin-top: 20px;
+  }
+  .answer {
+    width: 860px;
+    margin: 0 auto;
+  }
+  ul {
+    padding-left: 20px;
+    padding-top: 10px;
+  }
+}
+
+.about-container {
+  width: 1200px;
+  height: 900px;
+  margin: 0 auto;
+  .about-box {
+    width: 960px;
+    height: 300px;
+    margin: 0 auto;
+    margin-top: 40px;
+    border: 2px solid black;
+  }
+  .peeps {
+    margin: 0 auto;
+    width: 960px;
+    .member-box {
+      width: 236px;
+      height: 300px;
+      padding: 20px;
+      background-color: white;
+      float: right;
+      margin-right: 60px;
+      margin-top: 40px;
+      border: 2px solid black;
+      &:first-child {
+        margin-right: 0;
+      }
+    }
+    .bio {
+      width: 260px;
+    }
+  }
+}

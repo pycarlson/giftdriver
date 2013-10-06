@@ -4,9 +4,12 @@ class StaticPagesController < ApplicationController
   def about
   end
 
-  def team
+  def faq
   end
 
   def home
+  end
+
+  def how_it_works
   end
 end

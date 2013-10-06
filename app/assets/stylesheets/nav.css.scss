@@ -86,3 +86,14 @@ a.navbar-link  {
     text-decoration: none;
   }
 }
+
+footer {
+  padding-top: 20px;
+  height: 40px;
+  background: $nav-background;
+  li {
+    display: inline;
+    float: right;
+    padding-right: 40px;
+  }
+}
