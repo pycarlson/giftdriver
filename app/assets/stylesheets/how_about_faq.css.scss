@@ -12,8 +12,7 @@
   }
   h3 {
     text-transform: none;
-    /*padding-bottom: 20px;*/
-    margin-top: 20px;
+    font-size: 20px;
   }
   .answer {
     width: 860px;
@@ -27,33 +26,67 @@
 
 .about-container {
   width: 1200px;
-  height: 900px;
   margin: 0 auto;
   .about-box {
-    width: 960px;
-    height: 300px;
+    width: 900px;
     margin: 0 auto;
-    margin-top: 40px;
-    border: 2px solid black;
+    padding: 30px;
   }
   .peeps {
     margin: 0 auto;
     width: 960px;
     .member-box {
-      width: 236px;
-      height: 300px;
+      width: 242px;
       padding: 20px;
       background-color: white;
       float: right;
-      margin-right: 60px;
-      margin-top: 40px;
-      border: 2px solid black;
+      margin-right: 50px;
+      img {
+        width: 240px;
+        margin-bottom: 20px;
+      }
       &:first-child {
         margin-right: 0;
       }
     }
     .bio {
       width: 260px;
+    }
+  }
+}
+
+.how-it-works-container {
+  width: 1200px;
+  margin: 0 auto;
+  .pink-present {
+    text-align: center;
+  }
+  h2 {
+    text-align: center;
+    padding-bottom: 20px; 
+  }
+  .for-the-organizer {
+    width: 520px;
+    background-color: #eee;
+    float: left;
+    margin: 20px;
+    padding: 20px;
+    ol {
+      padding-left: 20px;
+    }
+    ul {
+      padding-left: 20px;
+      padding-bottom: 10px;
+    }
+  }
+  .for-the-donor {
+    width: 520px;
+    background-color: #eee;
+    float: left;
+    margin: 20px;
+    padding: 20px;
+    ol {
+      padding-left: 20px;
     }
   }
 }
