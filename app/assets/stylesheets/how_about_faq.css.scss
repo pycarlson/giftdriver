@@ -34,19 +34,18 @@
   }
   .peeps {
     margin: 0 auto;
-    width: 960px;
+    width: 900px;
     .member-box {
-      width: 242px;
+      width: 260px;
       padding: 20px;
-      background-color: white;
       float: right;
-      margin-right: 50px;
       img {
-        width: 240px;
+        width: 242px;
         margin-bottom: 20px;
       }
       &:first-child {
         margin-right: 0;
+        margin-left: 0;
       }
     }
     .bio {
