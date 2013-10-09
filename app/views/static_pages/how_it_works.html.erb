@@ -2,6 +2,7 @@
   <div class="for-the-organizer">
     <div class="pink-present"><i class="icon-gift icon-3x"></i></div>
     <h2>Info for Organizers</h2>
+    <div class="how-buttons-work"><span class="cw-button home-button"><%= link_to "Create a Drive", new_drive_path %></span></div>
     <p>The process of starting a giftdrive is ridiculously easy. Here's a list of the information we ask you to provide:</p>
     <ol>
       <li><p>Your organization's name.</p></li>
@@ -21,13 +22,13 @@
       <li><p>Gift drop off locations - you can enter as many locations as needed.</li>
       <li><p>Drop off dates - sometimes organizations prefer that gifts are dropped off at specific dates and times, so we've provided the option of adding drop dates and times to specific drop off locations.</p></li>
     </ol>
-
-    <span class="cw-button home-button how-buttons-work"><%= link_to "Create a Drive", new_drive_path %></span>
   </div>
 
   <div class="for-the-donor">
     <div class="pink-present"><i class="icon-gift icon-3x"></i></div>
+
     <h2>Info for Donors</h2>
+    <div class="how-buttons-work"><span class="cw-button home-button how-buttons-work"><%= link_to "Current Drives", drives_path %></span></div>
     <p>The process of adopting a family thorugh Giftdriver is simple:</p>
     <ol>
       <li><p>Choose the Giftdrive you would like to adopt your family through.</p></li>
@@ -37,11 +38,9 @@
       <li><p>Once you find a family you would like to buy for, click the 'adopt this family' button.</p></li>
       <li><p>Provide the information requested in the pop up box that follows.</p></li>
       <li><p>Click 'adopt' and an email will be sent that contains all the necessary information you need when shopping for your adopted family and delivering your gifts.</p></li>
+      <li><p>Purchase and wrap your gifts, then drop them off at the drop off location specified in the email you receive upon adopting your family.</p></li>
+      <li><p>That's all there is to it.</p></li>
     </ol>
-    <p>It's really that easy.</p>
   </div>
-
-
-    <span class="cw-button home-button how-buttons-work"><%= link_to "Current Drives", drives_path %></span>
 </div>
 
