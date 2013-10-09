@@ -9,10 +9,11 @@
         <h3><%= link_to drive.drive_title, drive, action: 'get' %></h3>
       <% else %>
         <h3><%= link_to drive.drive_title, user_session_path %></h3>
+      <% end %>
       <h4>Organized by <%= drive.org_name %></h4>
       <div class="index-blurb"><p><%= drive.drive_blurb %></p></div>
     </div>
-    <% end %>
+    
     <% end %>
   </div>
 </div>
