@@ -11,6 +11,7 @@ class Drive < ActiveRecord::Base
   attr_accessible :org_blurb,
                   :org_email,
                   :org_phone,
+                  :org_website_url,
                   :org_name,
                   :org_address,
                   :org_zipcode,

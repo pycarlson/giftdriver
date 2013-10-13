@@ -16,6 +16,9 @@
       <div class="form-item"><%= f.label :Email %>
       <%= f.email_field :org_email, required: :true %></div>
 
+      <div class="form-item"><%= f.label :Organization_website_url %>
+      <%= f.text_field :org_website_url, placeholder: 'optional' %></div>
+
       <div class="form-item"><%= f.label :Phone %>
       <%= f.text_field :org_phone, required: :true %></div>
 
@@ -26,7 +29,7 @@
       <%= f.text_field :fundraising_url %></div>
 
       <div class="form-item"><%= f.label :Details_about_your_fundraising_needs %>
-      <%= f.text_area :fundraising_blurb, :rows => 10 %></div>
+      <%= f.text_area :fundraising_blurb, :rows => 10, placeholder: 'optional' %></div>
 
     </div>
 
