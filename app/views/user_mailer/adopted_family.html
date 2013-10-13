@@ -8,16 +8,18 @@
 <body>
 
   <div style="margin: 0 auto; margin-bottom: 20px; width: 800px; padding: 20px;">
-    <h1><a class="brand" href="http://www.giftdriver.org/">Giftdriver </a>and 
+    <h1><a href="http://www.giftdriver.org/">Giftdriver </a>and 
       <% if @drive.org_url %>
         <%= link_to @drive.org_name, @drive.org_website_url %>
+      <% else %>
+        <%= @drive.org_name %>
       <% end %>
       thank you!</h1>
   <hr>
     <h2><%= @drive.title %> Details</h2>
 
-    <% if @drive.details_for_the_donor %>
-      <h4>Here are a few words from the <%= @drive.org_name: %></h4>
+    <% unless @drive.details_for_the_donor.cell.black? %>
+      <h4>Here are a few words from the <%= @drive.org_name %>:</h4>
       <p><%= @drive.details_for_the_donor %></p>
     <% end %>
 
@@ -45,12 +47,12 @@
         <li>Age: <%= member.age %></li>
         <li>Gender: <%= member.gender %></li>
       <ul>
-    <% end %>
+    
       <h4>Needs</h4>
         <ul>
           <% member.needs.each do |need| %>
             <li><%= need.text %></li>
-          <% end %> 
+          <% end %>
         </ul>
 
       <h4>Clothing Sizes</h4>
