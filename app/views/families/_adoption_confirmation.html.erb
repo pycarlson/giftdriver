@@ -22,6 +22,7 @@
     </div>
     <div id="confirm-p"><p>Please choose a drop date so the <%= @drive.drive_title %> staff know when to expect your delivery.</p></div>
     <div id="donor-drop-date-options">
+      
       <% @drop_dates.each do |date| %>
       <div class="radio">
         <%= f.radio_button(:drop_date_id, date.id, required: :true ) %>
@@ -30,7 +31,8 @@
         <%= f.label("#{date.date_and_time}") %>
       </div>
       <br>
-      <% end %>
+      
+    <% end %>
     </div>
     
     <% end %>
