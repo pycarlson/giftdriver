@@ -8,13 +8,7 @@
 <body>
 
   <div style="margin: 0 auto; margin-bottom: 20px; width: 800px; padding: 20px;">
-    <h1><a href="http://www.giftdriver.org/">Giftdriver </a>and 
-      <% if @drive.org_url %>
-        <%= link_to @drive.org_name, @drive.org_website_url %>
-      <% else %>
-        <%= @drive.org_name %>
-      <% end %>
-      thank you!</h1>
+    <h1><a href="http://www.giftdriver.org/">Giftdriver </a> and <%= @drive.org_name %> thank you!</h1>
   <hr>
     <h2><%= @drive.title %> Details</h2>
 
