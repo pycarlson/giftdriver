@@ -13,7 +13,7 @@
 
 
 
-  <p>A CSV or Excel file can be used to import family records.</p>
+  <p>A CSV or Excel file can be used to import family records. Excel formats must be XLS for versions of excel (1997-2003) or XLSX (2007 or later).</p>
 
   <p>Download an import template in <%= link_to "Excel Format", family_member_imports_path(format: "xls") %>.</p>
   <br>
@@ -30,7 +30,8 @@
     <li>size_shoes</li>
     <li>bio</li>
     <li>family_code</li>
-    <li>drop_location</li> 
+    <li>drop_location</li>
+    <p style="color:red !important;font-size:11px;margin:0px !important;padding:0px !important;">**The drop location name must match the name(s) you enter when you create the gift drive.)</p> 
   </ul>
   <br>
   <p> 
