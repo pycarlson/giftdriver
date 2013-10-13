@@ -27,6 +27,7 @@
   <p><%= @drive.org_name %></p>
 
   <h3>Family Details</h3>
+  <h3>Code: @family.code</h3>
   <% @family.family_members.each do |member| %>
     <h4><%= member.first_name %></h4>
     <h5>About <%= member.first_name %></h5>
