@@ -12,7 +12,7 @@
   <hr>
     <h2><%= @drive.drive_title %> Details</h2>
 
-    <% unless @drive.details_for_the_donor.cell.black? %>
+    <% unless @drive.details_for_the_donor == nil %>
       <h4>Here are a few words from the <%= @drive.org_name %>:</h4>
       <p><%= @drive.details_for_the_donor %></p>
     <% end %>
