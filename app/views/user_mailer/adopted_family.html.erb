@@ -9,7 +9,7 @@
 
   <div style="margin: 0 auto; margin-bottom: 20px; width: 800px; padding: 20px;">
     <h1><a style="text-decoration: none;" href="http://www.giftdriver.org/">Giftdriver</a> and  
-      <% if @drive.org_website_url.blank? %>
+      <% if @drive.org_website_url != nil %>
       <a style="text-decoration: none;" href="<%= @drive.org_website_url %>"><%= @drive.org_name %></a>
       <% else %>
       <%= @drive.org_name %>
@@ -17,7 +17,7 @@
       <hr>
       <h2><%= @drive.drive_title %> Details</h2>
 
-      <% if @drive.details_for_the_donor == nil %>
+      <% if @drive.details_for_the_donor.blank? %>
       <% else %>
       <h4>Here are a few words from the <%= @drive.org_name %>:</h4>
         <p><%= @drive.details_for_the_donor %></p>
