@@ -9,7 +9,7 @@
 
   <div style="margin: 0 auto; margin-bottom: 20px; width: 800px; padding: 20px;">
     <h1><a style="text-decoration: none;" href="http://www.giftdriver.org/">Giftdriver</a> and  
-      <% if @drive.org_website_url != nil %>
+      <% if @drive.org_website_url.blank? %>
       <a style="text-decoration: none;" href="<%= @drive.org_website_url %>"><%= @drive.org_name %></a>
       <% else %>
       <%= @drive.org_name %>
