@@ -8,7 +8,12 @@
 <body>
 
   <div style="margin: 0 auto; margin-bottom: 20px; width: 800px; padding: 20px;">
-    <h1><a href="http://www.giftdriver.org/">Giftdriver </a> and <%= @drive.org_name %> thank you!</h1>
+    <h1>Thank you from <a style="text-decoration: none;" href="http://www.giftdriver.org/">Giftdriver</a>. And thank you from </h1>
+  <% if @drive.org_website_url != nil %>
+    <a href="<%= @drive.org_website_url %>"><%= @drive.org_name %></a>
+      <% else %>
+    <%= @drive.org_name %>
+  <% end %>
   <hr>
     <h2><%= @drive.drive_title %> Details</h2>
 
@@ -34,7 +39,6 @@
       <h2>Family Details (Family Code: <%= @family.code %>) </h2>
 
     <% @family.family_members.each do |member| %>
-      <div style="width: 100%; border: 4px solid gray; padding: 20px;">
       <h3><%= member.first_name %></h3>
       <ul style="list-style:none;">
         <li>About: <%= member.bio %></li>
@@ -58,5 +62,4 @@
         </ul>
       <% end %>
     </body>
-  </div>
 </html>
