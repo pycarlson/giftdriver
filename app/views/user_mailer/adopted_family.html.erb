@@ -40,25 +40,24 @@
     <% @family.family_members.each do |member| %>
       <h3><%= member.first_name %></h3>
       <ul style="list-style:none;">
-        <li>About: <%= member.bio %></li>
-        <li>Age: <%= member.age %></li>
-        <li>Gender: <%= member.gender %></li>
-      <ul>
+        <li><strong>About:</strong> <%= member.bio %></li>
+        <li><strong>Age:</strong> <%= member.age %></li>
+        <li><strong>Gender:</strong> <%= member.gender %></li>
     
       <h4>Needs</h4>
-        <ul>
-          <% member.needs.each do |need| %>
-            <li><%= need.text %></li>
-          <% end %>
-        </ul>
+        
+        <% member.needs.each do |need| %>
+          <li><%= need.text %></li>
+        <% end %>
+       
 
       <h4>Clothing Sizes</h4>
-        <ul>
-          <li>Pants: <%= member.size_pants %></li>
-          <li>Shirt: <%= member.size_shirt %></li>
-          <li>Dress: <%= member.size_dress %></li>
-          <li>Shoes: <%= member.size_shoes %></li>
-        </ul>
+   
+        <li>Pants: <%= member.size_pants %></li>
+        <li>Shirt: <%= member.size_shirt %></li>
+        <li>Dress: <%= member.size_dress %></li>
+        <li>Shoes: <%= member.size_shoes %></li>
+      
       <% end %>
     </body>
 </html>
