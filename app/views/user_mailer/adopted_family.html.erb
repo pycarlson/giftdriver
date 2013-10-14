@@ -8,12 +8,12 @@
 <body>
 
   <div style="margin: 0 auto; margin-bottom: 20px; width: 800px; padding: 20px;">
-    <h1>Thank you from <a style="text-decoration: none;" href="http://www.giftdriver.org/">Giftdriver</a>. And thank you from </h1>
+    <h1><a style="text-decoration: none;" href="http://www.giftdriver.org/">Giftdriver</a> and  
   <% if @drive.org_website_url != nil %>
     <a href="<%= @drive.org_website_url %>"><%= @drive.org_name %></a>
       <% else %>
     <%= @drive.org_name %>
-  <% end %>
+  <% end %>thank you!</h1>
   <hr>
     <h2><%= @drive.drive_title %> Details</h2>
 
@@ -26,9 +26,7 @@
     <h4>Please drop your gifts off at:<h4>
       <ul style="list-style:none;">
         <li><%= @location.street %></li>
-        <li><%= @location.city %></li>
-        <li><%= @location.state %></li>
-        <li><%= @location.zipcode %></li>
+        <li><%= @location.city %>, &nbsp<%= @location.state %>&nbsp<%= @location.zipcode %></li>
         <% end %>
       </ul>
 
@@ -36,7 +34,8 @@
 
       <hr>
 
-      <h2>Family Details (Family Code: <%= @family.code %>) </h2>
+      <h2>Family Details</h2>
+      <h3>(Family Code: <%= @family.code %>)</h3>
 
     <% @family.family_members.each do |member| %>
       <h3><%= member.first_name %></h3>
