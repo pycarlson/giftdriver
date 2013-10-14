@@ -10,7 +10,7 @@
   <div style="margin: 0 auto; margin-bottom: 20px; width: 800px; padding: 20px;">
     <h1><a style="text-decoration: none;" href="http://www.giftdriver.org/">Giftdriver</a> and  
   <% if @drive.org_website_url != nil %>
-    <a href="<%= @drive.org_website_url %>"><%= @drive.org_name %></a>
+    <a style="text-decoration: none;" href="<%= @drive.org_website_url %>"><%= @drive.org_name %></a>
       <% else %>
     <%= @drive.org_name %>
   <% end %>thank you!</h1>
@@ -34,8 +34,8 @@
 
       <hr>
 
-      <h2>Family Details</h2>
-      <h3>(Family Code: <%= @family.code %>)</h3>
+      <h2 style="margin-bottom: 0px; padding-bottom: 0px;">Family Details</h2>
+      <h3 style="margin-top: 0px; padding-top: 0px;">(Family Code: <%= @family.code %>)</h3>
 
     <% @family.family_members.each do |member| %>
       <h3><%= member.first_name %></h3>
