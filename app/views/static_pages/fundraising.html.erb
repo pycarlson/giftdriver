@@ -1,4 +1,4 @@
-<div id="funds-header"><h2><%= @family.get_organization_name %> has Just One More Ask</h2></div>
+<div id="funds-header"><h2><%= @family.get_organization_name %> has just one more ask. Would you like to make an additional donation?</h2></div>
 <div id="donation-request" data-id='<%= @family.id %>' data-url='<%= get_donation_page_url(@family.drive_id) %>' >
     <%= render 'donation_request' %>
 </div>
