@@ -1,8 +1,6 @@
 <div class='add-location'>
   <h3>Current Locations</h3>
-  <% if @locations.length < 1 %>
-    no locations assigned yet
-  <% else %>
+  
     <ul class="loc-list">
     <% @locations.each do |location| %>
       <li><%= location.code %></li>
@@ -10,7 +8,6 @@
         <%= date.date_and_time %><br>
         <% end %>
         <br>
-    <% end %>
     </ul>
   <% end %>
 </div>
