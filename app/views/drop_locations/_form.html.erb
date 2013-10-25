@@ -1,14 +1,16 @@
 <div class='add-location'>
   <h3>Current Locations</h3>
   
-    <ul class="loc-list">
+  <ul class="loc-list">
     <% @locations.each do |location| %>
-      <li><%= location.code %></li>
-      <% location.drop_dates.each do |date| %>
-        <%= date.date_and_time %><br>
-        <% end %>
-        <br>
-    </ul>
+    <li><%= location.code %></li>
+    <% unless location.drop_dates == nil %>
+    <% location.drop_dates.each do |date| %>
+    <%= date.date_and_time %><br>
+    <% end %>
+    <br>
+  </ul>
+  <% end %>
   <% end %>
 </div>
 
