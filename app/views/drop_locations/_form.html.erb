@@ -3,7 +3,9 @@
     <ul class="loc-list">
     <% @locations.each do |location| %>
       <li><%= location.code %></li>
-      <% if location.drop_dates %>
+      <% if location.drop_dates.nil? %>
+      no dates yet
+        <% else %>
       <% location.drop_dates.each do |date| %>
         <%= date.date_and_time %><br>
         <% end %>
