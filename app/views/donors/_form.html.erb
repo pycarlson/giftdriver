@@ -2,7 +2,7 @@
   <% @locations.each do |location| %>
     <% if Family.not_adopted_families_by_location(@drive, location).present? %>
       <div class="radio">
-        <%= f.radio_button(:drop_location, location.id) %>
+        <%= f.radio_button(:drop_location, location.id, required: :true) %>
       </div>
       <div class="local">
         <%= f.label("drop_location_#{location.id}",
