@@ -40,7 +40,7 @@ class DrivesController < ApplicationController
       @locations = @drive.donor_dropoff_pref(current_user)
     else
       p "*" * 100
-      @locations = DropLocation.where('drive_id = ?' @drive.id)
+      @locations = DropLocation.where('drive_id = ?', @drive.id)
       p "#{@drive.id}"
       p "THIS S THE LOCATIONS #{@locations.inspect}"
       
