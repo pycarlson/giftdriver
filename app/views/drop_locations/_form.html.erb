@@ -1,5 +1,14 @@
 <div class='add-location'>
   <h3>Current Locations</h3>
-    will have to fix this<br>strange bug
+  <ul>
+    <% @locations.each do |location| %>
+      <li><%= location.code %></li>
+      <% location.drop_dates.each do |drop_off| %>
+        <li><%= drop_off.date_and_time %></li>
+      <% end %>
+      <br>
+    <% end %>
+  </ul>
+
 </div>
 

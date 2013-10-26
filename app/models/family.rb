@@ -57,8 +57,8 @@ class Family < ActiveRecord::Base
     user.company ? user.company : "n/a"
   end
 
-  def get_donor_gift_drop_date
-    DropDate.find(self.drop_date_id).date_and_time
+  def get_donor_gift_drop_date(family)
+    family.drop_date_id
   end
 
   def self.not_adopted_families(drive)
