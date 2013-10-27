@@ -11,11 +11,11 @@
   </ul>
 
   <% if @families_with_no_drop_location_info.length > 0 %>
-  <h3 style="color: red;">Drop Location ID required</h3>
+  <h3 style="color: red; font-size: 16px;">Drop Location ID required for:</h3>
   
     <ul>
       <% @families_with_no_drop_location_info.each do |f| %>
-        <li><%= f.code %></li>
+        <li>Family / Code: <%= f.code %></li>
       <% end %>
     </ul>
 
