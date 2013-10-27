@@ -17,10 +17,16 @@ FactoryGirl.define do
     drive_blurb "Smiling all the way"
     start_date "Nov 15, 2013"
     end_date "Dec 24, 2013"
+
+    after(:create) do |drive, evaluator|
+      unless drive.drop_locations.length > 0
+        create(:drop_location, drive: drive)
+      end
+    end
   end
 
   factory :drop_location do 
-    drive_id  1
+    drive
     street "717 California Street"
     city "San Francisco"
     state "CA"

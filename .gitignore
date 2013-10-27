@@ -20,3 +20,6 @@ db/*.sqlite3
 .yardoc
 _yardoc
 doc/
+
+zeus.json
+custom_plan.rb

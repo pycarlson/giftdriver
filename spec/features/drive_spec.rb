@@ -68,8 +68,6 @@ describe "Creating and managing a drive" do
             click_button "Add Organizer"
           end
 
-          save_and_open_page
-
           expect(page).to have_content "org2@cat.cat"
         end
 
@@ -87,16 +85,22 @@ describe "Creating and managing a drive" do
 
       context "when a family has been adopted" do
 
-        it "lets the organizer log gifts as received" do
+        # These tests are broken because a <form> is not allowed to span multiple table elements.
+        # We would need to pick a different strategy for the gift management page if we want
+        # to be able to test it.
+        it "lets the organizer log gifts as received by organization" do
           visit manage_path(adopted_family)
 
-          click_link "Received"
-          within ".received" do
-            expect(page).to have_content(Time.now.strftime("%B %-d, %Y"))
+          within '#manage_table tbody tr:first' do
+            find("[name=received_at_org]").set("Oct 2, 2001")
+            click_on "Update"
           end
+
+          visit manage_path(adopted_family)
+          expect(page).to have_content("Oct 2, 2001")
         end
 
-        it "lets the organizer log gift as delivered" do
+        it "lets the organizer log gift as delivered/given to families" do
           visit manage_path(adopted_family)
 
           click_link "Received"
@@ -135,7 +139,7 @@ describe "Creating and managing a drive" do
 
           click_link "Add a need"
           find(:css, "#right-member-create input[type=text]").set("New Shirts")
-          
+
           click_link "Add a need"
 
           need_inputs = all(:css, "#right-member-create input[type=text]")

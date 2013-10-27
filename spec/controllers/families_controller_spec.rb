@@ -1,22 +1,18 @@
 require 'spec_helper'
 
 describe FamiliesController do
+  let(:user) { create(:user) }
+  let(:drive) { create(:drive) }
 
-	let(:family) { create(:family) }
-	let(:drive) { create(:drive) }
-	let(:drop_location) { create(:drop_locatiion) }
-	let(:family_attributes) { create(:family) }
-
-	before do
-		drive
-	end
+  before do
+    sign_in user
+    drive.users << user
+  end
 
 	context "with valid attributes" do
 		it "creates a new family" do
-			family_attributes[:drive_id] = drive.id
-
 			expect {
-				post :create, family: family_attributes
+				post :create, drive_id: drive.id, family: attributes_for(:family, drive: drive)
 			}.to change(Family, :count).by(1)
 		end
 	end
