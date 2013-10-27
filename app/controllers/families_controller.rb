@@ -91,12 +91,14 @@ class FamiliesController < ApplicationController
       if !@drive.fundraising_url.blank?
         render 'static_pages/fundraising' 
       else
+        flash[:alert] = "You will receive an email with your adoption details shortly."
         redirect_to family_path(@family.id)
       end
     else
       flash[:alert] = "Something went wrong. Try again?"
       redirect_to family_path(@family.id)
     end
+    flash[:alert] = "You will receive an email with your adoption details shortly."
   end
 
 

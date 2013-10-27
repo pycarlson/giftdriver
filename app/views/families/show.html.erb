@@ -5,22 +5,28 @@
   </div>
   <div class="add-family-button">
     <% if organizer?(@family.drive) %>
+      <% unless @family.adopted? %>
       <div class="cw-button organizer-button" id="add-member"><%= link_to "Add family member", new_family_family_member_path(@family), action: 'post' %></div>
+      <% end %>
     <% end %>
   </div>
   <div>
 
     <% if @family.adopted? %>
-      <h3 style="text-align: center; font-size: 32px; padding-bottom: 20px;">Thank you <%= current_user.full_name %> for adopting this family. You will receive an email with our giftdrive and family details in just a moment.</h3>
-    <% else %>
-      <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
+    <% if organizer?(@drive) || @family.adopted_by == current_user.id %>
+    <h3 style="text-align: center; font-size: 32px; padding-bottom: 20px;">This family has been adopted. </h3>
     <% end %>
+    <% else %>
+    <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>
+    
+  
   </div>
   <div class="page-title">
     <h4>This family's gifts should be delivered to:</h4><br>
     <h4 style="font-size:30px;"><%= @family.drop_location.code %></h4>
     <h4><%= @family.drop_location.gmaps4rails_address %></h4>
   </div>
+  <% end %>
   <div id="adoption-confirmation">
     <%= render 'adoption_confirmation' %>
   </div>
@@ -31,10 +37,10 @@
 
   <div class="family-detail-section">
     <% @family.family_members.order('age DESC').each do |member| %>
-      <%= render 'family_member_needs_card', member: member, family: @family %>
+    <%= render 'family_member_needs_card', member: member, family: @family %>
     <% end %>
   </div>
 </div>
 
-  
+
 
