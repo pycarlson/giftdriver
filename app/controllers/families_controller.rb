@@ -1,6 +1,6 @@
 class FamiliesController < ApplicationController
 
-  before_filter :validate_organizer, except: [:index, :show, :adopt, :update, :update_gift_status]
+  before_filter :validate_organizer, except: [:index, :show, :adopt, :update, :update_gift_status, :edit, :update_location_code ]
   before_filter :find_family, except: [:index, :create]
 
   def index
@@ -49,10 +49,20 @@ class FamiliesController < ApplicationController
     @drop_dates = @family.drop_location.drop_dates
   end
 
+  def edit 
+    @drive = Drive.find(@family.drive_id)
+    @family.update_attributes(params[:family])
+  end
+
   def update
-    drive = Drive.find(@family.drive_id)
-    @family.update_attributes(:num_boxes => params[:family][:num_boxes])
-    redirect_to manage_path(drive.id)
+    @drive = Drive.find(@family.drive_id)
+    @family.update_attributes(params[:family])
+    redirect_to drive_families_path(@drive)
+  end
+
+  def update_location_code
+    @family.update_attributes(drop_location_id: params[:location_code])
+    redirect_to(:back)
   end
 
   def destroy
@@ -88,6 +98,8 @@ class FamiliesController < ApplicationController
       redirect_to family_path(@family.id)
     end
   end
+
+
 
   protected
 

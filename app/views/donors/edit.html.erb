@@ -1,7 +1,7 @@
 <div class="inner location-chooser">
   <h1>Update your drop-off location</h1>
   <h4>Changing your preferred drop-off location will show you any families associated with the new drop-off location. If you have already adopted a family, please drop off their gifts at your originally chosen location. You can contact <%= @drive.org_name %> at <%= @drive.org_email %> with any questions.</h4>
-  <h4>Currently selected location: <%= "#{@donor.drop_location.code}, #{@donor.drop_location.gmaps4rails_address}"%></h4>
+  <h4 style="text-decoration: underline;">Current location: <%= "#{@donor.drop_location.code}, #{@donor.drop_location.gmaps4rails_address}"%></h4>
   <div id="choose-map"><%= gmaps4rails(@json) %></div>
   <%= render "form" %>
 </div>

@@ -6,4 +6,23 @@
     <% end %>
   </ul>
   <div class="family-needs">Their needs include: <%= family.sampled_needs(8).to_sentence %>.</div>
+  <br>
+  <% if organizer?(@drive) %>
+    <% if family.drop_location_id == nil %>
+
+    <p style="color: red;">WARNING: This family has no drop location assigned. Add drop location ID number now. You can find a list of your drop location ID numbers in the Orgainzer Dashboard at the bottom of the Drive home page.</p>
+
+    <div id="hidden-location-update-div">
+      <%= form_tag("/families/#{family.id}/update_location_code") do %>
+        <%= text_field_tag :location_code, (family.drop_location_id), :style => "width: 80px" %> 
+        <%= submit_tag "Add ID" %>
+      <% end %>
+    </div>
+
+    <% else %>
+      <%= link_to "Update Family Code or Location ID", edit_family_path(family) %> 
+  <% end %>
+
+<% end %>
+
 </div>

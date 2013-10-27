@@ -16,7 +16,7 @@ class Family < ActiveRecord::Base
                   :drop_date_id,
                   :users_attributes,
                   :code,
-                  :drop_location
+                  :drop_location_id
 
   accepts_nested_attributes_for :drop_location
   accepts_nested_attributes_for :user
@@ -59,7 +59,7 @@ class Family < ActiveRecord::Base
   end
 
   def get_donor_gift_drop_date(family)
-    family.drop_date_id
+    DropDate.find(family.drop_date_id).date_and_time
   end
 
   def self.not_adopted_families(drive)

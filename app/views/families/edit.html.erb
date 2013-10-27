@@ -1,0 +1,13 @@
+<div class="create-edit-title"><h2>Family Editing Options</h2></div>
+<div class="family-edit-form">
+  <%= form_for @family do |f| %>
+      <div class="form-item"><%= f.label :code %>
+      <%= f.text_field :code, required: :true, :autofocus => true %></div>
+
+      <div class="form-item"><%= f.label :drop_location_id %>
+      <%= f.text_field :drop_location_id, required: :true, :autofocus => true %></div>
+      <%= f.submit "Update Family Details" %>
+  <% end %>
+</div>
+
+ 

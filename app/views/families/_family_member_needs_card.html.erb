@@ -1,18 +1,9 @@
 <div class="family-details-card">
   <div class="span3">
-    <h2><%= member.first_name %></h2>
+    <h2 style="font-size: 40px;"><%= member.first_name %></h2>
     <h4>Gender: <%= member.gender %></h4>
     <h4>Age: <%= member.age %></h4>
-  </div>
-  <div class="span3">
-    <h3>Needs</h3>
-    <ul>
-      <% member.needs.each do |need| %>
-      <li><%= need.text %></li>
-      <% end %>
-    </ul>
-  </div>
-  <div class="span3">
+    <br>
     <h3>Clothing Sizes</h3>
     <ul>
       <li>Pants: <%= member.size_pants %></li>
@@ -21,6 +12,16 @@
       <li>Shoes: <%= member.size_shoes %></li>
     </ul>
   </div>
+
+  <div class="needs-span4">
+    <h3>Needs</h3>
+    <ul>
+      <% member.needs.each do |need| %>
+      <li><%= need.text %></li>
+      <% end %>
+    </ul>
+  </div>
+  
   <p id="member-bio"><%= member.bio %></p>
   <div class="span9">
   <% if organizer?(family.drive)%>
