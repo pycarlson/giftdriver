@@ -10,7 +10,7 @@
   <% if organizer?(@drive) %>
     <% if family.drop_location_id == nil %>
 
-    <p style="color: red;">WARNING: This family has no drop location assigned. Add adrop location ID number now. You can find a list of your drop location ID numbers in the Orgainzer Dashboard at the bottom of the Drive home page.</p>
+    <p style="color: red;">WARNING: This family has no drop location assigned and is not yet visible to donors. Add a drop location ID number now. You can find a list of your drop location ID numbers in the Orgainzer Dashboard at the bottom of the Drive home page.</p>
 
     <div id="hidden-location-update-div">
       <%= form_tag("/families/#{family.id}/update_location_code") do %>
