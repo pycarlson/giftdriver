@@ -14,7 +14,7 @@
 
     <% if @family.adopted? %>
     <% if organizer?(@drive) || @family.adopted_by == current_user.id %>
-    <h3 style="text-align: center; font-size: 32px; padding-bottom: 20px;">This family has been adopted. </h3>
+    <h3 style="text-align: center; font-size: 32px; padding-bottom: 20px;">This family has been adopted</h3>
     <% end %>
     <% else %>
     <div class="cw-button" id="adopt-button"><%= link_to "Adopt this Family", adopt_path(@family), action: 'post' %></div>

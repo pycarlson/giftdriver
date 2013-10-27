@@ -89,10 +89,10 @@ class FamiliesController < ApplicationController
       UserMailer.adopted_family(current_user, @family.id).deliver
 
       if !@drive.fundraising_url.blank?
-        flash[:notice] = "Thank you, #{current_user.full_name}! You will receive an email with your adoption details shortly.  Adopted family details will continue to be available to view on Giftdriver any time.  You will find your family page and details located in the 'Adopted Families' section at the bottom of the all families page."
+        flash[:notice] = "Thank you, #{current_user.full_name}! You will receive an email with your adoption details shortly.  Adopted family details will continue to be available on Giftdriver to view any time.  You will find your family page and details located in the 'Adopted Families' section at the bottom of the all families page."
         render 'static_pages/fundraising' 
       else
-        flash[:notice] = "Thank you, #{current_user.full_name}! You will receive an email with your adoption details shortly.  Adopted family details will continue to be available to view on Giftdriver any time.  You will find your family page and details located in the 'Adopted Families' section at the bottom of the all families page."
+        flash[:notice] = "Thank you, #{current_user.full_name}! You will receive an email with your adoption details shortly.  Adopted family details will continue to be available on Giftdriver to view any time.  You will find your family page and details located in the 'Adopted Families' section at the bottom of the all families page."
         redirect_to family_path(@family.id)
       end
     else
