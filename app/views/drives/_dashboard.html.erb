@@ -10,7 +10,8 @@
       <%= email_field_tag :email, nil, :placeholder => "new organizer email" %>
       <div><%= submit_tag("Add Organizer") %></div>
     <% end %> 
-    <h4>Current Organizers</h4>
+    
+    <h3>Current Organizers</h3>
     <ul>
     <% @organizers.each do |organizer| %>
       <% if last_organizer?(@drive) %>
@@ -29,6 +30,6 @@
   <%= render '/drop_locations/form' %>
 
   <%= render 'drive_organizer_buttons', locals: { family: @family, drive: @drive } %>
-  
+
 </div>
 <% end %>
