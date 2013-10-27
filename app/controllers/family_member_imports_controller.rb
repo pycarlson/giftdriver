@@ -7,9 +7,7 @@ class FamilyMemberImportsController < ApplicationController
   end
 
   def new
-    p "I am getting here!" * 5
     @drive = Drive.find(params[:drive_id])
-    p "AND getting here!" * 5
     @family_members = FamilyMemberImport.new
   end
 
