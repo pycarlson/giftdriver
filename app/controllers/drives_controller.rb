@@ -4,13 +4,13 @@ class DrivesController < ApplicationController
   before_filter :validate_organizer, except: [:filter, :index, :show, :new, :create]
 
   def filter
-    drive = Drive.find(params[:id])
+    @drive = Drive.find(params[:id])
 
-    if organizer?(drive)
-      @families = Family.not_adopted_families_by_size(drive, params[:filter])
+    if organizer?(@drive)
+      @families = Family.not_adopted_families_by_size(@drive, params[:filter])
     else
-      location = drive.set_location(current_user)
-      @families = drive.get_filtered_families(drive, location, params[:filter])
+      location = @drive.set_location(current_user)
+      @families = @drive.get_filtered_families(@drive, location, params[:filter])
     end
 
     respond_to do |format|

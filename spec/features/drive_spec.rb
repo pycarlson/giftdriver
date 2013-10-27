@@ -83,6 +83,32 @@ describe "Creating and managing a drive" do
 
       it "lets the organizer add more drop locations"
 
+      describe "when there are many families in the drive" do
+        before do
+          @family_with_one = create(:family, drive: drive)
+          create(:family_member, family: @family_with_one, first_name: 'Onefamily')
+
+          @family_with_two = create(:family, drive: drive)
+          create(:family_member, family: @family_with_two, first_name: 'Twofamily')
+          create(:family_member, family: @family_with_two)
+        end
+
+        it "lets a user browse families to adopt", js: true do
+          visit drive_families_path(drive)
+
+          expect(page).to have_content('Onefamily')
+          expect(page).to have_content('Twofamily')
+
+          find('#filter_1').click
+          expect(page).to have_content('Onefamily')
+          expect(page).not_to have_content('Twofamily')
+
+          find('#filter_2').click
+          expect(page).not_to have_content('Onefamily')
+          expect(page).to have_content('Twofamily')
+        end
+      end
+
       context "when a family has been adopted" do
 
         # These tests are broken because a <form> is not allowed to span multiple table elements.

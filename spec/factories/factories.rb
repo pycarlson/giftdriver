@@ -38,7 +38,7 @@ FactoryGirl.define do
   end
 
   factory :family do
-    code "hrt675"
+    sequence(:code) { |n| "familycode-#{n}" }
     drive
     drop_location
   end
