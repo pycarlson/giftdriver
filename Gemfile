@@ -8,6 +8,8 @@ gem "gmaps4rails", "~> 1.5.6"
 gem "geocoder"
 gem "nested_form"
 gem "jquery-datatables-rails"
+gem 'thin'
+gem 'rubyzip', '< 1.0.0'
 
 group :development do
   gem 'quiet_assets'
