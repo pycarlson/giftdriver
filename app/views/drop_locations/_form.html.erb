@@ -1,4 +1,4 @@
-<div class='add-location'>
+<div class='add-location three'>
   <h3>Current Locations</h3>
   <ul>
     <% @locations.each do |location| %>
@@ -10,5 +10,15 @@
     <% end %>
   </ul>
 
+  <% if @families_with_no_drop_location_info.length > 0 %>
+  <h3 style="color: red;">Drop Location ID required</h3>
+  
+    <ul>
+      <% @families_with_no_drop_location_info.each do |f| %>
+        <li><%= f.code %></li>
+      <% end %>
+    </ul>
+
+  <% end %>
 </div>
 
