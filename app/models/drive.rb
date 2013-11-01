@@ -40,6 +40,14 @@ class Drive < ActiveRecord::Base
   accepts_nested_attributes_for :drop_dates, :allow_destroy => true
   accepts_nested_attributes_for :drop_locations
 
+
+
+  def delete_user_as_donor(user)
+    user.donors.each do |donor|
+      donor.destroy
+    end
+  end
+
   def get_families_with_no_drop_location_info
     families = self.families
     families.where('drop_location_id IS NULL')

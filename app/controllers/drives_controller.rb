@@ -22,25 +22,59 @@ class DrivesController < ApplicationController
     @drives = Drive.all
   end
 
+   def add_organizer
+    user = User.find_by_email(params[:email])
+    drive = Drive.find(params[:id])
+
+    if user == nil
+      flash[:alert] = "Please have user sign up."
+      redirect_to drive_path
+    else
+      new_organizer = Organizer.where("user_id = ? AND drive_id = ?", user.id, params[:id])
+      if new_organizer.empty?
+        drive.users << user
+        p "*" * 100
+        p user.drop_locations
+        p user.donors
+        p "$" * 100
+        drive.delete_user_as_donor(user)
+        p user.donors
+        # user.donors.first.drop_location_id = nil
+        # user.save
+        
+        flash[:alert] = "User is now an organizer for this drive."
+        redirect_to drive_path
+      else
+        flash[:alert] = "User is already an organizer for this drive."
+        redirect_to drive_path
+      end
+    end
+  end
+
+   
   def show
     redirect_to user_session_path unless current_user
-     
+    
     @drive = Drive.find_by_id(params[:id])
     @families_with_no_drop_location_info = @drive.get_families_with_no_drop_location_info
     @families = @drive.families
     @not_adopted = Family.not_adopted_families(@drive).sample(5)
     @family = Family.new
+    
     @organizers = Organizer.where("drive_id = ?", @drive.id)
     @donor_ids = []
+
     @drive.donors.each { |donor| @donor_ids << donor.user_id }
     if current_user
       @user = Donor.find_by_user_id(current_user.id)
     end
-
+    
     if @drive.user_has_dropoff_preference?(current_user)
       @locations = @drive.donor_dropoff_pref(current_user)
+      
     else
       @locations = DropLocation.where('drive_id = ?', @drive.id)
+      
     end
     
     @json = @locations.to_gmaps4rails
@@ -80,25 +114,8 @@ class DrivesController < ApplicationController
     @families = @drive.families.order(:id)
   end
 
-  def add_organizer
-    user = User.find_by_email(params[:email])
-    drive = Drive.find(params[:id])
 
-    if user == nil
-      flash[:alert] = "Please have user sign up."
-      redirect_to drive_path
-    else
-      new_organizer = Organizer.where("user_id = ? AND drive_id = ?", user.id, params[:id])
-      if new_organizer.empty?
-        drive.users << user
-        flash[:alert] = "User is now an organizer for this drive."
-        redirect_to drive_path
-      else
-        flash[:alert] = "User is already an organizer for this drive."
-        redirect_to drive_path
-      end
-    end
-  end
+
 
   def delete_organizer
     organizers = Organizer.where("drive_id = ?", params[:id])
