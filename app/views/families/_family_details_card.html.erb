@@ -5,7 +5,8 @@
     <li><%= member.first_name %>, age: <%= member.age %></li>
     <% end %>
   </ul>
-  <div class="family-needs">Their needs include: <%= family.sampled_needs(8).to_sentence %>.</div>
+  <div class="family-needs">Their needs include: <%= family.sampled_needs(2).to_sentence %>...(click on the family id to see more)</div>
+
   <br>
   <% if organizer?(@drive) %>
     <% if family.drop_location_id == nil %>
