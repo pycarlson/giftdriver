@@ -15,23 +15,29 @@
       <%= @drive.org_name %>
       <% end %>thank you!</h1>
       <hr>
-      <h2><%= @drive.drive_title %> Details</h2>
+      <h1><%= @drive.drive_title %> Details</h1>
 
       <% if @drive.details_for_the_donor.blank? %>
       <% else %>
-      <h4>Here are a few words from the <%= @drive.org_name %>:</h4>
+      <h2>A few words from <%= @drive.org_name %>:</h2>
         <p><%= @drive.details_for_the_donor %></p>
+        <% unless @drive.shopping_details_link.blank? %>
+        <p>You can get shopping tips here: <a style="text-decoration: none;" href="<%= @drive.shopping_details_link %>">GET SHOPPING TIPS</a></p>
+        <% end %>
+        <% unless @drive.donation_receipt_link.blank? %>
+        <p>If you would like to fill out a donation receipt. Please visit this link: <a style="text-decoration: none;" href="<%= @drive.donation_receipt_link %>">GET RECEIPT</a></p>
+        <% end %>
       <% end %>
 
       <% if @location %>
-      <h4>Please drop your gifts off at:<h4>
-        <ul style="list-style:none;">
-          <li><%= @location.street %></li>
-          <li><%= @location.city %>, &nbsp<%= @location.state %>&nbsp<%= @location.zipcode %></li>
+      <h2>Please drop your gifts off at:<h2>
+        <ul style="list-style-type:none;">
+          <li style="list-style-tupe:none;"><p style="margin: 0;"><%= @location.street %></p></li>
+          <li style="list-style-type:none;"><p style="margin: 0;"><%= @location.city %>, &nbsp<%= @location.state %>&nbsp<%= @location.zipcode %></p></li>
           <% end %>
         </ul>
 
-        <h4>Drop date: <%= DropDate.find(@family.drop_date_id).date_and_time %></h4>
+        <h2>Drop date: <%= DropDate.find(@family.drop_date_id).date_and_time %></h2>
 
         <hr>
 

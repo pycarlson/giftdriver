@@ -23,7 +23,9 @@ class Drive < ActiveRecord::Base
                   :drop_locations_attributes,
                   :drop_dates_attributes,
                   :fundraising_url,
-                  :fundraising_blurb
+                  :fundraising_blurb,
+                  :donation_receipt_link,
+                  :shopping_details_link
 
   validates :org_blurb,
             :org_email,

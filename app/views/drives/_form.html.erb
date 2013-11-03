@@ -17,7 +17,7 @@
       <%= f.email_field :org_email, required: :true %></div>
 
       <div class="form-item"><%= f.label :Organization_website_url %>
-      <%= f.text_field :org_website_url, placeholder: 'optional' %></div>
+      <%= f.text_field :org_website_url, placeholder: 'optional - must be a valid url' %></div>
 
       <div class="form-item"><%= f.label :Phone %>
       <%= f.text_field :org_phone, required: :true %></div>
@@ -26,7 +26,7 @@
       <%= f.text_field :org_address, required: :true %></div>
     
       <div class="form-item"><%= f.label :Your_website_donations_page_url %>
-      <%= f.text_field :fundraising_url, placeholder: 'optional' %></div>
+      <%= f.text_field :fundraising_url, placeholder: 'optional - must be a valid url' %></div>
 
       <div class="form-item"><%= f.label :Details_about_your_fundraising_needs %>
       <%= f.text_area :fundraising_blurb, :rows => 10, placeholder: 'optional' %></div>
@@ -49,8 +49,13 @@
       <%= f.text_field :end_date, required: :true %></div>
 
       <div class="form-item"><%= f.label :Details_for_the_donor_email %>
-      <%= f.text_area :details_for_the_donor, :rows => 20 %></div>
+      <%= f.text_area :details_for_the_donor, :rows => 20, placeholder: 'optional'  %></div>
 
+      <div class="form-item"><%= f.label :Donation_receipt_link %>
+      <%= f.text_field :donation_receipt_link, placeholder: 'optional - must be a valid url' %></div>
+
+      <div class="form-item"><%= f.label :Shopping_details_link %>
+      <%= f.text_field :shopping_details_link, placeholder: 'optional - must be a valid url' %></div>
     </div>
 
     <div id="right">

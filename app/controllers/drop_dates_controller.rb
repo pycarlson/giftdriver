@@ -1,4 +1,3 @@
 class DropLocationsController < ApplicationController
 
-  
 end

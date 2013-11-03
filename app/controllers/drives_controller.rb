@@ -33,15 +33,7 @@ class DrivesController < ApplicationController
       new_organizer = Organizer.where("user_id = ? AND drive_id = ?", user.id, params[:id])
       if new_organizer.empty?
         drive.users << user
-        p "*" * 100
-        p user.drop_locations
-        p user.donors
-        p "$" * 100
         drive.delete_user_as_donor(user)
-        p user.donors
-        # user.donors.first.drop_location_id = nil
-        # user.save
-        
         flash[:alert] = "User is now an organizer for this drive."
         redirect_to drive_path
       else
@@ -113,9 +105,6 @@ class DrivesController < ApplicationController
     @drive = Drive.find(params[:id])
     @families = @drive.families.order(:id)
   end
-
-
-
 
   def delete_organizer
     organizers = Organizer.where("drive_id = ?", params[:id])
