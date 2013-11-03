@@ -20,61 +20,54 @@
       <% if @drive.details_for_the_donor.blank? %>
       <% else %>
       <h2>A few words from <%= @drive.org_name %>:</h2>
-        <p><%= @drive.details_for_the_donor %></p>
+      <p><%= @drive.details_for_the_donor %></p>
 
-        <% unless @drive.donation_receipt_link.blank? %>
-        <p>When dropping off your gifts, please bring a filled out donation receipt. A blank copy can be found here: 
+      <% unless @drive.donation_receipt_link.blank? %>
+      <p>When dropping off your gifts, please bring a filled out donation receipt. A blank copy can be found here: 
         <a style="text-decoration: none;" href="<%= @drive.donation_receipt_link %>">GET RECEIPT</a></p>
         <% end %>
 
         <% unless @drive.shopping_details_link.blank? %>
         <p>For shopping tips, pleaes go here: 
           <a style="text-decoration: none;" href="<%= @drive.shopping_details_link %>">GET SHOPPING TIPS</a></p>
-        <% end %>
-        
-      <% end %>
-
-      <% if @location %>
-      <h2>Please drop your gifts off at:<h2>
-        <ul style="list-style-type:none;">
-          <li style="list-style-tupe:none;"><p style="margin: 0;"><%= @location.street %></p></li>
-          <li style="list-style-type:none;"><p style="margin: 0;"><%= @location.city %>, &nbsp<%= @location.state %>&nbsp<%= @location.zipcode %></p></li>
-          <% end %>
-        </ul>
-
-        <h2>Drop date: <%= DropDate.find(@family.drop_date_id).date_and_time %></h2>
-
-        <hr>
-
-        <h2 style="margin-bottom: 0px; padding-bottom: 0px;">Family Details</h2>
-        <h3 style="margin-top: 0px; padding-top: 0px;">(Family Code: <%= @family.code %>)</h3>
-
-        <% @family.family_members.each do |member| %>
-        <h3><%= member.first_name %></h3>
-        <ul style="list-style:none;">
-          <li><strong>About:</strong> <%= member.bio %></li>
-          <li><strong>Age:</strong> <%= member.age %></li>
-          <li><strong>Gender:</strong> <%= member.gender %></li>
-
-          <h4>Needs</h4>
-
-          <% member.needs.each do |need| %>
-          <li><%= need.text %></li>
           <% end %>
 
+          <% end %>
 
-          <h4>Clothing Sizes</h4>
+          <% if @location %>
+          <p><strong>Please drop your gifts off at:</strong> <%= @location.street %>, <%= @location.city %>, <%= @location.state %></p>
+            <% end %>
+            <p><strong>Please note your Gift Drop date as:</strong> <%= DropDate.find(@family.drop_date_id).date_and_time %></p>
+            <hr>
 
-          <li>Pants: <%= member.size_pants %></li>
-          <li>Shirt: <%= member.size_shirt %></li>
-          <li>Dress: <%= member.size_dress %></li>
-          <li>Shoes: <%= member.size_shoes %></li>
-        </ul>
-        <% end %>
-      </body>
-      </html>
+            <h2 style="margin-bottom: 0px; padding-bottom: 0px;">Family Details</h2>
+            <h3 style="margin-top: 0px; padding-top: 0px;">(Family Code: <%= @family.code %>)</h3>
+
+            <% @family.family_members.each do |member| %>
+            <h3><%= member.first_name %></h3>
+            <ul style="list-style:none;">
+              <li><strong>About:</strong> <%= member.bio %></li>
+              <li><strong>Age:</strong> <%= member.age %></li>
+              <li><strong>Gender:</strong> <%= member.gender %></li>
+
+              <h4>Needs</h4>
+
+              <% member.needs.each do |need| %>
+              <li><%= need.text %></li>
+              <% end %>
+
+
+              <h4>Clothing Sizes</h4>
+
+              <li>Pants: <%= member.size_pants %></li>
+              <li>Shirt: <%= member.size_shirt %></li>
+              <li>Dress: <%= member.size_dress %></li>
+              <li>Shoes: <%= member.size_shoes %></li>
+            </ul>
+            <% end %>
+          </body>
+          </html>
 
 
 
 
-      
