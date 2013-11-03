@@ -35,9 +35,9 @@
           <% end %>
 
           <% if @location %>
-          <p><strong>Please drop your gifts off at:</strong> <%= @location.street %>, <%= @location.city %>, <%= @location.state %></p>
+          <p><strong>Please note your DROP OFF LOCATION as:</strong> <%= @location.street %>, <%= @location.city %>, <%= @location.state %></p>
             <% end %>
-            <p><strong>Please note your Gift Drop date as:</strong> <%= DropDate.find(@family.drop_date_id).date_and_time %></p>
+            <p><strong>Please note your GIFT DROP DATE as:</strong> <%= DropDate.find(@family.drop_date_id).date_and_time %></p><br>
             <hr>
 
             <h2 style="margin-bottom: 0px; padding-bottom: 0px;">Family Details</h2>
