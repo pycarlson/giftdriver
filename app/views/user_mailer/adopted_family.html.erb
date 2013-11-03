@@ -21,12 +21,17 @@
       <% else %>
       <h2>A few words from <%= @drive.org_name %>:</h2>
         <p><%= @drive.details_for_the_donor %></p>
-        <% unless @drive.shopping_details_link.blank? %>
-        <p>You can get shopping tips here: <a style="text-decoration: none;" href="<%= @drive.shopping_details_link %>">GET SHOPPING TIPS</a></p>
-        <% end %>
+
         <% unless @drive.donation_receipt_link.blank? %>
-        <p>If you would like to fill out a donation receipt. Please visit this link: <a style="text-decoration: none;" href="<%= @drive.donation_receipt_link %>">GET RECEIPT</a></p>
+        <p>When dropping off your gifts, please bring a filled out donation receipt. A blank copy can be found here: 
+        <a style="text-decoration: none;" href="<%= @drive.donation_receipt_link %>">GET RECEIPT</a></p>
         <% end %>
+
+        <% unless @drive.shopping_details_link.blank? %>
+        <p>For shopping tips, pleaes go here: 
+          <a style="text-decoration: none;" href="<%= @drive.shopping_details_link %>">GET SHOPPING TIPS</a></p>
+        <% end %>
+        
       <% end %>
 
       <% if @location %>
