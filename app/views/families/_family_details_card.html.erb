@@ -5,7 +5,7 @@
     <li><%= member.first_name %>, age: <%= member.age %></li>
     <% end %>
   </ul>
-  <div class="family-needs">A sample of this family's needs: <%= family.sampled_needs(2).to_sentence %>...<%= link_to "continue reading", family_path(family), action: 'get' %></div>
+  <div class="family-needs">A random sample of this family's needs: <%= family.sampled_needs(2).first %>...<%= link_to "continue reading", family_path(family), action: 'get' %></div>
 
   <br>
   <% if organizer?(@drive) %>
