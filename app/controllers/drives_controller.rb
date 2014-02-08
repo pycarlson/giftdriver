@@ -119,21 +119,6 @@ class DrivesController < ApplicationController
     end
   end
 
-  def drop_locations
-    @location = DropLocation.new
-    @location.street = params[:street]
-    @location.city = params[:city]
-    @location.state = params[:state]
-    @location.zipcode = params[:zipcode]
-    @location.code = params[:code]
-    if @location.save
-      Drive.find(params[:id]).drop_locations << @location
-      render :json => {location_code: params[:code], location_id: @location.id}.to_json
-    else
-      render :json => {alert: "There was a problem saving the drop location! Please verify the address and try again."}.to_json
-    end
-  end
-
   protected
 
   def validate_organizer
